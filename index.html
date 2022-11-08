@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" type="image/png" href="img/title.png" />
+    <link rel="shortcut icon" type="image/jpeg" href="img/title.png" />
     <title>Manu Arya 🤟</title>
     <link rel="stylesheet" href="style.css" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="Jquery_3.5.1.js"></script>
+    <script src="Gsap_3.4.2.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script> -->
     <script src="script.js"></script>
   </head>
 
@@ -158,6 +160,17 @@
         </div>
 
         <div class="footer-first-page">
+          <div class="first-social">
+            <div class="f-links hover-this">
+              <a href="https://linkedin.com/in/manuaryaddn"
+                ><span>LinkedIn</span></a
+              >
+            </div>
+            <div class="f-links hover-this">
+              <a href="https://github.com/manuarya1610"><span>GitHub</span></a>
+            </div>
+          </div>
+
           <div class="contain-dna">
             <div id="dna">
               <div class="line line1"></div>
@@ -168,21 +181,6 @@
               <div class="line line6"></div>
               <div class="line line7"></div>
               <div class="line line8"></div>
-            </div>
-          </div>
-
-          <div class="first-page-social">
-            <div class="first-social">
-              <div class="f-links hover-this">
-                <a href="https://linkedin.com/in/manuaryaddn"
-                  ><span>LinkedIn</span></a
-                >
-              </div>
-              <div class="f-links hover-this">
-                <a href="https://github.com/manuarya1610"
-                  ><span>GitHub</span></a
-                >
-              </div>
             </div>
           </div>
         </div>
@@ -238,6 +236,7 @@
               ><button class="about-button">Check Me Out</button></a
             >
           </div>
+
           <div class="about-element">
             <div class="consist-element">
               <div class="scene">
@@ -294,7 +293,7 @@
           </div>
         </div>
 
-        <div id="project-about-main">
+        <div id="project-about-main-2">
           <div class="project-about-box">
             <div class="project-about-letter">E</div>
           </div>
@@ -472,7 +471,7 @@
                 />
               </div>
 
-              <div class="field">
+              <div class="field hover-this">
                 <div class="consist-button">
                   <div class="container">
                     <button type="submit" class="button" cursor-class="overlay">
@@ -684,7 +683,7 @@
       t1.staggerFrom(
         ".menu > div",
         0.8,
-        { y: 100, opacity: 0, ease: Expo.easeOut },
+        { y: 1000, opacity: 0, ease: Expo.easeOut },
         "0.1",
         "-=0.4"
       );

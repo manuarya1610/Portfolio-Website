@@ -1,7 +1,5 @@
 // full modal
 
-easteregg = 0;
-
 $(function () {
   $(".md-trigger").on("click", function () {
     $(".md-modal").addClass("md-show");
