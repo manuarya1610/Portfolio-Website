@@ -1282,6 +1282,12 @@ p {
   -webkit-text-stroke-color: rgb(255, 255, 255);
 }
 
+.project-container-main {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
 .git {
   z-index: 200;
   margin-top: 30%;
@@ -1447,6 +1453,7 @@ p {
 }
 
 .left_box {
+  overflow: hidden;
   height: 100vh;
   width: 50%;
   display: flex;
@@ -1462,7 +1469,7 @@ p {
   /* backdrop-filter: blur(150%); */
 }
 
-.txt1 {
+.txt1-ct {
   color: rgb(255, 255, 255);
   font-family: "monumentR", Arial, Helvetica, sans-serif;
   margin-top: 10%;
@@ -1470,7 +1477,7 @@ p {
   margin-left: 4%;
 }
 
-.txt2 {
+.txt2-ct {
   /* width: fit-content; */
   font-family: "monumentR", Arial, Helvetica, sans-serif;
   font-size: 7.8vw;
@@ -1545,6 +1552,7 @@ p {
 }
 
 .right_box {
+  overflow: hidden;
   height: 100%;
   background: rgba(0, 0, 0, 0.171);
   backdrop-filter: blur(4px);
@@ -1897,10 +1905,12 @@ button.md-close {
   }
 } */
 
+/*  */
+
 @media only screen and (max-width: 780px) {
   /* for small smartphones */
   html {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .logo {
@@ -2084,6 +2094,7 @@ button.md-close {
   }
 
   .left_box {
+    overflow: hidden;
     background: rgba(0, 0, 0, 0.171);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
@@ -2094,6 +2105,7 @@ button.md-close {
   }
 
   .right_box {
+    overflow: hidden;
     border-top-right-radius: 100px;
     width: 100%;
     background: rgba(0, 0, 0, 0.171);
@@ -2151,12 +2163,18 @@ button.md-close {
     transition: all 0.25s linear;
   }
 
-  .txt1 {
-    font-size: 5rem;
+  .txt1-ct {
+    /* margin-left: -30%; */
+    /* justify-content: right; */
+    font-size: 3.5rem;
+
   }
 
-  .txt2 {
-    font-size: 5rem;
+  .txt2-ct {
+
+    /* margin-left: -30%; */
+    /* justify-content: right; */
+    font-size: 3.5rem;
   }
 
   .links {
