@@ -294,7 +294,7 @@ button {
   width: 100vw;
   height: 100vh;
 
-  background-image: url(img/contact-glass-blk-v3.png);
+  background-image: url(img/contact-glass-blk-v3_Large.jpeg);
   background-size: cover;
   position: relative;
   background-repeat: no-repeat;
@@ -887,7 +887,7 @@ a {
   display: flex;
   flex-direction: row;
 
-  background-image: url(img/ft546-v2.png);
+  background-image: url(img/ft546-v2.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -1424,7 +1424,7 @@ p {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  background-image: url(img/contact-final.png);
+  background-image: url(img/contact-final.jpeg);
   background-size: cover;
   /* background-position: center;
   object-fit:fill; */
@@ -2088,7 +2088,7 @@ button.md-close {
 
   .contact {
     height: 130%;
-    background-image: url(img/contact-final\ copy.png);
+    background-image: url(img/contact-final\ copy.jpeg);
     flex-direction: column;
     /* background-size: contain; */
   }
