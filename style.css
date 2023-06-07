@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap");
 @font-face {
   font-family: "MonumentR";
   src: url(fonts/Monument/MonumentExtended-Regular.otf);
@@ -12,11 +13,9 @@ html {
   height: 100vh;
   margin: 0%;
   padding: 0%;
-  /* scroll-behavior: smooth; */
 }
 
 body {
-  /* overflow-x: scroll; */
   margin: 0%;
   padding: 0%;
   width: 100vw;
@@ -34,7 +33,6 @@ button {
 }
 
 .menu-consist-small {
-  /* display: none; */
   z-index: 100;
   position: fixed;
 }
@@ -91,7 +89,6 @@ button {
   background: #ffffff;
   animation: slide-out-container 4s cubic-bezier(0.97, 0.01, 0.36, 0.99) 2.8s;
   animation-fill-mode: forwards;
-  /* font-family: "Arial"; */
 }
 
 .text-wrapper {
@@ -130,16 +127,6 @@ button {
   }
 }
 
-/* .text-1 {
-  animation: blink 0.8s linear 0.9s, blink 0.8s linear 2s;
-  opacity: 0;
-}
-
-.text-2 {
-  animation: blink 0.8s linear 0.8s, blink 0.8s linear 2.1s;
-  opacity: 0;
-} */
-
 .text-3 {
   animation: blink 0.8s linear 0.7s, blink 0.8s linear 2.2s;
   opacity: 0;
@@ -175,16 +162,6 @@ button {
   animation: blink 0.8s linear 0.7s, blink 0.8s linear 2.2s;
   opacity: 0;
 }
-
-/* .text-10 {
-  animation: blink 0.8s linear 0.8s, blink 0.8s linear 2.1s;
-  opacity: 0;
-}
-
-.text-11 {
-  animation: blink 0.8s linear 0.9s, blink 0.8s linear 2s;
-  opacity: 0;
-} */
 
 @keyframes slide-out {
   0% {
@@ -241,12 +218,6 @@ button {
   }
 }
 
-/* @media (max-width: 990px) {
-  .text {
-    font-size: 24px;
-  }
-} */
-
 /* intro animation end */
 
 .wrapper {
@@ -279,15 +250,9 @@ button {
   flex-direction: row;
   justify-content: space-between;
   overflow: hidden;
-  /* position: fixed; */
   top: 0%;
-  /* margin-bottom: 1%; */
   position: relative;
   width: 100%;
-  /* margin-left: 3%; */
-  /* margin-right: 8%; */
-  /* padding: 0% 3%; */
-  /* font-family: Arial, Helvetica, sans-serif; */
   text-transform: uppercase;
   line-height: 5rem;
 }
@@ -310,10 +275,6 @@ button {
 }
 
 .site-menu .menu-item {
-  /* width: fit-content; */
-  /* display: flex;
-  justify-content: space-between; */
-  /* margin-left: 10%; */
   text-decoration: none;
   color: white;
   font-family: "MonumentR", Arial, Helvetica, sans-serif;
@@ -386,13 +347,10 @@ span {
 .contain-content {
   display: flex;
   width: 100%;
-  /* height: -120%; */
   position: relative;
 }
 
 .content {
-  /* width: 30vh; */
-  /* height: 100vh; */
   position: relative;
   display: flex;
   flex-direction: column;
@@ -400,8 +358,6 @@ span {
   font-family: "MonumentR", Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
   color: white;
-  /* position: absolute; */
-  /* z-index: 3; */
   text-transform: uppercase;
   margin-top: 2%;
   margin-left: 7%;
@@ -428,8 +384,6 @@ span {
 .contain-box {
   justify-content: space-between;
   margin-top: -3.5%;
-  /* margin-bottom: 10vh; */
-  /* margin-top: 3%; */
   display: flex;
   width: 100%;
   height: 70%;
@@ -440,11 +394,9 @@ span {
 #box {
   padding-top: 5%;
   padding-bottom: 10%;
-  /* margin-top: 10%; */
   width: 100%;
   height: 70%;
   position: relative;
-  /* top: 25%; */
   left: 3%;
   overflow: hidden;
 }
@@ -458,7 +410,6 @@ span {
   width: 750px;
   height: 150px;
   font-size: 10.5vw;
-  /* font-weight: 700; */
   position: relative;
   overflow: hidden;
   display: inline-block;
@@ -518,7 +469,6 @@ span {
 #text3,
 #text5 {
   left: 750px;
-  /* animation-delay: 600.3s; */
   animation: anim 1s forwards 0.1s;
 }
 
@@ -586,37 +536,24 @@ span {
 .contain-dna {
   padding-right: 15%;
   justify-content: right;
-  /* overflow: hidden; */
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0;
-
   margin-right: 4%;
-  /* margin-left: 87vw; */
   display: flex;
   width: 15%;
-  /* height: 2%; */
-  /* position: relative; */
 }
 
 #dna {
   justify-content: right;
   margin: 0;
   padding: 0;
-  /* position: absolute;
-  left: 0; */
-  /* bottom: 0; */
-  /* margin-left: 90vw; */
-  /* margin-top: -4%; */
-
   display: flex;
   justify-content: right;
   align-items: center;
   position: relative;
-  /* top: 50%; */
-  /* left: 100%; */
   transform: rotate(-90deg);
 }
 
@@ -626,7 +563,6 @@ span {
   background: rgba(255, 255, 255, 0.334);
   margin-top: 50%;
   position: absolute;
-  /* left: 50%; */
   transform: translateX(-50%);
   animation: anime 1s ease infinite;
 }
@@ -635,15 +571,10 @@ span {
   content: "";
   height: 10px;
   width: 10px;
-  /* background: #9f7a34b5; */
-
   background: rgba(81, 161, 52, 0.2);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  /* border-radius: 300px; */
-  /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
-
   border-radius: 20%;
   position: absolute;
   left: 0%;
@@ -654,15 +585,11 @@ span {
   content: "";
   height: 10px;
   width: 10px;
-  /* background: #9f7a3494; */
-
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-radius: 200px;
-  /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
-
   border-radius: 20%;
   position: absolute;
   left: 100%;
@@ -738,8 +665,6 @@ span {
   position: relative;
   display: flex;
   flex-direction: row;
-  /* margin-left: 40%; */
-  /* margin-right: 40%; */
 }
 
 .f-links span {
@@ -752,7 +677,6 @@ span {
   font-family: "monumentR", Arial, Helvetica, sans-serif;
   font-size: 1.2rem;
   color: white;
-  /* margin-top: 50vh; */
   margin-right: 23%;
   padding-bottom: 3%;
 }
@@ -788,7 +712,6 @@ span {
 .white-space {
   display: flex;
   position: relative;
-  /* color: white; */
   width: 100vh;
   height: 20vh;
 }
@@ -802,21 +725,15 @@ a {
 }
 
 .about-button {
-  /* padding: 1%; */
   padding: 1%;
-  /* font-size: 1em; */
   margin-top: 4%;
   margin-left: 4%;
   font-family: "monumentB", Arial, Helvetica, sans-serif;
   display: flex;
-  /* border-radius: 100px; */
   border: 1px solid white;
   justify-content: center;
   align-items: center;
-
   color: white;
-  /* width: 20%; */
-  /* height: 6%; */
   background-color: transparent;
 }
 
@@ -826,9 +743,7 @@ a {
   color: rgb(255, 255, 255);
   font-family: "monumentR", Arial, Helvetica, sans-serif;
   font-size: 1.4rem;
-  /* font-weight: 100; */
   overflow: hidden;
-  /* padding: 1rem 2rem; */
   position: relative;
   text-decoration: none;
   transition: 1s transform ease-in-out;
@@ -838,10 +753,7 @@ a {
 
 .about-button::after {
   background-color: rgba(48, 90, 48, 0.738);
-  /* border-radius: 3rem; */
-
   color: black;
-
   content: "";
   display: block;
   height: 100%;
@@ -865,11 +777,7 @@ a {
     background-color: rgba(26, 61, 26, 0.738);
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     border-color: transparent;
-
     color: black;
-    /* -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgb(255, 255, 255); */
   }
 
   .about-button:hover::after {
@@ -897,7 +805,6 @@ a {
   background-size: cover;
   width: 100%;
   height: 100%;
-  /* margin-left: 4%; */
 }
 
 .hello {
@@ -915,21 +822,17 @@ a {
   background-color: transparent;
   color: rgb(255, 255, 255);
   font-family: "montserratB", Arial, Helvetica, sans-serif;
-  /* font-weight: lighter; */
-  /* text-transform: uppercase; */
   display: flex;
   flex-direction: row;
   justify-content: right;
 }
 
 #about-main {
-  /* left: 4%; */
   position: relative;
 }
 
 .about-box {
   width: 10.5%;
-  /* height: 2%; */
   display: inline-block;
   overflow: hidden;
 }
@@ -937,7 +840,6 @@ a {
 .about-letter {
   font-family: "monumentR", Arial, Helvetica, sans-serif;
   font-size: 7rem;
-  /* line-height: 250px; */
   position: relative;
   left: -160px;
   transition: all 0.25s linear;
@@ -949,25 +851,19 @@ a {
   height: auto;
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
 }
 
 .about-wrapper .about-line {
   width: 80%;
-  /* height: 70px; */
   position: relative;
   overflow: hidden;
 }
 
 .about-wrapper .about-line-1 {
   margin-bottom: 2%;
-  font-family: Helvetica, sans-serif, Arial, Helvetica, sans-serif;
-  /* font-weight: 200em; */
-  /* text-align: justify; */
-  text-justify: inter-word;
-  font-size: 1.5rem;
-  line-height: 1.4;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
   width: 65%;
   height: 100%;
   position: relative;
@@ -979,14 +875,12 @@ p {
 }
 
 .about-wrapper .about-line .span-line {
+  font-family: "Raleway", sans-serif;
   position: relative;
-  /* font-weight: lighter; */
   font-size: 1.5rem;
-  /* line-height: 1.2em; */
 }
 
 .about-element {
-  /* margin-right: -10%; */
   margin-top: -25%;
   color: white;
 }
@@ -997,7 +891,6 @@ p {
 
 .consist-element {
   position: sticky;
-  /* background-color: #000; */
   background-color: transparent;
   color: #fff;
   min-height: 100%;
@@ -1199,7 +1092,6 @@ p {
   position: absolute;
   width: 400px;
   height: 400px;
-  /* background-image: linear-gradient(90deg, #000a, #0004, #000a); */
   transform: translate(-50%, -50%);
 }
 
@@ -1208,16 +1100,12 @@ p {
 /* This is the project part */
 
 #project-about-main {
-  /* z-index: 1; */
-  /* left: 4%; */
   position: relative;
   display: flex;
   justify-content: right;
 }
 
 #project-about-main-2 {
-  /* z-index: 1; */
-  /* left: 4%; */
   margin-top: -3%;
   position: relative;
   display: flex;
@@ -1225,7 +1113,6 @@ p {
 }
 
 .project-about-box {
-  /* z-index: 2; */
   width: 110px;
   height: 175px;
   display: inline-block;
@@ -1233,14 +1120,11 @@ p {
 }
 
 .project-about-letter {
-  /* text-transform: lowercase; */
   color: white;
   font-family: "monumentR", Arial, Helvetica, sans-serif;
   font-size: 7rem;
   font-weight: bold;
-  /* line-height: 250px; */
   position: relative;
-  /* left: -160px; */
   transition: all 0.25s linear;
 }
 
@@ -1289,13 +1173,29 @@ p {
 }
 
 .git {
+  padding-left: 17%;
+  padding-right: 17%;
   z-index: 200;
   margin-top: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 28%;
-  height: 23%;
+  height: 26%;
+  font-family: "monumentR", Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+  color: white;
+  border-radius: 200px;
+  border: 1px solid currentColor;
+}
+.git-website {
+  z-index: 200;
+  margin-top: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28%;
+  height: 70%;
   font-family: "monumentR", Arial, Helvetica, sans-serif;
   font-size: 1.3rem;
   color: white;
@@ -1305,11 +1205,8 @@ p {
 
 .git:hover::after {
   background-color: rgba(48, 90, 48, 0.738);
-  /* border-radius: 3rem; */
-
   color: black;
   -webkit-text-fill-color: rgba(55, 41, 41, 0);
-
   content: "";
   display: block;
   height: 100%;
@@ -1321,7 +1218,6 @@ p {
   transform-origin: top left;
   transition: 0.2s transform ease-out;
   will-change: transform;
-  /* z-index: -1; */
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -1343,7 +1239,6 @@ p {
   margin-left: 2%;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   flex-direction: column;
 }
 
@@ -1351,7 +1246,6 @@ p {
   margin-left: 3%;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   flex-direction: column;
 }
 
@@ -1373,13 +1267,10 @@ p {
 }
 
 .pr1-right {
-  /* margin-left: -10%; */
-  /* margin-right: 4%; */
   font-family: "monumentR", Arial, Helvetica, sans-serif;
   font-size: 1.2rem;
   text-align: justify;
   text-justify: inter-word;
-
   width: 33vw;
   justify-content: center;
   align-items: center;
@@ -1434,7 +1325,6 @@ p {
 }
 
 .contact {
-  /* padding-top: 3%; */
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -1443,8 +1333,6 @@ p {
   flex-direction: row;
   background-image: url(img/contact-final.jpeg);
   background-size: cover;
-  /* background-position: center;
-  object-fit:fill; */
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -1459,14 +1347,11 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* background: rgba(255, 255, 255, 0.3); */
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   padding-right: 2%;
-  /* height: 100%; */
   position: relative;
   background-color: rgba(53, 53, 53, 0.171);
-  /* backdrop-filter: blur(150%); */
 }
 
 .txt1-ct {
@@ -1478,12 +1363,10 @@ p {
 }
 
 .txt2-ct {
-  /* width: fit-content; */
   font-family: "monumentR", Arial, Helvetica, sans-serif;
   font-size: 7.8vw;
   margin-left: 4%;
   margin-top: -5%;
-
   color: rgb(255, 255, 255);
 }
 
@@ -1493,7 +1376,6 @@ p {
 }
 
 .socialul {
-  /* margin-bottom: 1%; */
   bottom: 0;
   position: absolute;
   padding-left: 5%;
@@ -1507,8 +1389,6 @@ p {
 .social {
   display: flex;
   flex-direction: row;
-  /* margin-left: 4%; */
-  /* margin-right: 4%; */
 }
 
 .social .links {
@@ -1517,8 +1397,6 @@ p {
   font-family: "monumentR", Arial, Helvetica, sans-serif;
   font-size: 1.3rem;
   color: white;
-
-  /* margin-top: 59vh; */
   margin-bottom: 2%;
   margin-right: 10%;
 }
@@ -1568,7 +1446,6 @@ p {
 
 .form {
   font-size: 1.4rem;
-  /* margin-left: 13%; */
   font-family: "monumentR", Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
@@ -1601,7 +1478,6 @@ input {
 }
 
 .form .in {
-  /* font-size: 1.3em; */
   margin-top: 10%;
 }
 
@@ -1609,7 +1485,6 @@ input {
   width: 125%;
   position: relative;
   font-size: 1rem;
-
   background-color: transparent;
   border: none;
   outline: none;
@@ -1623,7 +1498,6 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: #121212; */
 }
 
 .title {
@@ -1691,7 +1565,6 @@ input {
 /* socials duplicate */
 
 .socialul-1 {
-  /* margin-left: 4%; */
   position: absolute;
   bottom: 0;
   justify-content: center;
@@ -1708,11 +1581,9 @@ input {
 /* modal button */
 
 .m-consist-button {
-  /* margin-top: 10%; */
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: #121212; */
 }
 
 .m-button {
@@ -1749,7 +1620,6 @@ input {
   width: 0;
   height: 0;
   border-radius: 50%;
-  /* background-color: #0a512e; */
   background-color: #0a512e;
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -1774,10 +1644,8 @@ input {
 button {
   display: flex;
   flex-direction: column;
-  /* margin: 5% auto 0; */
   background: transparent;
   border: 2px solid #444;
-  /* padding: 5px 10px; */
 }
 
 button.md-close {
@@ -1818,7 +1686,6 @@ button.md-close {
   left: 0;
   z-index: 1000;
   opacity: 0;
-  /* background: rgba(228, 240, 227, 0.8); */
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
@@ -1855,8 +1722,6 @@ button.md-close {
   align-items: center;
   margin-top: -7%;
   margin-bottom: 6%;
-  /* width: 10%; */
-  /* height: 10%; */
 }
 
 .container-text .txt {
@@ -1891,20 +1756,6 @@ button.md-close {
   opacity: 1;
 }
 
-/* button .field {
-  border: none;
-} */
-
-/* end */
-
-/* Responsive */
-
-/* @media only screen and (max-width: 600px) {
-  html {
-    font-size: 10px;
-  }
-} */
-
 /*  */
 
 @media only screen and (max-width: 780px) {
@@ -1932,9 +1783,7 @@ button.md-close {
   #box {
     width: 100%;
     margin-bottom: 1%;
-    /* height: 65%; */
     position: relative;
-    /* top: 25%; */
     left: 3%;
   }
 
@@ -1945,8 +1794,6 @@ button.md-close {
   #box5,
   #box6 {
     width: 100%;
-    /* height: 150px; */
-    /* font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif; */
     font-size: 4.45rem;
     font-weight: 700;
     position: relative;
@@ -1956,7 +1803,6 @@ button.md-close {
 
   #box1 {
     margin-top: 20%;
-    /* transform: skewY(-15deg); */
   }
 
   #box2 {
@@ -2016,10 +1862,8 @@ button.md-close {
   .about-wrapper .about-line-1 {
     margin-bottom: 2%;
     font-family: Helvetica, sans-serif, Arial, Helvetica, sans-serif;
-    text-align: justify;
-    text-justify: inter-word;
-    font-size: 1.5rem;
-    /* line-height: 2rem; */
+    line-height: 1.5rem;
+    font-size: 1.3rem;
     margin: 0;
     width: 90vw;
     height: 100%;
@@ -2074,6 +1918,10 @@ button.md-close {
     margin-top: -15%;
   }
 
+  .git-website {
+    margin-top: 5rem;
+  }
+
   .pr-text {
     margin: 0;
     height: max-content;
@@ -2103,12 +1951,10 @@ button.md-close {
     display: flex;
     flex-direction: column;
     position: relative;
-    /* mix-blend-mode: color; */
   }
 
   .right_box {
     overflow: hidden;
-    /* border-top-right-radius: 100px; */
     width: 100%;
     background: rgba(0, 0, 0, 0.171);
     backdrop-filter: blur(4px);
@@ -2121,7 +1967,6 @@ button.md-close {
     height: 130%;
     background-image: url(img/contact-final\ copy.jpeg);
     flex-direction: column;
-    /* background-size: contain; */
   }
 
   .socialul {
@@ -2133,7 +1978,6 @@ button.md-close {
     position: relative;
     display: flex;
     justify-content: space-between;
-    /* justify-content: center; */
     margin-left: 4%;
   }
 
@@ -2146,7 +1990,6 @@ button.md-close {
   }
 
   .project-about-box {
-    /* z-index: 2; */
     width: 90px;
     height: 175px;
     display: inline-block;
@@ -2154,26 +1997,19 @@ button.md-close {
   }
 
   .project-about-letter {
-    /* text-transform: lowercase; */
     color: white;
     font-family: "monumentR", Arial, Helvetica, sans-serif;
     font-size: 5rem;
     font-weight: bold;
-    /* line-height: 250px; */
     position: relative;
-    /* left: -160px; */
     transition: all 0.25s linear;
   }
 
   .txt1-ct {
-    /* margin-left: -30%; */
-    /* justify-content: right; */
     font-size: 4.5rem;
   }
 
   .txt2-ct {
-    /* margin-left: -30%; */
-    /* justify-content: right; */
     font-size: 4.5rem;
   }
 
@@ -2191,9 +2027,6 @@ button.md-close {
     font-family: "monumentR", Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
     color: white;
-
-    /* margin-top: 59vh; */
-
     margin-bottom: 2%;
     margin-right: 5%;
   }
@@ -2205,11 +2038,8 @@ button.md-close {
 
 .menu-consist-small {
   font-family: "monumentR", Arial, Helvetica, sans-serif;
-  /* font-weight: 400; */
   width: 100vw;
-  /* height: 100vh; */
   display: block;
-  /* background: #161616; */
 }
 
 .menu-open {
