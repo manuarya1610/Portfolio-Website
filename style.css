@@ -1,13 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap");
-@font-face {
-  font-family: "MonumentR";
-  src: url(fonts/Monument/MonumentExtended-Regular.otf);
-}
-@font-face {
-  font-family: "MonumentB";
-  src: url(fonts/Monument/MonumentExtended-Ultrabold.otf);
-}
-
 html {
   width: 100vw;
   height: 100vh;
@@ -57,6 +47,7 @@ button {
   width: 100vw;
   height: 100vh;
   animation: changing-index 34s;
+  z-index: -1;
 }
 
 @keyframes changing-index {
@@ -97,7 +88,7 @@ button {
 }
 
 .text {
-  font-family: "MonumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   font-weight: lighter;
   font-size: 7vw;
 }
@@ -234,7 +225,7 @@ button {
   margin: 0%;
   width: 100vw;
   height: 100vh;
-  background-image: url(img/contact-glass-blk-v3.jpeg);
+  background-image: url(https://manuarya1610.github.io/contact-glass-blk-v3.jpeg);
   position: relative;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -277,7 +268,7 @@ button {
 .site-menu .menu-item {
   text-decoration: none;
   color: white;
-  font-family: "MonumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
 }
 
 .hover-link {
@@ -286,7 +277,7 @@ button {
   background: none;
   color: white;
 
-  font-family: "MonumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   font-size: 1.2rem;
   text-transform: uppercase;
   text-decoration: none;
@@ -355,7 +346,7 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: "MonumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
   color: white;
   text-transform: uppercase;
@@ -455,7 +446,7 @@ span {
 #text4,
 #text5,
 #text6 {
-  font-family: "monumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   width: 1200px;
   height: 400px;
   position: absolute;
@@ -674,7 +665,7 @@ span {
 
 .first-social .f-links {
   list-style: none;
-  font-family: "monumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   font-size: 1.2rem;
   color: white;
   margin-right: 23%;
@@ -728,7 +719,7 @@ a {
   padding: 1%;
   margin-top: 4%;
   margin-left: 4%;
-  font-family: "monumentB", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Bold", Arial, Helvetica, sans-serif;
   display: flex;
   border: 1px solid white;
   justify-content: center;
@@ -741,7 +732,7 @@ a {
   border: 1px solid currentColor;
   border-radius: 1.2em;
   color: rgb(255, 255, 255);
-  font-family: "monumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   font-size: 1.4rem;
   overflow: hidden;
   position: relative;
@@ -796,7 +787,7 @@ a {
   display: flex;
   flex-direction: row;
 
-  background-image: url(img/ft546-v2.jpeg);
+  background-image: url(https://manuarya1610.github.io/ft546-v2.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -812,7 +803,7 @@ a {
 }
 
 .name {
-  font-family: "monumentB", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Bold", Arial, Helvetica, sans-serif;
   font-size: 1.6rem;
   margin-top: 2.5%;
 }
@@ -838,7 +829,7 @@ a {
 }
 
 .about-letter {
-  font-family: "monumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   font-size: 7rem;
   position: relative;
   left: -160px;
@@ -936,7 +927,7 @@ p {
   position: absolute;
   left: var(--left);
   content: " Be the Exception! ";
-  font-family: "monumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   font-size: 5rem;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -1121,7 +1112,7 @@ p {
 
 .project-about-letter {
   color: white;
-  font-family: "monumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   font-size: 7rem;
   font-weight: bold;
   position: relative;
@@ -1138,7 +1129,7 @@ p {
   color: rgb(0, 0, 0);
   font-size: 0.8rem;
   font-weight: bolder;
-  font-family: "MonumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   transition: 0.5s ease-out;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.363);
 }
@@ -1151,7 +1142,7 @@ p {
 .project-heading {
   margin-left: 2%;
   margin-top: 5%;
-  font-family: "monumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   font-size: 2.5rem;
   color: white;
 
@@ -1182,7 +1173,7 @@ p {
   align-items: center;
   width: 28%;
   height: 26%;
-  font-family: "monumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   font-size: 1.3rem;
   color: white;
   border-radius: 200px;
@@ -1196,7 +1187,7 @@ p {
   align-items: center;
   width: 28%;
   height: 70%;
-  font-family: "monumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   font-size: 1.3rem;
   color: white;
   border-radius: 200px;
@@ -1267,7 +1258,7 @@ p {
 }
 
 .pr1-right {
-  font-family: "monumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   font-size: 1.2rem;
   text-align: justify;
   text-justify: inter-word;
@@ -1290,7 +1281,7 @@ p {
 }
 
 .pr2-left {
-  font-family: "monumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   font-size: 1.2rem;
   width: 35vw;
   justify-content: center;
@@ -1331,7 +1322,7 @@ p {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  background-image: url(img/contact-final.jpeg);
+  background-image: url(https://manuarya1610.github.io/contact-final.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -1356,14 +1347,14 @@ p {
 
 .txt1-ct {
   color: rgb(255, 255, 255);
-  font-family: "monumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   margin-top: 10%;
   font-size: 8vw;
   margin-left: 4%;
 }
 
 .txt2-ct {
-  font-family: "monumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   font-size: 7.8vw;
   margin-left: 4%;
   margin-top: -5%;
@@ -1371,7 +1362,7 @@ p {
 }
 
 ::placeholder {
-  font-family: "monumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   color: rgba(255, 255, 255, 0.389);
 }
 
@@ -1394,7 +1385,7 @@ p {
 .social .links {
   padding-bottom: 3%;
   list-style: none;
-  font-family: "monumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   font-size: 1.3rem;
   color: white;
   margin-bottom: 2%;
@@ -1446,7 +1437,7 @@ p {
 
 .form {
   font-size: 1.4rem;
-  font-family: "monumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -1456,7 +1447,7 @@ p {
 
 input {
   color: rgb(255, 255, 255);
-  font-family: "monumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
 }
 
 .form .heading {
@@ -1501,7 +1492,7 @@ input {
 }
 
 .title {
-  font-family: "monumentR", serif;
+  font-family: "Monument Extended Regular", serif;
   font-size: 2rem;
   line-height: 1.3;
   text-decoration: none;
@@ -1521,7 +1512,7 @@ input {
   border: solid 1px rgba(255, 255, 255, 0.558);
   text-align: center;
   color: #fff;
-  font-family: "MonumentR", Arial, Helvetica, sans-serif, serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif, serif;
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: bolder;
@@ -1597,7 +1588,7 @@ input {
   border: solid 1px rgba(255, 255, 255, 0.2);
   text-align: center;
   color: #fff;
-  font-family: "MonumentR", serif;
+  font-family: "Monument Extended Regular", serif;
   text-transform: uppercase;
   font-weight: bolder;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1727,7 +1718,7 @@ button.md-close {
 .container-text .txt {
   margin-bottom: 6%;
   color: white;
-  font-family: "monumentB", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Bold", Arial, Helvetica, sans-serif;
   font-size: 1.7rem;
 }
 
@@ -1852,7 +1843,7 @@ button.md-close {
   }
 
   .about-letter {
-    font-family: "monumentR", Arial, Helvetica, sans-serif;
+    font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
     font-size: 5rem;
     position: relative;
     left: -160px;
@@ -1872,7 +1863,7 @@ button.md-close {
   }
 
   .name {
-    font-family: "monumentB", Arial, Helvetica, sans-serif;
+    font-family: "Monument Extended Bold", Arial, Helvetica, sans-serif;
     font-size: 1.7rem;
     padding-top: 1.5%;
   }
@@ -1965,7 +1956,7 @@ button.md-close {
 
   .contact {
     height: 130%;
-    background-image: url(img/contact-final\ copy.jpeg);
+    background-image: url(https://manuarya1610.github.io/copy.jpeg);
     flex-direction: column;
   }
 
@@ -1998,7 +1989,7 @@ button.md-close {
 
   .project-about-letter {
     color: white;
-    font-family: "monumentR", Arial, Helvetica, sans-serif;
+    font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
     font-size: 5rem;
     font-weight: bold;
     position: relative;
@@ -2024,7 +2015,7 @@ button.md-close {
 
   .social .links {
     list-style: none;
-    font-family: "monumentR", Arial, Helvetica, sans-serif;
+    font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
     color: white;
     margin-bottom: 2%;
@@ -2037,7 +2028,7 @@ button.md-close {
 /* menu small */
 
 .menu-consist-small {
-  font-family: "monumentR", Arial, Helvetica, sans-serif;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
   width: 100vw;
   display: block;
 }
@@ -2152,3 +2143,15 @@ button.md-close {
 }
 
 /* end */
+
+@media only screen and (min-width: 1300px) {
+  #box1,
+  #box2,
+  #box3,
+  #box4,
+  #box5,
+  #box6 {
+    font-size: 10rem;
+    margin-bottom: +1rem;
+  }
+}
