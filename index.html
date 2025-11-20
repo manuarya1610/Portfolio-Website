@@ -3,20 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio of Manu Arya, data engineer and developer working on data pipelines, cloud analytics, and creative web experiences."
+      content="Portfolio of Manu Arya, data engineer and developer working on data pipelines, analytics, and creative web experiences."
     />
     <link
       rel="shortcut icon"
       type="image/jpeg"
       href="https://manuarya1610.github.io/title.png"
     />
-    <title>Manu Arya | Data Engineer & Developer 🤟</title>
+    <title>Manu Arya | Data Engineer &amp; Developer 🤟</title>
 
     <link rel="stylesheet" href="style.css" />
     <link
@@ -31,23 +28,29 @@
     />
     <link
       href="https://db.onlinewebfonts.com/c/ece33ed91db7fd1ad3ad9dd6751c7b98?family=Monument+Extended+Bold"
-      rel=" preload stylesheet"
+      rel="preload stylesheet"
       crossorigin
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Questrial&family=Raleway:wght@600&display=swap"
       rel="stylesheet"
     />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.10.2/dist/gsap.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.10.2/dist/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://unpkg.com/circletype@2.3.0/dist/circletype.min.js"
+      defer
+    ></script>
     <script src="script.js" defer></script>
   </head>
 
@@ -95,14 +98,14 @@
 
           <div class="menu-consist">
             <div class="site-menu">
-              <a href="#one" class="menu-item hover-this">
-                <div><span>About</span></div></a
+              <a href="#one" class="menu-item hover-this"
+                ><div><span>About</span></div></a
               >
-              <a href="#two" class="menu-item hover-this">
-                <div><span>Projects</span></div></a
+              <a href="#two" class="menu-item hover-this"
+                ><div><span>Projects</span></div></a
               >
-              <a href="#three" class="menu-item hover-this">
-                <div><span>Contact</span></div></a
+              <a href="#three" class="menu-item hover-this"
+                ><div><span>Contact</span></div></a
               >
             </div>
           </div>
@@ -120,7 +123,7 @@
             <div class="menu__item">
               <a
                 href="#first"
-                onclick="t1.reverse()"
+                onclick="return false;"
                 class="menu__item-link"
                 >Home</a
               >
@@ -133,12 +136,7 @@
               </div>
             </div>
             <div class="menu__item">
-              <a
-                href="#one"
-                onclick="t1.reverse()"
-                class="menu__item-link"
-                >About</a
-              >
+              <a href="#one" class="menu__item-link">About</a>
               <div class="marquee">
                 <div class="marquee__inner">
                   <span
@@ -149,28 +147,18 @@
               </div>
             </div>
             <div class="menu__item">
-              <a
-                href="#two"
-                onclick="t1.reverse()"
-                class="menu__item-link"
-                >Projects</a
-              >
+              <a href="#two" class="menu__item-link">Projects</a>
               <div class="marquee">
                 <div class="marquee__inner">
                   <span
-                    >Projects - Projects - Projects - Projects - Projects
-                    - Projects</span
+                    >Projects - Projects - Projects - Projects - Projects -
+                    Projects</span
                   >
                 </div>
               </div>
             </div>
             <div class="menu__item">
-              <a
-                href="#three"
-                onclick="t1.reverse()"
-                class="menu__item-link"
-                >Contact</a
-              >
+              <a href="#three" class="menu__item-link">Contact</a>
               <div class="marquee">
                 <div class="marquee__inner">
                   <span
@@ -275,7 +263,7 @@
         </div>
       </div>
 
-      <!-- About Section -->
+      <!-- ABOUT -->
 
       <div id="one" class="contain-about">
         <div class="about">
@@ -312,54 +300,71 @@
                 <p>
                   I work as a data engineer, designing reliable data pipelines
                   and analytics platforms, while still creating fun and
-                  interactive experiences with code. I am passionate about
-                  clean, minimal design and building systems that actually help
-                  people make decisions. Most of my time is spent working with
-                  cloud data tools, but I always come back to the creative side
-                  of development. Nature, food and learning new tools keep me
-                  inspired — feel free to say hi while you're here, I'd be
-                  delighted to connect with you.
+                  interactive experiences with code. I care about clean, minimal
+                  design and building systems that actually help people make
+                  decisions. Most of my time is spent working with cloud data
+                  tools (Azure, Databricks, ADLS, ADF and friends), but I always
+                  come back to the creative side of development. Nature, food
+                  and learning new tools keep me inspired — feel free to say hi
+                  while you're here, I'd be delighted to connect with you.
                 </p>
+              </div>
+            </div>
+
+            <a href="https://linkedin.com/in/manuaryaddn"
+              ><button class="about-button">Let's talk</button></a
+            >
+
+            <div class="data-engineering-highlights">
+              <div class="de-tagline">Data engineering focus</div>
+              <div class="de-badges">
+                <span class="de-badge">Azure ▸ Data Factory</span>
+                <span class="de-badge">Databricks ▸ PySpark</span>
+                <span class="de-badge">ADLS ▸ Delta Lake</span>
+                <span class="de-badge">Orchestration ▸ CI/CD</span>
               </div>
             </div>
           </div>
 
           <div class="about-element">
-            <div class="scene">
-              <div class="banner">
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-              </div>
-              <div class="banner">
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
-                <div class="panel"></div>
+            <div class="consist-element">
+              <div class="scene">
+                <div class="banner">
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                </div>
+                <div class="banner">
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -367,10 +372,10 @@
 
         <div class="white-space-about"></div>
 
-        <!-- Project Section -->
+        <!-- PROJECTS -->
 
-        <div id="two" class="project-section">
-          <div class="project-heading-main">
+        <div id="two" class="project-heading-main">
+          <div id="project-about-main">
             <div class="project-about">
               <div class="project-about-box">
                 <div class="project-about-letter">P</div>
@@ -384,262 +389,306 @@
               <div class="project-about-box">
                 <div class="project-about-letter">J</div>
               </div>
+
               <div class="project-about-box">
-                <div class="project-about-letter">E</div>
-              </div>
-              <div class="project-about-box">
-                <div class="project-about-letter">C</div>
-              </div>
-              <div class="project-about-box">
-                <div class="project-about-letter">T</div>
-              </div>
-              <div class="project-about-box">
-                <div class="project-about-letter">S</div>
+                <div class="project-about-letter">_</div>
               </div>
             </div>
           </div>
 
-          <div class="project-heading">&lt;/&gt; project 1</div>
-
-          <div class="project1">
-            <div class="pr1-left">
-              <span class="modal-img"
-                ><img
-                  src="https://manuarya1610.github.io/pr1.png"
-                  width="100%"
-                  loading="lazy"
-                  alt="Object detection and alert generation project screenshot"
-              /></span>
+          <div id="project-about-main-2">
+            <div class="project-about-box">
+              <div class="project-about-letter">E</div>
             </div>
-            <div class="ct">
-              <div class="pr1-right">
-                <div>
-                  <span>Object Detection and Alert Generation</span>
-                  <br />
-                  <br />
-                  <div class="pr-text">
-                    The software supports various both video and image input
-                    formats and utilizes bounding boxes to identify and label
-                    detected objects by their corresponding class names.
-                    Additionally, it offers filters to specifically target
-                    certain objects and can generate text alerts along with
-                    relevant screenshots of specific frames. These alerts can be
-                    sent to remote servers to serve as intruder warnings.
-                  </div>
-                </div>
-              </div>
-              <div class="git-button">
-                <a
-                  href="https://github.com/manuarya1610/Object-Detection-and-Alert-Generation.git"
-                  ><button class="git">GitHub</button></a
-                >
-              </div>
+            <div class="project-about-box">
+              <div class="project-about-letter">C</div>
             </div>
-          </div>
-
-          <div class="white-space-project"></div>
-
-          <div class="project-heading">&lt;/&gt; project 2</div>
-
-          <div class="project2">
-            <div class="pr2-right">
-              <span class="modal-img"
-                ><img
-                  src="https://manuarya1610.github.io/pr2.png"
-                  width="100%"
-                  loading="lazy"
-                  alt="SmartNote notes web app screenshot"
-              /></span>
+            <div class="project-about-box">
+              <div class="project-about-letter">T</div>
             </div>
-
-            <div class="ct-2">
-              <div class="pr2-left">
-                <div>
-                  <span>SmartNote 📖</span>
-                  <br />
-                  <br />
-                  <div class="pr-text">
-                    SmartNote is a website created by React and implemented
-                    using Firestore as the database and Firebase Authentication
-                    for authentication. You can save your notes and access them
-                    anytime and anywhere and enjoy the web-app's aesthetics
-                    while doing so.
-                  </div>
-                </div>
-              </div>
-              <div class="git-button">
-                <a href="https://github.com/manuarya1610/SmartNote"
-                  ><button class="git">GitHub</button></a
-                >
-              </div>
-              <div class="git-button">
-                <a
-                  class="a-git-1"
-                  href="https://smart-note-ed42e.web.app/"
-                  ><button class="git">Live</button></a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="white-space-project"></div>
-
-          <div class="project-heading">&lt;/&gt; project 3</div>
-
-          <div class="project1">
-            <div class="pr1-left">
-              <span class="modal-img"
-                ><img
-                  src="https://manuarya1610.github.io/pr3.png"
-                  width="100%"
-                  loading="lazy"
-                  alt="UI for community website template screenshot"
-              /></span>
-            </div>
-            <div class="ct">
-              <div class="pr1-right">
-                <div>
-                  <span>Community Website Template 🏡</span>
-                  <br />
-                  <br />
-                  <div class="pr-text">
-                    A clean and modern multipage community website template built
-                    with responsive layout and attention to typography and
-                    spacing.
-                  </div>
-                </div>
-              </div>
-              <div class="git-button">
-                <a
-                  href="https://github.com/manuarya1610/Community-Website-Template"
-                  ><button class="git">GitHub</button></a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="white-space-project"></div>
-
-          <div class="project-heading">&lt;/&gt; project 4</div>
-
-          <div class="project2">
-            <div class="pr2-right">
-              <span class="modal-img"
-                ><img
-                  src="https://manuarya1610.github.io/pr6.png"
-                  width="100%"
-                  loading="lazy"
-                  alt="Cocktails React web app screenshot"
-              /></span>
-            </div>
-
-            <div class="ct-2">
-              <div class="pr2-left">
-                <div>
-                  <span>Cocktails App 🍸</span>
-                  <br />
-                  <br />
-                  <div class="pr-text">
-                    This website is created using react. This website fetches
-                    cocktails from a free API and showcases it in stunning
-                    UI/UX.
-                  </div>
-                </div>
-              </div>
-              <div class="git-button">
-                <a href="https://github.com/manuarya1610/Cocktails-WebApp"
-                  ><button class="git">GitHub</button></a
-                >
-              </div>
-              <div class="git-button">
-                <a
-                  class="a-git-1"
-                  href="https://cocktails-project-react.netlify.app/"
-                  ><button class="git">Live</button></a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="white-space-project"></div>
-
-          <div class="project-heading">&lt;/&gt; project 5</div>
-
-          <div class="project1">
-            <div class="pr1-left">
-              <span class="modal-img"
-                ><img
-                  src="https://manuarya1610.github.io/pr5.png"
-                  width="100%"
-                  loading="lazy"
-                  alt="AccountEase financial tracking web app screenshot"
-              /></span>
-            </div>
-            <div class="ct">
-              <div class="pr1-right">
-                <div>
-                  <span>AccountEase 💸</span>
-                  <br />
-                  <br />
-                  <div class="pr-text">
-                    This is a user-friendly web application, designed to simplify
-                    your financial management and keep a track of your finances.
-                  </div>
-                </div>
-              </div>
-              <div class="git-button">
-                <a
-                  href="https://github.com/manuarya1610/Expense-Tracker-UI"
-                  ><button class="git">GitHub</button></a
-                >
-              </div>
-              <div class="git-button">
-                <a
-                  class="a-git-1"
-                  href="https://account-ease.netlify.app/"
-                  ><button class="git">Live</button></a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="white-space-project"></div>
-
-          <div class="project-heading">&lt;/&gt; project 6</div>
-
-          <div class="project1">
-            <div class="pr1-left">
-              <span class="modal-img"
-                ><img
-                  src="https://manuarya1610.github.io/pr4.png"
-                  width="100%"
-                  loading="lazy"
-                  alt="Expense tracker UI design screenshot"
-              /></span>
-            </div>
-            <div class="ct">
-              <div class="pr1-right">
-                <div>
-                  <span>Expense Tracker 🏦</span>
-                  <br />
-                  <br />
-                  <div class="pr-text">
-                    This is a user-friendly web application, designed to simplify
-                    your financial management and keep a track of your finances.
-                  </div>
-                </div>
-              </div>
-              <div class="git-button">
-                <a
-                  href="https://www.behance.net/gallery/113559279/Finance-App-UIUX-EasePay"
-                  ><button class="git">Behance</button></a
-                >
-              </div>
+            <div class="project-about-box">
+              <div class="project-about-letter">S</div>
             </div>
           </div>
         </div>
 
-        <!-- Contact Section -->
+        <div class="white-space-project"></div>
+
+        <!-- project 1 -->
+
+        <div class="project-heading">&lt;/&gt; project 1</div>
+
+        <div class="project1">
+          <div class="pr1-left">
+            <span class="modal-img"
+              ><img
+                src="https://manuarya1610.github.io/pr1.png"
+                width="100%"
+                loading="lazy"
+                alt="Object detection and alert generation project screenshot"
+            /></span>
+          </div>
+
+          <div class="ct">
+            <div class="pr1-right">
+              <div>
+                <span>Object Detection and Alert Generation</span>
+                <br />
+                <br />
+                <div class="pr-text">
+                  The software supports various both video and image input
+                  formats and utilizes bounding boxes to identify and label
+                  detected objects by their corresponding class names.
+                  Additionally, it offers filters to specifically target certain
+                  objects and can generate text alerts along with relevant
+                  screenshots of specific frames. These alerts can be sent to
+                  remote servers to serve as intruder warnings.
+                </div>
+              </div>
+            </div>
+            <div class="git-button">
+              <a
+                href="https://github.com/manuarya1610/Object-Detection-and-Alert-Generation.git"
+                target="_blank"
+                rel="noreferrer"
+                ><button class="git">GitHub</button></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="white-space-project"></div>
+
+        <!-- project 2 -->
+
+        <div class="project-heading">&lt;/&gt; project 2</div>
+
+        <div class="project2">
+          <div class="pr2-right">
+            <span class="modal-img"
+              ><img
+                src="https://manuarya1610.github.io/pr2.png"
+                width="100%"
+                loading="lazy"
+                alt="SmartNote web app screenshot"
+            /></span>
+          </div>
+
+          <div class="ct-2">
+            <div class="pr2-left">
+              <div>
+                <span>SmartNote 📖</span>
+                <br />
+                <br />
+                <div class="pr-text">
+                  SmartNote is a website created by React and implemented using
+                  Firestore as the database and Firebase Authentication for
+                  authentication. You can save your notes and access them
+                  anytime and anywhere and enjoy the web-app's aesthetics while
+                  doing so.
+                </div>
+              </div>
+            </div>
+            <div class="git-button">
+              <a
+                href="https://github.com/manuarya1610/SmartNote"
+                target="_blank"
+                rel="noreferrer"
+                ><button class="git">GitHub</button></a
+              >
+            </div>
+            <div class="git-button">
+              <a
+                class="a-git-1"
+                href="https://smart-note-ed42e.web.app/"
+                target="_blank"
+                rel="noreferrer"
+                ><button class="git">Live</button></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="white-space-project"></div>
+
+        <!-- project 3 -->
+
+        <div class="project-heading">&lt;/&gt; project 3</div>
+
+        <div class="project1">
+          <div class="pr1-left">
+            <span class="modal-img"
+              ><img
+                src="https://manuarya1610.github.io/pr3.png"
+                width="100%"
+                loading="lazy"
+                alt="Community website template"
+            /></span>
+          </div>
+
+          <div class="ct">
+            <div class="pr1-right">
+              <div>
+                <span>Community Website Template 🏡</span>
+                <br />
+                <br />
+                <div class="pr-text">
+                  A clean and modern multipage community website template built
+                  with responsive layout and attention to typography and
+                  spacing.
+                </div>
+              </div>
+            </div>
+            <div class="git-button">
+              <a
+                href="https://github.com/manuarya1610/Community-Website-Template"
+                target="_blank"
+                rel="noreferrer"
+                ><button class="git">GitHub</button></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="white-space-project"></div>
+
+        <!-- project 4 -->
+
+        <div class="project-heading">&lt;/&gt; project 4</div>
+
+        <div class="project2">
+          <div class="pr2-right">
+            <span class="modal-img"
+              ><img
+                src="https://manuarya1610.github.io/pr6.png"
+                width="100%"
+                loading="lazy"
+                alt="Cocktails React app"
+            /></span>
+          </div>
+
+          <div class="ct-2">
+            <div class="pr2-left">
+              <div>
+                <span>Cocktails App 🍸</span>
+                <br />
+                <br />
+                <div class="pr-text">
+                  This website is created using react. This website fetches
+                  cocktails from a free API and showcases it in stunning UI/UX.
+                </div>
+              </div>
+            </div>
+            <div class="git-button">
+              <a
+                href="https://github.com/manuarya1610/Cocktails-WebApp"
+                target="_blank"
+                rel="noreferrer"
+                ><button class="git">GitHub</button></a
+              >
+            </div>
+            <div class="git-button">
+              <a
+                class="a-git-1"
+                href="https://cocktails-project-react.netlify.app/"
+                target="_blank"
+                rel="noreferrer"
+                ><button class="git">Live</button></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="white-space-project"></div>
+
+        <!-- project 5 -->
+
+        <div class="project-heading">&lt;/&gt; project 5</div>
+
+        <div class="project1">
+          <div class="pr1-left">
+            <span class="modal-img"
+              ><img
+                src="https://manuarya1610.github.io/pr5.png"
+                width="100%"
+                loading="lazy"
+                alt="AccountEase finance tracking app"
+            /></span>
+          </div>
+
+          <div class="ct">
+            <div class="pr1-right">
+              <div>
+                <span>AccountEase 💸</span>
+                <br />
+                <br />
+                <div class="pr-text">
+                  This is a user-friendly web application, designed to simplify
+                  your financial management and keep a track of your finances.
+                </div>
+              </div>
+            </div>
+            <div class="git-button">
+              <a
+                href="https://github.com/manuarya1610/Expense-Tracker-UI"
+                target="_blank"
+                rel="noreferrer"
+                ><button class="git">GitHub</button></a
+              >
+            </div>
+            <div class="git-button">
+              <a
+                class="a-git-1"
+                href="https://account-ease.netlify.app/"
+                target="_blank"
+                rel="noreferrer"
+                ><button class="git">Live</button></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="white-space-project"></div>
+
+        <!-- project 6 -->
+
+        <div class="project-heading">&lt;/&gt; project 6</div>
+
+        <div class="project1">
+          <div class="pr1-left">
+            <span class="modal-img"
+              ><img
+                src="https://manuarya1610.github.io/pr4.png"
+                width="100%"
+                loading="lazy"
+                alt="Expense Tracker UI"
+            /></span>
+          </div>
+
+          <div class="ct">
+            <div class="pr1-right">
+              <div>
+                <span>Expense Tracker 🏦</span>
+                <br />
+                <br />
+                <div class="pr-text">
+                  This is a user-friendly web application, designed to simplify
+                  your financial management and keep a track of your finances.
+                </div>
+              </div>
+            </div>
+            <div class="git-button">
+              <a
+                href="https://www.behance.net/gallery/113559279/Finance-App-UIUX-EasePay"
+                target="_blank"
+                rel="noreferrer"
+                ><button class="git">Behance</button></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT -->
 
         <div class="white-space-project"></div>
 
@@ -716,12 +765,7 @@
                   <div class="cnt heading">What's your name?</div>
                 </div>
                 <div class="cnt in">
-                  <input
-                    required
-                    type="text"
-                    name="name"
-                    placeholder="name*"
-                  />
+                  <input required type="text" name="name" placeholder="name*" />
                 </div>
                 <div class="form-heading-container">
                   <div class="cnt heading">What's your email-id?</div>
@@ -817,122 +861,16 @@
       </div>
     </div>
 
-    <!-- This is for Menu animation -->
+    <!-- This is animation for navbar -->
 
-    <script>
-      var t1 = new TimelineMax({ paused: true });
-
-      t1.to(".nav-container", 1, {
-        left: 0,
-        ease: Expo.easeInOut,
-      });
-
-      t1.staggerFrom(
-        ".menu > div",
-        0.8,
-        { y: 100, opacity: 0, ease: Expo.easeOut },
-        "0.1",
-        "-=0.4"
-      );
-
-      t1.reverse();
-      $(document).on("click", ".menu-open", function () {
-        t1.reversed(!t1.reversed());
-      });
-      $(document).on("click", ".menu-close", function () {
-        t1.reversed(!t1.reversed());
-      });
-    </script>
-
-    <!-- This is the creative animation -->
-
-    <script>
-      var mainbox = document.querySelector(".wrapper");
-      var text1 = document.querySelector("#text1");
-      var text2 = document.querySelector("#text2");
-
-      function cursorflow(e, mainbox) {
-        var con = mainbox.getBoundingClientRect();
-        var x = (e.pageX - con.x) * 0.5;
-        text1.style.transform = `translate(${x}px,0)`;
-        text2.style.transform = `translate(${x}px,0)`;
-      }
-
-      mainbox.addEventListener("mousemove", (e) => {
-        setInterval(cursorflow(e, mainbox), 100000);
-      });
-    </script>
-
-    <!-- About Section scroll effect -->
-
-    <script>
-      $(document).scroll(function () {
-        var scroll = $(window).scrollTop();
-        var amount = -140 + scroll * 0.2;
-        if (amount < 10) {
-          $(".about-letter").css({ left: amount + "px" });
-        }
-      });
-    </script>
-
-    <!-- name about -->
-
-    <script>
-      $(document).scroll(function () {
-        var scroll = $(window).scrollTop();
-        var amount = -155 + scroll * 0.2;
-        if (amount < 10) {
-          $(".span-line").css({ bottom: amount + "px" });
-        }
-      });
-    </script>
-
-    <!-- nav bar changing -->
-
-    <script>
-      $(document).scroll(function () {
-        var scroll = $(window).scrollTop();
-        var amount = scroll;
-        if (amount > 600) {
-          $(".menu-open").addClass("menu-open-show");
-        } else {
-          $(".menu-open").removeClass("menu-open-show");
-        }
-      });
-    </script>
-
-    <!-- Project Reveal -->
-
-    <script>
-      $(document).scroll(function () {
-        var scroll = $(window).scrollTop();
-        var amount = -305 + scroll * 0.2;
-        if (amount < 10) {
-          $(".project-about-letter").css({ left: amount + "px" });
-        }
-      });
-    </script>
+    <!-- end -->
 
     <!-- This is the rotating circle -->
 
-    <script src="https://unpkg.com/circletype@2.3.0/dist/circletype.min.js"></script>
-    <script>
-      const circleType = new CircleType(
-        document.getElementById("rotated")
-      ).radius(80);
+    <!--  -->
 
-      $(window).scroll(function () {
-        var offset = $(window).scrollTop();
-        offset = offset * 0.3;
+    <!-- this is for the small menu -->
 
-        $(".circular-text").css({
-          "-moz-transform": "rotate(" + offset + "deg)",
-          "-webkit-transform": "rotate(" + offset + "deg)",
-          "-o-transform": "rotate(" + offset + "deg)",
-          "-ms-transform": "rotate(" + offset + "deg)",
-          transform: "rotate(" + offset + "deg)",
-        });
-      });
-    </script>
+    <!-- end -->
   </body>
 </html>
