@@ -14,28 +14,307 @@ body {
 }
 
 a {
+  text-decoration: none;
   color: white;
-  cursor: pointer;
 }
 
-button {
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+.first-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.navbar {
+  justify-content: space-between;
+  z-index: 50;
+  position: relative;
+  display: flex;
+  margin: 0px 4.5rem;
+  padding-top: 2.5rem;
+}
+
+.logo {
+  display: flex;
+  transform: translateY(-10px);
+  z-index: 500;
+}
+
+.hover-link {
+  position: relative;
+  display: inline-block;
+  background: transparent;
+  border: none;
   cursor: pointer;
+  padding: 0.17rem 0.2rem;
+}
+
+.hover-link span {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-link span span {
+  display: inline-block;
+  will-change: transform;
+  transition: transform 200ms ease;
+}
+
+.hover-link span span:nth-of-type(1) {
+  transition-delay: 50ms;
+}
+
+.hover-link span span:nth-of-type(2) {
+  transition-delay: 100ms;
+}
+
+.hover-link:hover span span,
+.hover-link:focus span span {
+  transform: translateY(-50%);
+}
+
+.hover-link::before {
+  content: attr(area-label);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  display: block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  color: white;
+  background: gray;
+  opacity: 0;
+  transform: scale(0.8) translateX(-50%);
+  transition: transform 150ms ease, opacity 150ms ease;
+}
+
+.hover-link:hover::before,
+.hover-link:focus::before {
+  opacity: 1;
+  transform: scale(1) translateX(-50%);
+}
+
+.logo button {
+  white-space: nowrap;
+  position: relative;
+  background: transparent;
+
+  font-family: "Monument Extended Regular", "Questrial", sans-serif;
+  font-size: 1.6rem;
+  color: #efefef;
+  letter-spacing: 3px;
+}
+
+.logo button span span {
+  display: inline-block;
+  will-change: transform;
+  animation: float 2200ms ease infinite;
+}
+
+.logo button span span:nth-of-type(1) {
+  animation-delay: 100ms;
+}
+
+.logo button span span:nth-of-type(2) {
+  animation-delay: 200ms;
+}
+
+@keyframes float {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: translate3d(0.1rem, 0.1rem, 0);
+  }
+
+  50% {
+    transform: translate3d(0.2rem, 0.1rem, 0);
+  }
+
+  75% {
+    transform: translate3d(0.1rem, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.nav-heading {
+  font-family: "Questrial", sans-serif;
+  font-size: 13px;
+  color: rgb(121, 121, 121);
+  letter-spacing: 1.4px;
+}
+
+/* menu */
+
+.site-menu {
+  display: flex;
+  margin-top: 10px;
+}
+
+.site-sub {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-item {
+  cursor: pointer;
+  padding: 5px 14px 2px 14px;
+}
+
+.menu-item span {
+  position: relative;
+  padding-bottom: 2px;
+  font-size: 14px;
+  color: #f1f1f1;
+  line-height: 2.4;
+  font-family: "Questrial", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: lighter;
+}
+
+.menu-item span:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  left: 50%;
+  bottom: 0;
+  background-color: #f1f1f1;
+  transition: all 0.3s;
+  transition-duration: all 0.3s;
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-delay: 0s;
+}
+
+.menu-item span:hover:before {
+  left: 0;
+  width: 100%;
+}
+
+.hover-this {
+  transition: all 0.3s ease;
 }
 
 .menu-consist-small {
-  z-index: 100;
-  position: fixed;
-}
-
-.menu-open {
   display: none;
 }
 
+.menu-consist-small {
+  display: none;
+}
+
+/* small menu */
+
+.menu-small {
+  display: none;
+  z-index: 50;
+}
+
+.box-sm-line {
+  width: 35px;
+  height: 2px;
+  background-color: white;
+  margin: 7px 3px;
+  position: relative;
+  left: 10vw;
+  top: 20px;
+}
+
 .menu-open-show {
-  margin-right: 0%;
-  top: 0;
+  position: fixed;
+}
+
+.nav-container {
+  position: fixed;
+  left: -100%;
+  top: 0px;
+  width: 100%;
+  height: 100vh;
+  font-family: "Questrial", sans-serif;
+  background: rgb(9, 9, 9);
+  padding: 0em 1em;
+  overflow: hidden;
+}
+
+.menu {
+  font-family: "Monument Extended Regular", "Questrial", sans-serif;
+
+  font-size: 3.5rem;
+  width: 75%;
+  margin: 0 auto;
+  padding-top: 3rem;
+}
+
+.menu__item {
+  position: relative;
+  padding: 0 6vw;
+}
+
+/* circle cursor */
+
+.circle,
+.row,
+.cursor {
+  position: fixed;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.cursor {
+  background: #f1f1f1ce;
+  width: 100px;
+  height: 100px;
+  border-radius: 120px;
+  pointer-events: none;
+}
+
+.circle {
   display: flex;
-  position: sticky;
+  align-items: center;
+  bottom: 0;
+  justify-content: center;
+  padding: 2rem 2rem;
+  gap: 15px;
+}
+
+.circle-desc {
+  font-family: "Questrial", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgb(173, 173, 173);
+  font-size: 12px;
+}
+
+.row p {
+  display: block;
+  text-transform: uppercase;
+  color: #000000;
+  padding-top: 0.55em;
+  padding-left: 0.04em;
+  padding-bottom: 0;
+  padding-right: 0;
+  font-weight: bold;
+}
+
+.circular-text:hover {
+  transform-origin: center center;
+}
+
+.circular-text {
+  font-size: 9px;
+  white-space: nowrap;
 }
 
 /* intro animation */
@@ -52,344 +331,160 @@ button {
 
 @keyframes changing-index {
   0% {
-    z-index: 100;
+    z-index: 15;
+  }
+
+  90% {
+    z-index: 15;
+  }
+
+  99% {
+    z-index: 1;
   }
 
   100% {
-    z-index: -100;
+    z-index: 1;
   }
 }
 
-.on-top {
-  z-index: 100;
-}
-
-.under-top {
-  z-index: -100;
-}
+/* intro text */
 
 .intro-container {
-  overflow: hidden;
-  text-transform: lowercase;
-  width: 100vw;
-  height: 100vh;
-  margin: 0px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #ffffff;
-  animation: slide-out-container 4s cubic-bezier(0.97, 0.01, 0.36, 0.99) 2.8s;
-  animation-fill-mode: forwards;
-}
-
-.text-wrapper {
-  color: black;
-  position: absolute;
+  margin: 0;
+  padding: 0;
 }
 
 .text {
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  font-weight: lighter;
-  font-size: 7vw;
+  margin: 0;
+  padding: 0;
+  color: rgb(71, 71, 71);
+  font-family: "Monument Extended Bold", "Questrial", sans-serif;
+  font-size: 3.85rem;
+  letter-spacing: 1px;
 }
 
 .text-1,
 .text-3,
-.text-4,
-.text-8,
-.text-9,
-.text-11 {
-  color: rgba(0, 0, 0, 0);
-  -webkit-text-stroke: 1px rgb(0, 0, 0);
+.text-5,
+.text-7,
+.text-9 {
+  -webkit-text-stroke: 1px rgb(97, 97, 97);
+  color: transparent;
+  z-index: 10;
 }
 
-@keyframes blink {
-  0% {
-    opacity: 0%;
-  }
-  1% {
-    opacity: 100%;
-  }
-  99% {
-    opacity: 100%;
-  }
-  100% {
-    opacity: 0;
-  }
+.text-1 {
+  transform: translate(40%, 0.3vh);
+  animation: textdown 0.2s;
+  animation-fill-mode: forwards;
+}
+
+.text-2 {
+  animation: textup 0.24s;
+  animation-fill-mode: forwards;
 }
 
 .text-3 {
-  animation: blink 0.8s linear 0.7s, blink 0.8s linear 2.2s;
-  opacity: 0;
+  transform: translate(32.4vw, 4.4vh);
+  animation: textdown 0.25s;
+  animation-fill-mode: forwards;
 }
 
 .text-4 {
-  animation: blink 0.8s linear 0.6s, blink 0.8s linear 2.3s;
-  opacity: 0;
+  transform: translate(24.3vw, 8.36vh);
+  animation: textup 0.26s;
+  animation-fill-mode: forwards;
 }
 
 .text-5 {
-  animation: blink 0.8s linear 0.5s, blink 0.8s linear 2.4s;
-  opacity: 0;
+  transform: translate(16.95vw, 12.55vh);
+  animation: textdown 0.27s;
+  animation-fill-mode: forwards;
 }
 
 .text-6 {
-  animation: blink 0.8s linear 0.4s, blink 0.8s linear 2.5s,
-    slide-out 1s linear 3.2s;
-  opacity: 0;
+  transform: translate(8.7vw, 16.48vh);
+  animation: textup 0.28s;
+  animation-fill-mode: forwards;
 }
 
 .text-7 {
-  animation: blink 0.8s linear 0.5s, blink 0.8s linear 2.4s;
-  opacity: 0;
+  transform: translate(1.25vw, 20.62vh);
+  animation: textdown 0.29s;
+  animation-fill-mode: forwards;
 }
 
 .text-8 {
-  animation: blink 0.8s linear 0.6s, blink 0.8s linear 2.3s;
-  opacity: 0;
+  transform: translate(-7.75vw, 24.5vh);
+  animation: textup 0.3s;
+  animation-fill-mode: forwards;
 }
 
 .text-9 {
-  animation: blink 0.8s linear 0.7s, blink 0.8s linear 2.2s;
-  opacity: 0;
+  transform: translate(-15.3vw, 28.7vh);
+  animation: textdown 0.31s;
+  animation-fill-mode: forwards;
 }
 
-@keyframes slide-out {
+@keyframes textup {
   0% {
-    opacity: 0%;
-  }
-  1% {
-    opacity: 100%;
-  }
-
-  19% {
-    opacity: 100%;
-  }
-  20% {
-    opacity: 0%;
-  }
-
-  39% {
-    opacity: 0%;
-  }
-  40% {
-    opacity: 100%;
-  }
-
-  59% {
-    opacity: 100%;
-  }
-  60% {
-    opacity: 0%;
-  }
-
-  79% {
-    opacity: 0%;
-  }
-  80% {
-    opacity: 100%;
+    opacity: 0;
+    transform: translate(5vw, 10vh);
   }
 
   100% {
-    opacity: 100%;
+    opacity: 1;
+    transform: translate(5vw, 6.42vh);
   }
 }
 
-@keyframes slide-out-container {
+@keyframes textdown {
   0% {
-    height: 100vh;
-  }
-
-  40% {
-    height: 100vh;
+    opacity: 0;
+    transform: translate(40vw, -5vh);
   }
 
   100% {
-    height: 0%;
+    opacity: 1;
+    transform: translate(40vw, -1.38vh);
   }
 }
 
-/* intro animation end */
-
-.wrapper {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  margin: 0%;
-  padding: 0%;
-}
-
-.first-page {
-  overflow: hidden;
-  padding: 0%;
-  margin: 0%;
-  width: 100vw;
-  height: 100vh;
-  background-image: url(https://manuarya1610.github.io/contact-glass-blk-v3.jpeg);
-  position: relative;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-/* This is the navbar */
-
-.navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  overflow: hidden;
-  top: 0%;
-  position: relative;
-  width: 100%;
-  text-transform: uppercase;
-  line-height: 5rem;
-}
-
-.site-menu {
-  display: flex;
-  width: 30%;
-  padding: 0;
-  justify-content: right;
-}
-
-.logo {
-  width: fit-content;
-  margin-left: 3%;
-  margin-bottom: 3%;
-}
-
-.menu-item {
-  margin-right: 12%;
-}
-
-.site-menu .menu-item {
-  text-decoration: none;
-  color: white;
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-}
-
-.hover-link {
-  margin: 0 auto;
-  border: none;
-  background: none;
-  color: white;
-
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-}
-
-.hover-link > span {
-  overflow: hidden;
-  display: block;
-  position: relative;
-  pointer-events: none;
-}
-
-.hover-link > span > span {
-  display: inline-block;
-}
-
-.hover-link > span > span:nth-of-type(1) {
-  transition: 0.4s ease all;
-}
-
-.hover-link > span > span:nth-of-type(2) {
-  transition: 0.4s ease all;
-  transition-delay: 0.07s;
-}
-
-.hover-link > span > span > span {
-  content: attr(data-text);
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateY(200%);
-}
-
-.hover-link:hover > span > span,
-.hover-link:focus > span > span {
-  transform: translateY(-200%);
-}
-
-/* manu-arya hover */
-
-.hover-this {
-  cursor: pointer;
-  transition: all 0.4s ease;
-}
-
-span {
-  display: inline-block;
-  pointer-events: none;
-  transition: transform 0.2s linear;
-}
-
-/* this is my portfolio */
+/* welcome text */
 
 .contain-content {
-  display: flex;
-  width: 100%;
+  display: block;
   position: relative;
+  top: 12vh;
+  left: 4vw;
 }
 
 .content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  font-size: 0.75rem;
-  color: white;
-  text-transform: uppercase;
-  margin-top: 2%;
-  margin-left: 7%;
-  transform: rotate(-90deg);
-}
+  font-family: "Monument Extended Bold", "Questrial", sans-serif;
 
-/* glow */
+  font-size: 8.3rem;
+  color: #f1f1f1;
+  letter-spacing: 3px;
+  line-height: 1;
+  text-transform: uppercase;
+}
 
 .hi1 {
-  cursor: default;
-  transition: 0.1s;
+  overflow: hidden;
 }
 
-.hi1:hover {
-  color: #fff;
-  text-shadow: 0 0 20px #00ffc8, 0 0 30px #00ffc8, 0 0 60px #00ffc8,
-    0 0 100px #00ffc8;
-}
-
-/* end */
-
-/* This is the hero-section element */
+/* mid text */
 
 .contain-box {
-  justify-content: space-between;
-  margin-top: -3.5%;
-  display: flex;
-  width: 100%;
-  height: 70%;
-  position: absolute;
-  overflow: hidden;
+  display: block;
+  position: relative;
+  top: 2.5vh;
+  left: 7vw;
 }
 
 #box {
-  padding-top: 5%;
-  padding-bottom: 10%;
-  width: 100%;
-  height: 70%;
-  position: relative;
-  left: 3%;
-  overflow: hidden;
+  line-height: 1.2;
+  cursor: pointer;
 }
 
 #box1,
@@ -398,1266 +493,608 @@ span {
 #box4,
 #box5,
 #box6 {
-  width: 750px;
-  height: 150px;
-  font-size: 10.5vw;
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-}
+  font-family: "Monument Extended Bold", "Questrial", sans-serif;
 
-#box1 {
-  transform: skewY(-15deg);
-}
-
-#box2 {
-  transform: skewY(15deg);
-  margin-left: -5px;
-  position: absolute;
-}
-
-#box3 {
-  margin-top: -50px;
-  transform: skewY(-15deg);
-}
-
-#box4 {
-  margin-top: -50px;
-  transform: skewY(15deg);
-  margin-left: -4px;
-  position: absolute;
-}
-
-#box5 {
-  margin-top: -50px;
-  transform: skewY(-15deg);
-}
-
-#box6 {
-  margin-top: -50px;
-  transform: skewY(15deg);
-  margin-left: -0px;
-  position: absolute;
-}
-
-#text1,
-#text2,
-#text3,
-#text4,
-#text5,
-#text6 {
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  width: 1200px;
-  height: 400px;
-  position: absolute;
-  display: inline-block;
-  color: white;
-  transition: all 0.4s;
-  overflow: hidden;
+  font-size: 8.5rem;
+  margin-bottom: -1.2rem;
 }
 
 #text1,
 #text3,
 #text5 {
-  left: 750px;
-  animation: anim 1s forwards 0.1s;
+  color: transparent;
+  -webkit-text-stroke: 2px rgb(136, 136, 136);
+  z-index: 10;
+  font-weight: 800;
 }
 
 #text2,
 #text4,
 #text6 {
-  left: -750px;
-  animation: anim2 1s forwards;
+  color: rgb(255, 255, 255);
+  margin-top: -17vh;
+  z-index: -10;
 }
 
-@keyframes anim {
-  from {
-    left: 1200px;
-  }
-  to {
-    left: 0px;
-  }
-}
-
-@keyframes anim2 {
-  from {
-    left: 1200px;
-  }
-  to {
-    left: -750px;
-  }
-}
-
-#text3,
-#text4,
-#text5,
-#text6 {
-  color: white;
-  opacity: 0.18;
-}
-
-#text2 {
-  color: black;
-  -webkit-text-fill-color: rgba(55, 41, 41, 0);
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgb(255, 255, 255);
-}
-
-/* hero end */
-
-/* footer first page*/
+/* footer first page */
 
 .footer-first-page {
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  padding-bottom: 1%;
-}
-
-/* end */
-
-/* DNA */
-
-.contain-dna {
-  padding-right: 15%;
-  justify-content: right;
+  display: block;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin-right: 4%;
-  display: flex;
-  width: 15%;
+  top: 14vh;
+  left: 4vw;
 }
-
-#dna {
-  justify-content: right;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  position: relative;
-  transform: rotate(-90deg);
-}
-
-.line {
-  height: 2px;
-  width: 30px;
-  background: rgba(255, 255, 255, 0.334);
-  margin-top: 50%;
-  position: absolute;
-  transform: translateX(-50%);
-  animation: anime 1s ease infinite;
-}
-
-.line::before {
-  content: "";
-  height: 10px;
-  width: 10px;
-  background: rgba(81, 161, 52, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-radius: 20%;
-  position: absolute;
-  left: 0%;
-  margin-top: -4px;
-}
-
-.line::after {
-  content: "";
-  height: 10px;
-  width: 10px;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-radius: 200px;
-  border-radius: 20%;
-  position: absolute;
-  left: 100%;
-  margin-top: -4px;
-}
-
-.line1 {
-  margin-top: 50px;
-  animation-delay: 0s;
-  animation-duration: 1s;
-}
-
-.line2 {
-  margin-top: 80px;
-  animation-delay: 0.2s;
-  animation-duration: 1s;
-}
-
-.line3 {
-  margin-top: 110px;
-  animation-delay: 0.3s;
-  animation-duration: 1s;
-}
-
-.line4 {
-  margin-top: 140px;
-  animation-delay: 0.4s;
-  animation-duration: 1s;
-}
-
-.line5 {
-  margin-top: 170px;
-  animation-delay: 0.5s;
-  animation-duration: 1s;
-}
-
-.line6 {
-  margin-top: 200px;
-  animation-delay: 0.6s;
-  animation-duration: 1s;
-}
-
-.line7 {
-  margin-top: 230px;
-  animation-delay: 0.7s;
-  animation-duration: 1s;
-}
-
-.line8 {
-  margin-top: 260px;
-  animation-delay: 0.8s;
-  animation-duration: 1s;
-}
-
-@keyframes anime {
-  0% {
-    width: 30px;
-  }
-  50% {
-    width: 0px;
-  }
-  100% {
-    width: 30px;
-  }
-}
-
-/* end */
-
-/* This is for socials */
 
 .first-social {
-  margin-left: 3%;
-  position: relative;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 4.8vw;
 }
 
 .f-links span {
-  text-decoration: none;
-  color: white;
-}
-
-.first-social .f-links {
-  list-style: none;
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  font-size: 1.2rem;
-  color: white;
-  margin-right: 23%;
-  padding-bottom: 3%;
-}
-
-.f-links {
-  display: inline-block;
   position: relative;
-  color: #ffffff;
+  text-transform: uppercase;
+  font-family: "Questrial", sans-serif;
+  font-size: 12px;
+  color: #f1f1f1;
+  letter-spacing: 2.8px;
 }
 
-.f-links:after {
+.f-links span:before {
   content: "";
   position: absolute;
   width: 100%;
-  transform: scaleX(0);
-  height: 2px;
+  height: 0.1px;
+  left: 0%;
   bottom: 0;
-  left: 0;
-  background-color: #ffffff;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+  background-color: #f1f1f1;
+
+  transform-origin: center;
+  transform: scale3d(0, 1, 1);
+  transition: transform 0.3s;
 }
 
-.f-links:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+.f-links span:hover:before {
+  transform: scale3d(1, 1, 1);
 }
 
-/* end */
-
-/* white-space */
-
-.white-space {
+.socialul ul {
   display: flex;
-  position: relative;
-  width: 100vh;
-  height: 20vh;
+  list-style-type: none;
 }
 
-/* END */
-
-/* About Section */
-
-a {
-  text-decoration: none;
+.socialul a {
+  padding-left: 35px;
+  display: inherit;
+  text-transform: uppercase;
+  font-family: "Questrial", sans-serif;
+  font-size: 12px;
+  color: #f1f1f1;
+  letter-spacing: 2px;
+  transition: color 0.3s;
 }
 
-.about-button {
-  padding: 1%;
-  margin-top: 4%;
-  margin-left: 4%;
-  font-family: "Monument Extended Bold", Arial, Helvetica, sans-serif;
-  display: flex;
-  border: 1px solid white;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background-color: transparent;
+.socialul a:hover {
+  color: rgb(173, 173, 173);
 }
 
-.about-button {
-  border: 1px solid currentColor;
-  border-radius: 1.2em;
-  color: rgb(255, 255, 255);
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  font-size: 1.4rem;
-  overflow: hidden;
-  position: relative;
-  text-decoration: none;
-  transition: 1s transform ease-in-out;
-  will-change: transform;
-  z-index: 0;
-}
-
-.about-button::after {
-  background-color: rgba(48, 90, 48, 0.738);
-  color: black;
-  content: "";
-  display: block;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: translate(-100%, 0) rotate(10deg);
-  transform-origin: top left;
-  transition: 0.2s transform ease-out;
-  will-change: transform;
-  z-index: -1;
-}
-
-.about-button:hover::after {
-  transform: translate(0, 0);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .about-button:hover {
-    background-color: rgba(26, 61, 26, 0.738);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    border-color: transparent;
-    color: black;
-  }
-
-  .about-button:hover::after {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.about-about {
-  width: 100vw;
-}
+/* about section */
 
 .contain-about {
+  width: 100vw;
+  height: auto;
+  background-color: #000000;
   overflow: hidden;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-
-  background-image: url(https://manuarya1610.github.io/ft546-v2.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-}
-
-.hello {
-  margin-left: 3%;
-}
-
-.name {
-  font-family: "Monument Extended Bold", Arial, Helvetica, sans-serif;
-  font-size: 1.6rem;
-  margin-top: 2.5%;
 }
 
 .about {
-  position: relative;
-  background-color: transparent;
-  color: rgb(255, 255, 255);
-  font-family: "montserratB", Arial, Helvetica, sans-serif;
   display: flex;
-  flex-direction: row;
-  justify-content: right;
+  padding: 6rem 4.5rem;
+  padding-top: 4.5rem;
+  padding-bottom: 2.2rem;
 }
 
 #about-main {
-  position: relative;
-}
-
-.about-box {
-  width: 10.5%;
-  display: inline-block;
-  overflow: hidden;
-}
-
-.about-letter {
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  font-size: 7rem;
-  position: relative;
-  left: -160px;
-  transition: all 0.25s linear;
-}
-
-.about-wrapper {
-  margin-left: 4%;
-  width: 80vw;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.about-wrapper .about-line {
-  width: 80%;
-  position: relative;
-  overflow: hidden;
-}
-
-.about-wrapper .about-line-1 {
-  margin-bottom: 2%;
-  font-family: Helvetica, sans-serif;
-  font-size: 1.4rem;
-  line-height: 1.5;
-  width: 65%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-p {
-  width: auto;
-}
-
-.about-wrapper .about-line .span-line {
-  font-family: "Raleway", sans-serif;
-  position: relative;
-  font-size: 1.5rem;
+  flex: 63;
 }
 
 .about-element {
-  margin-top: -25%;
-  color: white;
+  flex: 37;
 }
 
-/* end */
-
-/* This is the first 3d element */
-
-.consist-element {
-  position: sticky;
-  background-color: transparent;
-  color: #fff;
-  min-height: 100%;
-  display: grid;
-  place-items: center;
-  perspective: 500px;
-  perspective-origin: 50% calc(50% - 150px);
+.about-box {
+  display: inline-block;
+  position: relative;
+  margin-right: -8px;
+  margin-bottom: 4px;
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  border: solid 0.8px #787878;
+  background-color: rgb(231, 231, 231);
 }
+
+.about-letter {
+  position: absolute;
+  font-family: "Monument Extended Bold", "Questrial", sans-serif;
+  top: 18px;
+  left: 29px;
+  transform: translate(-50%, -50%);
+  font-size: 23px;
+}
+
+.about-wrapper {
+  margin-top: 20px;
+  color: #efefef;
+}
+
+.about-line {
+  font-size: 3.2rem;
+  letter-spacing: 2px;
+  font-family: "Monument Extended Bold", "Questrial", sans-serif;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.about-line-1 {
+  margin-top: 2.1rem;
+  width: 70%;
+  letter-spacing: 0.5px;
+  font-family: "Questrial", sans-serif;
+  color: rgb(182, 182, 182);
+  font-weight: 200;
+}
+
+/* about element */
 
 .scene {
-  position: relative;
-  transform-style: preserve-3d;
+  height: 78%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .banner {
-  display: flex;
-  transform-style: preserve-3d;
-  -webkit-animation: rotate 24s infinite linear;
-  animation: rotate 24s infinite linear;
-}
-
-@-webkit-keyframes rotate {
-  to {
-    transform: rotateY(-360deg);
-  }
-}
-
-@keyframes rotate {
-  to {
-    transform: rotateY(-360deg);
-  }
+  transform: translate(-45px, 0px);
 }
 
 .panel {
-  position: absolute;
-  transform: translate(-50%, -50%) rotateY(var(--angle)) translateZ(190px);
-  width: 3.2rem;
-  height: 160px;
-  overflow: hidden;
+  float: left;
+  width: 25px;
+  height: 25px;
+  border-radius: 8px;
+  border: solid 0.8px #787878;
+  background-color: rgba(231, 231, 231, 0.151);
 }
 
-.panel::before {
-  position: absolute;
-  left: var(--left);
-  content: " Be the Exception! ";
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  font-size: 5rem;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  color: hsl(var(--hue), 85%, 85%);
+.banner:nth-child(2) .panel:nth-child(odd),
+.banner:nth-child(1) .panel:nth-child(even) {
+  background-color: rgba(231, 231, 231, 0.767);
 }
 
-.panel:nth-child(1) {
-  --left: 0px;
-  --hue: 0;
-  --angle: 0deg;
+/* white-space */
+
+.white-space-about {
+  margin: 0 4.5rem;
+  width: auto;
+  height: 40vh;
 }
 
-.panel:nth-child(2) {
-  --left: -50px;
-  --hue: 15;
-  --angle: 15deg;
+/* project section */
+
+.project-heading-main {
+  margin: 0 4.5rem;
 }
 
-.panel:nth-child(3) {
-  --left: -100px;
-  --hue: 30;
-  --angle: 30deg;
-}
-
-.panel:nth-child(4) {
-  --left: -150px;
-  --hue: 45;
-  --angle: 45deg;
-}
-
-.panel:nth-child(5) {
-  --left: -200px;
-  --hue: 60;
-  --angle: 60deg;
-}
-
-.panel:nth-child(6) {
-  --left: -250px;
-  --hue: 75;
-  --angle: 75deg;
-}
-
-.panel:nth-child(7) {
-  --left: -300px;
-  --hue: 90;
-  --angle: 90deg;
-}
-
-.panel:nth-child(8) {
-  --left: -350px;
-  --hue: 105;
-  --angle: 105deg;
-}
-
-.panel:nth-child(9) {
-  --left: -400px;
-  --hue: 120;
-  --angle: 120deg;
-}
-
-.panel:nth-child(10) {
-  --left: -450px;
-  --hue: 135;
-  --angle: 135deg;
-}
-
-.panel:nth-child(11) {
-  --left: -500px;
-  --hue: 150;
-  --angle: 150deg;
-}
-
-.panel:nth-child(12) {
-  --left: -550px;
-  --hue: 165;
-  --angle: 165deg;
-}
-
-.panel:nth-child(13) {
-  --left: -600px;
-  --hue: 180;
-  --angle: 180deg;
-}
-
-.panel:nth-child(14) {
-  --left: -650px;
-  --hue: 195;
-  --angle: 195deg;
-}
-
-.panel:nth-child(15) {
-  --left: -700px;
-  --hue: 210;
-  --angle: 210deg;
-}
-
-.panel:nth-child(16) {
-  --left: -750px;
-  --hue: 225;
-  --angle: 225deg;
-}
-
-.panel:nth-child(17) {
-  --left: -800px;
-  --hue: 240;
-  --angle: 240deg;
-}
-
-.panel:nth-child(18) {
-  --left: -850px;
-  --hue: 255;
-  --angle: 255deg;
-}
-
-.panel:nth-child(19) {
-  --left: -900px;
-  --hue: 270;
-  --angle: 270deg;
-}
-
-.panel:nth-child(20) {
-  --left: -950px;
-  --hue: 285;
-  --angle: 285deg;
-}
-
-.panel:nth-child(21) {
-  --left: -1000px;
-  --hue: 300;
-  --angle: 300deg;
-}
-
-.panel:nth-child(22) {
-  --left: -1050px;
-  --hue: 315;
-  --angle: 315deg;
-}
-
-.panel:nth-child(23) {
-  --left: -1100px;
-  --hue: 330;
-  --angle: 330deg;
-}
-
-.panel:nth-child(24) {
-  --left: -1150px;
-  --hue: 345;
-  --angle: 345deg;
-}
-
-.screen {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  transform: translate(-50%, -50%);
-}
-
-/* end */
-
-/* This is the project part */
-
-#project-about-main {
-  position: relative;
+.project-detail {
   display: flex;
-  justify-content: right;
+  margin-top: 20px;
 }
 
-#project-about-main-2 {
-  margin-top: -3%;
-  position: relative;
-  display: flex;
-  justify-content: right;
+.project-num {
+  font-family: "Monument Extended Bold", "Questrial", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.801);
+}
+
+.project-subheading {
+  margin-top: 8px;
+  margin-bottom: 30px;
+  font-family: "Questrial", sans-serif;
+  color: rgb(153, 153, 153);
+  font-weight: 200;
 }
 
 .project-about-box {
-  width: 110px;
-  height: 175px;
   display: inline-block;
-  overflow: hidden;
+  position: relative;
+  margin-right: -8px;
+  margin-bottom: 4px;
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  border: solid 0.8px #787878;
+  background-color: rgb(231, 231, 231);
 }
 
 .project-about-letter {
-  color: white;
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  font-size: 7rem;
-  font-weight: bold;
-  position: relative;
-  transition: all 0.25s linear;
-}
-
-/* PROJECTS PART */
-
-.circular-text {
   position: absolute;
-  top: 10%;
-  left: 3%;
+  font-family: "Monument Extended Bold", "Questrial", sans-serif;
+  top: 19px;
+  left: 30px;
   transform: translate(-50%, -50%);
-  color: rgb(0, 0, 0);
-  font-size: 0.8rem;
-  font-weight: bolder;
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  transition: 0.5s ease-out;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.363);
+  font-size: 16px;
 }
 
-.white-space-project {
-  position: relative;
-  height: 10vh;
+/* project section */
+
+.project-section {
+  margin-top: -12rem;
 }
+
+/* project heading */
 
 .project-heading {
-  margin-left: 2%;
-  margin-top: 5%;
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  font-size: 2.5rem;
-  color: white;
-
-  color: black;
-  -webkit-text-fill-color: rgba(
-    55,
-    41,
-    41,
-    0
-  ); /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgb(255, 255, 255);
+  margin: 0 4.5rem;
+  margin-top: 40px;
+  text-transform: uppercase;
+  font-family: "Monument Extended Bold", "Questrial", sans-serif;
+  letter-spacing: 3px;
+  color: rgb(214, 214, 214);
+  font-size: 16px;
 }
 
-.project-container-main {
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-}
-
-.git {
-  padding-left: 17%;
-  padding-right: 17%;
-  z-index: 200;
-  margin-top: 30%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 28%;
-  height: 26%;
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  font-size: 1.3rem;
-  color: white;
-  border-radius: 200px;
-  border: 1px solid currentColor;
-}
-.git-website {
-  z-index: 200;
-  margin-top: 8%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 28%;
-  height: 70%;
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  font-size: 1.3rem;
-  color: white;
-  border-radius: 200px;
-  border: 1px solid currentColor;
-}
-
-.git:hover::after {
-  background-color: rgba(48, 90, 48, 0.738);
-  color: black;
-  -webkit-text-fill-color: rgba(55, 41, 41, 0);
-  content: "";
-  display: block;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: translate(-100%, 0) rotate(10deg);
-  transform-origin: top left;
-  transition: 0.2s transform ease-out;
-  will-change: transform;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .git:hover {
-    background-color: rgb(255, 255, 255);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    border-color: transparent;
-
-    color: rgb(0, 0, 0);
-  }
-
-  .git:hover::after {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.ct {
-  margin-left: 2%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.ct-2 {
-  margin-left: 3%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.pr-text {
-  line-height: 1.6rem;
-}
+/* project 1 */
 
 .project1 {
-  width: 100%;
   display: flex;
-  flex-direction: row;
+  margin: 0 4.5rem;
+  margin-top: 50px;
 }
 
 .pr1-left {
-  position: relative;
-  width: 62%;
-  justify-content: right;
-  align-items: center;
+  flex: 50;
 }
 
+.ct {
+  flex: 50;
+  padding-left: 3.5rem;
+}
+
+.modal-img {
+  cursor: pointer;
+}
+
+/* pr1right */
+
 .pr1-right {
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  font-size: 1.2rem;
-  text-align: justify;
-  text-justify: inter-word;
-  width: 33vw;
-  justify-content: center;
-  align-items: center;
-  color: white;
   display: flex;
-  flex-direction: row;
+  height: 100%;
+  align-items: center;
+  width: 80%;
+}
+
+.pr1-right span {
+  font-size: 2.45rem;
+  font-family: "Monument Extended Bold", "Questrial", sans-serif;
+  color: #f1f1f1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .pr-text {
-  font-family: Helvetica, sans-serif;
+  margin-top: 10px;
+  font-family: "Questrial", sans-serif;
+  color: rgb(185, 185, 185);
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+/* button git */
+
+.git-button {
+  margin-top: 20px;
+}
+
+.git {
+  padding: 9px 21px;
+  border: 2px solid #a0a0a0;
+  border-radius: 30px;
+  background: transparent;
+  font-family: "Questrial", sans-serif;
+  color: rgb(216, 216, 216);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.3px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.git:hover {
+  background-color: rgba(255, 255, 255, 0.959);
+  color: #000000;
+}
+
+/* project 2 */
+
+.pr2-left {
+  flex: 50;
+  padding-right: 3.5rem;
 }
 
 .project2 {
-  width: 100vw;
   display: flex;
-  flex-direction: row-reverse;
-}
-
-.pr2-left {
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  font-size: 1.2rem;
-  width: 35vw;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  display: flex;
-  flex-direction: row;
+  margin: 0 4.5rem;
+  margin-top: 50px;
 }
 
 .pr2-right {
-  position: relative;
-  width: 65%;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  display: flex;
-  flex-direction: row;
-}
-*/
-
-/* END */
-
-/* THIS IS THE CONTACT FORM */
-
-.consist-contact {
-  width: 100%;
-  height: 100%;
-  margin-top: 0;
-  padding: 0;
-  position: relative;
-  overflow: hidden;
+  flex: 50;
 }
 
-.contact {
-  position: relative;
+.ct-2 {
+  flex: 50;
+}
+
+/* Project white-space */
+
+.white-space-project {
+  margin: 0 4.5rem;
+  width: auto;
+  height: 8vh;
+}
+
+/* contact */
+
+.contain-contact {
   width: 100vw;
-  height: 100vh;
+  background-color: #000000;
+}
+
+.contact-heading-main {
+  margin: 0 4.5rem;
+}
+
+.contact-about {
+  margin-bottom: 1.5rem;
+}
+
+/* contact left */
+
+.flex-contact {
   display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  background-image: url(https://manuarya1610.github.io/contact-final.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  padding: 0 4.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 3.5rem;
 }
 
-.left_box {
-  overflow: hidden;
-  height: 100vh;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  padding-right: 2%;
-  position: relative;
-  background-color: rgba(53, 53, 53, 0.171);
+.contact-left {
+  flex: 40;
+  padding-right: 3.2rem;
 }
 
-.txt1-ct {
-  color: rgb(255, 255, 255);
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  margin-top: 10%;
-  font-size: 8vw;
-  margin-left: 4%;
+.contact-heading {
+  font-family: "Monument Extended Bold", "Questrial", sans-serif;
+  color: #f1f1f1;
+  font-size: 2.2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
-.txt2-ct {
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  font-size: 7.8vw;
-  margin-left: 4%;
-  margin-top: -5%;
-  color: rgb(255, 255, 255);
+.contact-caption {
+  margin-top: 1.2rem;
+  font-family: "Questrial", sans-serif;
+  color: #b2b2b2;
+  font-size: 14px;
+  width: 95%;
 }
 
-::placeholder {
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  color: rgba(255, 255, 255, 0.389);
+/* contact right */
+
+.contact-right {
+  flex: 60;
 }
 
-.socialul {
-  bottom: 0;
-  position: absolute;
-  padding-left: 5%;
+.form-heading-container {
+  margin-top: 1rem;
 }
 
-.links span {
-  text-decoration: none;
+.heading {
+  font-family: "Questrial", sans-serif;
+  color: rgb(224, 224, 224);
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.cnt input {
+  width: 70%;
+  background: transparent;
+  padding: 14px 0;
+  border-width: 0;
+  border-bottom: 1px solid #cccccc;
   color: white;
+  transition: all 0.5s;
+}
+
+.cnt input::placeholder {
+  color: rgb(121, 121, 121);
+}
+
+.cnt input:focus {
+  outline: none;
+  border-bottom: 1px solid #ffffff;
+}
+
+/* button contact */
+
+.field {
+  margin-top: 25px;
+}
+
+.consist-button {
+  display: flex;
+}
+
+.container {
+  width: 90%;
+}
+
+.button {
+  position: relative;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 15px 20px;
+  min-width: 200px;
+  min-height: 60px;
+  border-radius: 500px;
+  border: 1px solid #a0a0a0;
+  box-shadow: 0px 4px 30px 0px rgba(4, 4, 4, 0.36);
+  background-color: #00000000;
+  color: rgb(224, 224, 224);
+}
+
+.button:active {
+  transform: translateY(2px);
+}
+
+.button-text {
+  font-family: "Questrial", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  position: relative;
+  z-index: 2;
+}
+
+.foreground-text {
+  color: #000000;
+}
+
+.button::before,
+.button::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+  background-color: rgba(255, 255, 255, 0.87);
+  width: 102%;
+  height: 102%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.button::before {
+  left: 0;
+  top: 0;
+}
+
+.button::after {
+  right: 0;
+  top: 0;
+}
+
+.button:hover::before {
+  opacity: 1;
+  animation: rotatecw 1s ease forwards;
+}
+
+.button:hover::after {
+  opacity: 1;
+  animation: rotateccw 1s ease forwards;
+}
+
+.button:hover {
+  box-shadow: 0px 3.8px 30px 0px rgba(255, 255, 255, 0.219);
+  border: none;
+}
+
+@keyframes rotatecw {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: translate3d(5px, 10px, 0);
+  }
+
+  50% {
+    transform: translate3d(10px, 10px, 0);
+  }
+
+  75% {
+    transform: translate3d(15px, 5px, 0);
+  }
+
+  100% {
+    transform: translate3d(20px, 0, 0);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: translate3d(-5px, 10px, 0);
+  }
+
+  50% {
+    transform: translate3d(-10px, 10px, 0);
+  }
+
+  75% {
+    transform: translate3d(-15px, 5px, 0);
+  }
+
+  100% {
+    transform: translate3d(-20px, 0, 0);
+  }
+}
+
+/* social bottom */
+
+.socialul-1 {
+  margin-top: 2.4rem;
 }
 
 .social {
   display: flex;
-  flex-direction: row;
 }
 
-.social .links {
-  padding-bottom: 3%;
-  list-style: none;
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  font-size: 1.3rem;
-  color: white;
-  margin-bottom: 2%;
-  margin-right: 10%;
-}
-
-.links {
-  display: inline-block;
-  position: relative;
-  color: #ffffff;
-}
-
-.links:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #ffffff;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-.links:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-.social .easter {
-  color: rgb(255, 174, 0);
-}
-
-.right_box {
-  overflow: hidden;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.171);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  line-height: 0;
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.form {
-  font-size: 1.4rem;
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  color: white;
-  position: relative;
-}
-
-input {
-  color: rgb(255, 255, 255);
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-}
-
-.form .heading {
-  display: flex;
-  flex-flow: column;
-
-  margin-top: 15%;
-}
-
-.form-heading-container {
-  width: max-content;
-  height: auto;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column;
-}
-
-.form .in {
-  margin-top: 10%;
-}
-
-input {
-  width: 125%;
-  position: relative;
-  font-size: 1rem;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  border-bottom: 1px solid rgb(255, 255, 255);
-}
-
-/* THIS IS FOR THE SUBMIT BUTTON */
-
-.consist-button {
-  margin-top: 25%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.title {
-  font-family: "Monument Extended Regular", serif;
-  font-size: 2rem;
-  line-height: 1.3;
-  text-decoration: none;
-  color: #1d213f;
-  text-align: center;
-}
-
-.button {
-  margin-left: 15%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 13rem;
-  height: 13rem;
-  text-decoration: none;
-  border-radius: 50%;
-  border: solid 1px rgba(255, 255, 255, 0.558);
-  text-align: center;
-  color: #fff;
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif, serif;
+.links a {
+  padding-right: 30px;
+  justify-content: space-between;
+  display: block;
   text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: bolder;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: "Questrial", sans-serif;
+  font-size: 13px;
+  color: #f1f1f1;
+  letter-spacing: 2.4px;
+  transition: color 0.3s;
 }
 
-.button .button-text {
-  position: absolute;
+.links a:hover {
+  color: rgb(173, 173, 173);
 }
 
-.button .foreground-text {
-  opacity: 0;
-  z-index: 1;
-  color: #f7f7f7;
-}
-
-.button::after {
-  content: "";
-  position: relative;
-  z-index: 0;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background-color: #0a512e;
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .button:hover {
-    border-color: transparent;
-  }
-  .button:hover::after {
-    width: 100%;
-    height: 100%;
-  }
-  .button:hover .button-text.foreground-text {
-    opacity: 1;
-  }
-}
-
-/* socials duplicate */
-
-.socialul-1 {
-  position: absolute;
-  bottom: 0;
-  justify-content: center;
-  display: none;
-  margin-bottom: 2.7%;
-}
-
-/* end */
-
-/* end */
-
-/* modal box */
-
-/* modal button */
-
-.m-consist-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.m-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 150px;
-  height: 150px;
-  text-decoration: none;
-  border-radius: 50%;
-  border: solid 1px rgba(255, 255, 255, 0.2);
-  text-align: center;
-  color: #fff;
-  font-family: "Monument Extended Regular", serif;
-  text-transform: uppercase;
-  font-weight: bolder;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.m-button .m-button-text {
-  position: absolute;
-}
-
-.m-button .m-foreground-text {
-  opacity: 0;
-  z-index: 1;
-  color: #f7f7f7;
-}
-
-.m-button::after {
-  content: "";
-  position: relative;
-  z-index: 0;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background-color: #0a512e;
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .m-button:hover {
-    border-color: transparent;
-  }
-
-  .m-button:hover::after {
-    width: 100%;
-    height: 100%;
-  }
-
-  .m-button:hover .m-button-text.m-foreground-text {
-    opacity: 1;
-  }
-}
-
-/* end */
-
-button {
-  display: flex;
-  flex-direction: column;
-  background: transparent;
-  border: 2px solid #444;
-}
-
-button.md-close {
-  margin-top: 40px;
-}
+/* MODAL */
 
 .md-modal {
-  margin: auto;
   position: fixed;
-  top: 100px;
-  left: 0;
-  right: 0;
-  width: 50%;
-  max-width: 630px;
-  min-width: 320px;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  max-width: 550px;
   height: auto;
   z-index: 2000;
   visibility: hidden;
   -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
   backface-visibility: hidden;
+  transform: translateX(-50%);
 }
 
 .md-show {
@@ -1665,20 +1102,15 @@ button.md-close {
 }
 
 .md-overlay {
-  background: rgba(96, 141, 93, 0.1);
-  backdrop-filter: blur(19px);
-  -webkit-backdrop-filter: blur(19px);
-
   position: fixed;
   width: 100%;
   height: 100%;
   visibility: hidden;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 1500;
   opacity: 0;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
+  background: rgba(32, 32, 32, 0.671);
   transition: all 0.3s;
 }
 
@@ -1687,423 +1119,127 @@ button.md-close {
   visibility: visible;
 }
 
-.md-effect-12 .md-content {
-  -webkit-transform: scale(0.8);
-  -moz-transform: scale(0.8);
-  -ms-transform: scale(0.8);
-  transform: scale(0.8);
-  opacity: 0;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
+.md-content {
+  text-align: center;
+  background: rgb(15, 15, 15);
+  position: relative;
+  border-radius: 12px;
+  margin-left: 16%;
+}
+
+.giffy img {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
 .container-text {
+  padding: 1rem 3rem;
+}
+
+.txt {
+  font-family: "Monument Extended Bold", "Questrial", sans-serif;
+  color: #f1f1f1;
+  font-size: 1.45rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.txt-1 {
+  font-size: 1rem;
+  margin-top: 0.6rem;
+}
+
+.m-consist-button {
+  margin-top: 1.8rem;
+}
+
+.m-container {
   width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-.giffy {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -7%;
-  margin-bottom: 6%;
+.m-button {
+  position: relative;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 500px;
+  border: 1px solid #a0a0a0;
+  background-color: #00000000;
+  color: rgb(224, 224, 224);
 }
 
-.container-text .txt {
-  margin-bottom: 6%;
-  color: white;
-  font-family: "Monument Extended Bold", Arial, Helvetica, sans-serif;
-  font-size: 1.7rem;
+.m-button-text {
+  font-family: "Questrial", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  position: relative;
+  z-index: 2;
 }
 
-.container-text .txt-1 {
-  color: black;
-  -webkit-text-fill-color: rgba(
-    55,
-    41,
-    41,
-    0
-  ); /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgb(255, 255, 255);
-}
-
-.md-effect-12 .md-content h3,
-.md-effect-12 .md-content {
-  background: transparent;
-}
-
-.md-show.md-effect-12 .md-content {
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  opacity: 1;
-}
-
-/*  */
-
-@media only screen and (max-width: 780px) {
-  /* for small smartphones */
-  html {
-    font-size: 14px;
+@keyframes slick-hover {
+  0% {
+    border-width: 12px 12px 0px 0px;
+    transform: translate(-12px, 6px);
   }
-
-  .logo {
-    width: 50vw;
+  50% {
+    border-width: 0px 0px 0px 0px;
+    transform: translate(0px, 0px);
   }
-
-  .menu-open,
-  .menu-close {
-    margin-right: 4%;
-    display: flex;
-  }
-
-  .site-menu {
-    display: none;
-  }
-
-  /* hero section start */
-
-  #box {
-    width: 100%;
-    margin-bottom: 1%;
-    position: relative;
-    left: 3%;
-  }
-
-  #box1,
-  #box2,
-  #box3,
-  #box4,
-  #box5,
-  #box6 {
-    width: 100%;
-    font-size: 4.45rem;
-    font-weight: 700;
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-  }
-
-  #box1 {
-    margin-top: 20%;
-  }
-
-  #box2 {
-    display: none;
-    margin-left: -15px;
-    position: absolute;
-  }
-
-  #box3 {
-    margin-top: -20%;
-  }
-
-  #box4 {
-    display: none;
-    margin-top: -20%;
-    margin-left: -15px;
-    position: absolute;
-  }
-
-  #box5 {
-    margin-top: -20%;
-  }
-
-  #box6 {
-    display: none;
-    margin-top: -20px;
-    margin-left: -15px;
-    position: absolute;
-  }
-
-  /* hero section end */
-
-  .contain-about {
-    margin: 0;
-    padding: 0;
-    flex-direction: column;
-  }
-
-  .about {
-    flex-direction: column;
-  }
-
-  .about-box {
-    width: 15vw;
-    display: inline-block;
-    overflow: hidden;
-  }
-
-  .about-letter {
-    font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-    font-size: 5rem;
-    position: relative;
-    left: -160px;
-    transition: all 0.25s linear;
-  }
-
-  .about-wrapper .about-line-1 {
-    margin-bottom: 2%;
-    font-family: Helvetica, sans-serif, Arial, Helvetica, sans-serif;
-    line-height: 1.5rem;
-    font-size: 1.3rem;
-    margin: 0;
-    width: 90vw;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .name {
-    font-family: "Monument Extended Bold", Arial, Helvetica, sans-serif;
-    font-size: 1.7rem;
-    padding-top: 1.5%;
-  }
-
-  .consist-element {
-    display: none;
-  }
-
-  .project-about-main {
-    justify-content: center;
-  }
-
-  .ct {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .ct-2 {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .git {
-    margin-left: 5%;
-  }
-
-  .project1 {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .pr1-left {
-    width: 100%;
-  }
-
-  .pr1-right {
-    margin-left: 5%;
-    align-items: center;
-    width: 80%;
-  }
-
-  .git-button {
-    margin-top: -15%;
-  }
-
-  .git-website {
-    margin-top: 5rem;
-  }
-
-  .pr-text {
-    margin: 0;
-    height: max-content;
-  }
-
-  .project2 {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .pr2-left {
-    width: 100%;
-  }
-
-  .pr2-right {
-    width: 100%;
-  }
-
-  .left_box {
-    width: 100%;
-    height: 20%;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.171);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
-
-  .right_box {
-    overflow: hidden;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.171);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-
-  .contact {
-    height: 130%;
-    background-image: url(https://manuarya1610.github.io/copy.jpeg);
-    flex-direction: column;
-  }
-
-  .socialul {
-    display: none;
-  }
-
-  .socialul-1 {
-    margin-top: 8%;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    margin-left: 4%;
-  }
-
-  .consist-menu {
-    display: flex;
-  }
-
-  .text {
-    font-size: 3rem;
-  }
-
-  .project-about-box {
-    width: 90px;
-    height: 175px;
-    display: inline-block;
-    overflow: hidden;
-  }
-
-  .project-about-letter {
-    color: white;
-    font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-    font-size: 5rem;
-    font-weight: bold;
-    position: relative;
-    transition: all 0.25s linear;
-  }
-
-  .txt1-ct {
-    font-size: 4.5rem;
-  }
-
-  .txt2-ct {
-    font-size: 4.5rem;
-  }
-
-  .links {
-    content: " ";
-  }
-
-  .form {
-    margin: 10%;
-    justify-content: center;
-  }
-
-  .social .links {
-    list-style: none;
-    font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-    font-size: 1.2rem;
-    color: white;
-    margin-bottom: 2%;
-    margin-right: 5%;
+  100% {
+    border-width: 0px 0px 12px 12px;
+    transform: translate(12px, -6px);
   }
 }
 
-/* END */
+/* menu marquee */
 
-/* menu small */
-
-.menu-consist-small {
-  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
-  width: 100vw;
-  display: block;
-}
-
-.menu-open {
-  color: rgb(255, 255, 255);
-}
-
-.menu-open,
-.menu-close {
-  color: white;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding-right: 3%;
-  font-size: 1.2rem;
+.menu,
+.menu__item-link {
   cursor: pointer;
 }
 
-.socials {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: 40px 100px;
-}
-
-.nav-container {
-  z-index: 100;
-  position: fixed;
-  left: -100%;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.68);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-}
-
-.menu__item {
-  position: relative;
-  padding: 0 6vw;
+.menu__item-link,
+.marquee span {
+  white-space: nowrap;
+  font-size: 64px;
+  font-weight: 200;
+  display: inline-block;
+  text-transform: uppercase;
 }
 
 .menu__item-link {
-  display: inline-block;
-  cursor: pointer;
-  position: relative;
+  color: transparent;
   transition: opacity 0.4s;
+  position: relative;
+  z-index: 100;
 }
 
 .menu__item-link::before {
-  all: initial;
-  counter-increment: menu;
+  content: "";
   position: absolute;
-  bottom: 60%;
-  left: 0;
-  pointer-events: none;
+  left: -1%;
+  top: 50%;
+  margin-top: -0.5em;
+  width: 0;
+  height: 1em;
+  background: #f1f1f1;
+  transition: width 0.4s;
+}
+
+.menu__item-link:hover::before {
+  width: 102%;
 }
 
 .menu__item-link:hover {
-  transition-duration: 0.1s;
-  opacity: 0;
+  color: #151515;
 }
 
-.menu__item-link:hover + .menu__item-img {
+.menu__item-link:hover ~ .marquee .marquee__inner {
+  animation-play-state: running;
   opacity: 1;
-  transform: scale(1);
-  transition: all 0.4s;
-}
-
-.menu {
-  padding: 10vh 0 25vh;
-  --offset: 20vw;
-  --move-initial: calc(-25% + var(--offset));
-  --move-final: calc(-50% + var(--offset));
-  font-size: 7vw;
 }
 
 .marquee {
@@ -2119,27 +1255,28 @@ button.md-close {
   width: fit-content;
   display: flex;
   position: relative;
+  transform: translate3d(-25%, 0, 0);
+  animation: marquee 5s linear infinite;
+  animation-play-state: paused;
   opacity: 0;
-  transition: all 0.1s;
-  transform: translateX(60px);
-}
-
-.menu__item-link:hover ~ .marquee .marquee__inner {
-  opacity: 1;
-  transform: translateX(0px);
-  transition-duration: 0.4s;
-}
-
-.menu__item-link,
-.marquee span {
-  white-space: nowrap;
-  font-size: 7vw;
-  padding: 0 1vw;
-  line-height: 1.15;
+  transition: opacity 0.1s;
 }
 
 .marquee span {
-  font-style: italic;
+  font-family: "Monument Extended Ultrabold", "Questrial", sans-serif;
+}
+
+.marquee span {
+  padding: 0 1rem;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(-25%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 /* end */
@@ -2153,5 +1290,57 @@ button.md-close {
   #box6 {
     font-size: 10rem;
     margin-bottom: +1rem;
+  }
+}
+
+/* --- Modern global improvements (2025 refresh) --- */
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Relax full-screen sections on smaller screens for better scrolling */
+@media only screen and (max-width: 768px) {
+  .first-page {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .contain-about {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .flex-contact {
+    flex-direction: column;
+  }
+
+  .contact-left {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .project1,
+  .project2 {
+    flex-direction: column;
+  }
+
+  .pr1-right,
+  .pr2-left {
+    padding: 0;
+    width: 100%;
+  }
+
+  .ct,
+  .ct-2 {
+    padding: 0;
   }
 }

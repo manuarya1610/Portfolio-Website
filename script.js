@@ -1,28 +1,56 @@
-// full modal
+// Modal + smooth scroll (2025 refresh, vanilla JS)
 
-$(function () {
-  $(".md-trigger").on("click", function () {
-    $(".md-modal").addClass("md-show");
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.querySelector(".md-modal");
+  const triggers = document.querySelectorAll(".md-trigger");
+  const closeBtn = document.querySelector(".md-close");
+  const overlay = document.querySelector(".md-overlay");
+
+  // Open modal on any .md-trigger click
+  if (modal && triggers.length > 0) {
+    triggers.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        modal.classList.add("md-show");
+      });
+    });
+  }
+
+  // Close modal helper
+  const closeModal = () => {
+    if (modal) {
+      modal.classList.remove("md-show");
+    }
+  };
+
+  // Close modal on close button
+  if (modal && closeBtn) {
+    closeBtn.addEventListener("click", closeModal);
+  }
+
+  // Close on overlay click
+  if (overlay) {
+    overlay.addEventListener("click", closeModal);
+  }
+
+  // Close modal on ESC key
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" || event.key === "Esc") {
+      closeModal();
+    }
   });
 
-  $(".md-close").on("click", function () {
-    $(".md-modal").removeClass("md-show");
+  // Smooth-scroll for in-page anchor links
+  const anchors = document.querySelectorAll('a[href^="#"]');
+  anchors.forEach((anchor) => {
+    anchor.addEventListener("click", (event) => {
+      const href = anchor.getAttribute("href");
+      if (!href || href === "#") return;
+
+      const target = document.querySelector(href);
+      if (target) {
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
   });
 });
-
-// modal
-
-// smooth
-
-$(document).on("click", 'a[href^="#"]', function (event) {
-  event.preventDefault();
-
-  $("html, body").animate(
-    {
-      scrollTop: $($.attr(this, "href")).offset().top,
-    },
-    900
-  );
-});
-
-// end
