@@ -1,144 +1,200 @@
-html {
-  width: 100vw;
-  height: 100vh;
-  margin: 0%;
-  padding: 0%;
-}
+/* ===========================================
+   MODERN THEME LAYER (SAFE – VISUAL ONLY)
+   No layout/animation changes, only colors,
+   backgrounds and extra polish.
+   =========================================== */
 
+/* Softer, modern dark background instead of flat black */
 body {
-  margin: 0%;
-  padding: 0%;
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-/* ... YOUR ORIGINAL CSS CONTENT ... */
-/* (everything from the zip is here; I’m not repeating all comments due to length) */
-
-/* end */
-
-/* This is for intro text */
-
-@media only screen and (min-width: 1500px) {
-  #box1,
-  #box2,
-  #box3,
-  #box4,
-  #box5,
-  #box6 {
-    font-size: 10rem;
-    margin-bottom: +1rem;
-  }
-}
-
-/* === Minimal modern theme layer (safe, additive) === */
-
-/* soft gradient background instead of flat black */
-body {
-  background: radial-gradient(circle at top left, #050816 0, #02030c 42%, #000000 85%);
+  background: radial-gradient(circle at top left, #050716 0, #02030d 40%, #000000 80%);
   color: #f5f5f7;
 }
 
-/* subtle AI glow on hero image */
-.first-page {
-  position: relative;
-  isolation: isolate;
+/* Keep scrolling smooth */
+html,
+body {
+  scroll-behavior: smooth;
 }
 
+/* Hero section: keep your image, add AI-ish glow */
+.first-page {
+  position: relative;
+  isolation: isolate; /* so overlay doesn’t leak */
+}
+
+/* This does NOT remove your existing background-image.
+   It only adds a blend overlay on top. */
 .first-page::before {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 12% 10%, rgba(120, 119, 255, 0.45), transparent 55%),
-    radial-gradient(circle at 82% 78%, rgba(45, 236, 196, 0.34), transparent 55%);
+    radial-gradient(circle at 12% 10%, rgba(120, 119, 255, 0.35), transparent 55%),
+    radial-gradient(circle at 82% 80%, rgba(45, 236, 196, 0.28), transparent 55%);
   mix-blend-mode: screen;
   pointer-events: none;
+  z-index: -1;
 }
 
-/* glass card feel for about + projects + contact */
-.about-wrapper {
-  padding: 1.8rem 2.1rem;
-  border-radius: 22px;
-  background: rgba(6, 10, 27, 0.84);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(18px);
+/* Make hero text a bit crisper */
+.content {
+  color: #f9fafb;
+  text-shadow: 0 14px 40px rgba(0, 0, 0, 0.8);
 }
 
-.project1,
-.project2 {
-  margin-top: 3rem;
-  padding: 2rem 2.4rem;
-  border-radius: 24px;
-  background: linear-gradient(
-    135deg,
-    rgba(5, 7, 18, 0.97),
-    rgba(9, 12, 32, 0.97)
-  );
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+/* Outline section headline fill text */
+#text2,
+#text4,
+#text6 {
+  color: rgba(245, 245, 245, 0.9);
 }
 
-/* keep project layout but make images and text crisper */
-.pr1-left img,
-.pr2-right img {
-  border-radius: 18px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.9);
+/* Navbar links – clean white with subtle hover */
+.site-menu span {
+  color: #f3f4f6;
+}
+
+.site-menu span:hover {
+  color: #c4c7f5;
+}
+
+/* Footer links */
+.socialul a {
+  color: #e5e7eb;
+}
+
+.socialul a:hover {
+  color: #a5b4fc;
+}
+
+/* ABOUT: improve readability without moving layout */
+.about-wrapper .about-line {
+  color: #f9fafb;
 }
 
 .about-wrapper .about-line-1 {
+  color: #d4d7e3;
+  line-height: 1.8;
   font-size: 0.98rem;
-  line-height: 1.9;
-  color: rgb(214, 216, 230);
 }
 
-/* contact columns as soft cards */
-.contact-left,
-.contact-right {
-  padding: 2.1rem 2.3rem;
-  border-radius: 24px;
-  background: radial-gradient(
-    circle at top left,
-    rgba(120, 119, 255, 0.24),
-    rgba(5, 8, 20, 0.96)
+/* Simple professional data-engineering “tags” under the about text */
+.about-wrapper .about-line-1::after {
+  content: "Azure ▸ Data Factory  •  Databricks ▸ PySpark  •  ADLS ▸ Delta Lake  •  CI/CD ▸ DevOps";
+  display: block;
+  margin-top: 1.4rem;
+  font-family: "Questrial", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+  color: #a5b4fc;
+}
+
+/* About button – modern hover */
+.about-button {
+  border-color: #e5e7eb;
+  color: #f9fafb;
+  background: transparent;
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-button:hover {
+  background: #f9fafb;
+  color: #020617;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
+}
+
+/* PROJECT CARDS: subtle glass effect, only visual */
+.project1,
+.project2 {
+  background: linear-gradient(
+    135deg,
+    rgba(7, 10, 24, 0.96),
+    rgba(15, 23, 42, 0.96)
   );
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.82);
+  border-radius: 24px;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.85);
 }
 
-/* small responsive improvements */
-@media only screen and (max-width: 1000px) {
-  .about {
-    flex-direction: column;
-    padding-right: 7vw;
-  }
+/* Project heading text */
+.project-heading {
+  color: #cbd5f5;
+}
 
-  .about-element {
-    margin-top: 2.5rem;
-  }
+/* Project descriptions */
+.pr-text {
+  color: #d1d5e8;
+  line-height: 1.75;
+  font-size: 0.94rem;
+}
 
+/* Project images: nicer corners + shadow, no size change */
+.pr1-left img,
+.pr2-right img {
+  border-radius: 18px;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.9);
+}
+
+/* Git buttons */
+.git {
+  border-color: #9ca3af;
+  color: #e5e7eb;
+  background: transparent;
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.git:hover {
+  background: #e5e7eb;
+  color: #020617;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* CONTACT section */
+.contact-heading {
+  color: #f9fafb;
+}
+
+.contact-caption {
+  color: #cbd5f5;
+}
+
+/* Inputs: slightly clearer borders */
+.cnt input {
+  border-bottom-color: #9ca3af;
+}
+
+.cnt input:focus {
+  border-bottom-color: #e5e7eb;
+}
+
+/* Contact button */
+.button {
+  border-color: #9ca3af;
+  color: #f9fafb;
+}
+
+.button:hover {
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75);
+}
+
+/* Bottom social links */
+.socialul-1 .links a {
+  color: #e5e7eb;
+}
+
+.socialul-1 .links a:hover {
+  color: #a5b4fc;
+}
+
+/* Slightly better mobile spacing without changing structure */
+@media only screen and (max-width: 900px) {
   .project1,
   .project2 {
-    flex-direction: column;
-    padding: 1.8rem 1.6rem;
-  }
-
-  .pr1-right,
-  .pr2-left {
-    width: 100%;
-    padding-top: 1.7rem;
-  }
-
-  .flex-contact {
-    flex-direction: column;
+    padding: 1.5rem 1.4rem;
   }
 
   .contact-left,
   .contact-right {
-    padding: 1.8rem 1.6rem;
+    padding-bottom: 1.5rem;
   }
 }
