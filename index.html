@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio of Manu Arya, data engineer and developer working on data pipelines, analytics, and creative web experiences."
+      content="Portfolio of Manu Arya, data engineer and developer working on data pipelines, analytics platforms, and creative web experiences."
     />
     <link
       rel="shortcut icon"
@@ -22,13 +22,8 @@
       crossorigin
     />
     <link
-      href="https://db.onlinewebfonts.com/c/dbd3bdd046108608e4ccec6a924d27ef?family=Monument+Extended+Ultrabold"
-      rel="preload stylesheet"
-      crossorigin
-    />
-    <link
-      href="https://db.onlinewebfonts.com/c/ece33ed91db7fd1ad3ad9dd6751c7b98?family=Monument+Extended+Bold"
-      rel="preload stylesheet"
+      href="https://db.onlinewebfonts.com/c/55d433372d270829c51e2577a78ef12d?family=Monument+Extended+Bold"
+      rel=" preload stylesheet"
       crossorigin
     />
 
@@ -39,28 +34,16 @@
       rel="stylesheet"
     />
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-      defer
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/gsap@3.10.2/dist/gsap.min.js"
-      defer
-    ></script>
-    <script
-      src="https://unpkg.com/circletype@2.3.0/dist/circletype.min.js"
-      defer
-    ></script>
-    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.10.2/dist/gsap.min.js"></script>
+    <script src="script.js"></script>
   </head>
 
   <body>
-    <div class="wrapper">
+    <div id="ending" class="wrapper">
       <div class="consist-intro">
         <div class="intro-container">
-          <div class="intro-text">
-            <div class="text-1 text">KEEP IT SIMPLE</div>
-            <div class="text-2 text">KEEP IT SIMPLE</div>
+          <div class="text-wrapper">
             <div class="text-3 text">KEEP IT SIMPLE</div>
             <div class="text-4 text">KEEP IT SIMPLE</div>
             <div class="text-5 text">KEEP IT SIMPLE</div>
@@ -88,87 +71,83 @@
           </div>
 
           <div class="menu-consist-small">
-            <div class="menu-small">
-              <button class="menu-open">
-                <div class="box1-sm-line box-sm-line"></div>
-                <div class="box2-sm-line box-sm-line"></div>
-              </button>
+            <div class="menu-open">menu</div>
+            <div class="nav-container">
+              <div class="menu-close">close</div>
+
+              <nav class="menu">
+                <div class="menu__item">
+                  <a
+                    href="#first"
+                    onclick="t1.reverse()"
+                    class="menu__item-link"
+                    >Home</a
+                  >
+                  <div class="marquee">
+                    <div class="marquee__inner">
+                      <span
+                        >Home - Home - Home - Home - Home - Home - Home</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="menu__item">
+                  <a href="#one" onclick="t1.reverse()" class="menu__item-link"
+                    >About</a
+                  >
+                  <div class="marquee">
+                    <div class="marquee__inner">
+                      <span
+                        >About - About - About - About - About - About -
+                        About</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="menu__item">
+                  <a href="#two" onclick="t1.reverse()" class="menu__item-link"
+                    >Projects</a
+                  >
+                  <div class="marquee">
+                    <div class="marquee__inner">
+                      <span
+                        >Projects - Projects - Projects - Projects - Projects -
+                        Projects - Projects</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="menu__item">
+                  <a
+                    href="#three"
+                    onclick="t1.reverse()"
+                    class="menu__item-link"
+                    >Contact</a
+                  >
+                  <div class="marquee">
+                    <div class="marquee__inner">
+                      <span
+                        >Contact - Contact - Contact - Contact - Contact -
+                        Contact - Contact</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </nav>
             </div>
           </div>
 
-          <div class="menu-consist">
-            <div class="site-menu">
-              <a href="#one" class="menu-item hover-this"
-                ><div><span>About</span></div></a
-              >
-              <a href="#two" class="menu-item hover-this"
-                ><div><span>Projects</span></div></a
-              >
-              <a href="#three" class="menu-item hover-this"
-                ><div><span>Contact</span></div></a
-              >
-            </div>
+          <div class="site-menu">
+            <a href="#one" class="menu-item hover-this"
+              ><div><span>About</span></div></a
+            >
+            <a href="#two" class="menu-item hover-this"
+              ><div><span>Projects</span></div></a
+            >
+            <a href="#three" class="menu-item hover-this"
+              ><div><span>Contact</span></div></a
+            >
           </div>
-        </div>
-
-        <div class="nav-container">
-          <div class="menu-small-nav">
-            <button class="menu-close">
-              <div class="box1-sm-line box-sm-line"></div>
-              <div class="box2-sm-line box-sm-line"></div>
-            </button>
-          </div>
-
-          <nav class="menu">
-            <div class="menu__item">
-              <a
-                href="#first"
-                onclick="return false;"
-                class="menu__item-link"
-                >Home</a
-              >
-              <div class="marquee">
-                <div class="marquee__inner">
-                  <span
-                    >Home - Home - Home - Home - Home - Home - Home</span
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="menu__item">
-              <a href="#one" class="menu__item-link">About</a>
-              <div class="marquee">
-                <div class="marquee__inner">
-                  <span
-                    >About - About - About - About - About - About -
-                    About</span
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="menu__item">
-              <a href="#two" class="menu__item-link">Projects</a>
-              <div class="marquee">
-                <div class="marquee__inner">
-                  <span
-                    >Projects - Projects - Projects - Projects - Projects -
-                    Projects</span
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="menu__item">
-              <a href="#three" class="menu__item-link">Contact</a>
-              <div class="marquee">
-                <div class="marquee__inner">
-                  <span
-                    >Contact - Contact - Contact - Contact - Contact -
-                    Contact</span
-                  >
-                </div>
-              </div>
-            </div>
-          </nav>
         </div>
 
         <div class="contain-content">
@@ -207,63 +186,32 @@
         <div class="footer-first-page">
           <div class="first-social">
             <div class="f-links hover-this">
-              <span>
-                <span class="first-page-footer"
-                  ><a href="#two">projects</a></span
-                >
-              </span>
+              <a href="https://linkedin.com/in/manuaryaddn"
+                ><span>LinkedIn</span></a
+              >
             </div>
-
-            <div class="socialul">
-              <div>
-                <ul>
-                  <li>
-                    <a
-                      class="hover-this"
-                      href="mailto:manuarya1610@gmail.com"
-                      ><span>mail</span></a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="hover-this"
-                      href="https://github.com/manuarya1610"
-                      ><span>github</span></a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="hover-this"
-                      href="https://linkedin.com/in/manuaryaddn"
-                      ><span>linkedin</span></a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="hover-this"
-                      href="https://www.behance.net/manuarya"
-                      ><span>behance</span></a
-                    >
-                  </li>
-                </ul>
-              </div>
+            <div class="f-links hover-this">
+              <a href="https://github.com/manuarya1610"><span>GitHub</span></a>
             </div>
+          </div>
 
-            <div class="circle">
-              <div class="cursor">
-                <div class="row">
-                  <p class="circular-text" id="rotated">
-                    scroll &nbsp; down
-                  </p>
-                </div>
-              </div>
-              <div class="circle-desc">scroll</div>
+          <div class="contain-dna">
+            <div id="dna">
+              <div class="line line1"></div>
+              <div class="line line2"></div>
+              <div class="line line3"></div>
+              <div class="line line4"></div>
+              <div class="line line5"></div>
+              <div class="line line6"></div>
+              <div class="line line7"></div>
+              <div class="line line8"></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- ABOUT -->
+      <div class="white-space-project"></div>
+      <div class="white-space-project"></div>
 
       <div id="one" class="contain-about">
         <div class="about">
@@ -298,32 +246,30 @@
               </div>
               <div class="about-line-1">
                 <p>
-                  I work as a data engineer, designing reliable data pipelines
-                  and analytics platforms, while still creating fun and
-                  interactive experiences with code. I care about clean, minimal
-                  design and building systems that actually help people make
-                  decisions. Most of my time is spent working with cloud data
-                  tools (Azure, Databricks, ADLS, ADF and friends), but I always
-                  come back to the creative side of development. Nature, food
-                  and learning new tools keep me inspired — feel free to say hi
-                  while you're here, I'd be delighted to connect with you.
+                  I work as a data engineer, designing reliable data pipelines and analytics
+                  platforms, while still creating fun and interactive experiences with code.
+                  I care about clean, minimal design and building systems that actually help
+                  people make decisions. Most of my time is spent with cloud data tools
+                  (Azure, Databricks, ADLS, ADF and friends), but I always return to the
+                  creative side of development. Nature, food and learning new tools keep
+                  me inspired — feel free to say hi while you're here, I'd be delighted
+                  to connect with you.
                 </p>
+              </div>
+              <div class="data-engineering-highlights">
+                <div class="de-tagline">Data engineering focus</div>
+                <div class="de-badges">
+                  <span class="de-badge">Azure ▸ Data Factory</span>
+                  <span class="de-badge">Databricks ▸ PySpark</span>
+                  <span class="de-badge">ADLS ▸ Delta Lake</span>
+                  <span class="de-badge">Orchestration ▸ CI/CD</span>
+                </div>
               </div>
             </div>
 
             <a href="https://linkedin.com/in/manuaryaddn"
               ><button class="about-button">Let's talk</button></a
             >
-
-            <div class="data-engineering-highlights">
-              <div class="de-tagline">Data engineering focus</div>
-              <div class="de-badges">
-                <span class="de-badge">Azure ▸ Data Factory</span>
-                <span class="de-badge">Databricks ▸ PySpark</span>
-                <span class="de-badge">ADLS ▸ Delta Lake</span>
-                <span class="de-badge">Orchestration ▸ CI/CD</span>
-              </div>
-            </div>
           </div>
 
           <div class="about-element">
@@ -346,16 +292,6 @@
                   <div class="panel"></div>
                   <div class="panel"></div>
                   <div class="panel"></div>
-                </div>
-                <div class="banner">
-                  <div class="panel"></div>
-                  <div class="panel"></div>
-                  <div class="panel"></div>
-                  <div class="panel"></div>
-                  <div class="panel"></div>
-                  <div class="panel"></div>
-                  <div class="panel"></div>
-                  <div class="panel"></div>
                   <div class="panel"></div>
                   <div class="panel"></div>
                   <div class="panel"></div>
@@ -365,50 +301,45 @@
                   <div class="panel"></div>
                   <div class="panel"></div>
                 </div>
+                <div class="screen"></div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="white-space-about"></div>
-
-        <!-- PROJECTS -->
-
-        <div id="two" class="project-heading-main">
-          <div id="project-about-main">
-            <div class="project-about">
-              <div class="project-about-box">
-                <div class="project-about-letter">P</div>
-              </div>
-              <div class="project-about-box">
-                <div class="project-about-letter">R</div>
-              </div>
-              <div class="project-about-box">
-                <div class="project-about-letter">O</div>
-              </div>
-              <div class="project-about-box">
-                <div class="project-about-letter">J</div>
-              </div>
-
-              <div class="project-about-box">
-                <div class="project-about-letter">_</div>
-              </div>
-            </div>
+      <div id="two" class="project-container-main">
+        <div id="project-about-main">
+          <div class="project-about-box">
+            <div class="project-about-letter">P</div>
+          </div>
+          <div class="project-about-box">
+            <div class="project-about-letter">R</div>
+          </div>
+          <div class="project-about-box">
+            <div class="project-about-letter">O</div>
+          </div>
+          <div class="project-about-box">
+            <div class="project-about-letter">J</div>
           </div>
 
-          <div id="project-about-main-2">
-            <div class="project-about-box">
-              <div class="project-about-letter">E</div>
-            </div>
-            <div class="project-about-box">
-              <div class="project-about-letter">C</div>
-            </div>
-            <div class="project-about-box">
-              <div class="project-about-letter">T</div>
-            </div>
-            <div class="project-about-box">
-              <div class="project-about-letter">S</div>
-            </div>
+          <div class="project-about-box">
+            <div class="project-about-letter">_</div>
+          </div>
+        </div>
+
+        <div id="project-about-main-2">
+          <div class="project-about-box">
+            <div class="project-about-letter">E</div>
+          </div>
+          <div class="project-about-box">
+            <div class="project-about-letter">C</div>
+          </div>
+          <div class="project-about-box">
+            <div class="project-about-letter">T</div>
+          </div>
+          <div class="project-about-box">
+            <div class="project-about-letter">S</div>
           </div>
         </div>
 
@@ -417,22 +348,16 @@
         <!-- project 1 -->
 
         <div class="project-heading">&lt;/&gt; project 1</div>
-
         <div class="project1">
           <div class="pr1-left">
             <span class="modal-img"
-              ><img
-                src="https://manuarya1610.github.io/pr1.png"
-                width="100%"
-                loading="lazy"
-                alt="Object detection and alert generation project screenshot"
-            /></span>
+              ><img src="https://manuarya1610.github.io/pr1.png" width="100%" loading="lazy" alt="Object detection and alert generation project" />
+            </span>
           </div>
-
           <div class="ct">
             <div class="pr1-right">
               <div>
-                <span>Object Detection and Alert Generation</span>
+                <span>OBJECT DETECTION AND ALERT GENERATION</span>
                 <br />
                 <br />
                 <div class="pr-text">
@@ -448,223 +373,168 @@
             </div>
             <div class="git-button">
               <a
+                class="a-git-1"
                 href="https://github.com/manuarya1610/Object-Detection-and-Alert-Generation.git"
-                target="_blank"
-                rel="noreferrer"
-                ><button class="git">GitHub</button></a
-              >
+                ><button class="git">GitHub</button>
+              </a>
             </div>
           </div>
         </div>
 
         <div class="white-space-project"></div>
 
-        <!-- project 2 -->
+        <div class="project-container-about">
+          <div class="project-heading">&lt;/&gt; project 2</div>
 
-        <div class="project-heading">&lt;/&gt; project 2</div>
+          <div class="project2">
+            <div class="pr2-right">
+              <span class="modal-img"
+                ><img src="https://manuarya1610.github.io/pr2.png" width="100%" loading="lazy" alt="SmartNote React notes web app" /></span>
+            </div>
 
-        <div class="project2">
-          <div class="pr2-right">
-            <span class="modal-img"
-              ><img
-                src="https://manuarya1610.github.io/pr2.png"
-                width="100%"
-                loading="lazy"
-                alt="SmartNote web app screenshot"
-            /></span>
-          </div>
-
-          <div class="ct-2">
-            <div class="pr2-left">
-              <div>
-                <span>SmartNote 📖</span>
-                <br />
-                <br />
-                <div class="pr-text">
-                  SmartNote is a website created by React and implemented using
-                  Firestore as the database and Firebase Authentication for
-                  authentication. You can save your notes and access them
-                  anytime and anywhere and enjoy the web-app's aesthetics while
-                  doing so.
+            <div class="ct-2">
+              <div class="pr2-left">
+                <div>
+                  <span>RTSP/Video Streaming Software</span>
+                  <br />
+                  <br />
+                  <div class="pr-text">
+                    The software leverages the OpenCV library to stream video
+                    from diverse sources. It has been developed using QT Creator
+                    and the interface has been designed using QT Designer.
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="git-button">
-              <a
-                href="https://github.com/manuarya1610/SmartNote"
-                target="_blank"
-                rel="noreferrer"
-                ><button class="git">GitHub</button></a
-              >
-            </div>
-            <div class="git-button">
-              <a
-                class="a-git-1"
-                href="https://smart-note-ed42e.web.app/"
-                target="_blank"
-                rel="noreferrer"
-                ><button class="git">Live</button></a
-              >
+              <div class="git-button">
+                <a href="https://github.com/manuarya1610/RTSP-Video-Player.git"
+                  ><button class="git">GitHub</button></a
+                >
+              </div>
             </div>
           </div>
         </div>
 
         <div class="white-space-project"></div>
-
-        <!-- project 3 -->
 
         <div class="project-heading">&lt;/&gt; project 3</div>
 
         <div class="project1">
           <div class="pr1-left">
             <span class="modal-img"
-              ><img
-                src="https://manuarya1610.github.io/pr3.png"
-                width="100%"
-                loading="lazy"
-                alt="Community website template"
-            /></span>
+              ><img src="https://manuarya1610.github.io/pr3.png" width="100%" loading="lazy" alt="Community website template" />
+            </span>
           </div>
-
           <div class="ct">
             <div class="pr1-right">
               <div>
-                <span>Community Website Template 🏡</span>
+                <span>Website Template</span>
                 <br />
                 <br />
                 <div class="pr-text">
-                  A clean and modern multipage community website template built
-                  with responsive layout and attention to typography and
-                  spacing.
+                  An aesthetically pleasing and user-friendly website template
+                  that is super responsive on a majority of devices. It follows
+                  a minimalistic design concept that is both fucntional and
+                  aesthetic.
                 </div>
               </div>
-            </div>
-            <div class="git-button">
-              <a
-                href="https://github.com/manuarya1610/Community-Website-Template"
-                target="_blank"
-                rel="noreferrer"
-                ><button class="git">GitHub</button></a
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="white-space-project"></div>
-
-        <!-- project 4 -->
-
-        <div class="project-heading">&lt;/&gt; project 4</div>
-
-        <div class="project2">
-          <div class="pr2-right">
-            <span class="modal-img"
-              ><img
-                src="https://manuarya1610.github.io/pr6.png"
-                width="100%"
-                loading="lazy"
-                alt="Cocktails React app"
-            /></span>
-          </div>
-
-          <div class="ct-2">
-            <div class="pr2-left">
-              <div>
-                <span>Cocktails App 🍸</span>
-                <br />
-                <br />
-                <div class="pr-text">
-                  This website is created using react. This website fetches
-                  cocktails from a free API and showcases it in stunning UI/UX.
-                </div>
-              </div>
-            </div>
-            <div class="git-button">
-              <a
-                href="https://github.com/manuarya1610/Cocktails-WebApp"
-                target="_blank"
-                rel="noreferrer"
-                ><button class="git">GitHub</button></a
-              >
             </div>
             <div class="git-button">
               <a
                 class="a-git-1"
-                href="https://cocktails-project-react.netlify.app/"
-                target="_blank"
-                rel="noreferrer"
-                ><button class="git">Live</button></a
-              >
+                href="https://github.com/manuarya1610/Community-Website-Template"
+                ><button class="git">GitHub</button>
+              </a>
+            </div>
+            <div class="git-button">
+              <a class="a-git-1" href="https://manant-devs.netlify.app"
+                ><button class="git git-website">Website</button>
+              </a>
             </div>
           </div>
         </div>
 
         <div class="white-space-project"></div>
 
-        <!-- project 5 -->
+        <div class="project-container-about">
+          <div class="project-heading">&lt;/&gt; project 4</div>
+
+          <div class="project2">
+            <div class="pr2-right">
+              <span class="modal-img"
+                ><img src="https://manuarya1610.github.io/pr6.png" width="100%" loading="lazy" alt="Cocktails React web app" /></span>
+            </div>
+
+            <div class="ct-2">
+              <div class="pr2-left">
+                <div>
+                  <span>Cocktails App 🍸</span>
+                  <br />
+                  <br />
+                  <div class="pr-text">
+                    This website is created using react. This website fetches
+                    cocktails from a free API and showcases it in stunning
+                    UI/UX.
+                  </div>
+                </div>
+              </div>
+              <div class="git-button">
+                <a href="https://github.com/manuarya1610/Cocktails-WebApp"
+                  ><button class="git">GitHub</button></a
+                >
+              </div>
+              <div class="git-button">
+                <a
+                  class="a-git-1"
+                  href="https://cocktails-arya-webapp.netlify.app/"
+                  ><button class="git git-website">Website</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="white-space-project"></div>
 
         <div class="project-heading">&lt;/&gt; project 5</div>
-
         <div class="project1">
           <div class="pr1-left">
             <span class="modal-img"
-              ><img
-                src="https://manuarya1610.github.io/pr5.png"
-                width="100%"
-                loading="lazy"
-                alt="AccountEase finance tracking app"
-            /></span>
+              ><img src="https://manuarya1610.github.io/pr5.png" width="100%" loading="lazy" alt="AccountEase finance tracker UI" />
+            </span>
           </div>
-
           <div class="ct">
             <div class="pr1-right">
               <div>
-                <span>AccountEase 💸</span>
+                <span>Dino Game 🦖</span>
                 <br />
                 <br />
                 <div class="pr-text">
-                  This is a user-friendly web application, designed to simplify
-                  your financial management and keep a track of your finances.
+                  This JAVA-based game draws inspiration from the renowned
+                  Google Chrome Dino game, offering an exciting and engaging
+                  experience for players.
                 </div>
               </div>
             </div>
             <div class="git-button">
               <a
-                href="https://github.com/manuarya1610/Expense-Tracker-UI"
-                target="_blank"
-                rel="noreferrer"
-                ><button class="git">GitHub</button></a
-              >
-            </div>
-            <div class="git-button">
-              <a
                 class="a-git-1"
-                href="https://account-ease.netlify.app/"
-                target="_blank"
-                rel="noreferrer"
-                ><button class="git">Live</button></a
-              >
+                href="https://github.com/manuarya1610/Dino_Game"
+                ><button class="git">GitHub</button>
+              </a>
             </div>
           </div>
         </div>
 
         <div class="white-space-project"></div>
-
-        <!-- project 6 -->
 
         <div class="project-heading">&lt;/&gt; project 6</div>
 
         <div class="project1">
           <div class="pr1-left">
             <span class="modal-img"
-              ><img
-                src="https://manuarya1610.github.io/pr4.png"
-                width="100%"
-                loading="lazy"
-                alt="Expense Tracker UI"
-            /></span>
+              ><img src="https://manuarya1610.github.io/pr4.png" width="100%" loading="lazy" alt="Expense tracker UI design" />
+            </span>
           </div>
-
           <div class="ct">
             <div class="pr1-right">
               <div>
@@ -679,197 +549,334 @@
             </div>
             <div class="git-button">
               <a
-                href="https://www.behance.net/gallery/113559279/Finance-App-UIUX-EasePay"
-                target="_blank"
-                rel="noreferrer"
-                ><button class="git">Behance</button></a
-              >
+                class="a-git-1"
+                href="https://github.com/manuarya1610/Community-Website-Template"
+                ><button class="git">GitHub</button>
+              </a>
+            </div>
+            <div class="git-button">
+              <a class="a-git-1" href="https://manant-devs.netlify.app"
+                ><button class="git git-website">Website</button>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- CONTACT -->
-
         <div class="white-space-project"></div>
+      </div>
 
-        <div class="contain-contact">
-          <div class="contact-heading-main">
-            <div class="contact-about">
-              <div class="contact-about-box">
-                <div class="contact-about-letter">C</div>
-              </div>
-              <div class="contact-about-box">
-                <div class="contact-about-letter">O</div>
-              </div>
-              <div class="contact-about-box">
-                <div class="contact-about-letter">N</div>
-              </div>
-              <div class="contact-about-box">
-                <div class="contact-about-letter">T</div>
-              </div>
-              <div class="contact-about-box">
-                <div class="contact-about-letter">A</div>
-              </div>
-              <div class="contact-about-box">
-                <div class="contact-about-letter">C</div>
-              </div>
-              <div class="contact-about-box">
-                <div class="contact-about-letter">T</div>
-              </div>
+      <div class="consist-contact">
+        <div class="md-modal md-effect-12">
+          <div class="md-content">
+            <div class="giffy">
+              <img
+                src="https://manuarya1610.github.io/easter.gif"
+                alt="This is a GIF"
+              />
             </div>
-          </div>
-
-          <div class="flex-contact">
-            <div class="contact-left">
-              <div class="contact-info">
-                <div class="contact-heading">
-                  Need a data engineer, a developer or just want to say hi?
-                  Let's talk.
-                </div>
-                <div class="contact-caption">
-                  Fill out the form or drop me a mail — I’d love to hear about
-                  your ideas, projects, or data problems.
-                </div>
-              </div>
-
-              <div class="socialul-1">
-                <div id="three" class="social">
-                  <div class="links hover-this">
-                    <a href="https://linkedin.com/in/manuaryaddn"
-                      ><span class="bottom-socials">LinkedIn</span></a
-                    >
-                  </div>
-                  <div class="links hover-this">
-                    <a href="https://github.com/manuarya1610"
-                      ><span class="bottom-socials">GitHub</span></a
-                    >
-                  </div>
-                  <div class="md-trigger links hover-this easter">
-                    <a
-                      ><span class="easter bottom-socials"
-                        >EasterEgg</span
-                      ></a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="contact-right">
-              <form
-                class="form"
-                action="https://formspree.io/f/meqdpngy"
-                method="POST"
-              >
-                <div class="form-heading-container">
-                  <div class="cnt heading">What's your name?</div>
-                </div>
-                <div class="cnt in">
-                  <input required type="text" name="name" placeholder="name*" />
-                </div>
-                <div class="form-heading-container">
-                  <div class="cnt heading">What's your email-id?</div>
-                </div>
-                <div class="cnt in">
-                  <input
-                    required
-                    type="email"
-                    name="email"
-                    placeholder="email-id*"
-                  />
-                </div>
-                <div class="form-heading-container">
-                  <div class="cnt heading">What's the purpose?</div>
-                </div>
-                <div class="cnt in">
-                  <input
-                    required
-                    type="text"
-                    name="message"
-                    placeholder="Wassup*"
-                  />
-                </div>
-
-                <div class="field hover-this">
-                  <div class="consist-button">
-                    <div class="container">
-                      <button
-                        type="submit"
-                        class="button"
-                        cursor-class="overlay"
-                      >
-                        <span class="button-text"> Send It! </span>
-                        <span class="button-text foreground-text">
-                          Lets GO!
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </form>
-              <div class="socialul-1">
-                <div id="three" class="social">
-                  <div class="links hover-this">
-                    <a href="https://linkedin.com/in/manuaryaddn"
-                      ><span>LinkedIn</span></a
-                    >
-                  </div>
-                  <div class="links hover-this">
-                    <a href="https://github.com/manuarya1610"
-                      ><span>GitHub</span></a
-                    >
-                  </div>
-                  <div class="md-trigger links hover-this easter">
-                    <a><span class="easter">EasterEgg</span></a>
-                  </div>
+            <div class="container-text">
+              <div class="txt">WOW !</div>
+              <div class="txt txt-1">You Checked my whole Portfolio.</div>
+              <div class="md-close m-consist-button">
+                <div class="m-container">
+                  <a class="m-button" cursor-class="m-overlay">
+                    <span class="m-button-text"> Close </span>
+                    <span class="m-button-text m-foreground-text"> BYE ! </span>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- Easter Egg Modal -->
+        <div class="md-overlay"></div>
 
-          <div class="md-modal md-effect-12">
-            <div class="md-content">
-              <div class="giffy">
-                <img
-                  src="https://manuarya1610.github.io/easter.gif"
-                  alt="This is a GIF"
-                  loading="lazy"
+        <div class="contact">
+          <div class="left_box">
+            <div class=".contact-big-txt">
+              <div class="txt1-ct">LETS</div>
+              <br />
+              <br />
+              <div class="txt2-ct">CONNECT</div>
+            </div>
+            <div class="socialul">
+              <div id="three" class="social">
+                <div class="links hover-this">
+                  <a href="https://linkedin.com/in/manuaryaddn"
+                    ><span class="bottom-socials">LinkedIn</span></a
+                  >
+                </div>
+                <div class="links hover-this">
+                  <a href="https://github.com/manuarya1610"
+                    ><span class="bottom-socials">GitHub</span></a
+                  >
+                </div>
+                <div class="md-trigger links hover-this easter">
+                  <a><span class="easter bottom-socials">EasterEgg</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right_box">
+            <form
+              class="form"
+              action="https://formspree.io/f/meqdpngy"
+              method="POST"
+            >
+              <div class="form-heading-container">
+                <div class="cnt heading">What's your name?</div>
+              </div>
+              <div class="cnt in">
+                <input required type="text" name="name" placeholder="name*" />
+              </div>
+              <div class="form-heading-container">
+                <div class="cnt heading">What's your email-id?</div>
+              </div>
+              <div class="cnt in">
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  placeholder="email-id*"
                 />
               </div>
-              <div class="container-text">
-                <div class="txt">WOW !</div>
-                <div class="txt txt-1">
-                  You Checked my whole Portfolio.
-                </div>
-                <div class="md-close m-consist-button">
-                  <div class="m-container">
-                    <a class="m-button" cursor-class="m-overlay">
-                      <span class="m-button-text"> Close </span>
-                      <span class="m-button-text m-foreground-text">
-                        BYE !
+              <div class="form-heading-container">
+                <div class="cnt heading">What's the purpose?</div>
+              </div>
+              <div class="cnt in">
+                <input
+                  required
+                  type="text"
+                  name="message"
+                  placeholder="Wassup*"
+                />
+              </div>
+
+              <div class="field hover-this">
+                <div class="consist-button">
+                  <div class="container">
+                    <button type="submit" class="button" cursor-class="overlay">
+                      <span class="button-text"> Send It! </span>
+                      <span class="button-text foreground-text">
+                        Lets GO!
                       </span>
-                    </a>
+                    </button>
                   </div>
+                </div>
+              </div>
+            </form>
+            <div class="socialul-1">
+              <div id="three" class="social">
+                <div class="links hover-this">
+                  <a href="https://linkedin.com/in/manuaryaddn"
+                    ><span>LinkedIn</span></a
+                  >
+                </div>
+                <div class="links hover-this">
+                  <a href="https://github.com/manuarya1610"
+                    ><span>GitHub</span></a
+                  >
+                </div>
+                <div class="md-trigger links hover-this easter">
+                  <a><span class="easter">EasterEgg</span></a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="md-overlay"></div>
         </div>
       </div>
     </div>
 
     <!-- This is animation for navbar -->
 
+    <script>
+      const textrev = gsap.timeline();
+      textrev.from(".site-menu .menu-item", 0.5, {
+        x: 700,
+        ease: "power4.out",
+        delay: 6.3,
+        skewX: 10,
+        stagger: {
+          amount: 0.3,
+        },
+      });
+    </script>
+
     <!-- end -->
 
+    <!-- This is for menu items hover effect -->
+
+    <script>
+      (function () {
+        const link = document.querySelectorAll("div > .hover-this");
+        const cursor = document.querySelector(".cursor");
+
+        const animateit = function (e) {
+          const span = this.querySelector("span");
+          const { offsetX: x, offsetY: y } = e,
+            { offsetWidth: width, offsetHeight: height } = this,
+            move = 25,
+            xMove = (x / width) * (move * 2) - move,
+            yMove = (y / height) * (move * 2) - move;
+
+          span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+
+          if (e.type === "mouseleave") span.style.transform = "";
+        };
+
+        const editCursor = (e) => {
+          const { clientX: x, clientY: y } = e;
+          cursor.style.left = x + "px";
+          cursor.style.top = y + "px";
+        };
+
+        link.forEach((b) => b.addEventListener("mousemove", animateit));
+        link.forEach((b) => b.addEventListener("mouseleave", animateit));
+        window.addEventListener("mousemove", editCursor);
+      })();
+
+      var mainbox = document.querySelector("#container");
+      var text1 = document.querySelector("#text1");
+      var text2 = document.querySelector("#text2");
+
+      function cursorflow(e, mainbox) {
+        var con = mainbox.getBoundingClientRect();
+        var x = (e.pageX - con.x) * 0.5;
+        text1.style.transform = `translate(${x}px,0)`;
+        text2.style.transform = `translate(${x}px,0)`;
+      }
+
+      mainbox.addEventListener("mousemove", (e) => {
+        setInterval(cursorflow(e, mainbox), 100000);
+      });
+    </script>
+
+    <!-- end -->
+
+    <!-- This is the creative animation -->
+
+    <script>
+      var mainbox = document.querySelector(".wrapper");
+      var text1 = document.querySelector("#text1");
+      var text2 = document.querySelector("#text2");
+
+      function cursorflow(e, mainbox) {
+        var con = mainbox.getBoundingClientRect();
+        var x = (e.pageX - con.x) * 0.5;
+        text1.style.transform = `translate(${x}px,0)`;
+        text2.style.transform = `translate(${x}px,0)`;
+      }
+
+      mainbox.addEventListener("mousemove", (e) => {
+        setInterval(cursorflow(e, mainbox), 100000);
+      });
+    </script>
+
+    <!-- creative end -->
+
+    <!-- About Section -->
+
+    <script>
+      $(document).scroll(function () {
+        var scroll = $(window).scrollTop();
+        var amount = -140 + scroll * 0.2;
+        if (amount < 10) {
+          $(".about-letter").css({ left: amount + "px" });
+        }
+      });
+    </script>
+
+    <!-- name about -->
+
+    <script>
+      $(document).scroll(function () {
+        var scroll = $(window).scrollTop();
+        var amount = -155 + scroll * 0.2;
+        if (amount < 10) {
+          $(".span-line").css({ bottom: amount + "px" });
+        }
+      });
+    </script>
+
+    <!-- nav bar changing -->
+
+    <script>
+      $(document).scroll(function () {
+        var scroll = $(window).scrollTop();
+        var amount = scroll;
+        if (amount > 600) {
+          $(".menu-open").addClass("menu-open-show");
+        } else {
+          $(".menu-open").removeClass("menu-open-show");
+        }
+      });
+    </script>
+
+    <!-- nav bar changing -->
+
+    <!-- Project Reveal -->
+
+    <script>
+      $(document).scroll(function () {
+        var scroll = $(window).scrollTop();
+        var amount = -305 + scroll * 0.2;
+        if (amount < 10) {
+          $(".project-about-letter").css({ left: amount + "px" });
+        }
+      });
+    </script>
+
+    <!-- END -->
+
     <!-- This is the rotating circle -->
+
+    <script>
+      const circleType = new CircleType(
+        document.getElementById("rotated")
+      ).radius(80);
+
+      $(window).scroll(function () {
+        var offset = $(window).scrollTop();
+        offset = offset * 0.3;
+
+        $(".circular-text").css({
+          "-moz-transform": "rotate(" + offset + "deg)",
+          "-webkit-transform": "rotate(" + offset + "deg)",
+          "-o-transform": "rotate(" + offset + "deg)",
+          "-ms-transform": "rotate(" + offset + "deg)",
+          transform: "rotate(" + offset + "deg)",
+        });
+      });
+    </script>
 
     <!--  -->
 
     <!-- this is for the small menu -->
+
+    <script>
+      var t1 = new TimelineMax({ paused: true });
+
+      t1.to(".nav-container", 1, {
+        left: 0,
+        ease: Expo.easeInOut,
+      });
+
+      t1.staggerFrom(
+        ".menu > div",
+        0.8,
+        { y: 100, opacity: 0, ease: Expo.easeOut },
+        "0.1",
+        "-=0.4"
+      );
+
+      t1.reverse();
+      $(document).on("click", ".menu-open", function () {
+        t1.reversed(!t1.reversed());
+      });
+      $(document).on("click", ".menu-close", function () {
+        t1.reversed(!t1.reversed());
+      });
+    </script>
 
     <!-- end -->
   </body>
