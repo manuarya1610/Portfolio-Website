@@ -10,22 +10,22 @@ $(function () {
   });
 });
 
-// modal
-
-// smooth
+// smooth scroll
 
 $(document).on("click", 'a[href^="#"]', function (event) {
-  event.preventDefault();
+  const target = $($.attr(this, "href"));
 
-  $("html, body").animate(
-    {
-      scrollTop: $($.attr(this, "href")).offset().top,
-    },
-    900
-  );
+  if (target.length) {
+    event.preventDefault();
+
+    $("html, body").animate(
+      {
+        scrollTop: target.offset().top,
+      },
+      900
+    );
+  }
 });
-
-// end
 
 // close modal with ESC
 $(document).on("keyup", function (event) {
