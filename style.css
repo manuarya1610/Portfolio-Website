@@ -2438,106 +2438,75 @@ ul {
 
 /* end */
 
-/* === Modern theming & data-engineering styling (non-breaking overrides) === */
 
+/* === COLOR OVERRIDES ONLY – SAFE THEME TWEAKS === */
+
+/* Slightly richer dark background */
 body {
-  background-color: #020617;
+  background-color: #020617; /* deep navy instead of flat black */
 }
 
-.first-page {
-  background:
-    radial-gradient(circle at top, rgba(56, 189, 248, 0.22), transparent 55%),
-    radial-gradient(circle at bottom, rgba(236, 72, 153, 0.2), transparent 55%),
-    #020617;
-}
-
-/* keep panel image effect, but use same dark base behind sections */
+/* keep section backgrounds coherent */
 .contain-about,
 .contain-contact,
 .about {
   background-color: #020617;
 }
 
+/* Headings and main text tones */
 .hi1,
 .about-line,
 .name,
 .contact-heading {
-  color: #e5e7eb;
+  color: #e5e7eb; /* soft near-white */
 }
 
 .about-line-1 p,
 .contact-caption,
 .pr-text {
-  color: #9ca3af;
+  color: #9ca3af; /* neutral grey for long text */
 }
 
+/* Project section labels */
 .project-heading {
-  color: #38bdf8;
+  color: #38bdf8; /* cyan accent */
 }
 
-/* data engineering tag pills in about section */
-.about-tags {
-  margin-top: 24px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.tag-pill {
-  font-family: "Questrial", sans-serif;
-  font-size: 11px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 6px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.7);
-  color: #e5e7eb;
-  background: radial-gradient(
-    circle at top left,
-    rgba(56, 189, 248, 0.22),
-    transparent 55%
-  );
-}
-
-/* grid-letter blocks a bit softer */
+/* Grid letters (HELLO / PROJECTS / CONTACT) */
 .about-letter,
 .project-about-letter,
 .contact-about-letter {
-  color: #64748b;
+  color: #64748b; /* slate grey */
 }
 
-/* buttons & links accents */
+/* Buttons & CTA styling */
 .git,
 .about-button,
 .button,
 .m-button {
-  border-color: #38bdf8;
+  border-color: #38bdf8; /* cyan border */
 }
 
+/* Git buttons hover */
 .git:hover {
   background: linear-gradient(120deg, #38bdf8, #ec4899);
   color: #020617;
   border-color: transparent;
 }
 
+/* Form + modal buttons hover background */
 .button:hover::after,
 .m-button:hover::after {
   background: linear-gradient(120deg, #38bdf8, #ec4899);
 }
 
+/* Form + modal buttons text on hover */
 .button:hover .foreground-text,
 .m-button:hover .m-foreground-text {
   color: #020617;
 }
 
-/* custom cursor accent */
+/* Custom cursor outline accent */
 .cursor {
   box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.9);
-}
-
-/* mobile tweaks for new tags layout */
-@media only screen and (max-width: 900px) {
-  .about-tags {
-    width: 66vw;
-  }
 }
