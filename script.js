@@ -10,26 +10,19 @@ $(function () {
   });
 });
 
-// smooth scroll
+// modal
+
+// smooth
 
 $(document).on("click", 'a[href^="#"]', function (event) {
-  const target = $($.attr(this, "href"));
+  event.preventDefault();
 
-  if (target.length) {
-    event.preventDefault();
-
-    $("html, body").animate(
-      {
-        scrollTop: target.offset().top,
-      },
-      900
-    );
-  }
+  $("html, body").animate(
+    {
+      scrollTop: $($.attr(this, "href")).offset().top,
+    },
+    900
+  );
 });
 
-// close modal with ESC
-$(document).on("keyup", function (event) {
-  if (event.key === "Escape" || event.keyCode === 27) {
-    $(".md-modal").removeClass("md-show");
-  }
-});
+// end
