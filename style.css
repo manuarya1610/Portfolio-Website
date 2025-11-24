@@ -1,16 +1,19 @@
-html {
-  width: 100vw;
-  height: 100vh;
-  margin: 0%;
-  padding: 0%;
-}
-
+html,
 body {
   margin: 0%;
   padding: 0%;
+  background: #000000;
+  cursor: default;
+}
+
+html {
   width: 100vw;
   height: 100vh;
-  background-color: black;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
 }
 
 a {
@@ -18,26 +21,19 @@ a {
   color: white;
 }
 
-#box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
-  padding-left: 50px;
-  padding-right: 50px;
-}
+/* FIRST PAGE */
 
-/* first page */
-
-.navbar {
-  height: 11vh;
+.first-page {
+  position: relative;
   width: 100vw;
+  height: 100vh;
+  /* background: url("https://media.discordapp.net/attachments/897248284474527805/897251013970128986/Manu_BG_Trim.png?width=897&height=599")
+    no-repeat center center / cover; */
+  background: url("https://i.imgur.com/mABa2F3.jpeg") no-repeat center center /
+    cover;
   display: flex;
-  position: fixed;
-  z-index: 4;
+  flex-direction: column;
 }
-
-/* animation textds */
 
 .contain-intro {
   position: relative;
@@ -45,13 +41,149 @@ a {
   padding: 0;
 }
 
-/* .intro-text {
-  background: url(https://wallpaperaccess.com/full/5651961.jpg);
-  background-size:cover;
-  background-position: center;
-  -webkit-background-clip: text;
-  color: transparent;
-} */
+/* INTRO TEXT CONTAINER */
+
+.consist-intro {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  animation: changing-index 34s;
+  z-index: -1;
+}
+
+@keyframes changing-index {
+  0% {
+    z-index: 2;
+  }
+  10% {
+    z-index: 2;
+  }
+  20% {
+    z-index: 2;
+  }
+  30% {
+    z-index: 2;
+  }
+  40% {
+    z-index: 2;
+  }
+  50% {
+    z-index: 0;
+  }
+  60% {
+    z-index: 0;
+  }
+  70% {
+    z-index: 0;
+  }
+  80% {
+    z-index: 0;
+  }
+  90% {
+    z-index: 0;
+  }
+  100% {
+    z-index: 0;
+  }
+}
+
+/* intro container */
+
+.intro-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-size: cover;
+}
+
+/* text wrapper */
+
+.text-wrapper {
+  margin-top: 10vh;
+  text-align: left;
+  line-height: 1em;
+}
+
+/* text styling */
+
+.text {
+  font-family: "Monument Extended Regular";
+  color: white;
+  font-size: 7vw;
+  -webkit-text-stroke: 2px white;
+}
+
+.text-1,
+.text-2,
+.text-3,
+.text-4,
+.text-5,
+.text-6,
+.text-7,
+.text-8,
+.text-9 {
+  display: inline-block;
+}
+
+/* animation for text */
+
+.text:nth-child(even) {
+  transform: translateX(-1.5%);
+}
+
+/* KEYFRAME ANIMATION */
+
+@keyframes ae {
+  0% {
+    transform: translateY(0.05em);
+    text-shadow: 0px 0px 0px white;
+  }
+  10% {
+    transform: translateY(0.1em);
+    text-shadow: 0px 0px 20px white;
+  }
+  20% {
+    transform: translateY(0.2em);
+    text-shadow: -10px 5px 0px white;
+  }
+  30% {
+    transform: translateY(0.3em);
+    text-shadow: 0px 0px 0px white;
+  }
+  40% {
+    transform: translateY(0.4em);
+    text-shadow: 0px 0px 0px white;
+  }
+  50% {
+    transform: translateY(0.5em);
+    text-shadow: 10px 0px 0px white;
+  }
+  60% {
+    transform: translateY(0.4em);
+    text-shadow: 0px 0px 0px white;
+  }
+  70% {
+    transform: translateY(0.3em);
+    text-shadow: 0px 0px 0px white;
+  }
+  80% {
+    transform: translateY(0.2em);
+    text-shadow: 10px 0px 0px white;
+  }
+  90% {
+    transform: translateY(0.1em);
+    text-shadow: 0px 0px 0px white;
+  }
+  100% {
+    transform: translateY(0.05em);
+    text-shadow: 0px 0px 0px white;
+  }
+}
+
+/* individual text animation */
 
 .text-1 {
   animation: ae 34s infinite;
@@ -68,244 +200,25 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-}
-
-.text-2 {
   animation: ae 34s infinite;
 }
 
-.text-3 {
-  animation: ae 34s infinite;
-}
+/* NAVBAR */
 
-.text-4 {
-  animation: ae 34s infinite;
-}
-
-.text-5 {
-  animation: ae 34s infinite;
-}
-
-.text-6 {
-  animation: ae 34s infinite;
-}
-
-.text-7 {
-  animation: ae 34s infinite;
-}
-
-.text-8 {
-  animation: ae 34s infinite;
-}
-
-.text-9 {
-  animation: ae 34s infinite;
-}
-
-/* intro animation */
-
-.consist-intro {
-  position: fixed;
-  margin: 0;
-  padding: 0;
+.navbar {
+  height: 11vh;
   width: 100vw;
-  height: 100vh;
-  animation: changing-index 34s;
-  z-index: -1;
-}
-
-@keyframes changing-index {
-  0% {
-    z-index: 2;
-  }
-
-  10% {
-    z-index: 2;
-  }
-
-  20% {
-    z-index: 2;
-  }
-
-  30% {
-    z-index: 2;
-  }
-
-  40% {
-    z-index: 2;
-  }
-
-  50% {
-    z-index: 0;
-  }
-
-  60% {
-    z-index: 0;
-  }
-
-  70% {
-    z-index: 0;
-  }
-
-  80% {
-    z-index: 0;
-  }
-
-  90% {
-    z-index: 0;
-  }
-
-  100% {
-    z-index: 0;
-  }
-}
-
-.intro-container {
-  height: 100vh;
   display: flex;
-  justify-content: center;
-  align-content: center;
-  background-size: cover;
-}
-
-/* .intro-container::before{
-  content: "";
   position: fixed;
-  pointer-events: none;
-  background: url("https://cdn.discordapp.com/attachments/897248284474527805/897284848120414208/grid.png") center/cover no-repeat;
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  mix-blend-mode:exclusion;
-  z-index: 100;
-} */
-
-.intro-text {
-  margin-top: 10vh;
-  text-align: left;
-  line-height: 1em;
+  z-index: 4;
 }
-
-.text {
-  font-family: "Monument Extended Regular";
-  color: white;
-  font-size: 7vw;
-  /* mix-blend-mode:exclusion; */
-  -webkit-text-stroke: 2px white;
-}
-
-.text-1,
-.text-2,
-.text-3,
-.text-4,
-.text-5,
-.text-6,
-.text-7,
-.text-8,
-.text-9 {
-  display: inline-block;
-}
-
-.text:nth-child(even) {
-  transform: translateX(-1.5%);
-}
-
-/*  0:28
-
-.text:nth-child(1) {
-  transform: translateY(0.15em);
-}
-.text:nth-child(2) {
-  transform: translateY(0.3em);
-}
-.text:nth-child(3) {
-  transform: translateY(0.45em);
-}
-.text:nth-child(4) {
-  transform: translateY(0.6em);
-}
-.text:nth-child(5) {
-  transform: translateY(0.75em);
-}
-.text:nth-child(6) {
-  transform: translateY(0.9em);
-}
-.text:nth-child(7) {
-  transform: translateY(1.05em);
-}
-.text:nth-child(8) {
-  transform: translateY(1.2em);
-}
-.text:nth-child(9) {
-  transform: translateY(1.35em);
-} */
-
-@keyframes ae {
-  0% {
-    transform: translateY(0.05em);
-    text-shadow: 0px 0px 0px white;
-  }
-
-  10% {
-    transform: translateY(0.1em);
-    text-shadow: 0px 0px 20px white;
-  }
-
-  20% {
-    transform: translateY(0.2em);
-    text-shadow: -10px 5px 0px white;
-  }
-
-  30% {
-    transform: translateY(0.3em);
-    text-shadow: 0px 0px 0px white;
-  }
-
-  40% {
-    transform: translateY(0.4em);
-    text-shadow: 0px 0px 0px white;
-  }
-
-  50% {
-    transform: translateY(0.5em);
-    text-shadow: 10px 0px 0px white;
-  }
-
-  60% {
-    transform: translateY(0.4em);
-    text-shadow: 0px 0px 0px white;
-  }
-
-  70% {
-    transform: translateY(0.3em);
-    text-shadow: 0px 0px 0px white;
-  }
-
-  80% {
-    transform: translateY(0.2em);
-    text-shadow: 10px 0px 0px white;
-  }
-
-  90% {
-    transform: translateY(0.1em);
-    text-shadow: 0px 0px 0px white;
-  }
-
-  100% {
-    transform: translateY(0.05em);
-    text-shadow: 0px 0px 0px white;
-  }
-}
-
-/* end */
 
 .nav-left {
   width: 50vw;
   height: 11vh;
-  margin-left: 50px;
 }
 
-/* logo */
+/* LOGO */
 
 .logo {
   width: 50vw;
@@ -314,8 +227,10 @@ a {
   align-items: center;
   font-family: "Monument Extended Regular";
   font-weight: bolder;
-  /* color: white; */
+  color: white;
 }
+
+/* button reset */
 
 button {
   border-radius: 0;
@@ -369,20 +284,14 @@ button {
   transition: transform 400ms;
 }
 
-a {
-  text-decoration: none;
-}
+/* menu right */
 
 .nav-right {
   width: 50vw;
   height: 11vh;
 }
 
-ul {
-  list-style: none;
-}
-
-/* menu pages */
+/* menu list */
 
 .site-menu {
   display: flex;
@@ -392,6 +301,7 @@ ul {
   text-transform: uppercase;
   letter-spacing: 2.7px;
   height: 11vh;
+  color: white;
 }
 
 .site-menu span {
@@ -399,11 +309,15 @@ ul {
   display: inline-block;
 }
 
+/* hover this */
+
 .hover-this span {
   position: relative;
   display: inline-block;
   transition: transform 0.1s linear;
 }
+
+/* cursor */
 
 .cursor {
   pointer-events: none;
@@ -422,6 +336,8 @@ ul {
   justify-content: center;
 }
 
+/* background grid overlay */
+
 .cursor::before {
   content: "";
   position: fixed;
@@ -435,41 +351,51 @@ ul {
   z-index: 100;
 }
 
-/* .hover-this {
-  transition: all 0.3s ease;
-} */
+/* FIRST PAGE CONTENT */
 
-.first-page {
-  position: relative;
-  width: 100vw;
+.base-section {
   height: 100vh;
-  background: url("https://media.discordapp.net/attachments/897248284474527805/897251013970128986/Manu_BG_Trim.png?width=897&height=599")
-    no-repeat center center / cover;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  position: relative;
 }
 
-/* .first-page::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  background: linear-gradient(#000, #f00);
-  mix-blend-mode: overlay;
-} */
+/* fixed items */
 
-.first-page::after {
-  content: "";
+.fixed {
   position: fixed;
-  pointer-events: none;
-  background: url("https://cdn.discordapp.com/attachments/897248284474527805/897284848120414208/grid.png")
-    center/cover no-repeat;
   width: 100%;
-  height: 100%;
-  opacity: 0.07;
-  mix-blend-mode: soft-light;
+  z-index: 3;
 }
 
-/* headline */
+/* circular text container */
+
+.row {
+  margin-top: 5px;
+  margin-left: 2px;
+  display: inline-block;
+  text-align: center;
+}
+
+.circular-text {
+  width: 100%;
+  position: relative;
+  font-family: "Questrial", sans-serif;
+  color: white;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 2px;
+  animation: rotate 10s linear infinite;
+}
+
+/* rotation */
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* content body */
 
 .contain-content {
   height: 62.5vh;
@@ -480,15 +406,7 @@ ul {
   margin-right: 10vw;
 }
 
-/* under navbar */
-
-.under-top {
-  position: relative;
-  height: 13vh;
-  width: 100%;
-}
-
-/* main neame intro  */
+/* main heading */
 
 .hi1 {
   margin: 0;
@@ -498,10 +416,9 @@ ul {
   text-transform: uppercase;
   font-size: 5vw;
   font-family: "Monument Extended Regular";
-  /* mix-blend-mode:exclusion; */
 }
 
-/* moving text title */
+/* moving box */
 
 .contain-box {
   width: 100vw;
@@ -511,10 +428,18 @@ ul {
 }
 
 #box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  padding-left: 50px;
+  padding-right: 50px;
   margin-left: 10vw;
   margin-right: 10vw;
   height: 23vh;
 }
+
+/* positions */
 
 #box1,
 #box2 {
@@ -534,7 +459,72 @@ ul {
   margin-top: 210px;
 }
 
-/* end */
+/* creative text */
+
+#text1,
+#text3,
+#text5 {
+  position: absolute;
+  font-size: 5vw;
+  text-align: left;
+  padding: 0;
+  margin: 0px;
+  font-family: "Monument Extended Regular";
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 1);
+  color: transparent;
+}
+
+#text2,
+#text4,
+#text6 {
+  position: absolute;
+  font-size: 5vw;
+  text-align: left;
+  padding: 0;
+  margin: 0px;
+  font-family: "Monument Extended Regular";
+  color: rgba(255, 255, 255, 1);
+}
+
+/* sliding animation for moving text */
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-124vw);
+  }
+  16.666% {
+    transform: translateX(0vw);
+  }
+  50% {
+    transform: translateX(0vw);
+  }
+  66.66% {
+    transform: translateX(124vw);
+  }
+  100% {
+    transform: translateX(124vw);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(-124vw);
+  }
+  16.666% {
+    transform: translateX(0vw);
+  }
+  30% {
+    transform: translateX(0vw);
+  }
+  46.66% {
+    transform: translateX(124vw);
+  }
+  100% {
+    transform: translateX(124vw);
+  }
+}
+
+/* for each box */
 
 #box1 {
   position: relative;
@@ -570,140 +560,7 @@ ul {
   animation-delay: 1s;
 }
 
-/* creative */
-
-#text1 {
-  position: absolute;
-  font-size: 5vw;
-  text-align: left;
-  padding: 0;
-  margin: 0px;
-  /* top: 15px;
-  left: 50px; */
-  font-family: "Monument Extended Regular";
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 1);
-  color: transparent;
-}
-
-/* creative front */
-
-#text2 {
-  position: absolute;
-  /* top: 15px;
-  left: 50px; */
-  font-size: 5vw;
-  text-align: left;
-  padding: 0;
-  margin: 0px;
-  font-family: "Monument Extended Regular";
-  color: rgba(255, 255, 255, 1);
-}
-
-/* designer */
-
-#text3 {
-  position: absolute;
-  /* top: 120px;
-  left: 50px; */
-  font-size: 5vw;
-  text-align: left;
-  padding: 0;
-  margin: 0px;
-  font-family: "Monument Extended Regular";
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 1);
-  color: transparent;
-}
-
-/* designer front */
-
-#text4 {
-  position: absolute;
-  /* top: 120px;
-  left: 50px; */
-  font-size: 5vw;
-  text-align: left;
-  padding: 0;
-  margin: 0px;
-  font-family: "Monument Extended Regular";
-  color: rgba(255, 255, 255, 1);
-}
-
-/* developer */
-
-#text5 {
-  position: absolute;
-  /* top: 225px;
-  left: 50px; */
-  font-size: 5vw;
-  text-align: left;
-  padding: 0;
-  margin: 0px;
-  font-family: "Monument Extended Regular";
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 1);
-  color: transparent;
-}
-
-/* developer front */
-
-#text6 {
-  position: absolute;
-  /* top: 225px;
-  left: 50px; */
-  font-size: 5vw;
-  text-align: left;
-  padding: 0;
-  margin: 0px;
-  font-family: "Monument Extended Regular";
-  color: rgba(255, 255, 255, 1);
-}
-
-/* animation */
-
-@keyframes slide-in {
-  0% {
-    transform: translateX(-124vw);
-  }
-
-  16.666% {
-    transform: translateX(0vw);
-  }
-
-  50% {
-    transform: translateX(0vw);
-  }
-
-  66.66% {
-    transform: translateX(124vw);
-  }
-
-  100% {
-    transform: translateX(124vw);
-  }
-}
-
-@keyframes slide-out {
-  0% {
-    transform: translateX(-124vw);
-  }
-
-  16.666% {
-    transform: translateX(0vw);
-  }
-
-  30% {
-    transform: translateX(0vw);
-  }
-
-  46.66% {
-    transform: translateX(124vw);
-  }
-
-  100% {
-    transform: translateX(124vw);
-  }
-}
-
-/* moving text */
+/* wrapper */
 
 .wrapper {
   height: 100%;
@@ -715,7 +572,7 @@ ul {
   font-family: "Monument Extended Regular";
 }
 
-/* footer first page */
+/* FOOTER FIRST PAGE */
 
 .footer-first-page {
   display: flex;
@@ -724,8 +581,6 @@ ul {
   justify-content: space-between;
   align-items: center;
 }
-
-/* footer */
 
 .first-social {
   height: 6vh;
@@ -746,7 +601,7 @@ ul {
   margin-left: 50px;
 }
 
-/* links icons */
+/* social links */
 
 .socialul {
   width: 50vw;
@@ -765,43 +620,21 @@ ul {
   letter-spacing: 3px;
 }
 
-/* to next page reminder */
-
-.more {
-  width: 50vw;
-  height: 10vh;
-  position: absolute;
-  visibility: hidden;
-  display: flex;
-  margin-left: 50vw;
-  justify-content: center;
-  align-items: center;
-}
-
-/* end */
-
-.hi1,
-.first-page-footer,
-.socialul ul {
-  text-transform: uppercase;
-  font-family: "Monument Extended Regular";
-}
-
-/* about page */
+/* ABOUT PAGE */
 
 .contain-about {
   width: 100vw;
-  height: 100%;
   background-color: black;
+  padding-top: 10vh;
 }
 
-/* full about */
+/* about structure */
 
 .about {
   margin: 0;
   width: 100vw;
-  height: 100vh;
   display: flex;
+  justify-content: space-between;
 }
 
 /* hello block */
@@ -816,7 +649,7 @@ ul {
   justify-content: center;
 }
 
-/* hello hovering */
+/* hello letter blocks */
 
 .about-box {
   width: 40px;
@@ -830,8 +663,6 @@ ul {
   animation: up 1s;
 }
 
-/* end */
-
 /* hello letters */
 
 .about-letter {
@@ -839,52 +670,44 @@ ul {
   align-self: center;
   font-size: 60px;
   font-family: "Monument Extended Regular";
-  color: adadad;
+  color: #adadad;
 }
 
-/* hello animation */
+/* hello letters animation */
 
 @keyframes up {
   20% {
     transform: translateY(0%);
   }
-
   30% {
     transform: translateY(-100%);
     opacity: 1;
   }
-
   40% {
     transform: translateY(0%);
     opacity: 0;
   }
-
   50% {
     transform: translateY(-100%);
     opacity: 0;
   }
-
   60% {
     transform: translateY(0%);
     opacity: 1;
   }
-
   100% {
     transform: translateY(0%);
     opacity: 1;
   }
 }
 
-/* end */
-
-/* about contain */
+/* about text */
 
 #about-main {
   width: 51vw;
-  height: 100vh;
 }
 
-/* text about */
+/* about wrapper */
 
 .about-wrapper {
   margin-left: auto;
@@ -892,7 +715,7 @@ ul {
   height: auto;
 }
 
-/* about line and circle */
+/* about line */
 
 .about-line {
   opacity: 1;
@@ -903,45 +726,35 @@ ul {
   color: white;
 }
 
-/* big name */
+/* name span */
 
 .span-line {
   display: block;
 }
-
-/* manu name */
 
 .name {
   font-family: "Monument Extended Regular";
   color: rgb(255, 255, 255);
 }
 
-/* end */
-
-/* about full paragraph */
-
-.about-line-1 {
-  color: grey;
-  width: 33vw;
-  font-family: "Questrial", sans-serif;
-  margin-top: 75px;
-  padding-right: 20px;
-}
-
 /* paragraph */
 
-.about-line-1 p {
-  font-size: 16px;
-  line-height: 27px;
+.about-line-1 {
+  margin-bottom: 2%;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  width: 65%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
-/* end */
-
-#about-main > a {
-  margin-left: 50px;
+p {
+  width: auto;
 }
 
-/* button for about */
+/* about button */
 
 .about-button {
   padding: 16px 42px 16px 42px;
@@ -954,19 +767,17 @@ ul {
   color: white;
   letter-spacing: 3px;
   font-size: 16px;
-  margin-left: 50px;
+  margin-left: 100px;
   margin-top: 45px;
+  background: transparent;
 }
 
-/* about screen for css image */
+/* about image element */
 
 .about-element {
   margin: 0;
   width: 49vw;
-  height: 100vh;
 }
-
-/* css element contain */
 
 .consist-element {
   margin: 0;
@@ -975,7 +786,7 @@ ul {
   display: flex;
 }
 
-/* contain */
+/* grid animation */
 
 .scene {
   width: 100%;
@@ -984,8 +795,6 @@ ul {
   display: flex;
   align-self: center;
 }
-
-/* grid for window */
 
 .banner {
   position: relative;
@@ -1021,13 +830,9 @@ ul {
   opacity: 50%;
 }
 
-/* end */
-
 .banner:first-child .panel {
   box-shadow: 0 100px 25px rgba(0, 0, 0, 0.65);
 }
-
-/* grid image */
 
 .panel:nth-child(1) {
   animation: animate 2000ms 0ms ease-in-out infinite alternate;
@@ -1109,27 +914,25 @@ ul {
   background-position-y: -1500%;
 }
 
-/* grid animation */
+/* animation for grid */
 
 @keyframes animate {
   0% {
     transform: rotateX(-35deg);
     filter: brightness(0.1);
   }
-
   100% {
     transform: rotateX(0deg);
     filter: brightness(1.8);
   }
 }
 
-/* end */
+/* PROJECTS */
 
-.white-space-about {
-  height: 150px;
+.contain-pro {
+  padding-top: 15vh;
+  padding-bottom: 15vh;
 }
-
-/* project */
 
 .project-heading-main {
   display: flex;
@@ -1137,7 +940,7 @@ ul {
   margin-right: 11vw;
 }
 
-/* project heading */
+/* project heading boxes */
 
 #project-about-main,
 #project-about-main-2 {
@@ -1145,8 +948,6 @@ ul {
   width: 50vw;
   justify-content: left;
 }
-
-/* project letters */
 
 .project-about-box {
   width: 8vw;
@@ -1156,38 +957,29 @@ ul {
   justify-content: center;
 }
 
-/* letters */
-
 .project-about-letter {
   margin-top: 0px;
   align-self: center;
   font-size: 70px;
   font-family: "Monument Extended Regular";
-  color: adadad;
+  color: #adadad;
   text-transform: uppercase;
 }
-
-/* letter animation */
 
 .project-about-box:hover .project-about-letter {
   animation: up 1s;
 }
 
-/* project project heading */
+/* project whitespace */
 
-.project-heading {
-  color: rgb(156, 156, 156);
-  height: 45px;
-  margin-left: 11vw;
-  margin-right: 11vw;
-  font-family: "Monument Extended Regular";
-  text-transform: uppercase;
-  letter-spacing: 3px;
+.white-space-project {
+  height: 100px;
 }
 
-/* project 1 */
+/* project layout */
 
-.project1 {
+.project1,
+.project2 {
   display: flex;
   height: 550px;
   margin-left: 11vw;
@@ -1195,49 +987,78 @@ ul {
   justify-content: space-between;
 }
 
-/* project 1 left */
+/* project image */
 
 .pr1-left {
-  width: 45%;
-  height: 95%;
-  border: 1px solid rgba(128, 128, 128, 0.11);
+  position: relative;
+  width: 62%;
+  justify-content: right;
+  align-items: center;
 }
 
-/* project 1 right */
+.pr2-right {
+  position: relative;
+  width: 65%;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+/* project text container */
+
+.ct {
+  margin-left: 2%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ct-2 {
+  margin-left: 3%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
 .pr1-right {
-  width: 100%;
-  padding-left: 45px;
-  height: auto;
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  text-align: justify;
+  text-justify: inter-word;
+  width: 33vw;
+  justify-content: center;
+  align-items: center;
   color: white;
-  letter-spacing: 1px;
-  font-family: "Questrial", sans-serif;
+  display: flex;
+  flex-direction: row;
 }
 
-/* project 1 heading */
-
-.pr1-right span {
-  font-family: "Monument Extended Regular";
-  text-transform: uppercase;
+.pr2-left {
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  text-align: justify;
+  text-justify: inter-word;
+  width: 33vw;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-direction: row;
 }
-
-/* project brief 1 */
 
 .pr-text {
-  font-size: 14px;
-  line-height: 25px;
-  padding-right: 35px;
+  line-height: 1.8;
 }
 
-/* button git */
+/* git buttons */
 
 .git-button {
   height: 7vh;
   display: flex;
   margin-top: 25px;
 }
-
-/* button git */
 
 .git {
   padding-right: 40px;
@@ -1251,184 +1072,66 @@ ul {
   font-size: 13px;
   letter-spacing: 2px;
   border: 1px solid white;
+  background: transparent;
 }
 
-/* project white space */
-
-.white-space-project {
-  height: 100px;
-}
-
-/* project 2 heading */
-
-.project2 {
-  display: flex;
-  height: 550px;
-  margin-left: 11vw;
-  margin-right: 11vw;
-  justify-content: space-between;
-}
-
-/* main brief */
-
-.ct,
-.ct-2 {
-  height: 100%;
-  width: 45%;
-}
-
-/* white project frame 2 */
-
-.ct {
-  border: 1px solid rgba(128, 128, 128, 0.11);
-}
-
-/* project 2 image */
-
-.pr2-right {
-  width: 45%;
-  height: 95%;
-  border: 1px solid rgba(128, 128, 128, 0.11);
-}
-
-/* project 2 brief */
-
-.ct-2 > .pr2-left {
-  height: 75%;
-  width: 100%;
-}
-
-/* 2 */
-
-.pr2-left {
-  width: 100%;
-  padding-left: 45px;
-  height: auto;
-  color: white;
-  letter-spacing: 1px;
-  font-family: "Questrial", sans-serif;
-}
-
-/* 2 heading */
-
-.pr2-left span {
-  font-family: "Monument Extended Regular";
-  text-transform: uppercase;
-}
-
-/* space contact */
-
-.white-space-contact {
-  height: 50px;
-}
-
-/* 3 */
-
-#pr3-img {
-  background-image: url("pr3.png");
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-}
-
-/* contact page */
+/* CONTACT SECTION */
 
 .contain-contact {
   background-color: black;
+  padding-top: 15vh;
+  padding-bottom: 15vh;
 }
 
-/* letters */
-
-.contact-heading-main {
-  display: flex;
-  margin-left: 11vw;
-  margin-right: 11vw;
+.consist-contact {
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
 }
 
-/* contact full */
-
-.contact-about {
-  display: flex;
-  width: 50vw;
-  justify-content: left;
-}
-
-/* block contact */
-
-.contact-about-box {
-  width: 6vw;
-  height: 6vw;
-  border: 1px solid rgba(128, 128, 128, 0.274);
-  display: inline-flex;
-  justify-content: center;
-}
-
-/* contact letters */
-
-.contact-about-letter {
-  margin-top: 0px;
-  align-self: center;
-  font-size: 55px;
-  font-family: "Monument Extended Regular";
-  color: adadad;
-  text-transform: uppercase;
-}
-
-/* letter animation */
-
-.contact-about-box:hover .contact-about-letter {
-  animation: up 1s;
-}
-
-.flex-contact {
-  margin-left: 11vw;
-  margin-right: 11vw;
-  margin-top: 100px;
+.contact {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: space-between;
 }
 
-.contact-left {
-  width: 35vw;
-  height: 75vh;
+/* left side */
+
+.left_box {
+  overflow: hidden;
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* textception */
+/* big text */
 
-.contact-info {
-  height: 45vh;
-}
-
-/* caption */
-
-.contact-caption {
-  margin-top: 10px;
-  font-family: "Questrial", sans-serif;
-  color: grey;
-  font-size: 14px;
-}
-
-/* contact words */
-
-.contact-heading {
-  width: 85%;
-  margin-top: 100px;
-  color: white;
+.txt1-ct {
+  margin-left: 11vw;
+  margin-right: 11vw;
   font-family: "Monument Extended Regular";
-  font-size: 2vw;
+  font-size: 4vw;
+  color: white;
 }
 
-/* class below contact */
-
-.socialul-1 {
-  height: 30vh;
-  margin: 0;
-  padding: 0;
+.txt2-ct {
+  margin-left: 11vw;
+  margin-right: 11vw;
+  font-family: "Monument Extended Regular";
+  font-size: 4vw;
+  color: white;
 }
 
-/* contact words */
+/* contact socials */
 
-.socialul-1 > .social {
+.socialul > .social {
   width: 35vw;
   height: 100%;
 }
@@ -1438,7 +1141,7 @@ ul {
   flex-wrap: wrap;
 }
 
-/* contact words  */
+/* contact links */
 
 .links {
   width: 35vw;
@@ -1447,7 +1150,7 @@ ul {
   font-family: "Questrial", sans-serif;
 }
 
-/* contact words for hover */
+/* underline hover */
 
 .bottom-socials {
   display: inline-block;
@@ -1480,16 +1183,23 @@ ul {
   transform: scaleX(1);
 }
 
-/* forms */
+/* contact right box */
 
 .contact-right {
-  width: 35vw;
-  height: 80vh;
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
-/* start */
+/* form container */
 
-/* box for cnt */
+.contact-form {
+  width: 65%;
+  margin: 0 auto;
+}
+
+/* form heading */
 
 .form-heading-container {
   display: flex;
@@ -1497,26 +1207,22 @@ ul {
   height: 50px;
 }
 
-/* highlight */
-
 .heading {
   font-family: "Questrial", sans-serif;
   color: gray;
 }
 
-/* full input  */
+/* form */
 
 .cnt {
   display: inline-block;
 }
 
-/* text for margin */
-
 .form .cnt {
   margin: 30px 0;
 }
 
-/* input box */
+/* input styling */
 
 .cnt input {
   padding: 1.25rem 1.5rem 0.75rem;
@@ -1531,15 +1237,11 @@ ul {
   color: white;
 }
 
-/* placeholder text */
-
 .cnt input::placeholder {
   user-select: none;
   font-family: "Questrial", sans-serif;
   text-transform: lowercase;
 }
-
-/* when focused */
 
 .cnt input:focus::placeholder {
   transform: translateY(-75%);
@@ -1550,15 +1252,11 @@ ul {
   border-bottom: 1px solid rgb(233, 233, 233);
 }
 
-/* end */
-
-/* contact form button */
+/* form button */
 
 .consist-button {
   margin-top: 50px;
 }
-
-/* button effect start*/
 
 .container {
   position: relative;
@@ -1568,7 +1266,7 @@ ul {
   all: unset;
 }
 
-/* box of button */
+/* button base */
 
 .button {
   font-size: 1rem;
@@ -1582,16 +1280,14 @@ ul {
   cursor: pointer;
 }
 
-/* text */
+/* button text */
 
 .button-text {
   position: relative;
   z-index: 2;
 }
 
-/* background bebow */
-
-/* button animation */
+/* internal span */
 
 .foreground-text {
   position: absolute;
@@ -1599,7 +1295,7 @@ ul {
   transform: translateY(0px);
 }
 
-/* span */
+/* inner bg */
 
 .button::before {
   content: "";
@@ -1609,7 +1305,7 @@ ul {
   border-radius: inherit;
 }
 
-/* button background */
+/* hover bg */
 
 .button::after {
   content: "";
@@ -1618,25 +1314,171 @@ ul {
   border-radius: inherit;
 }
 
-/* span effect */
-
 .button:hover::after {
   background-color: #fcf9f6;
 }
 
-/* text color while hovering */
-
 .button:hover .foreground-text {
   color: black;
-}
-
-/* the span button */
-
-.button:hover .foreground-text {
   transform: translateY(-34px);
 }
 
-/* end */
+/* MODAL */
+
+.md-modal {
+  margin-left: auto;
+  margin-right: 200px;
+  max-width: 775px;
+  position: fixed;
+  height: 600px;
+  z-index: 10;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* show */
+
+.md-show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* modal content */
+
+.md-effect-12 .md-content {
+  background-color: black;
+}
+
+/* modal text */
+
+.container-text {
+  margin-top: 230px;
+  height: 100px;
+  display: inline;
+  color: white;
+  font-family: "Monument Extended Regular";
+}
+
+.container-text > .txt {
+  font-size: 40px;
+}
+
+.container-text > .txt-1 {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+/* gif */
+
+.giffy {
+  width: 100%;
+  height: 100%;
+}
+
+.giffy img {
+  margin-bottom: 200px;
+  width: 100%;
+  height: 100%;
+}
+
+/* modal button */
+
+.m-consist-button {
+  margin-top: 35px;
+}
+
+.m-container {
+  position: relative;
+}
+
+.m-button {
+  all: unset;
+}
+
+.m-button {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  padding: 13px 50px;
+  border-radius: 999px;
+  border: 1px solid white;
+  text-transform: uppercase;
+  font-family: "Monument Extended Regular";
+  color: #fcf9f6;
+  cursor: pointer;
+}
+
+.m-button-text {
+  position: relative;
+  z-index: 2;
+}
+
+.m-foreground-text {
+  position: absolute;
+  inset: 1px;
+  transform: translateY(0px);
+}
+
+.m-button::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background-color: black;
+  border-radius: inherit;
+}
+
+.m-button::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: inherit;
+}
+
+.m-button:hover::after {
+  background-color: #fcf9f6;
+}
+
+.m-button:hover .m-foreground-text {
+  color: black;
+  transform: translateY(-32px);
+}
+
+/* overlay */
+
+.md-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.md-modal {
+  margin-top: 75px;
+  width: 50vw;
+}
+
+.md-content {
+  height: 600px;
+  padding: 30px;
+}
+
+/* cursor small */
+
+.cursor {
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px white;
+}
+
+/* hover scaling */
+
+.hover-this:hover ~ .cursor {
+  transform: translate(-50%, -50%) scale(8);
+}
+
+/* RESPONSIVE */
 
 @media only screen and (max-width: 900px) {
   .navbar {
@@ -1658,534 +1500,156 @@ ul {
     z-index: -1;
   }
 
-  .intro-text {
+  .intro-container {
+    justify-content: center;
+  }
+
+  .text-wrapper {
     margin-top: 40vh;
-    text-align: left;
   }
 
   .text {
-    font-family: "Monument Extended Regular";
-    color: white;
     font-size: 12vw;
-    -webkit-text-stroke: 2px white;
   }
 
   .contain-content {
-    height: 62.5vh;
-    width: 80vw;
-    display: flex;
-    position: relative;
     margin-left: 5vw;
     margin-right: 5vw;
-  }
-
-  .contain-box {
-    width: 100vw;
-    height: 23vh;
-    display: flex;
-    align-items: center;
   }
 
   #box {
     margin-left: 5vw;
     margin-right: 5vw;
-    height: 23vh;
-  }
-
-  #box1,
-  #box2 {
-    position: absolute;
-    margin-top: -45px;
   }
 
   #box3,
   #box4 {
-    position: absolute;
     margin-top: 60px;
   }
 
   #box5,
   #box6 {
-    position: absolute;
     margin-top: 155px;
   }
 
-  #box1,
-  #box2 {
-    position: absolute;
-    margin-top: 0px;
-  }
-
-  /* project */
-
-  .project-heading-main {
-    display: flex;
-    margin-left: 7vw;
-    margin-right: 7vw;
-  }
-
-  /* project heading */
-
-  #project-about-main,
-  #project-about-main-2 {
-    display: flex;
-    width: 50vw;
-    justify-content: left;
-  }
-  #project-about-main {
-    margin-bottom: -40px;
-  }
-
-  /* project letters */
-
-  .project-about-box {
-    width: 12vw;
-    height: 12vw;
-    border: 1px solid rgba(128, 128, 128, 0.11);
-    display: inline-flex;
-    justify-content: center;
-  }
-
-  /* letters */
-
-  .project-about-letter {
-    margin-top: 0px;
-    align-self: center;
-    font-size: 55px;
-    font-family: "Monument Extended Regular";
-    color: adadad;
-    text-transform: uppercase;
-  }
-
-  /* contact page */
-
-  .contact-heading-main {
-    display: flex;
-    margin-left: 7vw;
-    margin-right: 7vw;
-  }
-
-  /* contain-content */
-
-  .contain-about > .project-heading-main {
-    margin-left: 7vw;
-    margin-right: 7vw;
-  }
-
-  .contain-content {
-    height: 62.5vh;
-    width: 80vw;
-    display: flex;
-    position: relative;
-    margin-left: 10vw;
-    margin-right: 10vw;
-  }
-
-  /* under navbar */
-
-  .under-top {
-    position: relative;
-    height: 13vh;
-    width: 100%;
-  }
-
-  /* main neame intro  */
-
-  .hi1 {
-    margin: 0;
-    color: white;
-    width: 70vw;
-    display: inline-block;
-    text-transform: uppercase;
-    font-size: 12vw;
-    font-family: "Monument Extended Regular";
-    -webkit-text-stroke: 1px black;
+  .contain-about {
+    padding-top: 5vh;
   }
 
   #about-main {
     width: 100vw;
-    height: 100vh;
   }
 
   .about {
-    margin: 0;
-    width: 100vw;
-    height: 170vh;
-    display: inline;
+    flex-direction: column;
   }
 
   .hello {
-    margin-left: auto;
     margin-right: 15vw;
-    padding-top: 100px;
   }
 
   .about-wrapper {
-    margin-left: auto;
     margin-right: 15vw;
-    height: auto;
   }
-
-  /* about line and circle */
 
   .about-line {
-    opacity: 1;
-    margin-top: 50px;
     width: 66vw;
-    font-family: "Monument Extended Regular";
     font-size: 8vw;
-    color: white;
-  }
-
-  /* big name */
-
-  .span-line {
-    display: block;
-  }
-
-  /* manu name */
-
-  .name {
-    font-family: "Monument Extended Regular";
-    color: white;
   }
 
   .about-line-1 {
-    color: grey;
     width: 66vw;
-    font-family: "Questrial", sans-serif;
-    margin-top: 75px;
-    padding-right: 20px;
   }
-
-  /* paragraph */
-
-  .about-line-1 p {
-    font-size: 14px;
-    line-height: 27px;
-  }
-
-  #about-main > a {
-    margin-left: 15vw;
-  }
-
-  /* button for about */
 
   .about-button {
-    padding: 16px 42px 16px 42px;
-    text-transform: uppercase;
-    border-radius: 0px;
-    border-color: white;
-    border-width: 1.5px;
-    position: relative;
-    font-family: "Monument Extended Regular";
-    color: white;
-    letter-spacing: 3px;
-    font-size: 14px;
     margin-left: 15vw;
-    margin-top: 45px;
   }
 
   .about-element {
-    margin: 0;
     width: 100vw;
-    height: 100vb;
-  }
-
-  .Consist-element {
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
+    height: 100vh;
   }
 
   .scene {
-    width: 100%;
     height: 100vh;
-    background-color: rgb(0, 0, 0);
-    display: flex;
-    align-self: center;
   }
 
-  #about-main > a {
-    margin-left: 11vw;
-  }
-
-  .about-wrapper {
-    margin-left: auto;
-    margin-right: 11vw;
-    height: auto;
-  }
-
-  .hello {
-    margin-left: auto;
-    margin-right: 11vw;
-    padding-top: 100px;
-  }
-
-  .white-space-about {
-    height: 50px;
-  }
-
-  .pr1-left {
-    width: 100%;
-    height: 350px;
-    border: 1px solid rgba(128, 128, 128, 0.11);
-  }
-
-  .project1 {
-    display: inline;
-    height: auto;
-    margin-left: 7vw;
-    margin-right: 7vw;
-  }
-
-  .pr1-right {
-    width: 100%;
-    height: auto;
-    color: white;
-    letter-spacing: 1px;
-    font-family: "Questrial", sans-serif;
-    margin-top: 20px;
-    padding-left: 0px;
-  }
-
-  .pr-text {
-    font-size: 14px;
-    line-height: 25px;
-    padding-right: 0px;
-    padding-top: 10px;
-  }
-
-  .project-heading {
-    color: rgb(156, 156, 156);
-    height: 45px;
-    margin-left: 7vw;
-    margin-right: 7vw;
-    font-family: "Monument Extended Regular";
-    text-transform: uppercase;
-    letter-spacing: 3px;
-  }
-
-  /* project 2 heading */
-
+  .project1,
   .project2 {
-    display: inline;
+    display: block;
     height: auto;
     margin-left: 7vw;
     margin-right: 7vw;
   }
 
+  .pr1-left,
   .pr2-right {
     width: 100%;
     height: 350px;
-    border: 1px solid rgba(128, 128, 128, 0.11);
-  }
-
-  .white-space-project {
-    height: 50px;
-  }
-
-  /* main brief */
-
-  .ct,
-  .ct-2 {
-    height: 100%;
-    width: 100%;
-  }
-
-  /* white project frame 2 */
-
-  .ct {
-    border: none;
   }
 
   .pr1-right,
   .pr2-left {
+    width: 100%;
     margin-top: 20px;
-    padding-left: 0px;
   }
 
-  .flex-contact {
-    margin-left: 7vw;
-    margin-right: 7vw;
-    margin-top: 50px;
-    display: inline;
-    justify-content: space-between;
+  .contain-pro {
+    padding-top: 10vh;
   }
 
-  .contact-left {
-    width: 80vw;
-    height: 45vh;
+  .contain-contact {
+    padding-top: 10vh;
   }
 
-  .contact-caption {
-    margin-top: 10px;
-    font-family: "Questrial", sans-serif;
-    color: grey;
-    font-size: 14px;
-  }
-
-  .contact-right {
-    width: 80vw;
+  .contact {
+    flex-direction: column;
     height: auto;
   }
 
-  .contact-info {
-    height: 25vh;
-  }
-
-  .contact-heading {
-    width: 85%;
-    margin-top: 20px;
-    color: white;
-    font-family: "Monument Extended Regular";
-    font-size: 6vw;
-  }
-
-  .socialul-1 {
-    height: 20vh;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* contact words */
-
-  .socialul-1 > .social {
+  .left_box {
     width: 100%;
-    height: 100%;
-  }
-
-  /* contact words  */
-
-  .links {
-    width: 50vw;
-    color: white;
-    text-transform: uppercase;
-    font-family: "Questrial", sans-serif;
-  }
-
-  /* input box */
-
-  .cnt input {
-    padding: 1.25rem 1.5rem 0.75rem;
-    border: 0;
-    font-family: "Questrial", sans-serif;
-    border-radius: 0px;
-    border-bottom: 1px solid rgb(150, 150, 150);
-    font-size: 16px;
-    width: 100%;
-    outline: none;
-    background-color: black;
-    color: white;
+    height: 20%;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.171);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
   }
 
   .contact-right {
-    width: 80vw;
-    height: 80vh;
+    width: 100%;
+    height: auto;
     padding-bottom: 50px;
   }
 
+  .contact-form {
+    width: 80%;
+  }
+
+  .cnt input {
+    width: 100%;
+  }
+
   .wrapper {
-    height: 100%;
-    width: 100vw;
-    position: absolute;
-    align-content: center;
-    background-color: black;
-    background-size: cover;
-    font-family: "Monument Extended Regular";
     padding-bottom: 100px;
   }
 
-  .logo {
-    width: 50vw;
-    height: 11vh;
-    display: flex;
-    align-items: center;
-    font-family: "Monument Extended Regular";
-    font-weight: bolder;
-    color: white;
+  .nav-left {
+    margin-left: 25px;
   }
 
   .socialul {
-    width: 50vw;
     margin-right: 25px;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  /* menu pages */
-
-  .site-menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: "Questrial", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2.7px;
-    height: 11vh;
-  }
-
-  .site-menu span {
-    position: relative;
-    display: inline-block;
-  }
-
-  .first-social {
-    height: 6vh;
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .socialul ul {
-    height: 6vh;
-    display: flex;
-    margin: 0;
-    justify-content: space-between;
-    align-items: center;
-    text-transform: uppercase;
-    color: white;
-    font-family: "Questrial", sans-serif;
-    letter-spacing: 3px;
-  }
-
-  .nav-left {
-    width: 50vw;
-    height: 11vh;
-    margin-left: 25px;
-  }
-
-  .first-page-footer {
-    display: flex;
-    width: 50vw;
-    height: 6vh;
-    align-items: center;
-    font-family: "Monument Extended Regular";
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-left: 25px;
-  }
-
-  #box1,
-  #box2,
-  #box3,
-  #box4,
-  #box5,
-  #box6 {
-    font-size: 8vw;
   }
 }
 
-/* this is for intro text */
-
 @media only screen and (max-width: 400px) {
-  .intro-text {
+  .intro-container {
+    justify-content: center;
+  }
+
+  .text-wrapper {
     margin-top: 45vh;
-    text-align: left;
   }
 }
 
@@ -2201,312 +1665,16 @@ ul {
   }
 }
 
-/* full screen */
-
-.md-modal {
-  margin-left: auto;
-  margin-right: 200px;
-  max-width: 775px;
-  position: fixed;
-  height: 600px;
-  z-index: 10;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-/* modal effect */
-
-.md-show {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-/* color effect */
-
-.md-effect-12 .md-content {
-  background-color: black;
-}
-
-/* text box modal */
-
-.container-text {
-  margin-top: 230px;
-  height: 100px;
-  display: inline;
-  color: white;
-  font-family: "Monument Extended Regular";
-}
-
-/* content */
-
-.container-text > .txt {
-  font-size: 40px;
-}
-
-/* bye text */
-
-.container-text > .txt-1 {
-  font-size: 20px;
-  line-height: 30px;
-}
-
-/* gif modal */
-
-.giffy {
-  width: 100%;
-  height: 100%;
-}
-
-/* gif image */
-
-.giffy img {
-  margin-bottom: 200px;
-  width: 100%;
-  height: 100%;
-}
-
-.m-consist-button {
-  margin-top: 35px;
-}
-
-/* button effect start*/
-
-.m-container {
-  position: relative;
-}
-
-.m-button {
-  all: unset;
-}
-
-/* box of button */
-
-.m-button {
-  font-size: 1rem;
-  letter-spacing: 2px;
-  padding: 13px 50px;
-  border-radius: 999px;
-  border: 1px solid white;
-  text-transform: uppercase;
-  font-family: "Monument Extended Regular";
-  color: #fcf9f6;
-  cursor: pointer;
-}
-
-/* text */
-
-.m-button-text {
-  position: relative;
-}
-
-/* background bebow */
-
-/* button animation */
-
-.m-foreground-text {
-  position: absolute;
-  inset: 1px;
-  transform: translateY(0px);
-}
-
-/* span */
-
-.m-button::before {
-  content: "";
-  position: absolute;
-  inset: 2px;
-  background-color: black;
-  border-radius: inherit;
-}
-
-/* button background */
-
-.m-button::after {
-  content: "";
-  position: absolute;
-  inset: 2px;
-  border-radius: inherit;
-}
-
-/* span effect */
-
-.m-button:hover::after {
-  background-color: #fcf9f6;
-}
-
-/* text color while hovering */
-
-.m-button:hover .m-foreground-text {
-  color: black;
-}
-
-/* the span button */
-
-.m-button:hover .m-foreground-text {
-  transform: translateY(-32px);
-}
-
-/* end */
-
-.m-button-text {
-  position: relative;
-  z-index: 2;
-}
-
-.md-overlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  display: none;
-}
-
-/* width */
-
-.md-modal {
-  margin-top: 75px;
-  width: 50vw;
-}
-
-/* bg-color */
-
-.md-content {
-  height: 600px;
-  PADDING: 30px;
-}
-
-/* cursor */
-
-.cursor {
-  pointer-events: none;
-  position: fixed;
-  padding: 29px;
-  border-radius: 50%;
-  mix-blend-mode: difference;
-  z-index: 1000;
-}
-
-.cursor {
-  height: 30px;
-  width: 30px;
-  background-color: transparent;
-  border-radius: 50%;
-  box-shadow: 0 0 0 1px white;
-}
-
-/* when hover */
-
-.hover-this:hover ~ .cursor {
-  transform: translate(-50%, -50%) scale(8);
-}
-
-/* endless animation text */
-
-.wrapper {
-  min-height: 100%;
-  min-width: 100%;
-  position: absolute;
-  align-content: center;
-  background-color: black;
-  background-size: cover;
-  font-family: "Monument Extended Regular";
-}
-
-.circular-text {
-  width: 100%;
-  position: relative;
-  font-family: "Questrial", sans-serif;
-  color: white;
-  text-transform: uppercase;
-  font-size: 10px;
-  letter-spacing: 2px;
-  animation: rotate 10s linear infinite;
-}
-
-@keyframes rotate {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.row {
-  margin-top: 5px;
-  margin-left: 2px;
-  display: inline-block;
-  text-align: center;
-}
-
-/* end */
-
-
-/* === COLOR OVERRIDES ONLY – SAFE THEME TWEAKS === */
-
-/* Slightly richer dark background */
-body {
-  background-color: #020617; /* deep navy instead of flat black */
-}
-
-/* keep section backgrounds coherent */
-.contain-about,
-.contain-contact,
-.about {
-  background-color: #020617;
-}
-
-/* Headings and main text tones */
-.hi1,
-.about-line,
-.name,
-.contact-heading {
-  color: #e5e7eb; /* soft near-white */
-}
-
-.about-line-1 p,
-.contact-caption,
-.pr-text {
-  color: #9ca3af; /* neutral grey for long text */
-}
-
-/* Project section labels */
-.project-heading {
-  color: #38bdf8; /* cyan accent */
-}
-
-/* Grid letters (HELLO / PROJECTS / CONTACT) */
-.about-letter,
-.project-about-letter,
-.contact-about-letter {
-  color: #64748b; /* slate grey */
-}
-
-/* Buttons & CTA styling */
-.git,
-.about-button,
-.button,
-.m-button {
-  border-color: #38bdf8; /* cyan border */
-}
-
-/* Git buttons hover */
-.git:hover {
-  background: linear-gradient(120deg, #38bdf8, #ec4899);
-  color: #020617;
-  border-color: transparent;
-}
-
-/* Form + modal buttons hover background */
-.button:hover::after,
-.m-button:hover::after {
-  background: linear-gradient(120deg, #38bdf8, #ec4899);
-}
-
-/* Form + modal buttons text on hover */
-.button:hover .foreground-text,
-.m-button:hover .m-foreground-text {
-  color: #020617;
-}
-
-/* Custom cursor outline accent */
-.cursor {
-  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.9);
+/* === Subtle glassmorphism accents (visual only, no layout changes) === */
+.about-line-1,
+.ct,
+.ct-2,
+.pr1-left,
+.pr2-right,
+.left_box {
+  background: rgba(15, 23, 42, 0.7);
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
