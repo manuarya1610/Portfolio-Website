@@ -3,160 +3,308 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manu Arya - Data Engineer</title>
+    <title>Manu Arya | Data Engineer & Creative Developer</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link
-      href="https://db.onlinewebfonts.com/c/99501fdab737541e9315ceaf9229370f?family=Monument+Extended+Regular"
-      rel="stylesheet"
-    />
-    <link
-      href="https://db.onlinewebfonts.com/c/55d433372d270829c51e2577a78ef12d?family=Monument+Extended+Bold"
-      rel="stylesheet"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.10.2/dist/gsap.min.js"></script>
   </head>
   <body>
-    <!-- Neural Network Background -->
-    <div class="neural-bg">
-      <div class="floating-element" style="top: 10%; left: 10%"></div>
-      <div
-        class="floating-element"
-        style="top: 60%; right: 10%; animation-delay: -5s"
-      ></div>
-    </div>
-
-    <!-- Cursor Trail -->
-    <div class="cursor-trail"></div>
-
-    <!-- Intro Animation -->
-    <div class="consist-intro">
-      <div class="intro-container">
-        <div class="text-wrapper">
-          <div class="text">TRANSFORMING DATA</div>
-          <div class="text" style="animation-delay: 0.2s">
-            INTO INTELLIGENCE
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-dot"></div>
 
     <!-- Navigation -->
     <nav class="navbar">
-      <div class="logo">MANU ARYA</div>
-      <div class="site-menu">
-        <a href="#home" class="menu-item">Home</a>
-        <a href="#about" class="menu-item">About</a>
-        <a href="#projects" class="menu-item">Projects</a>
-        <a href="#contact" class="menu-item">Contact</a>
-      </div>
+      <a href="#" class="logo">Manu Arya</a>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#expertise" class="nav-link">Expertise</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="first-page">
-      <div class="hero-content">
-        <h1 class="hero-title">
-          DATA ENGINEER<br />
-          & CREATIVE DEVELOPER
-        </h1>
-        <p class="hero-subtitle">
-          Building intelligent data pipelines and crafting beautiful digital
-          experiences. Where engineering meets artistry in the world of ones and
-          zeros.
-        </p>
-        <div class="hero-cta">
-          <a href="#projects" class="project-link"
-            >Explore My Work <i class="fas fa-arrow-right"></i
-          ></a>
-          <a
-            href="#contact"
-            class="project-link"
-            style="background: transparent; color: var(--neon-magenta)"
-            >Get In Touch</a
-          >
+    <section id="home" class="hero">
+      <div class="hero-bg"></div>
+      <div class="parallax-layer parallax-1 floating" data-speed="0.2"></div>
+      <div
+        class="parallax-layer parallax-2 floating"
+        data-speed="0.3"
+        style="animation-delay: -2s"
+      ></div>
+
+      <div class="container">
+        <div class="hero-content fade-in">
+          <h1 class="display-1 hero-title">
+            <span class="text-gradient">Data Engineer</span><br />
+            & Creative Developer
+          </h1>
+          <p class="hero-subtitle">
+            I transform complex data challenges into elegant solutions, building
+            bridges between raw information and meaningful insights. Where
+            engineering precision meets creative expression.
+          </p>
+          <div class="hero-cta">
+            <a
+              href="#projects"
+              class="submit-btn"
+              style="display: inline-flex; align-items: center; gap: 0.5rem"
+            >
+              <span>Explore My Work</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
         </div>
+      </div>
+
+      <div class="hero-scroll">
+        <span>Scroll to explore</span>
+        <div class="scroll-line"></div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="contain-about">
-      <div class="about">
-        <div class="about-text">
-          <span class="about-tag">DATA ENGINEERING</span>
-          <h2>Crafting the Digital Nervous System</h2>
-          <p>
-            I build the invisible architecture that makes data useful. Think of
-            me as a digital plumber, but instead of water, I move petabytes of
-            information through elegant pipelines.
-          </p>
+    <section id="about" class="about">
+      <div
+        class="parallax-layer parallax-3 floating"
+        data-speed="0.4"
+        style="animation-delay: -1s"
+      ></div>
 
-          <div class="data-engineering-quote">
-            <p class="quote-text">
-              "Data engineers don't just move data – we build the highways,
-              traffic systems, and logistics networks for the information age."
-            </p>
-            <span class="quote-author">— Me, probably</span>
+      <div class="container">
+        <div class="about-grid fade-in">
+          <div class="about-image">
+            <div class="about-img-container glass">
+              <!-- Placeholder for image -->
+              <div
+                class="about-img"
+                style="background: linear-gradient(45deg, #1a1a1a, #2a2a2a)"
+              ></div>
+            </div>
           </div>
-
-          <p>
-            When I'm not wrangling massive datasets or optimizing ETL processes,
-            I'm designing interfaces that make complex data feel human. I
-            believe the most beautiful code is the one nobody notices.
-          </p>
-
-          <div class="skills-visual">
-            <div class="skill-item">
-              <span class="skill-icon">⚡</span>
-              <span class="skill-name">Real-time Processing</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-icon">🔗</span>
-              <span class="skill-name">Data Pipelines</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-icon">☁️</span>
-              <span class="skill-name">Cloud Infrastructure</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-icon">📊</span>
-              <span class="skill-name">Data Visualization</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-icon">🎨</span>
-              <span class="skill-name">UI/UX Design</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-icon">🤖</span>
-              <span class="skill-name">AI Integration</span>
+          <div class="about-content">
+            <span class="section-label">About Me</span>
+            <h2 class="display-2" style="margin-bottom: 2rem">
+              Building the <span class="text-gradient">Digital Future</span>
+            </h2>
+            <p class="about-text">
+              I'm a Data Engineer with a passion for creating systems that not
+              only work efficiently but also tell compelling stories. I believe
+              data is the new canvas, and code is my brush.
+            </p>
+            <p class="about-text">
+              With experience in building scalable data pipelines, designing
+              robust architectures, and crafting beautiful interfaces, I bridge
+              the gap between complex backend systems and intuitive user
+              experiences.
+            </p>
+            <p class="about-text">
+              When I'm not wrangling petabytes or optimizing queries, you'll
+              find me experimenting with new frameworks, contributing to
+              open-source projects, or exploring the intersection of data and
+              design.
+            </p>
+            <div style="margin-top: 3rem">
+              <a href="#contact" class="submit-btn">Let's Connect</a>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="about-visual">
-          <!-- Will add an animated data flow visualization here -->
+    <!-- Expertise Section -->
+    <section id="expertise" class="expertise">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Expertise</span>
+          <h2 class="display-2 section-title">Core Competencies</h2>
+          <p class="section-subtitle">
+            Where data engineering meets creative problem-solving
+          </p>
+        </div>
+
+        <div class="expertise-grid">
+          <div class="expertise-card glass hover-lift fade-in">
+            <div class="expertise-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3 class="expertise-title">Data Engineering</h3>
+            <p class="expertise-desc">
+              Building scalable ETL pipelines, data warehouses, and real-time
+              processing systems that handle millions of events daily.
+            </p>
+          </div>
+
           <div
-            style="
-              height: 500px;
-              background: rgba(255, 255, 255, 0.03);
-              border-radius: 20px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            "
+            class="expertise-card glass hover-lift fade-in"
+            style="animation-delay: 0.1s"
           >
-            <div style="text-align: center">
-              <div style="font-size: 4rem; margin-bottom: 1rem">📊→🔄→🚀</div>
+            <div class="expertise-icon">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <h3 class="expertise-title">Cloud Architecture</h3>
+            <p class="expertise-desc">
+              Designing and implementing cloud-native solutions on AWS, GCP, and
+              Azure with focus on scalability and cost optimization.
+            </p>
+          </div>
+
+          <div
+            class="expertise-card glass hover-lift fade-in"
+            style="animation-delay: 0.2s"
+          >
+            <div class="expertise-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="expertise-title">Data Visualization</h3>
+            <p class="expertise-desc">
+              Creating interactive dashboards and visualizations that transform
+              complex data into actionable insights and compelling narratives.
+            </p>
+          </div>
+
+          <div
+            class="expertise-card glass hover-lift fade-in"
+            style="animation-delay: 0.3s"
+          >
+            <div class="expertise-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="expertise-title">Full-Stack Development</h3>
+            <p class="expertise-desc">
+              Crafting beautiful, performant web applications with modern
+              frameworks and best practices in both frontend and backend.
+            </p>
+          </div>
+
+          <div
+            class="expertise-card glass hover-lift fade-in"
+            style="animation-delay: 0.4s"
+          >
+            <div class="expertise-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3 class="expertise-title">ML Engineering</h3>
+            <p class="expertise-desc">
+              Implementing machine learning models into production systems with
+              proper monitoring, versioning, and scalability.
+            </p>
+          </div>
+
+          <div
+            class="expertise-card glass hover-lift fade-in"
+            style="animation-delay: 0.5s"
+          >
+            <div class="expertise-icon">
+              <i class="fas fa-palette"></i>
+            </div>
+            <h3 class="expertise-title">UI/UX Design</h3>
+            <p class="expertise-desc">
+              Designing intuitive user interfaces and experiences that make
+              complex data accessible and engaging for everyone.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <div class="projects-header fade-in">
+          <div class="projects-title">
+            <span class="section-label">Featured Work</span>
+            <h2 class="display-2">Selected Projects</h2>
+          </div>
+          <div class="projects-nav">
+            <button class="project-btn" id="prev-project">
+              <i class="fas fa-arrow-left"></i>
+            </button>
+            <button class="project-btn" id="next-project">
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-card glass fade-in">
+            <div
+              class="project-image"
+              style="background: linear-gradient(45deg, #1a1a1a, #2d2d2d)"
+            ></div>
+            <div class="project-overlay">
+              <span class="project-category">Data Pipeline</span>
+              <h3 class="project-name">Real-time Analytics Platform</h3>
+              <div class="project-tags">
+                <span class="project-tag">Apache Spark</span>
+                <span class="project-tag">Kafka</span>
+                <span class="project-tag">AWS</span>
+                <span class="project-tag">Python</span>
+              </div>
               <p
-                style="
-                  color: rgba(255, 255, 255, 0.6);
-                  font-family: 'Monument Extended Regular';
-                "
+                class="project-desc"
+                style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem"
               >
-                Data in → Magic happens → Insights out
+                A scalable platform processing 1M+ events daily with real-time
+                analytics and automated monitoring.
+              </p>
+            </div>
+          </div>
+
+          <div class="project-card glass fade-in" style="animation-delay: 0.1s">
+            <div
+              class="project-image"
+              style="background: linear-gradient(45deg, #2a1a2a, #3d2a3d)"
+            ></div>
+            <div class="project-overlay">
+              <span class="project-category">Web Application</span>
+              <h3 class="project-name">Interactive Data Dashboard</h3>
+              <div class="project-tags">
+                <span class="project-tag">React</span>
+                <span class="project-tag">D3.js</span>
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">MongoDB</span>
+              </div>
+              <p
+                class="project-desc"
+                style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem"
+              >
+                A dynamic dashboard visualizing complex datasets with
+                interactive charts and real-time updates.
+              </p>
+            </div>
+          </div>
+
+          <div class="project-card glass fade-in" style="animation-delay: 0.2s">
+            <div
+              class="project-image"
+              style="background: linear-gradient(45deg, #1a2a2a, #2a3d3d)"
+            ></div>
+            <div class="project-overlay">
+              <span class="project-category">Cloud Infrastructure</span>
+              <h3 class="project-name">Scalable Data Warehouse</h3>
+              <div class="project-tags">
+                <span class="project-tag">AWS Redshift</span>
+                <span class="project-tag">Airflow</span>
+                <span class="project-tag">Terraform</span>
+                <span class="project-tag">Python</span>
+              </div>
+              <p
+                class="project-desc"
+                style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem"
+              >
+                A cloud-native data warehouse solution reducing query times by
+                85% with automated ETL processes.
               </p>
             </div>
           </div>
@@ -164,166 +312,79 @@
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="project-container-main">
-      <h2 class="section-title">Featured Projects</h2>
-
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <div class="project-card">
-          <span class="project-number">01</span>
-          <h3 class="project-title">Intelligent Data Pipeline</h3>
-          <p class="project-description">
-            A real-time data processing system that handles millions of events
-            daily. Built with Apache Spark and Kafka, featuring automated
-            monitoring and self-healing capabilities.
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">Apache Spark</span>
-            <span class="tech-tag">Kafka</span>
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Airflow</span>
-          </div>
-          <div class="project-links">
-            <a
-              href="https://github.com/manuarya1610/Data-Pipeline"
-              class="project-link"
-            >
-              <i class="fab fa-github"></i> Code
-            </a>
-            <a href="#" class="project-link">
-              <i class="fas fa-external-link-alt"></i> Case Study
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-card">
-          <span class="project-number">02</span>
-          <h3 class="project-title">AI-Powered Analytics Dashboard</h3>
-          <p class="project-description">
-            An interactive dashboard that transforms raw data into actionable
-            insights using machine learning models. Features real-time
-            visualization and predictive analytics.
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">D3.js</span>
-            <span class="tech-tag">TensorFlow</span>
-            <span class="tech-tag">FastAPI</span>
-          </div>
-          <div class="project-links">
-            <a
-              href="https://github.com/manuarya1610/AI-Dashboard"
-              class="project-link"
-            >
-              <i class="fab fa-github"></i> Code
-            </a>
-            <a href="#" class="project-link">
-              <i class="fas fa-external-link-alt"></i> Live Demo
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-card">
-          <span class="project-number">03</span>
-          <h3 class="project-title">Cloud Data Warehouse</h3>
-          <p class="project-description">
-            A scalable data warehouse solution on AWS, featuring automated ETL
-            processes, data quality checks, and cost optimization. Reduced query
-            times by 85%.
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">AWS</span>
-            <span class="tech-tag">Redshift</span>
-            <span class="tech-tag">Glue</span>
-            <span class="tech-tag">S3</span>
-          </div>
-          <div class="project-links">
-            <a
-              href="https://github.com/manuarya1610/Cloud-Data-Warehouse"
-              class="project-link"
-            >
-              <i class="fab fa-github"></i> Code
-            </a>
-            <a href="#" class="project-link">
-              <i class="fas fa-external-link-alt"></i> Architecture
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Contact Section -->
-    <section id="contact" class="consist-contact">
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h2 class="contact-title">Let's Build Something Amazing</h2>
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact-wrapper fade-in">
+          <span class="section-label">Get In Touch</span>
+          <h2 class="display-2 contact-title">
+            Let's Build Something Together
+          </h2>
           <p class="contact-subtitle">
-            Have a data challenge that needs solving? Want to collaborate on an
-            innovative project? Or just want to chat about tech over virtual
-            coffee?
+            Have a project in mind? Want to collaborate or just say hello? I'd
+            love to hear from you.
           </p>
 
-          <div class="social-links">
-            <a href="https://linkedin.com/in/manuaryaddn" class="social-icon">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://github.com/manuarya1610" class="social-icon">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="mailto:hello@manuarya.com" class="social-icon">
-              <i class="fas fa-envelope"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fas fa-file-alt"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="contact-form">
-          <form action="https://formspree.io/f/meqdpngy" method="POST">
+          <form class="contact-form" id="contact-form">
             <div class="form-group">
-              <label class="form-label">What should I call you?</label>
               <input
                 type="text"
-                name="name"
                 class="form-input"
-                placeholder="Your name"
+                placeholder="Your Name"
                 required
               />
             </div>
-
             <div class="form-group">
-              <label class="form-label">Where can I reach you?</label>
               <input
                 type="email"
-                name="email"
                 class="form-input"
-                placeholder="Your email"
+                placeholder="Your Email"
                 required
               />
             </div>
-
             <div class="form-group">
-              <label class="form-label">What's on your mind?</label>
               <textarea
-                name="message"
                 class="form-input"
                 rows="5"
-                placeholder="Your message..."
+                placeholder="Your Message"
                 required
               ></textarea>
             </div>
-
             <button type="submit" class="submit-btn">
-              <i class="fas fa-paper-plane"></i> Send Message
+              Send Message
+              <i class="fas fa-paper-plane" style="margin-left: 0.5rem"></i>
             </button>
           </form>
+
+          <div class="social-links">
+            <a href="https://linkedin.com/in/manuaryaddn" class="social-link">
+              <i class="fab fa-linkedin-in"></i> LinkedIn
+            </a>
+            <a href="https://github.com/manuarya1610" class="social-link">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="mailto:hello@manuarya.com" class="social-link">
+              <i class="fas fa-envelope"></i> Email
+            </a>
+            <a href="#" class="social-link">
+              <i class="fas fa-file-alt"></i> Resume
+            </a>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p class="footer-text">
+          © 2024 Manu Arya. All rights reserved.<br />
+          Crafted with
+          <i class="fas fa-heart" style="color: var(--accent-pink)"></i> and
+          endless coffee.
+        </p>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
   </body>

@@ -1,159 +1,231 @@
-// Wait for page to load
-$(document).ready(function () {
-  // Remove intro after animation
-  setTimeout(() => {
-    $(".consist-intro").remove();
-  }, 3500);
+// Custom Cursor
+const cursor = document.querySelector(".custom-cursor");
+const cursorDot = document.querySelector(".cursor-dot");
 
-  // Cursor trail effect
-  const cursorTrail = document.querySelector(".cursor-trail");
-  let mouseX = 0,
-    mouseY = 0;
-  let trailX = 0,
-    trailY = 0;
+document.addEventListener("mousemove", (e) => {
+  cursor.style.transform = `translate(${e.clientX - 10}px, ${
+    e.clientY - 10
+  }px)`;
+  cursorDot.style.transform = `translate(${e.clientX - 2}px, ${
+    e.clientY - 2
+  }px)`;
+});
 
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+document.addEventListener("mousedown", () => {
+  cursor.style.transform += " scale(0.8)";
+});
+
+document.addEventListener("mouseup", () => {
+  cursor.style.transform = cursor.style.transform.replace(" scale(0.8)", "");
+});
+
+// Parallax Effect
+function initParallax() {
+  const parallaxLayers = document.querySelectorAll(".parallax-layer");
+
+  window.addEventListener("scroll", () => {
+    const scrolled = window.pageYOffset;
+
+    parallaxLayers.forEach((layer) => {
+      const speed = layer.getAttribute("data-speed") || 0.5;
+      const yPos = -(scrolled * speed);
+      layer.style.transform = `translateY(${yPos}px)`;
+    });
   });
+}
 
-  function animateTrail() {
-    trailX += (mouseX - trailX) * 0.1;
-    trailY += (mouseY - trailY) * 0.1;
+// Fade-in Animation on Scroll
+function initScrollAnimations() {
+  const fadeElements = document.querySelectorAll(".fade-in");
 
-    cursorTrail.style.left = trailX - 10 + "px";
-    cursorTrail.style.top = trailY - 10 + "px";
-    cursorTrail.style.opacity = "0.7";
-
-    requestAnimationFrame(animateTrail);
-  }
-
-  animateTrail();
-
-  // Smooth scrolling for navigation
-  $('a[href^="#"]').on("click", function (e) {
-    e.preventDefault();
-    const target = $(this.getAttribute("href"));
-    if (target.length) {
-      $("html, body").animate(
-        {
-          scrollTop: target.offset().top - 80,
-        },
-        1000
-      );
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
     }
+  );
+
+  fadeElements.forEach((element) => {
+    observer.observe(element);
   });
+}
 
-  // Animate project cards on scroll
-  function animateOnScroll() {
-    const cards = document.querySelectorAll(".project-card");
-    cards.forEach((card) => {
-      const cardTop = card.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
+// Project Navigation
+function initProjectNavigation() {
+  const prevBtn = document.getElementById("prev-project");
+  const nextBtn = document.getElementById("next-project");
+  const projectCards = document.querySelectorAll(".project-card");
+  let currentIndex = 0;
 
-      if (cardTop < windowHeight * 0.8) {
+  function updateProjects() {
+    projectCards.forEach((card, index) => {
+      card.style.opacity = "0.5";
+      card.style.transform = "scale(0.95)";
+
+      if (index === currentIndex) {
         card.style.opacity = "1";
-        card.style.transform = "translateY(0)";
+        card.style.transform = "scale(1)";
       }
     });
   }
 
-  // Initialize cards as hidden
-  $(".project-card").each(function () {
-    $(this).css({
-      opacity: "0",
-      transform: "translateY(30px)",
-    });
+  prevBtn.addEventListener("click", () => {
+    currentIndex =
+      (currentIndex - 1 + projectCards.length) % projectCards.length;
+    updateProjects();
   });
 
-  // Check on scroll and load
-  animateOnScroll();
-  window.addEventListener("scroll", animateOnScroll);
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % projectCards.length;
+    updateProjects();
+  });
 
-  // Form submission handling
-  $("form").on("submit", function (e) {
+  // Initialize
+  updateProjects();
+}
+
+// Form Submission
+function initForm() {
+  const form = document.getElementById("contact-form");
+  const submitBtn = form.querySelector(".submit-btn");
+  const originalText = submitBtn.innerHTML;
+
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const form = $(this);
-    const submitBtn = form.find('button[type="submit"]');
-    const originalText = submitBtn.html();
 
-    submitBtn.html('<i class="fas fa-spinner fa-spin"></i> Sending...');
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
 
-    // Simulate sending
+    // Simulate API call
     setTimeout(() => {
-      submitBtn.html('<i class="fas fa-check"></i> Sent!');
-      submitBtn.css(
-        "background",
-        "linear-gradient(90deg, var(--cyber-green), var(--neon-cyan))"
-      );
+      submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+      submitBtn.style.background =
+        "linear-gradient(90deg, var(--accent-green), var(--accent-cyan))";
 
       setTimeout(() => {
-        submitBtn.html(originalText);
-        submitBtn.css(
-          "background",
-          "linear-gradient(90deg, var(--neon-cyan), var(--ai-blue))"
-        );
-        form[0].reset();
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        submitBtn.style.background =
+          "linear-gradient(90deg, var(--accent-purple), var(--accent-cyan))";
+        form.reset();
       }, 2000);
     }, 1500);
   });
+}
 
-  // Parallax effect for floating elements
-  $(window).on("scroll", function () {
-    const scrolled = $(window).scrollTop();
-    $(".floating-element").each(function () {
-      const speed = $(this).data("speed") || 0.5;
-      const yPos = -(scrolled * speed);
-      $(this).css(
-        "transform",
-        `translate(0, ${yPos}px) rotate(${scrolled * 0.1}deg)`
-      );
+// Smooth Scrolling for Navigation Links
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute("href");
+      if (targetId === "#") return;
+
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: "smooth",
+        });
+      }
     });
   });
+}
 
-  // Generate neural nodes
-  function createNeuralNodes() {
-    const neuralBg = document.querySelector(".neural-bg");
-    for (let i = 0; i < 20; i++) {
-      const node = document.createElement("div");
-      node.className = "neural-node";
-      node.style.left = Math.random() * 100 + "%";
-      node.style.top = Math.random() * 100 + "%";
-      node.style.animationDelay = Math.random() * 20 + "s";
-      node.style.animationDuration = Math.random() * 10 + 15 + "s";
-      neuralBg.appendChild(node);
-    }
-  }
+// Typing Animation for Hero
+function initTypingAnimation() {
+  const heroSubtitle = document.querySelector(".hero-subtitle");
+  const text =
+    "I transform complex data challenges into elegant solutions, building bridges between raw information and meaningful insights. Where engineering precision meets creative expression.";
+  let index = 0;
 
-  createNeuralNodes();
-
-  // Add hover effect to skills
-  $(".skill-item").hover(function () {
-    const icon = $(this).find(".skill-icon");
-    const emojis = ["⚡", "🔗", "☁️", "📊", "🎨", "🤖"];
-    const current = icon.text();
-    const index = emojis.indexOf(current);
-    const next = emojis[(index + 1) % emojis.length];
-
-    // Quick animation
-    icon.css("transform", "scale(1.2)");
-    setTimeout(() => {
-      icon.css("transform", "scale(1)");
-    }, 200);
-  });
-
-  // Typewriter effect for hero subtitle
-  const heroText =
-    "Building intelligent data pipelines and crafting beautiful digital experiences. Where engineering meets artistry in the world of ones and zeros.";
-  let i = 0;
   function typeWriter() {
-    if (i < heroText.length) {
-      $(".hero-subtitle").text(heroText.substring(0, i + 1));
-      i++;
+    if (index < text.length) {
+      heroSubtitle.textContent = text.substring(0, index + 1);
+      index++;
       setTimeout(typeWriter, 30);
     }
   }
 
-  // Start typing after intro
-  setTimeout(typeWriter, 4000);
+  // Start typing after page loads
+  setTimeout(typeWriter, 1000);
+}
+
+// Mouse Move Gradient Effect
+function initMouseMoveEffect() {
+  const hero = document.querySelector(".hero");
+
+  document.addEventListener("mousemove", (e) => {
+    const x = e.clientX / window.innerWidth;
+    const y = e.clientY / window.innerHeight;
+
+    hero.style.setProperty("--mouse-x", x);
+    hero.style.setProperty("--mouse-y", y);
+  });
+}
+
+// Initialize Everything
+document.addEventListener("DOMContentLoaded", () => {
+  initParallax();
+  initScrollAnimations();
+  initProjectNavigation();
+  initForm();
+  initSmoothScroll();
+  initTypingAnimation();
+  initMouseMoveEffect();
+
+  // Add CSS variables for mouse effect
+  const style = document.createElement("style");
+  style.textContent = `
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                circle at calc(var(--mouse-x, 0.5) * 100%) calc(var(--mouse-y, 0.5) * 100%),
+                rgba(138, 43, 226, 0.15) 0%,
+                transparent 50%
+            );
+            transition: background 0.3s ease;
+            z-index: -1;
+        }
+    `;
+  document.head.appendChild(style);
+});
+
+// Add some interactive effects to project cards
+document.addEventListener("DOMContentLoaded", () => {
+  const projectCards = document.querySelectorAll(".project-card");
+
+  projectCards.forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateY = (x - centerX) / 25;
+      const rotateX = (centerY - y) / 25;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform =
+        "perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
+    });
+  });
 });
