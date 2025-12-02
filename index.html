@@ -1,40 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark-theme">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manu Arya — Award-Winning Portfolio</title>
+    <title>Manu Arya — Digital Alchemist</title>
 
-    <!-- Meta for Awards -->
+    <!-- Meta for Awwards -->
     <meta
       name="description"
-      content="Award-winning portfolio showcasing innovative web design and development by Manu Arya."
+      content="Award-winning portfolio fusing technology with art - Crafting immersive digital experiences that tell compelling stories."
     />
     <meta
       name="keywords"
-      content="portfolio, web design, developer, creative, award-winning, awwards"
-    />
-    <meta name="author" content="Manu Arya" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Manu Arya — Award-Winning Portfolio" />
-    <meta
-      property="og:description"
-      content="Sophisticated portfolio with cutting-edge web design techniques."
+      content="awwards, digital designer, creative developer, webgl, threejs, interactive design"
     />
     <meta
       property="og:image"
-      content="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      content="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
     />
-    <meta property="og:url" content="https://manuarya1610.github.io" />
 
     <!-- Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />
     <link
       href="https://fonts.cdnfonts.com/css/clash-display"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -48,251 +40,467 @@
     <!-- Favicon -->
     <link
       rel="icon"
-      type="image/x-icon"
-      href="https://manuarya1610.github.io/favicon.ico"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>"
     />
+
+    <style>
+      /* Initial loading state */
+      body:not(.loaded) * {
+        opacity: 0 !important;
+      }
+    </style>
   </head>
   <body>
-    <!-- Preloader -->
-    <div class="preloader">
-      <div class="loader">
-        <div class="loader-circle"></div>
-        <div class="loader-circle"></div>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+      <div class="theme-switch">
+        <div class="theme-icon">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+        </div>
+        <span class="theme-text">Dark Mode</span>
       </div>
     </div>
 
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+    <!-- Audio Player -->
+    <div class="audio-player">
+      <div class="audio-toggle">
+        <i class="fas fa-music"></i>
+        <div class="audio-wave">
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress Tracker -->
+    <div class="progress-tracker">
+      <div class="progress-line"></div>
+      <div class="progress-dots">
+        <div class="progress-dot active" data-section="hero">01</div>
+        <div class="progress-dot" data-section="about">02</div>
+        <div class="progress-dot" data-section="journey">03</div>
+        <div class="progress-dot" data-section="projects">04</div>
+        <div class="progress-dot" data-section="contact">05</div>
+      </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="cursor-circle"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-text"></div>
+
+    <!-- Loader -->
+    <div class="loader-container">
+      <div class="loader-wrapper">
+        <div class="loader-text">
+          <span class="loader-char">I</span>
+          <span class="loader-char">N</span>
+          <span class="loader-char">I</span>
+          <span class="loader-char">T</span>
+          <span class="loader-char">I</span>
+          <span class="loader-char">A</span>
+          <span class="loader-char">T</span>
+          <span class="loader-char">I</span>
+          <span class="loader-char">N</span>
+          <span class="loader-char">G</span>
+          <span class="loader-char">.</span>
+          <span class="loader-char">.</span>
+          <span class="loader-char">.</span>
+        </div>
+        <div class="loader-bar">
+          <div class="loader-progress"></div>
+        </div>
+        <div class="loader-quote">"Where code meets creativity"</div>
+      </div>
+    </div>
+
+    <!-- Background Elements -->
+    <div class="bg-grid"></div>
+    <div class="bg-noise"></div>
+    <div class="floating-elements">
+      <div class="floating-element el1"></div>
+      <div class="floating-element el2"></div>
+      <div class="floating-element el3"></div>
+      <div class="floating-element el4"></div>
+    </div>
 
     <!-- Navigation -->
-    <nav class="navbar glass">
-      <a href="#home" class="nav-logo">MA</a>
-
-      <ul class="nav-menu">
-        <li>
-          <a href="#home" class="nav-link"
-            ><span class="nav-number">01</span> Home</a
-          >
-        </li>
-        <li>
-          <a href="#about" class="nav-link"
-            ><span class="nav-number">02</span> About</a
-          >
-        </li>
-        <li>
-          <a href="#projects" class="nav-link"
-            ><span class="nav-number">03</span> Projects</a
-          >
-        </li>
-        <li>
-          <a href="#contact" class="nav-link"
-            ><span class="nav-number">04</span> Contact</a
-          >
-        </li>
-      </ul>
-
-      <div class="nav-cta">
-        <div class="nav-social">
-          <a
-            href="https://github.com/manuarya1610"
-            class="social-icon"
-            aria-label="GitHub"
-          >
-            <i class="fab fa-github"></i>
-          </a>
-          <a
-            href="https://linkedin.com/in/manuaryaddn"
-            class="social-icon"
-            aria-label="LinkedIn"
-          >
-            <i class="fab fa-linkedin-in"></i>
-          </a>
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <span class="logo-symbol">⚡</span>
+          <span class="logo-text">MANU ARYA</span>
         </div>
-        <a href="#contact" class="btn btn-primary">Let's Connect</a>
+
+        <div class="nav-center">
+          <div class="nav-orb">
+            <svg class="orb-svg" viewBox="0 0 100 100">
+              <path
+                class="orb-path"
+                d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+              ></path>
+              <text class="orb-text" text-anchor="middle" dy="0.35em">
+                <textPath href="#orb-path" startOffset="50%">
+                  CREATIVE DEVELOPER • DIGITAL STORYTELLER •
+                </textPath>
+              </text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="nav-menu">
+          <button class="nav-toggle">
+            <span class="nav-toggle-line"></span>
+            <span class="nav-toggle-line"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="nav-overlay">
+        <div class="nav-links">
+          <div class="nav-link-container" data-index="1">
+            <div class="nav-link-number">01</div>
+            <a href="#hero" class="nav-link">
+              <span class="nav-link-text">HOME</span>
+              <span class="nav-link-sub">Enter the void</span>
+            </a>
+          </div>
+          <div class="nav-link-container" data-index="2">
+            <div class="nav-link-number">02</div>
+            <a href="#about" class="nav-link">
+              <span class="nav-link-text">ABOUT</span>
+              <span class="nav-link-sub">The alchemist</span>
+            </a>
+          </div>
+          <div class="nav-link-container" data-index="3">
+            <div class="nav-link-number">03</div>
+            <a href="#journey" class="nav-link">
+              <span class="nav-link-text">JOURNEY</span>
+              <span class="nav-link-sub">Timeline</span>
+            </a>
+          </div>
+          <div class="nav-link-container" data-index="4">
+            <div class="nav-link-number">04</div>
+            <a href="#projects" class="nav-link">
+              <span class="nav-link-text">PROJECTS</span>
+              <span class="nav-link-sub">Portfolio</span>
+            </a>
+          </div>
+          <div class="nav-link-container" data-index="5">
+            <div class="nav-link-number">05</div>
+            <a href="#contact" class="nav-link">
+              <span class="nav-link-text">CONTACT</span>
+              <span class="nav-link-sub">Connect</span>
+            </a>
+          </div>
+        </div>
       </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="particles" id="particles-js"></div>
+    <section id="hero" class="hero-section">
+      <div class="hero-canvas" id="hero-canvas"></div>
 
       <div class="hero-content">
-        <div class="hero-intro">Hi, my name is</div>
+        <div class="hero-prelude">
+          <span class="hero-label pulse">DIGITAL ALCHEMIST</span>
+          <div class="hero-year">
+            <span class="year-number">2024</span>
+            <span class="year-line"></span>
+          </div>
+        </div>
 
-        <h1 class="hero-title display-1">
-          <span class="hero-title-line">
-            <span class="hero-title-text">Manu Arya</span>
-          </span>
-          <span class="hero-title-line">
-            <span class="hero-title-text">Creative Developer</span>
-          </span>
+        <h1 class="hero-title">
+          <div class="title-line">
+            <span class="title-word" data-word="MANU">MANU</span>
+          </div>
+          <div class="title-line">
+            <span class="title-word" data-word="ARYA">ARYA</span>
+          </div>
+          <div class="title-line">
+            <span class="title-sub">CRAFTING DIGITAL REALITIES</span>
+          </div>
         </h1>
 
-        <p class="hero-subtitle">
-          I craft exceptional digital experiences that blend innovative design
-          with cutting-edge technology. Currently pushing boundaries in web
-          development and interactive design.
-        </p>
-
-        <div class="hero-cta">
-          <a href="#projects" class="btn">View Projects</a>
-          <a href="#contact" class="btn btn-primary">Get In Touch</a>
+        <div class="hero-scroll">
+          <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <div class="scroll-text">BEGIN EXPLORATION</div>
+          </div>
         </div>
       </div>
 
-      <div class="scroll-indicator">
-        <div class="scroll-text">Scroll</div>
-        <div class="scroll-line"></div>
+      <div class="hero-grid">
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
-      <div class="about-content">
-        <div class="section-header">
-          <div class="section-label">About Me</div>
-          <h2 class="display-2">
-            Crafting Digital <span class="text-gradient">Experiences</span>
-          </h2>
-        </div>
-
-        <p>
-          I'm a passionate developer and designer with a keen eye for detail and
-          a love for creating immersive digital experiences. With expertise in
-          modern web technologies, I bridge the gap between stunning design and
-          robust functionality.
-        </p>
-
-        <p>
-          My approach combines technical precision with creative flair, ensuring
-          every project not only functions flawlessly but also tells a
-          compelling visual story. I believe in clean code, elegant design, and
-          meaningful interactions.
-        </p>
-
-        <div class="about-stats">
-          <div class="stat">
-            <span class="stat-number">50+</span>
-            <span class="stat-label">Projects</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">3+</span>
-            <span class="stat-label">Years Experience</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Satisfaction</span>
-          </div>
-        </div>
-
-        <div class="skill-tags">
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">Three.js</span>
-          <span class="skill-tag">GSAP</span>
-          <span class="skill-tag">Figma</span>
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">UI/UX</span>
-          <span class="skill-tag">WebGL</span>
-          <span class="skill-tag">CSS3</span>
-          <span class="skill-tag">HTML5</span>
-        </div>
+    <section id="about" class="about-section">
+      <div class="section-decorator">
+        <div class="decorator-line"></div>
+        <div class="decorator-text">01</div>
       </div>
 
-      <div class="about-visual">
-        <div class="floating-shapes">
-          <div class="shape shape-1"></div>
-          <div class="shape shape-2"></div>
-          <div class="shape shape-3"></div>
+      <div class="about-container">
+        <div class="about-intro">
+          <div class="intro-label">
+            <span>THE ALCHEMIST</span>
+            <div class="label-line"></div>
+          </div>
+          <h2 class="about-title">
+            <span class="title-part">Where</span>
+            <span class="title-part highlight">Code</span>
+            <span class="title-part">Meets</span>
+            <span class="title-part highlight">Creativity</span>
+          </h2>
+
+          <div class="about-stats">
+            <div class="stat-item">
+              <div class="stat-number" data-count="3">0</div>
+              <div class="stat-label">Years of Innovation</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="50">0</div>
+              <div class="stat-label">Projects Built</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="100">0</div>
+              <div class="stat-label">Cups of Coffee</div>
+            </div>
+          </div>
         </div>
-        <div class="about-image-container">
-          <div class="about-image"></div>
+
+        <div class="about-content">
+          <div class="content-block">
+            <p class="about-text">
+              I am a
+              <span class="text-highlight">digital alchemist</span> transforming
+              ideas into immersive experiences. My craft lies at the
+              intersection of cutting-edge technology and artistic vision,
+              creating digital realities that captivate and inspire.
+            </p>
+
+            <div class="skill-showcase">
+              <div class="skill-orb">
+                <div class="skill-name">WEBGL</div>
+                <div class="skill-level">
+                  <div class="level-bar" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-orb">
+                <div class="skill-name">THREE.JS</div>
+                <div class="skill-level">
+                  <div class="level-bar" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="skill-orb">
+                <div class="skill-name">GSAP</div>
+                <div class="skill-level">
+                  <div class="level-bar" style="width: 95%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual">
+            <div class="visual-container">
+              <div class="visual-element ve1"></div>
+              <div class="visual-element ve2"></div>
+              <div class="visual-element ve3"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="philosophy-grid">
+          <div class="philosophy-card">
+            <div class="card-icon">⚡</div>
+            <h3 class="card-title">Innovation First</h3>
+            <p class="card-text">
+              Pushing boundaries with bleeding-edge technology
+            </p>
+          </div>
+          <div class="philosophy-card">
+            <div class="card-icon">🎨</div>
+            <h3 class="card-title">Artistic Vision</h3>
+            <p class="card-text">
+              Every pixel tells a story, every interaction matters
+            </p>
+          </div>
+          <div class="philosophy-card">
+            <div class="card-icon">⚙️</div>
+            <h3 class="card-title">Technical Excellence</h3>
+            <p class="card-text">
+              Robust architecture meets elegant implementation
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-      <div class="section-header text-center">
-        <div class="section-label">Portfolio</div>
-        <h2 class="display-2">
-          Selected <span class="text-gradient">Projects</span>
+    <!-- Journey Timeline -->
+    <section id="journey" class="journey-section">
+      <div class="section-header">
+        <div class="header-label">
+          <span>THE ODYSSEY</span>
+          <div class="label-underline"></div>
+        </div>
+        <h2 class="section-title">
+          My Digital <span class="title-glow">Evolution</span>
         </h2>
-        <p class="hero-subtitle">
-          A curated selection of my recent work showcasing design and
-          development excellence.
+      </div>
+
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+
+        <div class="timeline-items">
+          <div class="timeline-item" data-year="2021">
+            <div class="item-marker">
+              <div class="marker-dot"></div>
+              <div class="marker-year">2021</div>
+            </div>
+            <div class="item-content">
+              <h3 class="item-title">The Awakening</h3>
+              <p class="item-desc">
+                First steps into web development. Built foundational projects
+                and discovered passion for interactive design.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-year="2022">
+            <div class="item-marker">
+              <div class="marker-dot"></div>
+              <div class="marker-year">2022</div>
+            </div>
+            <div class="item-content">
+              <h3 class="item-title">Mastering the Craft</h3>
+              <p class="item-desc">
+                Advanced into Three.js and WebGL. Created immersive experiences
+                and won first design awards.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-year="2023">
+            <div class="item-marker">
+              <div class="marker-dot"></div>
+              <div class="marker-year">2023</div>
+            </div>
+            <div class="item-content">
+              <h3 class="item-title">Breaking Boundaries</h3>
+              <p class="item-desc">
+                Pushed creative limits with complex animations and interactive
+                storytelling. Featured in design publications.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-year="2024">
+            <div class="item-marker">
+              <div class="marker-dot"></div>
+              <div class="marker-year">2024</div>
+            </div>
+            <div class="item-content">
+              <h3 class="item-title">Digital Alchemy</h3>
+              <p class="item-desc">
+                Crafting award-winning experiences that blend technology with
+                art. Pursuing excellence in every pixel.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Gallery -->
+    <section id="projects" class="projects-section">
+      <div class="projects-header">
+        <div class="projects-label">
+          <span>PORTFOLIO</span>
+          <div class="label-sparkle">✨</div>
+        </div>
+        <h2 class="projects-title">
+          Selected <span class="title-rotate">Creations</span>
+        </h2>
+        <p class="projects-subtitle">
+          Immersive experiences that push creative boundaries
         </p>
       </div>
 
       <div class="projects-grid">
         <!-- Project 1 -->
-        <div class="project-card glass">
-          <div
-            class="project-image"
-            style="
-              background-image: url('https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
-            "
-          ></div>
+        <div class="project-card" data-project="1">
+          <div class="project-preview">
+            <div class="preview-overlay">
+              <div class="preview-label">3D EXPERIENCE</div>
+              <div class="preview-glow"></div>
+            </div>
+            <div
+              class="project-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+              "
+            ></div>
+          </div>
           <div class="project-info">
-            <div class="project-year">2023</div>
-            <h3 class="project-title">Object Detection System</h3>
-            <p class="project-description">
-              Advanced computer vision system with real-time alert generation
-              and remote monitoring capabilities.
+            <div class="project-number">01</div>
+            <h3 class="project-name">Quantum Interface</h3>
+            <p class="project-desc">
+              Interactive 3D dashboard with real-time data visualization
             </p>
-            <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">OpenCV</span>
-              <span class="tech-tag">YOLO</span>
-              <span class="tech-tag">Flask</span>
+            <div class="project-tags">
+              <span class="project-tag">WebGL</span>
+              <span class="project-tag">Three.js</span>
+              <span class="project-tag">GSAP</span>
             </div>
             <div class="project-links">
-              <a
-                href="https://github.com/manuarya1610/Object-Detection-and-Alert-Generation"
-                class="project-link"
-                aria-label="GitHub"
-              >
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="#" class="project-link" aria-label="Live Demo">
-                <i class="fas fa-external-link-alt"></i>
+              <a href="#" class="project-link">
+                <span>View Case Study</span>
+                <i class="fas fa-arrow-right"></i>
               </a>
             </div>
           </div>
         </div>
 
         <!-- Project 2 -->
-        <div class="project-card glass">
-          <div
-            class="project-image"
-            style="
-              background-image: url('https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
-            "
-          ></div>
+        <div class="project-card" data-project="2">
+          <div class="project-preview">
+            <div class="preview-overlay">
+              <div class="preview-label">IMMERSIVE WEB</div>
+              <div class="preview-glow"></div>
+            </div>
+            <div
+              class="project-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+              "
+            ></div>
+          </div>
           <div class="project-info">
-            <div class="project-year">2023</div>
-            <h3 class="project-title">RTSP Video Streaming</h3>
-            <p class="project-description">
-              High-performance video streaming software with multi-source
-              support and real-time processing.
+            <div class="project-number">02</div>
+            <h3 class="project-name">Nexus Portal</h3>
+            <p class="project-desc">
+              Fullscreen immersive website with parallax scrolling
             </p>
-            <div class="project-tech">
-              <span class="tech-tag">C++</span>
-              <span class="tech-tag">QT</span>
-              <span class="tech-tag">OpenCV</span>
-              <span class="tech-tag">FFmpeg</span>
+            <div class="project-tags">
+              <span class="project-tag">Parallax</span>
+              <span class="project-tag">Canvas</span>
+              <span class="project-tag">ScrollMagic</span>
             </div>
             <div class="project-links">
-              <a
-                href="https://github.com/manuarya1610/RTSP-Video-Player"
-                class="project-link"
-                aria-label="GitHub"
-              >
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="#" class="project-link" aria-label="Live Demo">
+              <a href="#" class="project-link">
+                <span>Explore Live</span>
                 <i class="fas fa-external-link-alt"></i>
               </a>
             </div>
@@ -300,348 +508,327 @@
         </div>
 
         <!-- Project 3 -->
-        <div class="project-card glass">
-          <div
-            class="project-image"
-            style="
-              background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
-            "
-          ></div>
+        <div class="project-card" data-project="3">
+          <div class="project-preview">
+            <div class="preview-overlay">
+              <div class="preview-label">INTERACTIVE ART</div>
+              <div class="preview-glow"></div>
+            </div>
+            <div
+              class="project-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+              "
+            ></div>
+          </div>
           <div class="project-info">
-            <div class="project-year">2023</div>
-            <h3 class="project-title">Modern Website Template</h3>
-            <p class="project-description">
-              Elegant, responsive website template with sophisticated animations
-              and modern design patterns.
+            <div class="project-number">03</div>
+            <h3 class="project-name">Digital Cosmos</h3>
+            <p class="project-desc">
+              Generative art installation with particle systems
             </p>
-            <div class="project-tech">
-              <span class="tech-tag">HTML/CSS</span>
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">GSAP</span>
-              <span class="tech-tag">Responsive</span>
+            <div class="project-tags">
+              <span class="project-tag">Particles</span>
+              <span class="project-tag">Generative</span>
+              <span class="project-tag">GLSL</span>
             </div>
             <div class="project-links">
-              <a
-                href="https://github.com/manuarya1610/Community-Website-Template"
-                class="project-link"
-                aria-label="GitHub"
-              >
-                <i class="fab fa-github"></i>
-              </a>
-              <a
-                href="https://manant-devs.netlify.app"
-                class="project-link"
-                aria-label="Live Demo"
-              >
-                <i class="fas fa-external-link-alt"></i>
+              <a href="#" class="project-link">
+                <span>Experience Art</span>
+                <i class="fas fa-palette"></i>
               </a>
             </div>
           </div>
         </div>
 
         <!-- Project 4 -->
-        <div class="project-card glass">
-          <div
-            class="project-image"
-            style="
-              background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
-            "
-          ></div>
-          <div class="project-info">
-            <div class="project-year">2023</div>
-            <h3 class="project-title">Cocktails App</h3>
-            <p class="project-description">
-              Interactive cocktail recipe application with stunning UI/UX and
-              real-time API integration.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">API</span>
-              <span class="tech-tag">Styled Components</span>
-              <span class="tech-tag">Responsive</span>
+        <div class="project-card" data-project="4">
+          <div class="project-preview">
+            <div class="preview-overlay">
+              <div class="preview-label">AI INTEGRATION</div>
+              <div class="preview-glow"></div>
             </div>
-            <div class="project-links">
-              <a
-                href="https://github.com/manuarya1610/Cocktails-WebApp"
-                class="project-link"
-                aria-label="GitHub"
-              >
-                <i class="fab fa-github"></i>
-              </a>
-              <a
-                href="https://cocktails-arya-webapp.netlify.app"
-                class="project-link"
-                aria-label="Live Demo"
-              >
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
+            <div
+              class="project-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+              "
+            ></div>
           </div>
-        </div>
-
-        <!-- Project 5 -->
-        <div class="project-card glass">
-          <div
-            class="project-image"
-            style="
-              background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
-            "
-          ></div>
           <div class="project-info">
-            <div class="project-year">2023</div>
-            <h3 class="project-title">Dino Game</h3>
-            <p class="project-description">
-              Java-based game inspired by Google Chrome's Dino game with
-              enhanced features and smooth gameplay.
+            <div class="project-number">04</div>
+            <h3 class="project-name">Neural Interface</h3>
+            <p class="project-desc">
+              AI-powered dashboard with machine learning visualization
             </p>
-            <div class="project-tech">
-              <span class="tech-tag">Java</span>
-              <span class="tech-tag">Swing</span>
-              <span class="tech-tag">Game Dev</span>
-              <span class="tech-tag">OOP</span>
+            <div class="project-tags">
+              <span class="project-tag">AI/ML</span>
+              <span class="project-tag">D3.js</span>
+              <span class="project-tag">TensorFlow</span>
             </div>
             <div class="project-links">
-              <a
-                href="https://github.com/manuarya1610/Dino_Game"
-                class="project-link"
-                aria-label="GitHub"
-              >
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="#" class="project-link" aria-label="Live Demo">
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 6 -->
-        <div class="project-card glass">
-          <div
-            class="project-image"
-            style="
-              background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
-            "
-          ></div>
-          <div class="project-info">
-            <div class="project-year">2023</div>
-            <h3 class="project-title">Expense Tracker</h3>
-            <p class="project-description">
-              Comprehensive financial management web application with intuitive
-              UI and powerful analytics.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Chart.js</span>
-              <span class="tech-tag">Local Storage</span>
-              <span class="tech-tag">PWA</span>
-            </div>
-            <div class="project-links">
-              <a
-                href="https://github.com/manuarya1610/Expense-Tracker"
-                class="project-link"
-                aria-label="GitHub"
-              >
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="#" class="project-link" aria-label="Live Demo">
-                <i class="fas fa-external-link-alt"></i>
+              <a href="#" class="project-link">
+                <span>View Demo</span>
+                <i class="fas fa-brain"></i>
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="text-center mt-5">
-        <a href="https://github.com/manuarya1610" class="btn btn-primary"
-          >View All Projects</a
-        >
+      <div class="projects-cta">
+        <div class="cta-content">
+          <span class="cta-label">READY TO CREATE MAGIC?</span>
+          <a href="#contact" class="cta-button">
+            <span>Start a Project</span>
+            <div class="cta-arrow">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="contact-info">
-        <div class="section-header">
-          <div class="section-label">Get In Touch</div>
-          <h2 class="display-2">
-            Let's Create <span class="text-gradient">Together</span>
+    <section id="contact" class="contact-section">
+      <div class="contact-container">
+        <div class="contact-intro">
+          <div class="intro-sparkle">⚡</div>
+          <h2 class="contact-title">
+            <span>Let's Create</span>
+            <span class="title-glow">Something Amazing</span>
           </h2>
+          <p class="contact-subtitle">
+            Have a project in mind? Let's transform your vision into reality.
+          </p>
         </div>
 
-        <p>
-          Have an exciting project in mind? I'm always open to discussing new
-          opportunities, creative ideas, or opportunities to be part of your
-          vision.
-        </p>
+        <div class="contact-grid">
+          <div class="contact-form-container">
+            <form class="contact-form" id="contact-form">
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  required
+                />
+                <label for="name" class="form-label">
+                  <span class="label-text">Your Name</span>
+                  <span class="label-line"></span>
+                </label>
+              </div>
 
-        <div class="contact-methods">
-          <div class="contact-method glass">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <div class="contact-details">
-              <h4>Email</h4>
-              <p>manuarya1610@gmail.com</p>
-            </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  required
+                />
+                <label for="email" class="form-label">
+                  <span class="label-text">Email Address</span>
+                  <span class="label-line"></span>
+                </label>
+              </div>
+
+              <div class="form-group">
+                <select
+                  id="project-type"
+                  name="project-type"
+                  class="form-select"
+                  required
+                >
+                  <option value=""></option>
+                  <option value="web">Website Design</option>
+                  <option value="webgl">WebGL Experience</option>
+                  <option value="app">Web Application</option>
+                  <option value="other">Other</option>
+                </select>
+                <label for="project-type" class="form-label">
+                  <span class="label-text">Project Type</span>
+                  <span class="label-line"></span>
+                </label>
+              </div>
+
+              <div class="form-group">
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-textarea"
+                  required
+                ></textarea>
+                <label for="message" class="form-label">
+                  <span class="label-text">Your Vision</span>
+                  <span class="label-line"></span>
+                </label>
+              </div>
+
+              <button type="submit" class="submit-button">
+                <span class="button-text">Send Message</span>
+                <div class="button-sparkle">
+                  <i class="fas fa-bolt"></i>
+                </div>
+              </button>
+            </form>
           </div>
 
-          <div class="contact-method glass">
-            <div class="contact-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div class="contact-details">
-              <h4>Location</h4>
-              <p>India • Remote Worldwide</p>
-            </div>
-          </div>
+          <div class="contact-info">
+            <div class="info-grid">
+              <div class="info-card">
+                <div class="card-icon">📍</div>
+                <h4 class="card-title">Location</h4>
+                <p class="card-text">Remote Worldwide</p>
+              </div>
 
-          <div class="contact-method glass">
-            <div class="contact-icon">
-              <i class="fas fa-clock"></i>
+              <div class="info-card">
+                <div class="card-icon">✉️</div>
+                <h4 class="card-title">Email</h4>
+                <p class="card-text">hello@manuarya.dev</p>
+              </div>
+
+              <div class="info-card">
+                <div class="card-icon">🕐</div>
+                <h4 class="card-title">Response Time</h4>
+                <p class="card-text">Within 24 hours</p>
+              </div>
+
+              <div class="info-card">
+                <div class="card-icon">💼</div>
+                <h4 class="card-title">Availability</h4>
+                <p class="card-text">Open for Projects</p>
+              </div>
             </div>
-            <div class="contact-details">
-              <h4>Availability</h4>
-              <p>Open for Freelance & Full-time</p>
+
+            <div class="social-links">
+              <a href="https://github.com/manuarya1610" class="social-link">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="https://linkedin.com/in/manuaryaddn" class="social-link">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://dribbble.com" class="social-link">
+                <i class="fab fa-dribbble"></i>
+                <span>Dribbble</span>
+              </a>
+              <a href="https://twitter.com" class="social-link">
+                <i class="fab fa-twitter"></i>
+                <span>Twitter</span>
+              </a>
             </div>
           </div>
         </div>
-
-        <div class="social-links mt-4">
-          <a
-            href="https://github.com/manuarya1610"
-            class="social-link"
-            aria-label="GitHub"
-          >
-            <i class="fab fa-github"></i> GitHub
-          </a>
-          <a
-            href="https://linkedin.com/in/manuaryaddn"
-            class="social-link"
-            aria-label="LinkedIn"
-          >
-            <i class="fab fa-linkedin"></i> LinkedIn
-          </a>
-          <a
-            href="https://twitter.com"
-            class="social-link"
-            aria-label="Twitter"
-          >
-            <i class="fab fa-twitter"></i> Twitter
-          </a>
-        </div>
-      </div>
-
-      <div class="contact-form glass">
-        <form
-          id="contact-form"
-          action="https://formspree.io/f/mqkrqvqw"
-          method="POST"
-        >
-          <div class="form-group">
-            <input
-              type="text"
-              id="name"
-              name="name"
-              class="form-input"
-              required
-            />
-            <label for="name" class="form-label">Your Name</label>
-          </div>
-
-          <div class="form-group">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="form-input"
-              required
-            />
-            <label for="email" class="form-label">Your Email</label>
-          </div>
-
-          <div class="form-group">
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              class="form-input"
-              required
-            />
-            <label for="subject" class="form-label">Subject</label>
-          </div>
-
-          <div class="form-group">
-            <textarea
-              id="message"
-              name="message"
-              class="form-textarea"
-              required
-            ></textarea>
-            <label for="message" class="form-label">Your Message</label>
-          </div>
-
-          <div class="submit-btn">
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </div>
-        </form>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-logo">Manu Arya</div>
-        <p class="footer-tagline">
-          Building the future of digital experiences, one line of code at a
-          time.
-        </p>
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <span class="logo-symbol">⚡</span>
+          <span class="logo-text">MANU ARYA</span>
+        </div>
 
-        <div class="footer-social">
-          <a
-            href="https://github.com/manuarya1610"
-            class="social-icon"
-            aria-label="GitHub"
-          >
-            <i class="fab fa-github"></i>
-          </a>
-          <a
-            href="https://linkedin.com/in/manuaryaddn"
-            class="social-icon"
-            aria-label="LinkedIn"
-          >
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a
-            href="https://twitter.com"
-            class="social-icon"
-            aria-label="Twitter"
-          >
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a
-            href="https://instagram.com"
-            class="social-icon"
-            aria-label="Instagram"
-          >
-            <i class="fab fa-instagram"></i>
+        <div class="footer-quote">
+          "Crafting digital experiences that inspire, engage, and transform."
+        </div>
+
+        <div class="footer-cta">
+          <a href="#hero" class="back-to-top">
+            <span>Back to Top</span>
+            <div class="cta-arrow">
+              <i class="fas fa-arrow-up"></i>
+            </div>
           </a>
         </div>
 
         <div class="footer-bottom">
-          <p>
-            © <span id="current-year">2024</span> Manu Arya. All rights
-            reserved.
-          </p>
-          <p>Crafted with passion and precision.</p>
+          <p class="copyright">© 2024 Manu Arya. All rights reserved.</p>
+          <p class="crafted">Crafted with passion and precision.</p>
         </div>
       </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
     <script src="script.js"></script>
+
+    <script>
+      // Initialize Three.js scene
+      if (typeof THREE !== "undefined") {
+        const canvas = document.getElementById("hero-canvas");
+        if (canvas) {
+          // Create Three.js scene
+          const scene = new THREE.Scene();
+          const camera = new THREE.PerspectiveCamera(
+            75,
+            canvas.clientWidth / canvas.clientHeight,
+            0.1,
+            1000
+          );
+          const renderer = new THREE.WebGLRenderer({
+            canvas,
+            alpha: true,
+            antialias: true,
+          });
+
+          renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+          renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+          // Add particles
+          const particlesGeometry = new THREE.BufferGeometry();
+          const count = 2000;
+          const positions = new Float32Array(count * 3);
+
+          for (let i = 0; i < count * 3; i++) {
+            positions[i] = (Math.random() - 0.5) * 10;
+          }
+
+          particlesGeometry.setAttribute(
+            "position",
+            new THREE.BufferAttribute(positions, 3)
+          );
+
+          const particlesMaterial = new THREE.PointsMaterial({
+            size: 0.02,
+            color: 0x64ffda,
+            transparent: true,
+          });
+
+          const particles = new THREE.Points(
+            particlesGeometry,
+            particlesMaterial
+          );
+          scene.add(particles);
+
+          camera.position.z = 3;
+
+          function animate() {
+            requestAnimationFrame(animate);
+
+            particles.rotation.x += 0.0005;
+            particles.rotation.y += 0.001;
+
+            renderer.render(scene, camera);
+          }
+
+          animate();
+
+          // Handle resize
+          window.addEventListener("resize", () => {
+            camera.aspect = canvas.clientWidth / canvas.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+          });
+        }
+      }
+    </script>
   </body>
 </html>
