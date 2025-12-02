@@ -3,28 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manu Arya | Data Engineer & Developer</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Manu Arya — Award-Winning Portfolio</title>
+
+    <!-- Meta for Awards -->
+    <meta
+      name="description"
+      content="Award-winning portfolio showcasing innovative web design and development by Manu Arya."
+    />
+    <meta
+      name="keywords"
+      content="portfolio, web design, developer, creative, award-winning, awwards"
+    />
+    <meta name="author" content="Manu Arya" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Manu Arya — Award-Winning Portfolio" />
+    <meta
+      property="og:description"
+      content="Sophisticated portfolio with cutting-edge web design techniques."
+    />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+    />
+    <meta property="og:url" content="https://manuarya1610.github.io" />
+
+    <!-- Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.cdnfonts.com/css/clash-display"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://manuarya1610.github.io/favicon.ico"
+    />
   </head>
   <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen">
-      <div class="loading-container">
-        <h1 style="font-size: 3rem; margin-bottom: 2rem">Loading...</h1>
-        <div class="loading-progress">
-          <div class="loading-bar" id="loadingBar"></div>
-        </div>
-        <div class="loading-text" id="loadingText">Initializing portfolio</div>
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="loader">
+        <div class="loader-circle"></div>
+        <div class="loader-circle"></div>
       </div>
     </div>
 
@@ -33,278 +66,582 @@
     <div class="cursor-follower"></div>
 
     <!-- Navigation -->
-    <nav class="navbar">
-      <a href="#" class="logo">Manu Arya</a>
+    <nav class="navbar glass">
+      <a href="#home" class="nav-logo">MA</a>
+
       <ul class="nav-menu">
-        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-        <li class="nav-item">
-          <a href="#projects" class="nav-link">Projects</a>
+        <li>
+          <a href="#home" class="nav-link"
+            ><span class="nav-number">01</span> Home</a
+          >
         </li>
-        <li class="nav-item">
-          <a href="#contact" class="nav-link">Contact</a>
+        <li>
+          <a href="#about" class="nav-link"
+            ><span class="nav-number">02</span> About</a
+          >
+        </li>
+        <li>
+          <a href="#projects" class="nav-link"
+            ><span class="nav-number">03</span> Projects</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="nav-link"
+            ><span class="nav-number">04</span> Contact</a
+          >
         </li>
       </ul>
-    </nav>
 
-    <!-- Parallax Elements -->
-    <div class="parallax-layer parallax-1 floating"></div>
-    <div
-      class="parallax-layer parallax-2 floating"
-      style="animation-delay: -2s"
-    ></div>
-    <div
-      class="parallax-layer parallax-3 floating"
-      style="animation-delay: -4s"
-    ></div>
+      <div class="nav-cta">
+        <div class="nav-social">
+          <a
+            href="https://github.com/manuarya1610"
+            class="social-icon"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/manuaryaddn"
+            class="social-icon"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+        <a href="#contact" class="btn btn-primary">Let's Connect</a>
+      </div>
+    </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-      <div class="hero-background"></div>
+      <div class="particles" id="particles-js"></div>
+
       <div class="hero-content">
-        <div class="fade-in">
-          <span class="section-label">Data Engineer & Developer</span>
-          <h1 class="hero-title">Manu Arya</h1>
-          <p class="hero-subtitle fade-in delay-1">
-            Transforming complex data challenges into elegant solutions.
-            Building scalable systems and intuitive interfaces that bridge the
-            gap between data and design.
-          </p>
-          <div class="hero-buttons fade-in delay-2">
-            <a href="#projects" class="btn btn-primary">View Projects</a>
-            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-          </div>
+        <div class="hero-intro">Hi, my name is</div>
+
+        <h1 class="hero-title display-1">
+          <span class="hero-title-line">
+            <span class="hero-title-text">Manu Arya</span>
+          </span>
+          <span class="hero-title-line">
+            <span class="hero-title-text">Creative Developer</span>
+          </span>
+        </h1>
+
+        <p class="hero-subtitle">
+          I craft exceptional digital experiences that blend innovative design
+          with cutting-edge technology. Currently pushing boundaries in web
+          development and interactive design.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn">View Projects</a>
+          <a href="#contact" class="btn btn-primary">Get In Touch</a>
         </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <div class="scroll-text">Scroll</div>
+        <div class="scroll-line"></div>
       </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
-      <div class="about-container">
-        <div class="about-image fade-in">
-          <div class="about-img"></div>
+      <div class="about-content">
+        <div class="section-header">
+          <div class="section-label">About Me</div>
+          <h2 class="display-2">
+            Crafting Digital <span class="text-gradient">Experiences</span>
+          </h2>
         </div>
-        <div class="about-content">
-          <span class="section-label">About Me</span>
-          <h2 class="section-title">Building Digital Solutions</h2>
-          <p class="about-text fade-in delay-1">
-            I'm a Data Engineer with a passion for creating robust, scalable
-            systems that transform raw data into meaningful insights. With
-            expertise in modern data stack technologies, I build pipelines that
-            are not just efficient, but elegant.
-          </p>
-          <p class="about-text fade-in delay-2">
-            My approach combines technical precision with creative
-            problem-solving. I believe that the best solutions emerge at the
-            intersection of engineering excellence and user-centric design.
-          </p>
 
-          <div class="skills fade-in delay-3">
-            <div class="skill-item">
-              <div class="skill-name">Data Engineering</div>
-              <div class="skill-level">
-                <div class="skill-progress" style="width: 90%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-name">Cloud Architecture</div>
-              <div class="skill-level">
-                <div class="skill-progress" style="width: 85%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-name">Python Development</div>
-              <div class="skill-level">
-                <div class="skill-progress" style="width: 95%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-name">Web Development</div>
-              <div class="skill-level">
-                <div class="skill-progress" style="width: 80%"></div>
-              </div>
-            </div>
+        <p>
+          I'm a passionate developer and designer with a keen eye for detail and
+          a love for creating immersive digital experiences. With expertise in
+          modern web technologies, I bridge the gap between stunning design and
+          robust functionality.
+        </p>
+
+        <p>
+          My approach combines technical precision with creative flair, ensuring
+          every project not only functions flawlessly but also tells a
+          compelling visual story. I believe in clean code, elegant design, and
+          meaningful interactions.
+        </p>
+
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Projects</span>
           </div>
+          <div class="stat">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Satisfaction</span>
+          </div>
+        </div>
+
+        <div class="skill-tags">
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Three.js</span>
+          <span class="skill-tag">GSAP</span>
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">UI/UX</span>
+          <span class="skill-tag">WebGL</span>
+          <span class="skill-tag">CSS3</span>
+          <span class="skill-tag">HTML5</span>
+        </div>
+      </div>
+
+      <div class="about-visual">
+        <div class="floating-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+        </div>
+        <div class="about-image-container">
+          <div class="about-image"></div>
         </div>
       </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
-      <div class="projects-header">
-        <span class="section-label">Selected Work</span>
-        <h2 class="section-title">Featured Projects</h2>
-        <p
-          class="about-text"
-          style="color: var(--text-secondary); margin-top: 1rem"
-        >
-          A collection of my recent work, showcasing data engineering and
-          development projects.
+      <div class="section-header text-center">
+        <div class="section-label">Portfolio</div>
+        <h2 class="display-2">
+          Selected <span class="text-gradient">Projects</span>
+        </h2>
+        <p class="hero-subtitle">
+          A curated selection of my recent work showcasing design and
+          development excellence.
         </p>
       </div>
 
       <div class="projects-grid">
         <!-- Project 1 -->
-        <div class="project-card fade-in">
-          <div class="project-image"></div>
-          <div class="project-content">
-            <span class="project-category">Data Pipeline</span>
-            <h3 class="project-title">Real-time Analytics Platform</h3>
+        <div class="project-card glass">
+          <div
+            class="project-image"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            "
+          ></div>
+          <div class="project-info">
+            <div class="project-year">2023</div>
+            <h3 class="project-title">Object Detection System</h3>
             <p class="project-description">
-              A scalable data processing platform handling millions of events
-              daily with real-time analytics and automated monitoring.
+              Advanced computer vision system with real-time alert generation
+              and remote monitoring capabilities.
             </p>
-            <div class="project-tags">
-              <span class="project-tag">Apache Spark</span>
-              <span class="project-tag">Kafka</span>
-              <span class="project-tag">AWS</span>
-              <span class="project-tag">Python</span>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">YOLO</span>
+              <span class="tech-tag">Flask</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/manuarya1610/Object-Detection-and-Alert-Generation"
+                class="project-link"
+                aria-label="GitHub"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="project-link" aria-label="Live Demo">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
             </div>
           </div>
         </div>
 
         <!-- Project 2 -->
-        <div class="project-card fade-in delay-1">
-          <div class="project-image"></div>
-          <div class="project-content">
-            <span class="project-category">Web Application</span>
-            <h3 class="project-title">Interactive Data Dashboard</h3>
+        <div class="project-card glass">
+          <div
+            class="project-image"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            "
+          ></div>
+          <div class="project-info">
+            <div class="project-year">2023</div>
+            <h3 class="project-title">RTSP Video Streaming</h3>
             <p class="project-description">
-              A dynamic dashboard for visualizing complex datasets with
-              interactive charts and real-time data updates.
+              High-performance video streaming software with multi-source
+              support and real-time processing.
             </p>
-            <div class="project-tags">
-              <span class="project-tag">React</span>
-              <span class="project-tag">D3.js</span>
-              <span class="project-tag">Node.js</span>
-              <span class="project-tag">MongoDB</span>
+            <div class="project-tech">
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">QT</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">FFmpeg</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/manuarya1610/RTSP-Video-Player"
+                class="project-link"
+                aria-label="GitHub"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="project-link" aria-label="Live Demo">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
             </div>
           </div>
         </div>
 
         <!-- Project 3 -->
-        <div class="project-card fade-in delay-2">
-          <div class="project-image"></div>
-          <div class="project-content">
-            <span class="project-category">Cloud Infrastructure</span>
-            <h3 class="project-title">Scalable Data Warehouse</h3>
+        <div class="project-card glass">
+          <div
+            class="project-image"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            "
+          ></div>
+          <div class="project-info">
+            <div class="project-year">2023</div>
+            <h3 class="project-title">Modern Website Template</h3>
             <p class="project-description">
-              Cloud-native data warehouse solution reducing query times by 85%
-              with automated ETL processes and data quality checks.
+              Elegant, responsive website template with sophisticated animations
+              and modern design patterns.
             </p>
-            <div class="project-tags">
-              <span class="project-tag">AWS Redshift</span>
-              <span class="project-tag">Airflow</span>
-              <span class="project-tag">Terraform</span>
-              <span class="project-tag">Python</span>
+            <div class="project-tech">
+              <span class="tech-tag">HTML/CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">GSAP</span>
+              <span class="tech-tag">Responsive</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/manuarya1610/Community-Website-Template"
+                class="project-link"
+                aria-label="GitHub"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://manant-devs.netlify.app"
+                class="project-link"
+                aria-label="Live Demo"
+              >
+                <i class="fas fa-external-link-alt"></i>
+              </a>
             </div>
           </div>
         </div>
 
         <!-- Project 4 -->
-        <div class="project-card fade-in delay-3">
-          <div class="project-image"></div>
-          <div class="project-content">
-            <span class="project-category">Machine Learning</span>
-            <h3 class="project-title">Predictive Analytics System</h3>
+        <div class="project-card glass">
+          <div
+            class="project-image"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            "
+          ></div>
+          <div class="project-info">
+            <div class="project-year">2023</div>
+            <h3 class="project-title">Cocktails App</h3>
             <p class="project-description">
-              ML pipeline for predictive analytics with automated model
-              training, evaluation, and deployment.
+              Interactive cocktail recipe application with stunning UI/UX and
+              real-time API integration.
             </p>
-            <div class="project-tags">
-              <span class="project-tag">TensorFlow</span>
-              <span class="project-tag">Scikit-learn</span>
-              <span class="project-tag">Docker</span>
-              <span class="project-tag">Kubernetes</span>
+            <div class="project-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">API</span>
+              <span class="tech-tag">Styled Components</span>
+              <span class="tech-tag">Responsive</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/manuarya1610/Cocktails-WebApp"
+                class="project-link"
+                aria-label="GitHub"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://cocktails-arya-webapp.netlify.app"
+                class="project-link"
+                aria-label="Live Demo"
+              >
+                <i class="fas fa-external-link-alt"></i>
+              </a>
             </div>
           </div>
         </div>
+
+        <!-- Project 5 -->
+        <div class="project-card glass">
+          <div
+            class="project-image"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            "
+          ></div>
+          <div class="project-info">
+            <div class="project-year">2023</div>
+            <h3 class="project-title">Dino Game</h3>
+            <p class="project-description">
+              Java-based game inspired by Google Chrome's Dino game with
+              enhanced features and smooth gameplay.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Swing</span>
+              <span class="tech-tag">Game Dev</span>
+              <span class="tech-tag">OOP</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/manuarya1610/Dino_Game"
+                class="project-link"
+                aria-label="GitHub"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="project-link" aria-label="Live Demo">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card glass">
+          <div
+            class="project-image"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            "
+          ></div>
+          <div class="project-info">
+            <div class="project-year">2023</div>
+            <h3 class="project-title">Expense Tracker</h3>
+            <p class="project-description">
+              Comprehensive financial management web application with intuitive
+              UI and powerful analytics.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Chart.js</span>
+              <span class="tech-tag">Local Storage</span>
+              <span class="tech-tag">PWA</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/manuarya1610/Expense-Tracker"
+                class="project-link"
+                aria-label="GitHub"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="project-link" aria-label="Live Demo">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="https://github.com/manuarya1610" class="btn btn-primary"
+          >View All Projects</a
+        >
       </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-      <div class="contact-container">
-        <span class="section-label">Get In Touch</span>
-        <h2 class="section-title">Let's Work Together</h2>
-        <p
-          class="about-text"
-          style="color: var(--text-secondary); margin-top: 1rem"
-        >
-          Have a project in mind? I'd love to hear about it.
+      <div class="contact-info">
+        <div class="section-header">
+          <div class="section-label">Get In Touch</div>
+          <h2 class="display-2">
+            Let's Create <span class="text-gradient">Together</span>
+          </h2>
+        </div>
+
+        <p>
+          Have an exciting project in mind? I'm always open to discussing new
+          opportunities, creative ideas, or opportunities to be part of your
+          vision.
         </p>
 
-        <form class="contact-form">
-          <div class="form-group">
-            <label class="form-label" for="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              class="form-input"
-              placeholder="Your name"
-              required
-            />
+        <div class="contact-methods">
+          <div class="contact-method glass">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <p>manuarya1610@gmail.com</p>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              class="form-input"
-              placeholder="Your email"
-              required
-            />
+          <div class="contact-method glass">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Location</h4>
+              <p>India • Remote Worldwide</p>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="message">Message</label>
-            <textarea
-              id="message"
-              class="form-input"
-              placeholder="Your message"
-              required
-            ></textarea>
+          <div class="contact-method glass">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Availability</h4>
+              <p>Open for Freelance & Full-time</p>
+            </div>
           </div>
+        </div>
 
-          <button type="submit" class="btn btn-primary" style="width: 100%">
-            Send Message
-          </button>
-        </form>
-
-        <div class="social-links">
-          <a
-            href="https://linkedin.com/in/manuaryaddn"
-            class="social-link"
-            target="_blank"
-          >
-            <i class="fab fa-linkedin-in"></i>
-          </a>
+        <div class="social-links mt-4">
           <a
             href="https://github.com/manuarya1610"
             class="social-link"
-            target="_blank"
+            aria-label="GitHub"
           >
-            <i class="fab fa-github"></i>
+            <i class="fab fa-github"></i> GitHub
           </a>
-          <a href="mailto:manuarya@example.com" class="social-link">
-            <i class="fas fa-envelope"></i>
+          <a
+            href="https://linkedin.com/in/manuaryaddn"
+            class="social-link"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin"></i> LinkedIn
           </a>
-          <a href="#" class="social-link">
-            <i class="fas fa-file-pdf"></i>
+          <a
+            href="https://twitter.com"
+            class="social-link"
+            aria-label="Twitter"
+          >
+            <i class="fab fa-twitter"></i> Twitter
           </a>
         </div>
+      </div>
+
+      <div class="contact-form glass">
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/mqkrqvqw"
+          method="POST"
+        >
+          <div class="form-group">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-input"
+              required
+            />
+            <label for="name" class="form-label">Your Name</label>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-input"
+              required
+            />
+            <label for="email" class="form-label">Your Email</label>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              class="form-input"
+              required
+            />
+            <label for="subject" class="form-label">Subject</label>
+          </div>
+
+          <div class="form-group">
+            <textarea
+              id="message"
+              name="message"
+              class="form-textarea"
+              required
+            ></textarea>
+            <label for="message" class="form-label">Your Message</label>
+          </div>
+
+          <div class="submit-btn">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </div>
+        </form>
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-      <p class="footer-text">
-        © 2024 Manu Arya. All rights reserved.<br />
-        Built with passion and precision.
-      </p>
+      <div class="footer-content">
+        <div class="footer-logo">Manu Arya</div>
+        <p class="footer-tagline">
+          Building the future of digital experiences, one line of code at a
+          time.
+        </p>
+
+        <div class="footer-social">
+          <a
+            href="https://github.com/manuarya1610"
+            class="social-icon"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/manuaryaddn"
+            class="social-icon"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a
+            href="https://twitter.com"
+            class="social-icon"
+            aria-label="Twitter"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="https://instagram.com"
+            class="social-icon"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            © <span id="current-year">2024</span> Manu Arya. All rights
+            reserved.
+          </p>
+          <p>Crafted with passion and precision.</p>
+        </div>
+      </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
