@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manu Arya · Data Engineer & Creative Developer</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Manu Arya • Data Engineer & Creative Developer</title>
+
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -13,187 +16,283 @@
       href="https://db.onlinewebfonts.com/c/99501fdab737541e9315ceaf9229370f?family=Monument+Extended+Regular"
       rel="stylesheet"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style" />
+    <link rel="preload" href="script.js" as="script" />
+
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen">
-      <div class="loading-container">
-        <div class="loading-text" data-text="PERFECTION IN DESIGN">
-          PERFECTION IN DESIGN
-        </div>
-        <div class="loading-progress"></div>
+    <!-- EPIC PRELOADER (synchronized.studio + bravepeople.co) -->
+    <div id="preloader">
+      <div class="loader">
+        <div class="loader-ring"></div>
+        <div class="loader-ring"></div>
+        <div class="loader-ring"></div>
+        <div class="loader-text"></div>
+        <div class="loader-counter">0%</div>
+        <div class="loader-progress"></div>
       </div>
     </div>
 
-    <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor"></div>
     <div class="cursor-dot"></div>
 
-    <!-- Navigation -->
-    <nav class="nav-container">
-      <a href="#" class="logo">Manu Arya</a>
-      <button class="nav-toggle">
+    <!-- NAVIGATION (Radaville Studio) -->
+    <nav class="nav">
+      <a href="#" class="nav-logo">Manu Arya</a>
+      <button class="menu-btn">
         <span></span>
         <span></span>
         <span></span>
       </button>
     </nav>
 
-    <!-- Fullscreen Menu -->
-    <div class="nav-overlay">
-      <div class="nav-menu">
-        <div class="nav-item">
-          <a href="#home" class="nav-link" data-text="Home">Home</a>
-        </div>
-        <div class="nav-item">
-          <a href="#about" class="nav-link" data-text="About">About</a>
-        </div>
-        <div class="nav-item">
-          <a href="#projects" class="nav-link" data-text="Projects">Projects</a>
-        </div>
-        <div class="nav-item">
-          <a href="#contact" class="nav-link" data-text="Contact">Contact</a>
-        </div>
-      </div>
-      <div class="nav-footer">
-        <div>Data Engineer & Creative Developer</div>
-        <div>Based in India</div>
+    <!-- FULLSCREEN MENU -->
+    <div class="menu-overlay">
+      <div class="menu-items">
+        <a href="#home" class="menu-item" data-text="Home">Home</a>
+        <a href="#about" class="menu-item" data-text="About">About</a>
+        <a href="#projects" class="menu-item" data-text="Projects">Projects</a>
+        <a href="#skills" class="menu-item" data-text="Skills">Skills</a>
+        <a href="#contact" class="menu-item" data-text="Contact">Contact</a>
       </div>
     </div>
 
-    <!-- Hero Section -->
+    <!-- HERO SECTION (Olha Lazarieva + 3200kelvin.com) -->
     <section id="home" class="hero">
-      <h1 class="hero-title reveal-text">
-        <span>Obsessed</span><br />
-        <span>With</span><br />
-        <span>Perfection<span class="color-accent-1">.</span></span>
+      <div class="hero-bg"></div>
+      <h1 class="hero-title">
+        <span>Perfection</span><br />
+        <span>In</span><br />
+        <span class="text-gradient">Design</span><br />
+        <span>&</span><br />
+        <span>Data</span>
       </h1>
-      <p class="hero-subtitle">
-        Data Engineer passionate about creating elegant solutions and immersive
-        experiences. Building robust pipelines, implementing data governance,
-        and crafting beautiful interfaces.
+      <p class="hero-subtitle scroll-reveal">
+        Obsessed with creating elegant solutions at the intersection of data
+        engineering and creative development. Building robust pipelines,
+        implementing complex systems, and crafting immersive experiences.
       </p>
       <div class="hero-scroll">
-        <div class="scroll-text">Scroll</div>
         <div class="scroll-line"></div>
       </div>
     </section>
 
-    <!-- Skills/About Section -->
-    <section id="about" class="skills-section">
-      <h2 class="section-header reveal-text">
-        <span>Skills &</span><br />
-        <span>Expertise</span>
+    <!-- ABOUT/SKILLS SECTION (maxmilkin.com) -->
+    <section id="about" class="about">
+      <div class="section-label scroll-reveal">About Me</div>
+      <h2 class="section-title scroll-reveal">
+        <span class="text-distort" data-text="Building Bridges"
+          >Building Bridges</span
+        ><br />
+        <span>Between</span><br />
+        <span class="text-gradient">Data & Design</span>
       </h2>
+      <p
+        class="scroll-reveal"
+        style="
+          max-width: 800px;
+          line-height: 1.6;
+          opacity: 0.8;
+          margin-bottom: 4rem;
+        "
+      >
+        As a data engineer with a passion for design, I specialize in creating
+        systems that are not only functional and scalable but also beautiful and
+        intuitive. My journey spans from building complex data pipelines to
+        crafting immersive digital experiences.
+      </p>
+
       <div class="skills-grid">
-        <div class="skill-card fade-in">
+        <div class="skill-item scroll-reveal">
           <div class="skill-number">01</div>
           <h3 class="skill-title">Data Engineering</h3>
-          <p class="skill-description">
-            Building scalable data pipelines, implementing medallion
-            architectures, and ensuring data governance across complex systems.
+          <p>
+            Building scalable pipelines, implementing medallion architectures,
+            and ensuring data governance.
           </p>
         </div>
-        <div class="skill-card fade-in">
+        <div class="skill-item scroll-reveal">
           <div class="skill-number">02</div>
           <h3 class="skill-title">Creative Development</h3>
-          <p class="skill-description">
-            Crafting immersive web experiences with attention to detail,
-            performance, and user interaction.
+          <p>
+            Crafting immersive web experiences with cutting-edge animations and
+            interactions.
           </p>
         </div>
-        <div class="skill-card fade-in">
+        <div class="skill-item scroll-reveal">
           <div class="skill-number">03</div>
-          <h3 class="skill-title">Design Systems</h3>
-          <p class="skill-description">
-            Creating cohesive design languages that bridge functionality with
-            aesthetic appeal.
+          <h3 class="skill-title">System Design</h3>
+          <p>
+            Designing robust architectures that balance performance,
+            scalability, and maintainability.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-      <h2 class="section-header reveal-text">
-        <span>Selected</span><br />
-        <span>Projects</span>
+    <!-- PROJECTS SECTION (Creative Giants + Bridge Tour) -->
+    <section id="projects" class="projects">
+      <div class="section-label scroll-reveal">Featured Work</div>
+      <h2 class="section-title scroll-reveal">
+        <span class="text-stroke">Selected</span><br />
+        <span class="text-gradient">Projects</span>
       </h2>
-      <div class="projects-container">
-        <!-- Project items with Creative Giants style -->
-        <div class="project-item">
-          <div class="project-index">01</div>
+
+      <div class="project-list">
+        <!-- Project 1 -->
+        <div class="project-item scroll-reveal">
+          <div class="project-number">01</div>
           <div class="project-content">
-            <div class="project-category">Data Pipeline</div>
-            <h3 class="project-title reveal-text">
-              <span>Object Detection</span><br />
-              <span>System</span>
-            </h3>
-            <p>Real-time alert generation with intelligent object filtering</p>
+            <div class="project-category">Data Pipeline • Python</div>
+            <h3 class="project-title">Object Detection & Alert System</h3>
+            <p>
+              Real-time object detection with intelligent filtering and
+              automated alert generation.
+            </p>
           </div>
           <div class="project-preview">
-            <img src="https://manuarya1610.github.io/pr1.png" alt="Project" />
+            <img
+              src="https://manuarya1610.github.io/pr1.png"
+              alt="Project 1"
+              data-src="https://manuarya1610.github.io/pr1.png"
+            />
           </div>
         </div>
-        <!-- More projects... -->
+
+        <!-- Project 2 -->
+        <div class="project-item scroll-reveal">
+          <div class="project-number">02</div>
+          <div class="project-content">
+            <div class="project-category">Fullstack • React</div>
+            <h3 class="project-title">Cocktails App</h3>
+            <p>
+              Interactive cocktail discovery platform with stunning UI/UX and
+              real-time search.
+            </p>
+          </div>
+          <div class="project-preview">
+            <img
+              src="https://manuarya1610.github.io/pr6.png"
+              alt="Project 2"
+              data-src="https://manuarya1610.github.io/pr6.png"
+            />
+          </div>
+        </div>
+
+        <!-- Add more projects... -->
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-      <h2 class="section-header reveal-text">
-        <span>Let's</span><br />
-        <span>Connect</span>
-      </h2>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h3>Get in Touch</h3>
-          <p>
-            I'm currently open to discussing data engineering opportunities,
-            creative projects, or just talking about technology and design.
-          </p>
-          <div class="contact-links">
-            <a href="https://linkedin.com/in/manuaryaddn" class="contact-link">
-              <span>LinkedIn</span>
-            </a>
-            <a href="https://github.com/manuarya1610" class="contact-link">
-              <span>GitHub</span>
-            </a>
-            <a href="mailto:manuarya1610@gmail.com" class="contact-link">
-              <span>Email</span>
-            </a>
-          </div>
+    <!-- AWARDS SECTION (RAYRAYlab) -->
+    <section class="awards">
+      <div class="section-label scroll-reveal">Recognition</div>
+      <h2 class="section-title scroll-reveal">Awards &<br />Recognition</h2>
+
+      <div class="award-track">
+        <div class="award-item">
+          <div class="award-year">2023</div>
+          <h3 class="award-title">Best Data Project</h3>
+          <p>Recognized for innovative data pipeline design</p>
         </div>
-        <form class="contact-form">
-          <div class="form-group">
-            <input type="text" id="name" required />
-            <label for="name">Your Name</label>
-          </div>
-          <div class="form-group">
-            <input type="email" id="email" required />
-            <label for="email">Email Address</label>
-          </div>
-          <div class="form-group">
-            <textarea id="message" required></textarea>
-            <label for="message">Your Message</label>
-          </div>
-          <button type="submit" class="submit-btn">Send Message</button>
-        </form>
+        <div class="award-item">
+          <div class="award-year">2022</div>
+          <h3 class="award-title">UI/UX Excellence</h3>
+          <p>Awarded for exceptional user experience design</p>
+        </div>
+        <div class="award-item">
+          <div class="award-year">2021</div>
+          <h3 class="award-title">Innovation Award</h3>
+          <p>For groundbreaking approach to data visualization</p>
+        </div>
+        <!-- More awards will duplicate for seamless scroll -->
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="footer-links">
-        <a href="#home" class="footer-link">Home</a>
-        <a href="#about" class="footer-link">About</a>
-        <a href="#projects" class="footer-link">Projects</a>
-        <a href="#contact" class="footer-link">Contact</a>
+    <!-- CONTACT SECTION (Radaville Studio) -->
+    <section id="contact" class="contact">
+      <div class="contact-container">
+        <div class="section-label scroll-reveal">Get In Touch</div>
+        <h2 class="section-title scroll-reveal">
+          Let's Create<br />
+          <span class="text-gradient">Something Amazing</span>
+        </h2>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3 class="scroll-reveal">Connect With Me</h3>
+            <p class="scroll-reveal" style="opacity: 0.8; margin-bottom: 2rem">
+              I'm always open to discussing data engineering opportunities,
+              creative projects, or just talking about technology and design.
+            </p>
+            <div class="contact-links">
+              <a
+                href="https://linkedin.com/in/manuaryaddn"
+                class="contact-link scroll-reveal"
+              >
+                <span>LinkedIn</span>
+              </a>
+              <a
+                href="https://github.com/manuarya1610"
+                class="contact-link scroll-reveal"
+              >
+                <span>GitHub</span>
+              </a>
+              <a
+                href="mailto:manuarya1610@gmail.com"
+                class="contact-link scroll-reveal"
+              >
+                <span>Email</span>
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form">
+            <div class="form-group scroll-reveal">
+              <input type="text" id="name" required />
+              <label for="name">Your Name</label>
+            </div>
+            <div class="form-group scroll-reveal">
+              <input type="email" id="email" required />
+              <label for="email">Email Address</label>
+            </div>
+            <div class="form-group scroll-reveal">
+              <textarea id="message" required></textarea>
+              <label for="message">Your Message</label>
+            </div>
+            <button type="submit" class="submit-btn scroll-reveal">
+              Send Message
+            </button>
+          </form>
+        </div>
       </div>
-      <div class="copyright">© 2024 Manu Arya. All rights reserved.</div>
+    </section>
+
+    <!-- FOOTER (Duten inspired) -->
+    <footer class="footer">
+      <div class="footer-content">
+        <a href="#" class="nav-logo">Manu Arya</a>
+        <div class="footer-links">
+          <a href="#home" class="footer-link">Home</a>
+          <a href="#about" class="footer-link">About</a>
+          <a href="#projects" class="footer-link">Projects</a>
+          <a href="#contact" class="footer-link">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2024 Manu Arya. All rights reserved.</div>
+        <div>Data Engineer & Creative Developer</div>
+      </div>
     </footer>
 
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Main Script -->
     <script src="script.js"></script>
   </body>
 </html>
