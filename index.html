@@ -1,32 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" class="dark-theme">
+<html lang="en" class="no-scrollbar">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manu Arya — Digital Alchemist</title>
+    <title>Manu Arya · Data Engineering Perfectionist</title>
 
-    <!-- Meta for Awwards -->
+    <!-- Meta -->
     <meta
       name="description"
-      content="Award-winning portfolio fusing technology with art - Crafting immersive digital experiences that tell compelling stories."
+      content="Data Engineer obsessed with perfection in code, design, and implementation. Crafting elegant solutions to complex data problems."
     />
     <meta
       name="keywords"
-      content="awwards, digital designer, creative developer, webgl, threejs, interactive design"
-    />
-    <meta
-      property="og:image"
-      content="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+      content="data engineer, portfolio, perfectionist, data pipelines, architecture"
     />
 
     <!-- Fonts -->
-    <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.cdnfonts.com/css/clash-display"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -41,794 +34,781 @@
     <link
       rel="icon"
       type="image/svg+xml"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>▴</text></svg>"
     />
-
-    <style>
-      /* Initial loading state */
-      body:not(.loaded) * {
-        opacity: 0 !important;
-      }
-    </style>
   </head>
   <body>
-    <!-- Theme Toggle -->
-    <div class="theme-toggle">
-      <div class="theme-switch">
-        <div class="theme-icon">
-          <i class="fas fa-moon"></i>
-          <i class="fas fa-sun"></i>
-        </div>
-        <span class="theme-text">Dark Mode</span>
-      </div>
-    </div>
-
-    <!-- Audio Player -->
-    <div class="audio-player">
-      <div class="audio-toggle">
-        <i class="fas fa-music"></i>
-        <div class="audio-wave">
-          <div class="wave-bar"></div>
-          <div class="wave-bar"></div>
-          <div class="wave-bar"></div>
-          <div class="wave-bar"></div>
-          <div class="wave-bar"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Progress Tracker -->
-    <div class="progress-tracker">
-      <div class="progress-line"></div>
-      <div class="progress-dots">
-        <div class="progress-dot active" data-section="hero">01</div>
-        <div class="progress-dot" data-section="about">02</div>
-        <div class="progress-dot" data-section="journey">03</div>
-        <div class="progress-dot" data-section="projects">04</div>
-        <div class="progress-dot" data-section="contact">05</div>
-      </div>
-    </div>
-
-    <!-- Cursor -->
-    <div class="cursor-circle"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor-ring"></div>
     <div class="cursor-dot"></div>
-    <div class="cursor-text"></div>
 
-    <!-- Loader -->
-    <div class="loader-container">
-      <div class="loader-wrapper">
-        <div class="loader-text">
-          <span class="loader-char">I</span>
-          <span class="loader-char">N</span>
-          <span class="loader-char">I</span>
-          <span class="loader-char">T</span>
-          <span class="loader-char">I</span>
-          <span class="loader-char">A</span>
-          <span class="loader-char">T</span>
-          <span class="loader-char">I</span>
-          <span class="loader-char">N</span>
-          <span class="loader-char">G</span>
-          <span class="loader-char">.</span>
-          <span class="loader-char">.</span>
-          <span class="loader-char">.</span>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+      <div class="loading-container">
+        <div class="loading-text">
+          <span class="loading-char">M</span>
+          <span class="loading-char">A</span>
+          <span class="loading-char">N</span>
+          <span class="loading-char">U</span>
+          <span class="loading-char">&nbsp;</span>
+          <span class="loading-char">A</span>
+          <span class="loading-char">R</span>
+          <span class="loading-char">Y</span>
+          <span class="loading-char">A</span>
         </div>
-        <div class="loader-bar">
-          <div class="loader-progress"></div>
+        <div class="loading-subtitle">
+          <span>Data Engineering Perfectionist</span>
+          <div class="loading-line">
+            <div class="loading-progress"></div>
+          </div>
         </div>
-        <div class="loader-quote">"Where code meets creativity"</div>
       </div>
-    </div>
-
-    <!-- Background Elements -->
-    <div class="bg-grid"></div>
-    <div class="bg-noise"></div>
-    <div class="floating-elements">
-      <div class="floating-element el1"></div>
-      <div class="floating-element el2"></div>
-      <div class="floating-element el3"></div>
-      <div class="floating-element el4"></div>
     </div>
 
     <!-- Navigation -->
     <nav class="main-nav">
-      <div class="nav-container">
-        <div class="nav-logo">
-          <span class="logo-symbol">⚡</span>
+      <div class="nav-wrapper">
+        <a href="#home" class="nav-logo">
+          <span class="logo-symbol">▴</span>
           <span class="logo-text">MANU ARYA</span>
-        </div>
+        </a>
 
-        <div class="nav-center">
-          <div class="nav-orb">
-            <svg class="orb-svg" viewBox="0 0 100 100">
-              <path
-                class="orb-path"
-                d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
-              ></path>
-              <text class="orb-text" text-anchor="middle" dy="0.35em">
-                <textPath href="#orb-path" startOffset="50%">
-                  CREATIVE DEVELOPER • DIGITAL STORYTELLER •
-                </textPath>
-              </text>
-            </svg>
+        <div class="nav-menu-btn">
+          <span class="menu-text">MENU</span>
+          <div class="menu-icon">
+            <span></span>
+            <span></span>
           </div>
-        </div>
-
-        <div class="nav-menu">
-          <button class="nav-toggle">
-            <span class="nav-toggle-line"></span>
-            <span class="nav-toggle-line"></span>
-          </button>
         </div>
       </div>
 
       <div class="nav-overlay">
-        <div class="nav-links">
-          <div class="nav-link-container" data-index="1">
-            <div class="nav-link-number">01</div>
-            <a href="#hero" class="nav-link">
-              <span class="nav-link-text">HOME</span>
-              <span class="nav-link-sub">Enter the void</span>
-            </a>
+        <div class="overlay-content">
+          <div class="nav-links">
+            <div class="nav-link-item" data-index="01">
+              <a href="#home" class="nav-link">
+                <span class="link-number">01</span>
+                <span class="link-text">HOME</span>
+                <span class="link-sub">Enter</span>
+              </a>
+            </div>
+            <div class="nav-link-item" data-index="02">
+              <a href="#about" class="nav-link">
+                <span class="link-number">02</span>
+                <span class="link-text">ABOUT</span>
+                <span class="link-sub">The Perfectionist</span>
+              </a>
+            </div>
+            <div class="nav-link-item" data-index="03">
+              <a href="#skills" class="nav-link">
+                <span class="link-number">03</span>
+                <span class="link-text">SKILLS</span>
+                <span class="link-sub">Expertise</span>
+              </a>
+            </div>
+            <div class="nav-link-item" data-index="04">
+              <a href="#projects" class="nav-link">
+                <span class="link-number">04</span>
+                <span class="link-text">PROJECTS</span>
+                <span class="link-sub">Work</span>
+              </a>
+            </div>
+            <div class="nav-link-item" data-index="05">
+              <a href="#contact" class="nav-link">
+                <span class="link-number">05</span>
+                <span class="link-text">CONTACT</span>
+                <span class="link-sub">Connect</span>
+              </a>
+            </div>
           </div>
-          <div class="nav-link-container" data-index="2">
-            <div class="nav-link-number">02</div>
-            <a href="#about" class="nav-link">
-              <span class="nav-link-text">ABOUT</span>
-              <span class="nav-link-sub">The alchemist</span>
-            </a>
-          </div>
-          <div class="nav-link-container" data-index="3">
-            <div class="nav-link-number">03</div>
-            <a href="#journey" class="nav-link">
-              <span class="nav-link-text">JOURNEY</span>
-              <span class="nav-link-sub">Timeline</span>
-            </a>
-          </div>
-          <div class="nav-link-container" data-index="4">
-            <div class="nav-link-number">04</div>
-            <a href="#projects" class="nav-link">
-              <span class="nav-link-text">PROJECTS</span>
-              <span class="nav-link-sub">Portfolio</span>
-            </a>
-          </div>
-          <div class="nav-link-container" data-index="5">
-            <div class="nav-link-number">05</div>
-            <a href="#contact" class="nav-link">
-              <span class="nav-link-text">CONTACT</span>
-              <span class="nav-link-sub">Connect</span>
-            </a>
+
+          <div class="nav-footer">
+            <div class="nav-social">
+              <a href="https://github.com/manuarya1610" class="social-link"
+                >GitHub</a
+              >
+              <a href="https://linkedin.com/in/manuaryaddn" class="social-link"
+                >LinkedIn</a
+              >
+              <a href="#" class="social-link">Resume</a>
+            </div>
+            <div class="nav-info">
+              <span>© 2024 Manu Arya</span>
+              <span>Data Engineering Perfectionist</span>
+            </div>
           </div>
         </div>
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-      <div class="hero-canvas" id="hero-canvas"></div>
-
-      <div class="hero-content">
-        <div class="hero-prelude">
-          <span class="hero-label pulse">DIGITAL ALCHEMIST</span>
-          <div class="hero-year">
-            <span class="year-number">2024</span>
-            <span class="year-line"></span>
-          </div>
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section id="home" class="hero-section">
+        <div class="hero-background">
+          <canvas id="hero-canvas"></canvas>
+          <div class="hero-grid"></div>
         </div>
 
-        <h1 class="hero-title">
-          <div class="title-line">
-            <span class="title-word" data-word="MANU">MANU</span>
+        <div class="hero-content">
+          <div class="hero-prelude">
+            <span class="prelude-text">OBSESSED WITH PERFECTION</span>
+            <div class="prelude-line"></div>
           </div>
-          <div class="title-line">
-            <span class="title-word" data-word="ARYA">ARYA</span>
-          </div>
-          <div class="title-line">
-            <span class="title-sub">CRAFTING DIGITAL REALITIES</span>
-          </div>
-        </h1>
 
-        <div class="hero-scroll">
-          <div class="scroll-indicator">
+          <h1 class="hero-title">
+            <div class="title-line">
+              <span class="title-word" data-text="MANU">MANU</span>
+            </div>
+            <div class="title-line">
+              <span class="title-word" data-text="ARYA">ARYA</span>
+            </div>
+          </h1>
+
+          <div class="hero-subtitle">
+            <p>Data Engineer · Pipeline Architect · Design Perfectionist</p>
+            <p>Creating elegant solutions to complex data problems</p>
+          </div>
+
+          <div class="hero-scroll">
+            <div class="scroll-hint">SCROLL TO EXPLORE</div>
             <div class="scroll-line"></div>
-            <div class="scroll-text">BEGIN EXPLORATION</div>
           </div>
         </div>
-      </div>
 
-      <div class="hero-grid">
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-      </div>
-    </section>
+        <div class="hero-marquee">
+          <div class="marquee-content">
+            <span>DATA PIPELINES</span>
+            <span>·</span>
+            <span>MEDALLION ARCHITECTURE</span>
+            <span>·</span>
+            <span>DATA GOVERNANCE</span>
+            <span>·</span>
+            <span>DASHBOARDS</span>
+            <span>·</span>
+            <span>PERFECTION IN CODE</span>
+            <span>·</span>
+          </div>
+        </div>
+      </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-      <div class="section-decorator">
-        <div class="decorator-line"></div>
-        <div class="decorator-text">01</div>
-      </div>
-
-      <div class="about-container">
-        <div class="about-intro">
-          <div class="intro-label">
-            <span>THE ALCHEMIST</span>
+      <!-- About Section -->
+      <section id="about" class="about-section">
+        <div class="section-header">
+          <div class="header-label">
+            <span>THE PERFECTIONIST</span>
             <div class="label-line"></div>
           </div>
-          <h2 class="about-title">
-            <span class="title-part">Where</span>
-            <span class="title-part highlight">Code</span>
-            <span class="title-part">Meets</span>
-            <span class="title-part highlight">Creativity</span>
+          <h2 class="section-title">
+            Where <span class="title-highlight">Precision</span> Meets
+            <span class="title-highlight">Creativity</span>
           </h2>
-
-          <div class="about-stats">
-            <div class="stat-item">
-              <div class="stat-number" data-count="3">0</div>
-              <div class="stat-label">Years of Innovation</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" data-count="50">0</div>
-              <div class="stat-label">Projects Built</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" data-count="100">0</div>
-              <div class="stat-label">Cups of Coffee</div>
-            </div>
-          </div>
         </div>
 
         <div class="about-content">
-          <div class="content-block">
-            <p class="about-text">
-              I am a
-              <span class="text-highlight">digital alchemist</span> transforming
-              ideas into immersive experiences. My craft lies at the
-              intersection of cutting-edge technology and artistic vision,
-              creating digital realities that captivate and inspire.
+          <div class="about-text">
+            <p class="text-reveal">
+              I'm obsessed with perfection in all things digital. As a Data
+              Engineer, I find beauty in clean code, elegant architecture, and
+              flawless implementation. Every pipeline I build, every dashboard I
+              design, every problem I solve — perfection is the standard.
             </p>
 
-            <div class="skill-showcase">
-              <div class="skill-orb">
-                <div class="skill-name">WEBGL</div>
-                <div class="skill-level">
-                  <div class="level-bar" style="width: 90%"></div>
-                </div>
+            <div class="about-grid">
+              <div class="grid-item">
+                <div class="item-number">01</div>
+                <h3 class="item-title">Data Engineering</h3>
+                <p class="item-text">
+                  Building robust, scalable data pipelines with medallion
+                  architecture and meticulous attention to detail.
+                </p>
               </div>
-              <div class="skill-orb">
-                <div class="skill-name">THREE.JS</div>
-                <div class="skill-level">
-                  <div class="level-bar" style="width: 85%"></div>
-                </div>
+              <div class="grid-item">
+                <div class="item-number">02</div>
+                <h3 class="item-title">Design Mindset</h3>
+                <p class="item-text">
+                  Applying design principles to data solutions, creating
+                  intuitive dashboards and user experiences.
+                </p>
               </div>
-              <div class="skill-orb">
-                <div class="skill-name">GSAP</div>
-                <div class="skill-level">
-                  <div class="level-bar" style="width: 95%"></div>
-                </div>
+              <div class="grid-item">
+                <div class="item-number">03</div>
+                <h3 class="item-title">Nature & Travel</h3>
+                <p class="item-text">
+                  Finding inspiration in nature's perfection and bringing that
+                  clarity to complex data problems.
+                </p>
+              </div>
+            </div>
+
+            <div class="about-stats">
+              <div class="stat">
+                <div class="stat-number" data-count="50">0</div>
+                <div class="stat-label">Projects Completed</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number" data-count="100">0</div>
+                <div class="stat-label">Data Pipelines</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number" data-count="1000">0</div>
+                <div class="stat-label">Cups of Coffee</div>
               </div>
             </div>
           </div>
 
           <div class="about-visual">
-            <div class="visual-container">
-              <div class="visual-element ve1"></div>
-              <div class="visual-element ve2"></div>
-              <div class="visual-element ve3"></div>
-            </div>
+            <div class="visual-element ve1"></div>
+            <div class="visual-element ve2"></div>
+            <div class="visual-element ve3"></div>
           </div>
         </div>
+      </section>
 
-        <div class="philosophy-grid">
-          <div class="philosophy-card">
-            <div class="card-icon">⚡</div>
-            <h3 class="card-title">Innovation First</h3>
-            <p class="card-text">
-              Pushing boundaries with bleeding-edge technology
-            </p>
+      <!-- Skills Section -->
+      <section id="skills" class="skills-section">
+        <div class="section-header">
+          <div class="header-label">
+            <span>EXPERTISE</span>
+            <div class="label-line"></div>
           </div>
-          <div class="philosophy-card">
-            <div class="card-icon">🎨</div>
-            <h3 class="card-title">Artistic Vision</h3>
-            <p class="card-text">
-              Every pixel tells a story, every interaction matters
-            </p>
-          </div>
-          <div class="philosophy-card">
-            <div class="card-icon">⚙️</div>
-            <h3 class="card-title">Technical Excellence</h3>
-            <p class="card-text">
-              Robust architecture meets elegant implementation
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Journey Timeline -->
-    <section id="journey" class="journey-section">
-      <div class="section-header">
-        <div class="header-label">
-          <span>THE ODYSSEY</span>
-          <div class="label-underline"></div>
-        </div>
-        <h2 class="section-title">
-          My Digital <span class="title-glow">Evolution</span>
-        </h2>
-      </div>
-
-      <div class="timeline-container">
-        <div class="timeline-line"></div>
-
-        <div class="timeline-items">
-          <div class="timeline-item" data-year="2021">
-            <div class="item-marker">
-              <div class="marker-dot"></div>
-              <div class="marker-year">2021</div>
-            </div>
-            <div class="item-content">
-              <h3 class="item-title">The Awakening</h3>
-              <p class="item-desc">
-                First steps into web development. Built foundational projects
-                and discovered passion for interactive design.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item" data-year="2022">
-            <div class="item-marker">
-              <div class="marker-dot"></div>
-              <div class="marker-year">2022</div>
-            </div>
-            <div class="item-content">
-              <h3 class="item-title">Mastering the Craft</h3>
-              <p class="item-desc">
-                Advanced into Three.js and WebGL. Created immersive experiences
-                and won first design awards.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item" data-year="2023">
-            <div class="item-marker">
-              <div class="marker-dot"></div>
-              <div class="marker-year">2023</div>
-            </div>
-            <div class="item-content">
-              <h3 class="item-title">Breaking Boundaries</h3>
-              <p class="item-desc">
-                Pushed creative limits with complex animations and interactive
-                storytelling. Featured in design publications.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item" data-year="2024">
-            <div class="item-marker">
-              <div class="marker-dot"></div>
-              <div class="marker-year">2024</div>
-            </div>
-            <div class="item-content">
-              <h3 class="item-title">Digital Alchemy</h3>
-              <p class="item-desc">
-                Crafting award-winning experiences that blend technology with
-                art. Pursuing excellence in every pixel.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Gallery -->
-    <section id="projects" class="projects-section">
-      <div class="projects-header">
-        <div class="projects-label">
-          <span>PORTFOLIO</span>
-          <div class="label-sparkle">✨</div>
-        </div>
-        <h2 class="projects-title">
-          Selected <span class="title-rotate">Creations</span>
-        </h2>
-        <p class="projects-subtitle">
-          Immersive experiences that push creative boundaries
-        </p>
-      </div>
-
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <div class="project-card" data-project="1">
-          <div class="project-preview">
-            <div class="preview-overlay">
-              <div class="preview-label">3D EXPERIENCE</div>
-              <div class="preview-glow"></div>
-            </div>
-            <div
-              class="project-image"
-              style="
-                background-image: url('https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
-              "
-            ></div>
-          </div>
-          <div class="project-info">
-            <div class="project-number">01</div>
-            <h3 class="project-name">Quantum Interface</h3>
-            <p class="project-desc">
-              Interactive 3D dashboard with real-time data visualization
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">WebGL</span>
-              <span class="project-tag">Three.js</span>
-              <span class="project-tag">GSAP</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link">
-                <span>View Case Study</span>
-                <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-card" data-project="2">
-          <div class="project-preview">
-            <div class="preview-overlay">
-              <div class="preview-label">IMMERSIVE WEB</div>
-              <div class="preview-glow"></div>
-            </div>
-            <div
-              class="project-image"
-              style="
-                background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
-              "
-            ></div>
-          </div>
-          <div class="project-info">
-            <div class="project-number">02</div>
-            <h3 class="project-name">Nexus Portal</h3>
-            <p class="project-desc">
-              Fullscreen immersive website with parallax scrolling
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Parallax</span>
-              <span class="project-tag">Canvas</span>
-              <span class="project-tag">ScrollMagic</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link">
-                <span>Explore Live</span>
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-card" data-project="3">
-          <div class="project-preview">
-            <div class="preview-overlay">
-              <div class="preview-label">INTERACTIVE ART</div>
-              <div class="preview-glow"></div>
-            </div>
-            <div
-              class="project-image"
-              style="
-                background-image: url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
-              "
-            ></div>
-          </div>
-          <div class="project-info">
-            <div class="project-number">03</div>
-            <h3 class="project-name">Digital Cosmos</h3>
-            <p class="project-desc">
-              Generative art installation with particle systems
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Particles</span>
-              <span class="project-tag">Generative</span>
-              <span class="project-tag">GLSL</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link">
-                <span>Experience Art</span>
-                <i class="fas fa-palette"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="project-card" data-project="4">
-          <div class="project-preview">
-            <div class="preview-overlay">
-              <div class="preview-label">AI INTEGRATION</div>
-              <div class="preview-glow"></div>
-            </div>
-            <div
-              class="project-image"
-              style="
-                background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
-              "
-            ></div>
-          </div>
-          <div class="project-info">
-            <div class="project-number">04</div>
-            <h3 class="project-name">Neural Interface</h3>
-            <p class="project-desc">
-              AI-powered dashboard with machine learning visualization
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">AI/ML</span>
-              <span class="project-tag">D3.js</span>
-              <span class="project-tag">TensorFlow</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link">
-                <span>View Demo</span>
-                <i class="fas fa-brain"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="projects-cta">
-        <div class="cta-content">
-          <span class="cta-label">READY TO CREATE MAGIC?</span>
-          <a href="#contact" class="cta-button">
-            <span>Start a Project</span>
-            <div class="cta-arrow">
-              <i class="fas fa-arrow-right"></i>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-      <div class="contact-container">
-        <div class="contact-intro">
-          <div class="intro-sparkle">⚡</div>
-          <h2 class="contact-title">
-            <span>Let's Create</span>
-            <span class="title-glow">Something Amazing</span>
+          <h2 class="section-title">
+            Technical <span class="title-highlight">Mastery</span>
           </h2>
-          <p class="contact-subtitle">
-            Have a project in mind? Let's transform your vision into reality.
+        </div>
+
+        <div class="skills-container">
+          <div class="skills-grid">
+            <!-- Inspired by maxmilkin.com -->
+            <div class="skill-category">
+              <h3 class="category-title">Data Engineering</h3>
+              <div class="skill-items">
+                <div class="skill-item">
+                  <div class="skill-name">
+                    <span>Apache Spark</span>
+                    <span class="skill-percent">95%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 95%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-name">
+                    <span>Python</span>
+                    <span class="skill-percent">98%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 98%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-name">
+                    <span>SQL</span>
+                    <span class="skill-percent">96%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 96%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-name">
+                    <span>Airflow</span>
+                    <span class="skill-percent">90%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 90%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3 class="category-title">Cloud & Tools</h3>
+              <div class="skill-items">
+                <div class="skill-item">
+                  <div class="skill-name">
+                    <span>AWS</span>
+                    <span class="skill-percent">92%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 92%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-name">
+                    <span>Databricks</span>
+                    <span class="skill-percent">88%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 88%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-name">
+                    <span>Snowflake</span>
+                    <span class="skill-percent">85%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-name">
+                    <span>Tableau</span>
+                    <span class="skill-percent">87%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 87%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3 class="category-title">Development</h3>
+              <div class="skill-items">
+                <div class="skill-item">
+                  <div class="skill-name">
+                    <span>JavaScript</span>
+                    <span class="skill-percent">85%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-name">
+                    <span>React</span>
+                    <span class="skill-percent">80%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-name">
+                    <span>Git</span>
+                    <span class="skill-percent">95%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 95%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-name">
+                    <span>Docker</span>
+                    <span class="skill-percent">82%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 82%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-visual">
+            <div class="visual-circle">
+              <div class="circle-ring"></div>
+              <div class="circle-text">PERFECTION</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="projects-section">
+        <div class="section-header">
+          <div class="header-label">
+            <span>WORK</span>
+            <div class="label-line"></div>
+          </div>
+          <h2 class="section-title">
+            Selected <span class="title-highlight">Projects</span>
+          </h2>
+          <p class="section-subtitle">Complex problems, elegant solutions</p>
+        </div>
+
+        <div class="projects-container">
+          <!-- Project 1 - Inspired by Creative Giants scroll behavior -->
+          <div class="project-item">
+            <div class="project-preview">
+              <div class="preview-number">01</div>
+              <div class="preview-image">
+                <div class="image-overlay"></div>
+                <div class="image-content">
+                  <h3 class="project-title">Real-time Data Pipeline</h3>
+                  <p class="project-tags">Spark · Kafka · AWS · Python</p>
+                </div>
+              </div>
+            </div>
+            <div class="project-details">
+              <div class="details-content">
+                <div class="details-header">
+                  <span class="header-category">DATA ENGINEERING</span>
+                  <span class="header-year">2023</span>
+                </div>
+                <h3 class="details-title">Real-time Data Processing System</h3>
+                <p class="details-desc">
+                  Built a high-throughput data pipeline processing 1M+ events
+                  per second. Implemented using Apache Spark, Kafka, and AWS
+                  services with focus on fault tolerance and scalability.
+                </p>
+                <div class="details-tech">
+                  <span>Apache Spark</span>
+                  <span>Kafka</span>
+                  <span>AWS Glue</span>
+                  <span>Python</span>
+                </div>
+                <div class="details-links">
+                  <a href="#" class="link-button">
+                    <span>Case Study</span>
+                    <i class="fas fa-arrow-right"></i>
+                  </a>
+                  <a
+                    href="https://github.com/manuarya1610"
+                    class="link-button outline"
+                  >
+                    <span>GitHub</span>
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-item reverse">
+            <div class="project-preview">
+              <div class="preview-number">02</div>
+              <div class="preview-image">
+                <div class="image-overlay"></div>
+                <div class="image-content">
+                  <h3 class="project-title">Medallion Architecture</h3>
+                  <p class="project-tags">
+                    Databricks · Delta Lake · SQL · Governance
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="project-details">
+              <div class="details-content">
+                <div class="details-header">
+                  <span class="header-category">DATA ARCHITECTURE</span>
+                  <span class="header-year">2023</span>
+                </div>
+                <h3 class="details-title">
+                  Enterprise Data Lake Implementation
+                </h3>
+                <p class="details-desc">
+                  Designed and implemented a medallion architecture for a
+                  Fortune 500 company. Created bronze, silver, and gold layers
+                  with proper data governance and lineage tracking.
+                </p>
+                <div class="details-tech">
+                  <span>Databricks</span>
+                  <span>Delta Lake</span>
+                  <span>Unity Catalog</span>
+                  <span>SQL</span>
+                </div>
+                <div class="details-links">
+                  <a href="#" class="link-button">
+                    <span>Case Study</span>
+                    <i class="fas fa-arrow-right"></i>
+                  </a>
+                  <a
+                    href="https://github.com/manuarya1610"
+                    class="link-button outline"
+                  >
+                    <span>GitHub</span>
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-item">
+            <div class="project-preview">
+              <div class="preview-number">03</div>
+              <div class="preview-image">
+                <div class="image-overlay"></div>
+                <div class="image-content">
+                  <h3 class="project-title">Interactive Dashboard</h3>
+                  <p class="project-tags">React · D3.js · Python · API</p>
+                </div>
+              </div>
+            </div>
+            <div class="project-details">
+              <div class="details-content">
+                <div class="details-header">
+                  <span class="header-category">DATA VISUALIZATION</span>
+                  <span class="header-year">2023</span>
+                </div>
+                <h3 class="details-title">
+                  Real-time Business Intelligence Dashboard
+                </h3>
+                <p class="details-desc">
+                  Created an interactive dashboard for executive decision
+                  making. Features real-time data updates, predictive analytics,
+                  and intuitive data exploration capabilities.
+                </p>
+                <div class="details-tech">
+                  <span>React</span>
+                  <span>D3.js</span>
+                  <span>FastAPI</span>
+                  <span>PostgreSQL</span>
+                </div>
+                <div class="details-links">
+                  <a href="#" class="link-button">
+                    <span>Case Study</span>
+                    <i class="fas fa-arrow-right"></i>
+                  </a>
+                  <a
+                    href="https://github.com/manuarya1610"
+                    class="link-button outline"
+                  >
+                    <span>GitHub</span>
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Awards Section - Inspired by rayraylab.com -->
+        <div class="awards-section">
+          <div class="awards-header">
+            <h3 class="awards-title">Recognition & <span>Awards</span></h3>
+            <div class="awards-scroll-hint">← Scroll →</div>
+          </div>
+
+          <div class="awards-track">
+            <div class="awards-container">
+              <div class="award-item">
+                <div class="award-year">2023</div>
+                <h4 class="award-title">Data Excellence Award</h4>
+                <p class="award-desc">
+                  For outstanding contribution to data pipeline optimization
+                </p>
+              </div>
+              <div class="award-item">
+                <div class="award-year">2022</div>
+                <h4 class="award-title">Innovation Champion</h4>
+                <p class="award-desc">
+                  Recognized for implementing cutting-edge data architecture
+                </p>
+              </div>
+              <div class="award-item">
+                <div class="award-year">2021</div>
+                <h4 class="award-title">Performance Excellence</h4>
+                <p class="award-desc">
+                  Achieved 99.9% data pipeline reliability
+                </p>
+              </div>
+              <div class="award-item">
+                <div class="award-year">2020</div>
+                <h4 class="award-title">Rising Star</h4>
+                <p class="award-desc">
+                  Early career achievement in data engineering
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact-section">
+        <div class="section-header">
+          <div class="header-label">
+            <span>CONNECT</span>
+            <div class="label-line"></div>
+          </div>
+          <h2 class="section-title">
+            Let's Create <span class="title-highlight">Together</span>
+          </h2>
+          <p class="section-subtitle">
+            Have a complex data problem? Let's solve it perfectly.
           </p>
         </div>
 
-        <div class="contact-grid">
-          <div class="contact-form-container">
-            <form class="contact-form" id="contact-form">
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="info-item">
+              <div class="item-icon">✉️</div>
+              <div class="item-content">
+                <h4>Email</h4>
+                <p>hello@manuarya.dev</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="item-icon">📍</div>
+              <div class="item-content">
+                <h4>Location</h4>
+                <p>Remote · Available Worldwide</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="item-icon">⏱️</div>
+              <div class="item-content">
+                <h4>Response Time</h4>
+                <p>Within 24 hours</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <form id="contact-form">
               <div class="form-group">
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  class="form-input"
-                  required
-                />
-                <label for="name" class="form-label">
-                  <span class="label-text">Your Name</span>
-                  <span class="label-line"></span>
-                </label>
+                <input type="text" id="name" name="name" required />
+                <label for="name">Your Name</label>
+                <div class="form-line"></div>
               </div>
 
               <div class="form-group">
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  class="form-input"
-                  required
-                />
-                <label for="email" class="form-label">
-                  <span class="label-text">Email Address</span>
-                  <span class="label-line"></span>
-                </label>
+                <input type="email" id="email" name="email" required />
+                <label for="email">Email Address</label>
+                <div class="form-line"></div>
               </div>
 
               <div class="form-group">
-                <select
-                  id="project-type"
-                  name="project-type"
-                  class="form-select"
-                  required
-                >
-                  <option value=""></option>
-                  <option value="web">Website Design</option>
-                  <option value="webgl">WebGL Experience</option>
-                  <option value="app">Web Application</option>
-                  <option value="other">Other</option>
-                </select>
-                <label for="project-type" class="form-label">
-                  <span class="label-text">Project Type</span>
-                  <span class="label-line"></span>
-                </label>
+                <input type="text" id="subject" name="subject" required />
+                <label for="subject">Subject</label>
+                <div class="form-line"></div>
               </div>
 
               <div class="form-group">
-                <textarea
-                  id="message"
-                  name="message"
-                  class="form-textarea"
-                  required
-                ></textarea>
-                <label for="message" class="form-label">
-                  <span class="label-text">Your Vision</span>
-                  <span class="label-line"></span>
-                </label>
+                <textarea id="message" name="message" required></textarea>
+                <label for="message">Your Message</label>
+                <div class="form-line"></div>
               </div>
 
               <button type="submit" class="submit-button">
-                <span class="button-text">Send Message</span>
-                <div class="button-sparkle">
-                  <i class="fas fa-bolt"></i>
+                <span>Send Message</span>
+                <div class="button-icon">
+                  <i class="fas fa-paper-plane"></i>
                 </div>
               </button>
             </form>
           </div>
-
-          <div class="contact-info">
-            <div class="info-grid">
-              <div class="info-card">
-                <div class="card-icon">📍</div>
-                <h4 class="card-title">Location</h4>
-                <p class="card-text">Remote Worldwide</p>
-              </div>
-
-              <div class="info-card">
-                <div class="card-icon">✉️</div>
-                <h4 class="card-title">Email</h4>
-                <p class="card-text">hello@manuarya.dev</p>
-              </div>
-
-              <div class="info-card">
-                <div class="card-icon">🕐</div>
-                <h4 class="card-title">Response Time</h4>
-                <p class="card-text">Within 24 hours</p>
-              </div>
-
-              <div class="info-card">
-                <div class="card-icon">💼</div>
-                <h4 class="card-title">Availability</h4>
-                <p class="card-text">Open for Projects</p>
-              </div>
-            </div>
-
-            <div class="social-links">
-              <a href="https://github.com/manuarya1610" class="social-link">
-                <i class="fab fa-github"></i>
-                <span>GitHub</span>
-              </a>
-              <a href="https://linkedin.com/in/manuaryaddn" class="social-link">
-                <i class="fab fa-linkedin"></i>
-                <span>LinkedIn</span>
-              </a>
-              <a href="https://dribbble.com" class="social-link">
-                <i class="fab fa-dribbble"></i>
-                <span>Dribbble</span>
-              </a>
-              <a href="https://twitter.com" class="social-link">
-                <i class="fab fa-twitter"></i>
-                <span>Twitter</span>
-              </a>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Footer -->
+    <!-- Footer - Inspired by duten.com -->
     <footer class="main-footer">
       <div class="footer-container">
-        <div class="footer-logo">
-          <span class="logo-symbol">⚡</span>
-          <span class="logo-text">MANU ARYA</span>
+        <div class="footer-top">
+          <div class="footer-brand">
+            <span class="brand-symbol">▴</span>
+            <span class="brand-text">MANU ARYA</span>
+          </div>
+          <div class="footer-quote">
+            "Perfection is not attainable, but if we chase perfection we can
+            catch excellence."
+          </div>
         </div>
 
-        <div class="footer-quote">
-          "Crafting digital experiences that inspire, engage, and transform."
-        </div>
+        <div class="footer-middle">
+          <div class="footer-nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
 
-        <div class="footer-cta">
-          <a href="#hero" class="back-to-top">
-            <span>Back to Top</span>
-            <div class="cta-arrow">
-              <i class="fas fa-arrow-up"></i>
-            </div>
-          </a>
+          <div class="footer-social">
+            <a href="https://github.com/manuarya1610">GitHub</a>
+            <a href="https://linkedin.com/in/manuaryaddn">LinkedIn</a>
+            <a href="#">Twitter</a>
+            <a href="#">Resume</a>
+          </div>
         </div>
 
         <div class="footer-bottom">
-          <p class="copyright">© 2024 Manu Arya. All rights reserved.</p>
-          <p class="crafted">Crafted with passion and precision.</p>
+          <div class="footer-copyright">
+            <span>© 2024 Manu Arya. All rights reserved.</span>
+            <span>Data Engineering Perfectionist</span>
+          </div>
+          <div class="footer-extra">
+            <a href="404.html">404</a>
+            <span>·</span>
+            <a href="#">Privacy</a>
+            <span>·</span>
+            <a href="#">Imprint</a>
+          </div>
         </div>
       </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
     <script src="script.js"></script>
 
+    <!-- Three.js for particles -->
     <script>
-      // Initialize Three.js scene
-      if (typeof THREE !== "undefined") {
+      // Simple particle system for hero background
+      document.addEventListener("DOMContentLoaded", function () {
         const canvas = document.getElementById("hero-canvas");
-        if (canvas) {
-          // Create Three.js scene
-          const scene = new THREE.Scene();
-          const camera = new THREE.PerspectiveCamera(
-            75,
-            canvas.clientWidth / canvas.clientHeight,
-            0.1,
-            1000
-          );
-          const renderer = new THREE.WebGLRenderer({
-            canvas,
-            alpha: true,
-            antialias: true,
-          });
+        if (!canvas) return;
 
-          renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-          renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
-          // Add particles
-          const particlesGeometry = new THREE.BufferGeometry();
-          const count = 2000;
-          const positions = new Float32Array(count * 3);
+        const particles = [];
+        const particleCount = 100;
 
-          for (let i = 0; i < count * 3; i++) {
-            positions[i] = (Math.random() - 0.5) * 10;
-          }
-
-          particlesGeometry.setAttribute(
-            "position",
-            new THREE.BufferAttribute(positions, 3)
-          );
-
-          const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.02,
-            color: 0x64ffda,
-            transparent: true,
-          });
-
-          const particles = new THREE.Points(
-            particlesGeometry,
-            particlesMaterial
-          );
-          scene.add(particles);
-
-          camera.position.z = 3;
-
-          function animate() {
-            requestAnimationFrame(animate);
-
-            particles.rotation.x += 0.0005;
-            particles.rotation.y += 0.001;
-
-            renderer.render(scene, camera);
-          }
-
-          animate();
-
-          // Handle resize
-          window.addEventListener("resize", () => {
-            camera.aspect = canvas.clientWidth / canvas.clientHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+        // Create particles
+        for (let i = 0; i < particleCount; i++) {
+          particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 2 + 1,
+            speedX: Math.random() * 0.5 - 0.25,
+            speedY: Math.random() * 0.5 - 0.25,
+            color: `rgba(100, 255, 218, ${Math.random() * 0.3})`,
           });
         }
-      }
+
+        // Animation loop
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+          particles.forEach((particle) => {
+            particle.x += particle.speedX;
+            particle.y += particle.speedY;
+
+            // Boundary check
+            if (particle.x < 0 || particle.x > canvas.width)
+              particle.speedX *= -1;
+            if (particle.y < 0 || particle.y > canvas.height)
+              particle.speedY *= -1;
+
+            // Draw particle
+            ctx.beginPath();
+            ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+            ctx.fillStyle = particle.color;
+            ctx.fill();
+          });
+
+          requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Handle resize
+        window.addEventListener("resize", function () {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        });
+      });
     </script>
   </body>
 </html>
