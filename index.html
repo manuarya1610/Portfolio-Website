@@ -1,814 +1,199 @@
 <!DOCTYPE html>
-<html lang="en" class="no-scrollbar">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manu Arya · Data Engineering Perfectionist</title>
-
-    <!-- Meta -->
-    <meta
-      name="description"
-      content="Data Engineer obsessed with perfection in code, design, and implementation. Crafting elegant solutions to complex data problems."
-    />
-    <meta
-      name="keywords"
-      content="data engineer, portfolio, perfectionist, data pipelines, architecture"
-    />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-
-    <!-- Styles -->
+    <title>Manu Arya · Data Engineer & Creative Developer</title>
     <link rel="stylesheet" href="style.css" />
-
-    <!-- Favicon -->
     <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>▴</text></svg>"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
     />
+    <link
+      href="https://db.onlinewebfonts.com/c/99501fdab737541e9315ceaf9229370f?family=Monument+Extended+Regular"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   </head>
   <body>
-    <!-- Custom Cursor -->
-    <div class="cursor-ring"></div>
-    <div class="cursor-dot"></div>
-
     <!-- Loading Screen -->
     <div class="loading-screen">
       <div class="loading-container">
-        <div class="loading-text">
-          <span class="loading-char">M</span>
-          <span class="loading-char">A</span>
-          <span class="loading-char">N</span>
-          <span class="loading-char">U</span>
-          <span class="loading-char">&nbsp;</span>
-          <span class="loading-char">A</span>
-          <span class="loading-char">R</span>
-          <span class="loading-char">Y</span>
-          <span class="loading-char">A</span>
+        <div class="loading-text" data-text="PERFECTION IN DESIGN">
+          PERFECTION IN DESIGN
         </div>
-        <div class="loading-subtitle">
-          <span>Data Engineering Perfectionist</span>
-          <div class="loading-line">
-            <div class="loading-progress"></div>
-          </div>
-        </div>
+        <div class="loading-progress"></div>
       </div>
     </div>
 
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-dot"></div>
+
     <!-- Navigation -->
-    <nav class="main-nav">
-      <div class="nav-wrapper">
-        <a href="#home" class="nav-logo">
-          <span class="logo-symbol">▴</span>
-          <span class="logo-text">MANU ARYA</span>
-        </a>
-
-        <div class="nav-menu-btn">
-          <span class="menu-text">MENU</span>
-          <div class="menu-icon">
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="nav-overlay">
-        <div class="overlay-content">
-          <div class="nav-links">
-            <div class="nav-link-item" data-index="01">
-              <a href="#home" class="nav-link">
-                <span class="link-number">01</span>
-                <span class="link-text">HOME</span>
-                <span class="link-sub">Enter</span>
-              </a>
-            </div>
-            <div class="nav-link-item" data-index="02">
-              <a href="#about" class="nav-link">
-                <span class="link-number">02</span>
-                <span class="link-text">ABOUT</span>
-                <span class="link-sub">The Perfectionist</span>
-              </a>
-            </div>
-            <div class="nav-link-item" data-index="03">
-              <a href="#skills" class="nav-link">
-                <span class="link-number">03</span>
-                <span class="link-text">SKILLS</span>
-                <span class="link-sub">Expertise</span>
-              </a>
-            </div>
-            <div class="nav-link-item" data-index="04">
-              <a href="#projects" class="nav-link">
-                <span class="link-number">04</span>
-                <span class="link-text">PROJECTS</span>
-                <span class="link-sub">Work</span>
-              </a>
-            </div>
-            <div class="nav-link-item" data-index="05">
-              <a href="#contact" class="nav-link">
-                <span class="link-number">05</span>
-                <span class="link-text">CONTACT</span>
-                <span class="link-sub">Connect</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="nav-footer">
-            <div class="nav-social">
-              <a href="https://github.com/manuarya1610" class="social-link"
-                >GitHub</a
-              >
-              <a href="https://linkedin.com/in/manuaryaddn" class="social-link"
-                >LinkedIn</a
-              >
-              <a href="#" class="social-link">Resume</a>
-            </div>
-            <div class="nav-info">
-              <span>© 2024 Manu Arya</span>
-              <span>Data Engineering Perfectionist</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <nav class="nav-container">
+      <a href="#" class="logo">Manu Arya</a>
+      <button class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
-      <!-- Hero Section -->
-      <section id="home" class="hero-section">
-        <div class="hero-background">
-          <canvas id="hero-canvas"></canvas>
-          <div class="hero-grid"></div>
+    <!-- Fullscreen Menu -->
+    <div class="nav-overlay">
+      <div class="nav-menu">
+        <div class="nav-item">
+          <a href="#home" class="nav-link" data-text="Home">Home</a>
         </div>
-
-        <div class="hero-content">
-          <div class="hero-prelude">
-            <span class="prelude-text">OBSESSED WITH PERFECTION</span>
-            <div class="prelude-line"></div>
-          </div>
-
-          <h1 class="hero-title">
-            <div class="title-line">
-              <span class="title-word" data-text="MANU">MANU</span>
-            </div>
-            <div class="title-line">
-              <span class="title-word" data-text="ARYA">ARYA</span>
-            </div>
-          </h1>
-
-          <div class="hero-subtitle">
-            <p>Data Engineer · Pipeline Architect · Design Perfectionist</p>
-            <p>Creating elegant solutions to complex data problems</p>
-          </div>
-
-          <div class="hero-scroll">
-            <div class="scroll-hint">SCROLL TO EXPLORE</div>
-            <div class="scroll-line"></div>
-          </div>
+        <div class="nav-item">
+          <a href="#about" class="nav-link" data-text="About">About</a>
         </div>
-
-        <div class="hero-marquee">
-          <div class="marquee-content">
-            <span>DATA PIPELINES</span>
-            <span>·</span>
-            <span>MEDALLION ARCHITECTURE</span>
-            <span>·</span>
-            <span>DATA GOVERNANCE</span>
-            <span>·</span>
-            <span>DASHBOARDS</span>
-            <span>·</span>
-            <span>PERFECTION IN CODE</span>
-            <span>·</span>
-          </div>
+        <div class="nav-item">
+          <a href="#projects" class="nav-link" data-text="Projects">Projects</a>
         </div>
-      </section>
-
-      <!-- About Section -->
-      <section id="about" class="about-section">
-        <div class="section-header">
-          <div class="header-label">
-            <span>THE PERFECTIONIST</span>
-            <div class="label-line"></div>
-          </div>
-          <h2 class="section-title">
-            Where <span class="title-highlight">Precision</span> Meets
-            <span class="title-highlight">Creativity</span>
-          </h2>
-        </div>
-
-        <div class="about-content">
-          <div class="about-text">
-            <p class="text-reveal">
-              I'm obsessed with perfection in all things digital. As a Data
-              Engineer, I find beauty in clean code, elegant architecture, and
-              flawless implementation. Every pipeline I build, every dashboard I
-              design, every problem I solve — perfection is the standard.
-            </p>
-
-            <div class="about-grid">
-              <div class="grid-item">
-                <div class="item-number">01</div>
-                <h3 class="item-title">Data Engineering</h3>
-                <p class="item-text">
-                  Building robust, scalable data pipelines with medallion
-                  architecture and meticulous attention to detail.
-                </p>
-              </div>
-              <div class="grid-item">
-                <div class="item-number">02</div>
-                <h3 class="item-title">Design Mindset</h3>
-                <p class="item-text">
-                  Applying design principles to data solutions, creating
-                  intuitive dashboards and user experiences.
-                </p>
-              </div>
-              <div class="grid-item">
-                <div class="item-number">03</div>
-                <h3 class="item-title">Nature & Travel</h3>
-                <p class="item-text">
-                  Finding inspiration in nature's perfection and bringing that
-                  clarity to complex data problems.
-                </p>
-              </div>
-            </div>
-
-            <div class="about-stats">
-              <div class="stat">
-                <div class="stat-number" data-count="50">0</div>
-                <div class="stat-label">Projects Completed</div>
-              </div>
-              <div class="stat">
-                <div class="stat-number" data-count="100">0</div>
-                <div class="stat-label">Data Pipelines</div>
-              </div>
-              <div class="stat">
-                <div class="stat-number" data-count="1000">0</div>
-                <div class="stat-label">Cups of Coffee</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="about-visual">
-            <div class="visual-element ve1"></div>
-            <div class="visual-element ve2"></div>
-            <div class="visual-element ve3"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Skills Section -->
-      <section id="skills" class="skills-section">
-        <div class="section-header">
-          <div class="header-label">
-            <span>EXPERTISE</span>
-            <div class="label-line"></div>
-          </div>
-          <h2 class="section-title">
-            Technical <span class="title-highlight">Mastery</span>
-          </h2>
-        </div>
-
-        <div class="skills-container">
-          <div class="skills-grid">
-            <!-- Inspired by maxmilkin.com -->
-            <div class="skill-category">
-              <h3 class="category-title">Data Engineering</h3>
-              <div class="skill-items">
-                <div class="skill-item">
-                  <div class="skill-name">
-                    <span>Apache Spark</span>
-                    <span class="skill-percent">95%</span>
-                  </div>
-                  <div class="skill-bar">
-                    <div class="skill-fill" style="width: 95%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <div class="skill-name">
-                    <span>Python</span>
-                    <span class="skill-percent">98%</span>
-                  </div>
-                  <div class="skill-bar">
-                    <div class="skill-fill" style="width: 98%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <div class="skill-name">
-                    <span>SQL</span>
-                    <span class="skill-percent">96%</span>
-                  </div>
-                  <div class="skill-bar">
-                    <div class="skill-fill" style="width: 96%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <div class="skill-name">
-                    <span>Airflow</span>
-                    <span class="skill-percent">90%</span>
-                  </div>
-                  <div class="skill-bar">
-                    <div class="skill-fill" style="width: 90%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h3 class="category-title">Cloud & Tools</h3>
-              <div class="skill-items">
-                <div class="skill-item">
-                  <div class="skill-name">
-                    <span>AWS</span>
-                    <span class="skill-percent">92%</span>
-                  </div>
-                  <div class="skill-bar">
-                    <div class="skill-fill" style="width: 92%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <div class="skill-name">
-                    <span>Databricks</span>
-                    <span class="skill-percent">88%</span>
-                  </div>
-                  <div class="skill-bar">
-                    <div class="skill-fill" style="width: 88%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <div class="skill-name">
-                    <span>Snowflake</span>
-                    <span class="skill-percent">85%</span>
-                  </div>
-                  <div class="skill-bar">
-                    <div class="skill-fill" style="width: 85%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <div class="skill-name">
-                    <span>Tableau</span>
-                    <span class="skill-percent">87%</span>
-                  </div>
-                  <div class="skill-bar">
-                    <div class="skill-fill" style="width: 87%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h3 class="category-title">Development</h3>
-              <div class="skill-items">
-                <div class="skill-item">
-                  <div class="skill-name">
-                    <span>JavaScript</span>
-                    <span class="skill-percent">85%</span>
-                  </div>
-                  <div class="skill-bar">
-                    <div class="skill-fill" style="width: 85%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <div class="skill-name">
-                    <span>React</span>
-                    <span class="skill-percent">80%</span>
-                  </div>
-                  <div class="skill-bar">
-                    <div class="skill-fill" style="width: 80%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <div class="skill-name">
-                    <span>Git</span>
-                    <span class="skill-percent">95%</span>
-                  </div>
-                  <div class="skill-bar">
-                    <div class="skill-fill" style="width: 95%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <div class="skill-name">
-                    <span>Docker</span>
-                    <span class="skill-percent">82%</span>
-                  </div>
-                  <div class="skill-bar">
-                    <div class="skill-fill" style="width: 82%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="skills-visual">
-            <div class="visual-circle">
-              <div class="circle-ring"></div>
-              <div class="circle-text">PERFECTION</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Projects Section -->
-      <section id="projects" class="projects-section">
-        <div class="section-header">
-          <div class="header-label">
-            <span>WORK</span>
-            <div class="label-line"></div>
-          </div>
-          <h2 class="section-title">
-            Selected <span class="title-highlight">Projects</span>
-          </h2>
-          <p class="section-subtitle">Complex problems, elegant solutions</p>
-        </div>
-
-        <div class="projects-container">
-          <!-- Project 1 - Inspired by Creative Giants scroll behavior -->
-          <div class="project-item">
-            <div class="project-preview">
-              <div class="preview-number">01</div>
-              <div class="preview-image">
-                <div class="image-overlay"></div>
-                <div class="image-content">
-                  <h3 class="project-title">Real-time Data Pipeline</h3>
-                  <p class="project-tags">Spark · Kafka · AWS · Python</p>
-                </div>
-              </div>
-            </div>
-            <div class="project-details">
-              <div class="details-content">
-                <div class="details-header">
-                  <span class="header-category">DATA ENGINEERING</span>
-                  <span class="header-year">2023</span>
-                </div>
-                <h3 class="details-title">Real-time Data Processing System</h3>
-                <p class="details-desc">
-                  Built a high-throughput data pipeline processing 1M+ events
-                  per second. Implemented using Apache Spark, Kafka, and AWS
-                  services with focus on fault tolerance and scalability.
-                </p>
-                <div class="details-tech">
-                  <span>Apache Spark</span>
-                  <span>Kafka</span>
-                  <span>AWS Glue</span>
-                  <span>Python</span>
-                </div>
-                <div class="details-links">
-                  <a href="#" class="link-button">
-                    <span>Case Study</span>
-                    <i class="fas fa-arrow-right"></i>
-                  </a>
-                  <a
-                    href="https://github.com/manuarya1610"
-                    class="link-button outline"
-                  >
-                    <span>GitHub</span>
-                    <i class="fab fa-github"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div class="project-item reverse">
-            <div class="project-preview">
-              <div class="preview-number">02</div>
-              <div class="preview-image">
-                <div class="image-overlay"></div>
-                <div class="image-content">
-                  <h3 class="project-title">Medallion Architecture</h3>
-                  <p class="project-tags">
-                    Databricks · Delta Lake · SQL · Governance
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="project-details">
-              <div class="details-content">
-                <div class="details-header">
-                  <span class="header-category">DATA ARCHITECTURE</span>
-                  <span class="header-year">2023</span>
-                </div>
-                <h3 class="details-title">
-                  Enterprise Data Lake Implementation
-                </h3>
-                <p class="details-desc">
-                  Designed and implemented a medallion architecture for a
-                  Fortune 500 company. Created bronze, silver, and gold layers
-                  with proper data governance and lineage tracking.
-                </p>
-                <div class="details-tech">
-                  <span>Databricks</span>
-                  <span>Delta Lake</span>
-                  <span>Unity Catalog</span>
-                  <span>SQL</span>
-                </div>
-                <div class="details-links">
-                  <a href="#" class="link-button">
-                    <span>Case Study</span>
-                    <i class="fas fa-arrow-right"></i>
-                  </a>
-                  <a
-                    href="https://github.com/manuarya1610"
-                    class="link-button outline"
-                  >
-                    <span>GitHub</span>
-                    <i class="fab fa-github"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div class="project-item">
-            <div class="project-preview">
-              <div class="preview-number">03</div>
-              <div class="preview-image">
-                <div class="image-overlay"></div>
-                <div class="image-content">
-                  <h3 class="project-title">Interactive Dashboard</h3>
-                  <p class="project-tags">React · D3.js · Python · API</p>
-                </div>
-              </div>
-            </div>
-            <div class="project-details">
-              <div class="details-content">
-                <div class="details-header">
-                  <span class="header-category">DATA VISUALIZATION</span>
-                  <span class="header-year">2023</span>
-                </div>
-                <h3 class="details-title">
-                  Real-time Business Intelligence Dashboard
-                </h3>
-                <p class="details-desc">
-                  Created an interactive dashboard for executive decision
-                  making. Features real-time data updates, predictive analytics,
-                  and intuitive data exploration capabilities.
-                </p>
-                <div class="details-tech">
-                  <span>React</span>
-                  <span>D3.js</span>
-                  <span>FastAPI</span>
-                  <span>PostgreSQL</span>
-                </div>
-                <div class="details-links">
-                  <a href="#" class="link-button">
-                    <span>Case Study</span>
-                    <i class="fas fa-arrow-right"></i>
-                  </a>
-                  <a
-                    href="https://github.com/manuarya1610"
-                    class="link-button outline"
-                  >
-                    <span>GitHub</span>
-                    <i class="fab fa-github"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Awards Section - Inspired by rayraylab.com -->
-        <div class="awards-section">
-          <div class="awards-header">
-            <h3 class="awards-title">Recognition & <span>Awards</span></h3>
-            <div class="awards-scroll-hint">← Scroll →</div>
-          </div>
-
-          <div class="awards-track">
-            <div class="awards-container">
-              <div class="award-item">
-                <div class="award-year">2023</div>
-                <h4 class="award-title">Data Excellence Award</h4>
-                <p class="award-desc">
-                  For outstanding contribution to data pipeline optimization
-                </p>
-              </div>
-              <div class="award-item">
-                <div class="award-year">2022</div>
-                <h4 class="award-title">Innovation Champion</h4>
-                <p class="award-desc">
-                  Recognized for implementing cutting-edge data architecture
-                </p>
-              </div>
-              <div class="award-item">
-                <div class="award-year">2021</div>
-                <h4 class="award-title">Performance Excellence</h4>
-                <p class="award-desc">
-                  Achieved 99.9% data pipeline reliability
-                </p>
-              </div>
-              <div class="award-item">
-                <div class="award-year">2020</div>
-                <h4 class="award-title">Rising Star</h4>
-                <p class="award-desc">
-                  Early career achievement in data engineering
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section id="contact" class="contact-section">
-        <div class="section-header">
-          <div class="header-label">
-            <span>CONNECT</span>
-            <div class="label-line"></div>
-          </div>
-          <h2 class="section-title">
-            Let's Create <span class="title-highlight">Together</span>
-          </h2>
-          <p class="section-subtitle">
-            Have a complex data problem? Let's solve it perfectly.
-          </p>
-        </div>
-
-        <div class="contact-container">
-          <div class="contact-info">
-            <div class="info-item">
-              <div class="item-icon">✉️</div>
-              <div class="item-content">
-                <h4>Email</h4>
-                <p>hello@manuarya.dev</p>
-              </div>
-            </div>
-            <div class="info-item">
-              <div class="item-icon">📍</div>
-              <div class="item-content">
-                <h4>Location</h4>
-                <p>Remote · Available Worldwide</p>
-              </div>
-            </div>
-            <div class="info-item">
-              <div class="item-icon">⏱️</div>
-              <div class="item-content">
-                <h4>Response Time</h4>
-                <p>Within 24 hours</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="contact-form">
-            <form id="contact-form">
-              <div class="form-group">
-                <input type="text" id="name" name="name" required />
-                <label for="name">Your Name</label>
-                <div class="form-line"></div>
-              </div>
-
-              <div class="form-group">
-                <input type="email" id="email" name="email" required />
-                <label for="email">Email Address</label>
-                <div class="form-line"></div>
-              </div>
-
-              <div class="form-group">
-                <input type="text" id="subject" name="subject" required />
-                <label for="subject">Subject</label>
-                <div class="form-line"></div>
-              </div>
-
-              <div class="form-group">
-                <textarea id="message" name="message" required></textarea>
-                <label for="message">Your Message</label>
-                <div class="form-line"></div>
-              </div>
-
-              <button type="submit" class="submit-button">
-                <span>Send Message</span>
-                <div class="button-icon">
-                  <i class="fas fa-paper-plane"></i>
-                </div>
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer - Inspired by duten.com -->
-    <footer class="main-footer">
-      <div class="footer-container">
-        <div class="footer-top">
-          <div class="footer-brand">
-            <span class="brand-symbol">▴</span>
-            <span class="brand-text">MANU ARYA</span>
-          </div>
-          <div class="footer-quote">
-            "Perfection is not attainable, but if we chase perfection we can
-            catch excellence."
-          </div>
-        </div>
-
-        <div class="footer-middle">
-          <div class="footer-nav">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </div>
-
-          <div class="footer-social">
-            <a href="https://github.com/manuarya1610">GitHub</a>
-            <a href="https://linkedin.com/in/manuaryaddn">LinkedIn</a>
-            <a href="#">Twitter</a>
-            <a href="#">Resume</a>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <div class="footer-copyright">
-            <span>© 2024 Manu Arya. All rights reserved.</span>
-            <span>Data Engineering Perfectionist</span>
-          </div>
-          <div class="footer-extra">
-            <a href="404.html">404</a>
-            <span>·</span>
-            <a href="#">Privacy</a>
-            <span>·</span>
-            <a href="#">Imprint</a>
-          </div>
+        <div class="nav-item">
+          <a href="#contact" class="nav-link" data-text="Contact">Contact</a>
         </div>
       </div>
+      <div class="nav-footer">
+        <div>Data Engineer & Creative Developer</div>
+        <div>Based in India</div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <h1 class="hero-title reveal-text">
+        <span>Obsessed</span><br />
+        <span>With</span><br />
+        <span>Perfection<span class="color-accent-1">.</span></span>
+      </h1>
+      <p class="hero-subtitle">
+        Data Engineer passionate about creating elegant solutions and immersive
+        experiences. Building robust pipelines, implementing data governance,
+        and crafting beautiful interfaces.
+      </p>
+      <div class="hero-scroll">
+        <div class="scroll-text">Scroll</div>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- Skills/About Section -->
+    <section id="about" class="skills-section">
+      <h2 class="section-header reveal-text">
+        <span>Skills &</span><br />
+        <span>Expertise</span>
+      </h2>
+      <div class="skills-grid">
+        <div class="skill-card fade-in">
+          <div class="skill-number">01</div>
+          <h3 class="skill-title">Data Engineering</h3>
+          <p class="skill-description">
+            Building scalable data pipelines, implementing medallion
+            architectures, and ensuring data governance across complex systems.
+          </p>
+        </div>
+        <div class="skill-card fade-in">
+          <div class="skill-number">02</div>
+          <h3 class="skill-title">Creative Development</h3>
+          <p class="skill-description">
+            Crafting immersive web experiences with attention to detail,
+            performance, and user interaction.
+          </p>
+        </div>
+        <div class="skill-card fade-in">
+          <div class="skill-number">03</div>
+          <h3 class="skill-title">Design Systems</h3>
+          <p class="skill-description">
+            Creating cohesive design languages that bridge functionality with
+            aesthetic appeal.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+      <h2 class="section-header reveal-text">
+        <span>Selected</span><br />
+        <span>Projects</span>
+      </h2>
+      <div class="projects-container">
+        <!-- Project items with Creative Giants style -->
+        <div class="project-item">
+          <div class="project-index">01</div>
+          <div class="project-content">
+            <div class="project-category">Data Pipeline</div>
+            <h3 class="project-title reveal-text">
+              <span>Object Detection</span><br />
+              <span>System</span>
+            </h3>
+            <p>Real-time alert generation with intelligent object filtering</p>
+          </div>
+          <div class="project-preview">
+            <img src="https://manuarya1610.github.io/pr1.png" alt="Project" />
+          </div>
+        </div>
+        <!-- More projects... -->
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <h2 class="section-header reveal-text">
+        <span>Let's</span><br />
+        <span>Connect</span>
+      </h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <p>
+            I'm currently open to discussing data engineering opportunities,
+            creative projects, or just talking about technology and design.
+          </p>
+          <div class="contact-links">
+            <a href="https://linkedin.com/in/manuaryaddn" class="contact-link">
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/manuarya1610" class="contact-link">
+              <span>GitHub</span>
+            </a>
+            <a href="mailto:manuarya1610@gmail.com" class="contact-link">
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" id="name" required />
+            <label for="name">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" required />
+            <label for="email">Email Address</label>
+          </div>
+          <div class="form-group">
+            <textarea id="message" required></textarea>
+            <label for="message">Your Message</label>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-links">
+        <a href="#home" class="footer-link">Home</a>
+        <a href="#about" class="footer-link">About</a>
+        <a href="#projects" class="footer-link">Projects</a>
+        <a href="#contact" class="footer-link">Contact</a>
+      </div>
+      <div class="copyright">© 2024 Manu Arya. All rights reserved.</div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
     <script src="script.js"></script>
-
-    <!-- Three.js for particles -->
-    <script>
-      // Simple particle system for hero background
-      document.addEventListener("DOMContentLoaded", function () {
-        const canvas = document.getElementById("hero-canvas");
-        if (!canvas) return;
-
-        const ctx = canvas.getContext("2d");
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const particles = [];
-        const particleCount = 100;
-
-        // Create particles
-        for (let i = 0; i < particleCount; i++) {
-          particles.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            size: Math.random() * 2 + 1,
-            speedX: Math.random() * 0.5 - 0.25,
-            speedY: Math.random() * 0.5 - 0.25,
-            color: `rgba(100, 255, 218, ${Math.random() * 0.3})`,
-          });
-        }
-
-        // Animation loop
-        function animate() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-          particles.forEach((particle) => {
-            particle.x += particle.speedX;
-            particle.y += particle.speedY;
-
-            // Boundary check
-            if (particle.x < 0 || particle.x > canvas.width)
-              particle.speedX *= -1;
-            if (particle.y < 0 || particle.y > canvas.height)
-              particle.speedY *= -1;
-
-            // Draw particle
-            ctx.beginPath();
-            ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-            ctx.fillStyle = particle.color;
-            ctx.fill();
-          });
-
-          requestAnimationFrame(animate);
-        }
-
-        animate();
-
-        // Handle resize
-        window.addEventListener("resize", function () {
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
-        });
-      });
-    </script>
   </body>
 </html>
