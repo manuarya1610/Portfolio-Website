@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<animation_research_notes>
+  <meta>
+    <created>2026-01-25T01:56:00+05:30</created>
+    <purpose>Comprehensive notes for implementing Awwwards-level animations</purpose>
+    <reference_sites>
+      <site url="https://ironhill.au">Nuxt.js site with immersive scroll animations</site>
+      <site url="https://www.creativewebmanual.com">Best practices for creative web - delays, staggers, easings</site>
+    </reference_sites>
+  </meta>
+
+  <!-- ================== CORE LIBRARIES ================== -->
+  <libraries>
+    <library name="GSAP" version="3.12.5" essential="true">
+      <cdn>https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js</cdn>
+      <description>GreenSock Animation Platform - industry standard for web animations</description>
+    </library>
+    <library name="ScrollTrigger" version="3.12.5" essential="true">
+      <cdn>https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js</cdn>
+      <key_features>
+        <feature>pin - Lock element while animation plays</feature>
+        <feature>scrub - Link animation to scroll position</feature>
+        <feature>toggleActions - Control forward/reverse on enter/leave</feature>
+        <feature>snap - Snap to specific points</feature>
+      </key_features>
+    </library>
+    <library name="Lenis" version="1.1.18" essential="true">
+      <cdn>https://unpkg.com/lenis@1.1.18/dist/lenis.min.js</cdn>
+      <size>~3KB</size>
+      <advantages>
+        <item>Ultra-lightweight</item>
+        <item>Works with position:sticky</item>
+        <item>Native scroll behavior</item>
+        <item>Integrates well with ScrollTrigger</item>
+      </advantages>
+    </library>
+  </libraries>
+
+  <!-- ================== ANIMATION TECHNIQUES ================== -->
+  <techniques>
+    
+    <!-- SEAMLESS SECTION BLENDING -->
+    <technique name="seamless_sections">
+      <goal>Remove visible boundaries between sections, blend everything together</goal>
+      <methods>
+        <method name="single_background">
+          <description>Use one continuous background that spans entire page</description>
+          <implementation>Remove individual section backgrounds, animate blob shapes that follow scroll</implementation>
+        </method>
+        <method name="opacity_transitions">
+          <description>Cross-fade content using opacity and autoAlpha</description>
+          <gsap_property>autoAlpha (combines opacity + visibility)</gsap_property>
+        </method>
+        <method name="color_morphing">
+          <description>Smoothly interpolate background colors without hard cuts</description>
+          <implementation>Use GSAP scrub to tie color to scroll position continuously</implementation>
+        </method>
+      </methods>
+    </technique>
+
+    <!-- TEXT REVEAL ANIMATIONS -->
+    <technique name="text_reveal">
+      <goal>Character-by-character or line-by-line text animations</goal>
+      <methods>
+        <method name="vanilla_js_split" premium="false">
+          <description>Split text into spans using vanilla JavaScript (no plugin needed)</description>
+          <code_concept><![CDATA[
+function splitText(element) {
+  const text = element.textContent;
+  element.innerHTML = '';
+  text.split('').forEach((char, i) => {
+    const span = document.createElement('span');
+    span.textContent = char === ' ' ? '\u00A0' : char;
+    span.style.setProperty('--char-index', i);
+    element.appendChild(span);
+  });
+}
+          ]]></code_concept>
+        </method>
+        <method name="stagger_animation">
+          <description>Use GSAP stagger for organic character reveals</description>
+          <code_concept><![CDATA[
+gsap.from('.split-char', {
+  y: 100,
+  opacity: 0,
+  stagger: 0.03,
+  duration: 0.8,
+  ease: 'power4.out'
+});
+          ]]></code_concept>
+        </method>
+      </methods>
+    </technique>
+
+    <!-- HORIZONTAL SCROLL -->
+    <technique name="horizontal_scroll">
+      <goal>Convert vertical scroll to horizontal panel movement</goal>
+      <implementation><![CDATA[
+const sections = gsap.utils.toArray('.panel');
+gsap.to(sections, {
+  xPercent: -100 * (sections.length - 1),
+  ease: 'none',
+  scrollTrigger: {
+    trigger: '.horizontal-container',
+    pin: true,
+    scrub: 1,
+    snap: 1 / (sections.length - 1),
+    end: () => '+=' + document.querySelector('.horizontal-container').offsetWidth
+  }
+});
+      ]]></implementation>
+    </technique>
+
+    <!-- VERTICAL SCROLL CAROUSEL -->
+    <technique name="vertical_carousel">
+      <goal>Projects stack and reveal vertically on scroll</goal>
+      <key_properties>
+        <property name="pin">true - pins container while cards animate</property>
+        <property name="scrub">1 - smooth link to scroll</property>
+      </key_properties>
+      <implementation><![CDATA[
+const cards = gsap.utils.toArray('.project-card');
+cards.forEach((card, i) => {
+  gsap.to(card, {
+    y: i % 2 === 0 ? -100 : 100,
+    opacity: 1,
+    scrollTrigger: {
+      trigger: card,
+      start: 'top 80%',
+      end: 'top 20%',
+      scrub: 1,
+      toggleActions: 'play none none reverse'
+    }
+  });
+});
+      ]]></implementation>
+    </technique>
+
+    <!-- IMAGE REVEAL WITH CLIP-PATH -->
+    <technique name="image_reveal">
+      <goal>Dramatic image reveals using clip-path masking</goal>
+      <clip_path_options>
+        <option name="inset">inset(0% 100% 0% 0%) to inset(0% 0% 0% 0%)</option>
+        <option name="polygon">polygon(0 0, 0 0, 0 100%, 0 100%) to polygon(0 0, 100% 0, 100% 100%, 0 100%)</option>
+        <option name="circle">circle(0% at 50% 50%) to circle(100% at 50% 50%)</option>
+      </clip_path_options>
+      <implementation><![CDATA[
+gsap.fromTo('.reveal-image', 
+  { clipPath: 'inset(0% 100% 0% 0%)' },
+  { 
+    clipPath: 'inset(0% 0% 0% 0%)',
+    duration: 1.2,
+    ease: 'power4.inOut',
+    scrollTrigger: {
+      trigger: '.reveal-image',
+      start: 'top 80%'
+    }
+  }
+);
+      ]]></implementation>
+    </technique>
+
+    <!-- PARALLAX DEPTH LAYERS -->
+    <technique name="parallax">
+      <goal>Create depth perception with elements moving at different speeds</goal>
+      <data_speed_values>
+        <value amount="0.5">Slow - appears far away</value>
+        <value amount="1">Normal - scrolls with page</value>
+        <value amount="1.2">Fast - appears close</value>
+      </data_speed_values>
+      <implementation><![CDATA[
+gsap.utils.toArray('[data-speed]').forEach(el => {
+  const speed = parseFloat(el.dataset.speed) || 1;
+  gsap.to(el, {
+    y: (1 - speed) * 200,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: el.parentElement,
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+});
+      ]]></implementation>
+    </technique>
+
+    <!-- PRELOADER ANIMATION -->
+    <technique name="preloader">
+      <goal>Engaging intro animation before content reveals</goal>
+      <timeline_approach><![CDATA[
+const tl = gsap.timeline();
+tl.to('.loader-text', { 
+    y: -100, 
+    opacity: 0, 
+    stagger: 0.1,
+    duration: 0.6
+  })
+  .to('.loader-bar', { 
+    scaleX: 0, 
+    transformOrigin: 'right',
+    duration: 0.8 
+  })
+  .to('.loader-overlay', { 
+    yPercent: -100, 
+    duration: 1,
+    ease: 'power4.inOut'
+  })
+  .from('.hero-content > *', {
+    y: 60,
+    opacity: 0,
+    stagger: 0.1,
+    duration: 0.8
+  }, '-=0.4');
+      ]]></timeline_approach>
+    </technique>
+
+    <!-- MICRO-INTERACTIONS -->
+    <technique name="micro_interactions">
+      <goal>Delightful hover and interactive animations</goal>
+      <examples>
+        <example name="magnetic_buttons">Scale and follow cursor on hover</example>
+        <example name="link_underlines">Animated underlines on hover</example>
+        <example name="image_zoom">Subtle scale on image hover</example>
+      </examples>
+    </technique>
+
+  </techniques>
+
+  <!-- ================== KEY PRINCIPLES ================== -->
+  <principles source="creativewebmanual.com">
+    <principle name="delays">Use delays to create rhythm between animations</principle>
+    <principle name="staggers">Stagger elements for organic, natural motion</principle>
+    <principle name="easings">Nothing moves in straight lines - use curves (power4, expo, elastic)</principle>
+    <principle name="timing">Faster animations (0.3-0.6s) for micro-interactions, slower (0.8-1.5s) for reveals</principle>
+  </principles>
+
+  <!-- ================== EASING FUNCTIONS ================== -->
+  <easings>
+    <easing name="power4.out">Smooth deceleration - great for reveals</easing>
+    <easing name="power4.inOut">Smooth both ways - great for transitions</easing>
+    <easing name="expo.out">More dramatic deceleration</easing>
+    <easing name="elastic.out(1, 0.3)">Bouncy - for buttons</easing>
+    <easing name="back.out(1.7)">Slight overshoot - for impact</easing>
+  </easings>
+</animation_research_notes>

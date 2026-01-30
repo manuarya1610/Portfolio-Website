@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portfolio_context>
+  <meta>
+    <last_updated>2026-01-30T06:50:00+05:30</last_updated>
+    <version>3.0</version>
+    <project_path>/Users/manuarya/Documents/GitHub/Portfolio-Website</project_path>
+    <description>
+      A high-fidelity, Awwwards-style portfolio website for a Data Engineer. 
+      Features advanced animations, smooth scrolling, and a premium dark-mode aesthetic.
+    </description>
+  </meta>
+
+  <user_profile>
+    <name>Manu Arya</name>
+    <role>Data Engineer &amp; Developer</role>
+    <location>India (28.6139° N, 77.2090° E)</location>
+    <bio>
+      Data Engineer architecting the invisible infrastructure that powers data-driven decisions.
+      Specializes in transforming raw chaos into clarity through robust pipelines and intelligent systems.
+    </bio>
+    <contact>
+      <email>manuarya1610@gmail.com</email>
+      <linkedin>@manuaryaddn</linkedin>
+      <github>@manuarya1610</github>
+    </contact>
+  </user_profile>
+
+  <tech_stack>
+    <core>
+      <item>HTML5 (Semantic)</item>
+      <item>CSS3 (Variables, Flexbox, Grid, Glassmorphism)</item>
+      <item>JavaScript (ES6+ Modules)</item>
+    </core>
+    <libraries>
+      <lib name="GSAP Core" version="3.12.5" usage="Complex animations, timelines"/>
+      <lib name="ScrollTrigger" version="3.12.5" usage="Scroll-driven animations, pinning"/>
+      <lib name="SplitText" version="3.12.5" usage="Text splitting for reveals"/>
+      <lib name="Lenis" version="1.1.18" usage="Smooth momentum scrolling"/>
+    </libraries>
+    <fonts>
+      <font name="Sofia Sans Condensed" usage="Headlines, Display text"/>
+      <font name="Spline Sans Mono" usage="Technical metadata, labels"/>
+      <font name="Inter" usage="Body text"/>
+    </fonts>
+  </tech_stack>
+
+  <design_system>
+    <theme>
+      <name>Dual-Tone Cinematic</name>
+      <modes>
+        <mode name="Light" bg="#F7F7F7" text="#101010" usage="Hero, About sections"/>
+        <mode name="Dark" bg="#000000" text="#FFFFFF" usage="Expertise, Work, Connect sections"/>
+      </modes>
+      <accents>
+        <color name="Blue" value="#4DA8FF" usage="Glows, Highlights"/>
+        <color name="Orange" value="#FF6B35" usage="Interactions, Expansion"/>
+      </accents>
+    </theme>
+    <features>
+      <feature name="Vignette Overlay" description="Cinematic edge darkening"/>
+      <feature name="Spotlight" description="Mouse-following radial gradient reveal"/>
+      <feature name="Noise Texture" description="Subtle grain for filmic feel"/>
+      <feature name="Magnetic Elements" description="Buttons and links attract to cursor"/>
+    </features>
+  </design_system>
+
+  <key_components>
+    <component name="Preloader">
+      <type>Odometer + Rotating Text</type>
+      <behavior>Counts 000-100%, seamlessly blends into Hero reveal.</behavior>
+    </component>
+    <component name="Hero Section">
+      <type>Evolving Text</type>
+      <behavior>Letters expand into icons on hover/load. Massive typographic scale.</behavior>
+    </component>
+    <component name="Navigation">
+      <type>Minimal Magnetic</type>
+      <behavior>Bracket links [LINK] with text scramble effect on hover.</behavior>
+    </component>
+    <component name="Scroll Indicator">
+      <type>Centered Bottom</type>
+      <behavior>Fixed position in hero, guides user flow.</behavior>
+    </component>
+  </key_components>
+
+  <file_structure>
+    <active_files>
+      <file>index-new.html</file>
+      <file>styles-new.css</file>
+      <file>animations-new.js</file>
+    </active_files>
+    <legacy_files>
+      <file>index.html</file>
+      <file>style.css</file>
+      <file>script.js</file>
+    </legacy_files>
+  </file_structure>
+</portfolio_context>

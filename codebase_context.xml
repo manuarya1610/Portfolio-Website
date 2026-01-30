@@ -1,108 +1,886 @@
-/* ===== MODERN DESIGN TOKENS ===== */
-:root {
-  /* Colors */
-  --color-bg: #0a0a0a;
-  --color-text: #ffffff;
-  --color-accent: #00ffc8;
-  --color-accent-2: #0a512e;
+<codebase>
+  <file path="README.md">
+    <![CDATA[
+# Portfolio-Website
+    ]]>
+  </file>
+  <file path="index.html">
+    <![CDATA[
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="image/jpeg"
+      href="https://manuarya1610.github.io/title.png"
+    />
+    <title>Manu Arya 🤟</title>
 
-  /* Typography */
-  --font-display: 'Monument Extended', 'Inter', sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://db.onlinewebfonts.com/c/99501fdab737541e9315ceaf9229370f?family=Monument+Extended+Regular"
+      rel="preload stylesheet"
+      crossorigin
+    />
+    <link
+      href="https://db.onlinewebfonts.com/c/55d433372d270829c51e2577a78ef12d?family=Monument+Extended+Bold"
+      rel=" preload stylesheet"
+      crossorigin
+    />
 
-  /* Letter-spacing scale */
-  --tracking-tighter: -0.03em;
-  --tracking-tight: -0.01em;
-  --tracking-normal: 0;
-  --tracking-wide: 0.02em;
-  --tracking-wider: 0.05em;
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Questrial&family=Raleway:wght@600&display=swap"
+      rel="stylesheet"
+    />
 
-  /* Fluid font sizes */
-  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-  --text-sm: clamp(0.875rem, 0.8rem + 0.4vw, 1rem);
-  --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
-  --text-lg: clamp(1.125rem, 1rem + 0.6vw, 1.25rem);
-  --text-xl: clamp(1.25rem, 1.1rem + 0.8vw, 1.5rem);
-  --text-2xl: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.10.2/dist/gsap.min.js"></script>
+    <script src="script.js"></script>
+  </head>
 
-  /* Animation */
-  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-  --cursor-size: 40px;
+  <body>
+    <div id="ending" class="wrapper">
+      <div class="consist-intro">
+        <div class="intro-container">
+          <div class="text-wrapper">
+            <div class="text-3 text">KEEP IT SIMPLE</div>
+            <div class="text-4 text">KEEP IT SIMPLE</div>
+            <div class="text-5 text">KEEP IT SIMPLE</div>
+            <div class="text-6 text">KEEP IT SIMPLE</div>
+            <div class="text-7 text">KEEP IT SIMPLE</div>
+            <div class="text-8 text">KEEP IT SIMPLE</div>
+            <div class="text-9 text">KEEP IT SIMPLE</div>
+          </div>
+        </div>
+      </div>
 
-  /* Glass effect tokens */
-  --glass-blur: 40px;
-  --glass-bg: rgba(255, 255, 255, 0.06);
-  --glass-border: rgba(255, 255, 255, 0.12);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
+      <div id="first" class="first-page">
+        <div class="navbar">
+          <div class="logo">
+            <button
+              class="hover-link"
+              area-label="Hover Me"
+              cursor-type="button"
+            >
+              <span area-hidden="true">
+                <span>Manu <span>Manu </span></span>
+                <span>Arya<span>Arya</span></span>
+              </span>
+            </button>
+          </div>
 
-/* ===== LENIS SMOOTH SCROLL ===== */
-html.lenis,
-html.lenis body {
-  height: auto;
-}
+          <div class="menu-consist-small">
+            <div class="menu-open">menu</div>
+            <div class="nav-container">
+              <div class="menu-close">close</div>
 
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
+              <nav class="menu">
+                <div class="menu__item">
+                  <a
+                    href="#first"
+                    onclick="t1.reverse()"
+                    class="menu__item-link"
+                    >Home</a
+                  >
+                  <div class="marquee">
+                    <div class="marquee__inner">
+                      <span
+                        >Home - Home - Home - Home - Home - Home - Home</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="menu__item">
+                  <a href="#one" onclick="t1.reverse()" class="menu__item-link"
+                    >About</a
+                  >
+                  <div class="marquee">
+                    <div class="marquee__inner">
+                      <span
+                        >About - About - About - About - About - About -
+                        About</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="menu__item">
+                  <a href="#two" onclick="t1.reverse()" class="menu__item-link"
+                    >Projects</a
+                  >
+                  <div class="marquee">
+                    <div class="marquee__inner">
+                      <span
+                        >Projects - Projects - Projects - Projects - Projects -
+                        Projects - Projects</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="menu__item">
+                  <a
+                    href="#three"
+                    onclick="t1.reverse()"
+                    class="menu__item-link"
+                    >Contact</a
+                  >
+                  <div class="marquee">
+                    <div class="marquee__inner">
+                      <span
+                        >Contact - Contact - Contact - Contact - Contact -
+                        Contact - Contact</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
 
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
+          <div class="site-menu">
+            <a href="#one" class="menu-item hover-this"
+              ><div><span>About</span></div></a
+            >
+            <a href="#two" class="menu-item hover-this"
+              ><div><span>Projects</span></div></a
+            >
+            <a href="#three" class="menu-item hover-this"
+              ><div><span>Contact</span></div></a
+            >
+          </div>
+        </div>
 
-/* ===== CUSTOM CURSOR ===== */
-.custom-cursor {
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  mix-blend-mode: difference;
-}
+        <div class="contain-content">
+          <div class="content">
+            <div class="hi1">welcome</div>
+            <div class="hi1">to my &nbsp;</div>
+            <div class="hi1">portfolio</div>
+          </div>
+        </div>
 
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--color-accent);
-  border-radius: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s var(--ease-smooth);
-}
+        <div class="contain-box">
+          <div id="box">
+            <div id="box1">
+              <div id="text1">CREATIVE</div>
+            </div>
+            <div id="box2">
+              <div id="text2">CREATIVE</div>
+            </div>
+            <br /><br />
+            <div id="box3">
+              <div id="text3">DESIGNER</div>
+            </div>
+            <div id="box4">
+              <div id="text4">DESIGNER</div>
+            </div>
+            <br /><br />
+            <div id="box5">
+              <div id="text5">DEVELOPER</div>
+            </div>
+            <div id="box6">
+              <div id="text6">DEVELOPER</div>
+            </div>
+          </div>
+        </div>
 
-.cursor-circle {
-  width: var(--cursor-size);
-  height: var(--cursor-size);
-  border: 1px solid var(--color-text);
-  border-radius: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s var(--ease-smooth),
-    height 0.3s var(--ease-smooth),
-    border-color 0.3s var(--ease-smooth),
-    background-color 0.3s var(--ease-smooth);
-}
+        <div class="footer-first-page">
+          <div class="first-social">
+            <div class="f-links hover-this">
+              <a href="https://linkedin.com/in/manuaryaddn"
+                ><span>LinkedIn</span></a
+              >
+            </div>
+            <div class="f-links hover-this">
+              <a href="https://github.com/manuarya1610"><span>GitHub</span></a>
+            </div>
+          </div>
 
-.cursor-circle.hover {
-  width: 80px;
-  height: 80px;
-  border-color: var(--color-accent);
-  background-color: rgba(0, 255, 200, 0.1);
-}
+          <div class="contain-dna">
+            <div id="dna">
+              <div class="line line1"></div>
+              <div class="line line2"></div>
+              <div class="line line3"></div>
+              <div class="line line4"></div>
+              <div class="line line5"></div>
+              <div class="line line6"></div>
+              <div class="line line7"></div>
+              <div class="line line8"></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-.cursor-circle.active {
-  transform: translate(-50%, -50%) scale(0.8);
-}
+      <div class="white-space-project"></div>
+      <div class="white-space-project"></div>
 
-@media (pointer: coarse),
-(max-width: 768px) {
-  .custom-cursor {
-    display: none;
-  }
-}
+      <div id="one" class="contain-about">
+        <div class="about">
+          <div id="about-main">
+            <div class="hello">
+              <div class="about-box">
+                <div class="about-letter">H</div>
+              </div>
+              <div class="about-box">
+                <div class="about-letter">E</div>
+              </div>
+              <div class="about-box">
+                <div class="about-letter">L</div>
+              </div>
+              <div class="about-box">
+                <div class="about-letter">L</div>
+              </div>
+              <div class="about-box">
+                <div class="about-letter">O</div>
+              </div>
+              <div class="about-box">
+                <div class="about-letter">,</div>
+              </div>
+            </div>
 
-/* ===== BASE STYLES ===== */
+            <div class="about-wrapper">
+              <div class="about-line">
+                <span class="span-line">
+                  I am
+                  <span class="name">Manu Arya</span>
+                </span>
+              </div>
+              <div class="about-line-1">
+                <p>
+                  I enjoy creating fun and interactive experiences with code. I
+                  am passionate about designing aesthetically pleasing and
+                  functional experiences. I am constantly striving to develop
+                  and enhance my skills. Nature, food, and coding are all things
+                  I love. Feel free to say hi while you're here I would be
+                  delighted to connect with you.
+                </p>
+              </div>
+            </div>
+
+            <a href="https://linkedin.com/in/manuaryaddn"
+              ><button class="about-button">Let's talk</button></a
+            >
+          </div>
+
+          <div class="about-element">
+            <div class="consist-element">
+              <div class="scene">
+                <div class="banner">
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                  <div class="panel"></div>
+                </div>
+                <div class="screen"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="two" class="project-container-main">
+        <div id="project-about-main">
+          <div class="project-about-box">
+            <div class="project-about-letter">P</div>
+          </div>
+          <div class="project-about-box">
+            <div class="project-about-letter">R</div>
+          </div>
+          <div class="project-about-box">
+            <div class="project-about-letter">O</div>
+          </div>
+          <div class="project-about-box">
+            <div class="project-about-letter">J</div>
+          </div>
+
+          <div class="project-about-box">
+            <div class="project-about-letter">_</div>
+          </div>
+        </div>
+
+        <div id="project-about-main-2">
+          <div class="project-about-box">
+            <div class="project-about-letter">E</div>
+          </div>
+          <div class="project-about-box">
+            <div class="project-about-letter">C</div>
+          </div>
+          <div class="project-about-box">
+            <div class="project-about-letter">T</div>
+          </div>
+          <div class="project-about-box">
+            <div class="project-about-letter">S</div>
+          </div>
+        </div>
+
+        <div class="white-space-project"></div>
+
+        <!-- project 1 -->
+
+        <div class="project-heading">&lt;/&gt; project 1</div>
+        <div class="project1">
+          <div class="pr1-left">
+            <span class="modal-img"
+              ><img src="https://manuarya1610.github.io/pr1.png" width="100%" />
+            </span>
+          </div>
+          <div class="ct">
+            <div class="pr1-right">
+              <div>
+                <span>OBJECT DETECTION AND ALERT GENERATION</span>
+                <br />
+                <br />
+                <div class="pr-text">
+                  The software supports various both video and image input
+                  formats and utilizes bounding boxes to identify and label
+                  detected objects by their corresponding class names.
+                  Additionally, it offers filters to specifically target certain
+                  objects and can generate text alerts along with relevant
+                  screenshots of specific frames. These alerts can be sent to
+                  remote servers to serve as intruder warnings.
+                </div>
+              </div>
+            </div>
+            <div class="git-button">
+              <a
+                class="a-git-1"
+                href="https://github.com/manuarya1610/Object-Detection-and-Alert-Generation.git"
+                ><button class="git">GitHub</button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="white-space-project"></div>
+
+        <div class="project-container-about">
+          <div class="project-heading">&lt;/&gt; project 2</div>
+
+          <div class="project2">
+            <div class="pr2-right">
+              <span class="modal-img"
+                ><img src="https://manuarya1610.github.io/pr2.png" width="100%"
+              /></span>
+            </div>
+
+            <div class="ct-2">
+              <div class="pr2-left">
+                <div>
+                  <span>RTSP/Video Streaming Software</span>
+                  <br />
+                  <br />
+                  <div class="pr-text">
+                    The software leverages the OpenCV library to stream video
+                    from diverse sources. It has been developed using QT Creator
+                    and the interface has been designed using QT Designer.
+                  </div>
+                </div>
+              </div>
+              <div class="git-button">
+                <a href="https://github.com/manuarya1610/RTSP-Video-Player.git"
+                  ><button class="git">GitHub</button></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="white-space-project"></div>
+
+        <div class="project-heading">&lt;/&gt; project 3</div>
+
+        <div class="project1">
+          <div class="pr1-left">
+            <span class="modal-img"
+              ><img src="https://manuarya1610.github.io/pr3.png" width="100%" />
+            </span>
+          </div>
+          <div class="ct">
+            <div class="pr1-right">
+              <div>
+                <span>Website Template</span>
+                <br />
+                <br />
+                <div class="pr-text">
+                  An aesthetically pleasing and user-friendly website template
+                  that is super responsive on a majority of devices. It follows
+                  a minimalistic design concept that is both fucntional and
+                  aesthetic.
+                </div>
+              </div>
+            </div>
+            <div class="git-button">
+              <a
+                class="a-git-1"
+                href="https://github.com/manuarya1610/Community-Website-Template"
+                ><button class="git">GitHub</button>
+              </a>
+            </div>
+            <div class="git-button">
+              <a class="a-git-1" href="https://manant-devs.netlify.app"
+                ><button class="git git-website">Website</button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="white-space-project"></div>
+
+        <div class="project-container-about">
+          <div class="project-heading">&lt;/&gt; project 4</div>
+
+          <div class="project2">
+            <div class="pr2-right">
+              <span class="modal-img"
+                ><img src="https://manuarya1610.github.io/pr6.png" width="100%"
+              /></span>
+            </div>
+
+            <div class="ct-2">
+              <div class="pr2-left">
+                <div>
+                  <span>Cocktails App 🍸</span>
+                  <br />
+                  <br />
+                  <div class="pr-text">
+                    This website is created using react. This website fetches
+                    cocktails from a free API and showcases it in stunning
+                    UI/UX.
+                  </div>
+                </div>
+              </div>
+              <div class="git-button">
+                <a href="https://github.com/manuarya1610/Cocktails-WebApp"
+                  ><button class="git">GitHub</button></a
+                >
+              </div>
+              <div class="git-button">
+                <a
+                  class="a-git-1"
+                  href="https://cocktails-arya-webapp.netlify.app/"
+                  ><button class="git git-website">Website</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="white-space-project"></div>
+
+        <div class="project-heading">&lt;/&gt; project 5</div>
+        <div class="project1">
+          <div class="pr1-left">
+            <span class="modal-img"
+              ><img src="https://manuarya1610.github.io/pr5.png" width="100%" />
+            </span>
+          </div>
+          <div class="ct">
+            <div class="pr1-right">
+              <div>
+                <span>Dino Game 🦖</span>
+                <br />
+                <br />
+                <div class="pr-text">
+                  This JAVA-based game draws inspiration from the renowned
+                  Google Chrome Dino game, offering an exciting and engaging
+                  experience for players.
+                </div>
+              </div>
+            </div>
+            <div class="git-button">
+              <a
+                class="a-git-1"
+                href="https://github.com/manuarya1610/Dino_Game"
+                ><button class="git">GitHub</button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="white-space-project"></div>
+
+        <div class="project-heading">&lt;/&gt; project 6</div>
+
+        <div class="project1">
+          <div class="pr1-left">
+            <span class="modal-img"
+              ><img src="https://manuarya1610.github.io/pr4.png" width="100%" />
+            </span>
+          </div>
+          <div class="ct">
+            <div class="pr1-right">
+              <div>
+                <span>Expense Tracker 🏦</span>
+                <br />
+                <br />
+                <div class="pr-text">
+                  This is a user-friendly web application, designed to simplify
+                  your financial management and keep a track of your finances.
+                </div>
+              </div>
+            </div>
+            <div class="git-button">
+              <a
+                class="a-git-1"
+                href="https://github.com/manuarya1610/Community-Website-Template"
+                ><button class="git">GitHub</button>
+              </a>
+            </div>
+            <div class="git-button">
+              <a class="a-git-1" href="https://manant-devs.netlify.app"
+                ><button class="git git-website">Website</button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="white-space-project"></div>
+      </div>
+
+      <div class="consist-contact">
+        <div class="md-modal md-effect-12">
+          <div class="md-content">
+            <div class="giffy">
+              <img
+                src="https://manuarya1610.github.io/easter.gif"
+                alt="This is a GIF"
+              />
+            </div>
+            <div class="container-text">
+              <div class="txt">WOW !</div>
+              <div class="txt txt-1">You Checked my whole Portfolio.</div>
+              <div class="md-close m-consist-button">
+                <div class="m-container">
+                  <a class="m-button" cursor-class="m-overlay">
+                    <span class="m-button-text"> Close </span>
+                    <span class="m-button-text m-foreground-text"> BYE ! </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="md-overlay"></div>
+
+        <div class="contact">
+          <div class="left_box">
+            <div class=".contact-big-txt">
+              <div class="txt1-ct">LETS</div>
+              <br />
+              <br />
+              <div class="txt2-ct">CONNECT</div>
+            </div>
+            <div class="socialul">
+              <div id="three" class="social">
+                <div class="links hover-this">
+                  <a href="https://linkedin.com/in/manuaryaddn"
+                    ><span class="bottom-socials">LinkedIn</span></a
+                  >
+                </div>
+                <div class="links hover-this">
+                  <a href="https://github.com/manuarya1610"
+                    ><span class="bottom-socials">GitHub</span></a
+                  >
+                </div>
+                <div class="md-trigger links hover-this easter">
+                  <a><span class="easter bottom-socials">EasterEgg</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right_box">
+            <form
+              class="form"
+              action="https://formspree.io/f/meqdpngy"
+              method="POST"
+            >
+              <div class="form-heading-container">
+                <div class="cnt heading">What's your name?</div>
+              </div>
+              <div class="cnt in">
+                <input required type="text" name="name" placeholder="name*" />
+              </div>
+              <div class="form-heading-container">
+                <div class="cnt heading">What's your email-id?</div>
+              </div>
+              <div class="cnt in">
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  placeholder="email-id*"
+                />
+              </div>
+              <div class="form-heading-container">
+                <div class="cnt heading">What's the purpose?</div>
+              </div>
+              <div class="cnt in">
+                <input
+                  required
+                  type="text"
+                  name="message"
+                  placeholder="Wassup*"
+                />
+              </div>
+
+              <div class="field hover-this">
+                <div class="consist-button">
+                  <div class="container">
+                    <button type="submit" class="button" cursor-class="overlay">
+                      <span class="button-text"> Send It! </span>
+                      <span class="button-text foreground-text">
+                        Lets GO!
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="socialul-1">
+              <div id="three" class="social">
+                <div class="links hover-this">
+                  <a href="https://linkedin.com/in/manuaryaddn"
+                    ><span>LinkedIn</span></a
+                  >
+                </div>
+                <div class="links hover-this">
+                  <a href="https://github.com/manuarya1610"
+                    ><span>GitHub</span></a
+                  >
+                </div>
+                <div class="md-trigger links hover-this easter">
+                  <a><span class="easter">EasterEgg</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- This is animation for navbar -->
+
+    <script>
+      const textrev = gsap.timeline();
+      textrev.from(".site-menu .menu-item", 0.5, {
+        x: 700,
+        ease: "power4.out",
+        delay: 6.3,
+        skewX: 10,
+        stagger: {
+          amount: 0.3,
+        },
+      });
+    </script>
+
+    <!-- end -->
+
+    <!-- This is for menu items hover effect -->
+
+    <script>
+      (function () {
+        const link = document.querySelectorAll("div > .hover-this");
+        const cursor = document.querySelector(".cursor");
+
+        const animateit = function (e) {
+          const span = this.querySelector("span");
+          const { offsetX: x, offsetY: y } = e,
+            { offsetWidth: width, offsetHeight: height } = this,
+            move = 25,
+            xMove = (x / width) * (move * 2) - move,
+            yMove = (y / height) * (move * 2) - move;
+
+          span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+
+          if (e.type === "mouseleave") span.style.transform = "";
+        };
+
+        const editCursor = (e) => {
+          const { clientX: x, clientY: y } = e;
+          cursor.style.left = x + "px";
+          cursor.style.top = y + "px";
+        };
+
+        link.forEach((b) => b.addEventListener("mousemove", animateit));
+        link.forEach((b) => b.addEventListener("mouseleave", animateit));
+        window.addEventListener("mousemove", editCursor);
+      })();
+
+      var mainbox = document.querySelector("#container");
+      var text1 = document.querySelector("#text1");
+      var text2 = document.querySelector("#text2");
+
+      function cursorflow(e, mainbox) {
+        var con = mainbox.getBoundingClientRect();
+        var x = (e.pageX - con.x) * 0.5;
+        text1.style.transform = `translate(${x}px,0)`;
+        text2.style.transform = `translate(${x}px,0)`;
+      }
+
+      mainbox.addEventListener("mousemove", (e) => {
+        setInterval(cursorflow(e, mainbox), 100000);
+      });
+    </script>
+
+    <!-- end -->
+
+    <!-- This is the creative animation -->
+
+    <script>
+      var mainbox = document.querySelector(".wrapper");
+      var text1 = document.querySelector("#text1");
+      var text2 = document.querySelector("#text2");
+
+      function cursorflow(e, mainbox) {
+        var con = mainbox.getBoundingClientRect();
+        var x = (e.pageX - con.x) * 0.5;
+        text1.style.transform = `translate(${x}px,0)`;
+        text2.style.transform = `translate(${x}px,0)`;
+      }
+
+      mainbox.addEventListener("mousemove", (e) => {
+        setInterval(cursorflow(e, mainbox), 100000);
+      });
+    </script>
+
+    <!-- creative end -->
+
+    <!-- About Section -->
+
+    <script>
+      $(document).scroll(function () {
+        var scroll = $(window).scrollTop();
+        var amount = -140 + scroll * 0.2;
+        if (amount < 10) {
+          $(".about-letter").css({ left: amount + "px" });
+        }
+      });
+    </script>
+
+    <!-- name about -->
+
+    <script>
+      $(document).scroll(function () {
+        var scroll = $(window).scrollTop();
+        var amount = -155 + scroll * 0.2;
+        if (amount < 10) {
+          $(".span-line").css({ bottom: amount + "px" });
+        }
+      });
+    </script>
+
+    <!-- nav bar changing -->
+
+    <script>
+      $(document).scroll(function () {
+        var scroll = $(window).scrollTop();
+        var amount = scroll;
+        if (amount > 600) {
+          $(".menu-open").addClass("menu-open-show");
+        } else {
+          $(".menu-open").removeClass("menu-open-show");
+        }
+      });
+    </script>
+
+    <!-- nav bar changing -->
+
+    <!-- Project Reveal -->
+
+    <script>
+      $(document).scroll(function () {
+        var scroll = $(window).scrollTop();
+        var amount = -305 + scroll * 0.2;
+        if (amount < 10) {
+          $(".project-about-letter").css({ left: amount + "px" });
+        }
+      });
+    </script>
+
+    <!-- END -->
+
+    <!-- This is the rotating circle -->
+
+    <script>
+      const circleType = new CircleType(
+        document.getElementById("rotated")
+      ).radius(80);
+
+      $(window).scroll(function () {
+        var offset = $(window).scrollTop();
+        offset = offset * 0.3;
+
+        $(".circular-text").css({
+          "-moz-transform": "rotate(" + offset + "deg)",
+          "-webkit-transform": "rotate(" + offset + "deg)",
+          "-o-transform": "rotate(" + offset + "deg)",
+          "-ms-transform": "rotate(" + offset + "deg)",
+          transform: "rotate(" + offset + "deg)",
+        });
+      });
+    </script>
+
+    <!--  -->
+
+    <!-- this is for the small menu -->
+
+    <script>
+      var t1 = new TimelineMax({ paused: true });
+
+      t1.to(".nav-container", 1, {
+        left: 0,
+        ease: Expo.easeInOut,
+      });
+
+      t1.staggerFrom(
+        ".menu > div",
+        0.8,
+        { y: 100, opacity: 0, ease: Expo.easeOut },
+        "0.1",
+        "-=0.4"
+      );
+
+      t1.reverse();
+      $(document).on("click", ".menu-open", function () {
+        t1.reversed(!t1.reversed());
+      });
+      $(document).on("click", ".menu-close", function () {
+        t1.reversed(!t1.reversed());
+      });
+    </script>
+
+    <!-- end -->
+  </body>
+</html>
+
+    ]]>
+  </file>
+  <file path="style.css">
+    <![CDATA[
 html {
   width: 100vw;
   height: 100vh;
@@ -115,134 +893,7 @@ body {
   padding: 0%;
   width: 100vw;
   height: 100vh;
-  background-color: var(--color-bg);
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: 1.6;
-  letter-spacing: var(--tracking-normal);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  position: relative;
-}
-
-/* ===== ANIMATED BLOB BACKGROUND ===== */
-.background-blobs {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -10;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.5;
-  animation: morphBlob 20s ease-in-out infinite alternate;
-}
-
-.blob-1 {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(0, 255, 200, 0.25) 0%, transparent 70%);
-  top: -200px;
-  left: -200px;
-  animation-delay: 0s;
-}
-
-.blob-2 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(10, 81, 46, 0.35) 0%, transparent 70%);
-  bottom: -150px;
-  right: -150px;
-  animation-delay: -7s;
-}
-
-.blob-3 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(0, 100, 80, 0.2) 0%, transparent 70%);
-  top: 50%;
-  left: 60%;
-  animation-delay: -14s;
-}
-
-@keyframes morphBlob {
-  0% {
-    transform: translate(0, 0) scale(1) rotate(0deg);
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-  }
-
-  25% {
-    transform: translate(50px, -30px) scale(1.1) rotate(90deg);
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  }
-
-  50% {
-    transform: translate(-30px, 50px) scale(0.95) rotate(180deg);
-    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-  }
-
-  75% {
-    transform: translate(40px, 20px) scale(1.05) rotate(270deg);
-    border-radius: 50% 40% 50% 60% / 35% 60% 40% 65%;
-  }
-
-  100% {
-    transform: translate(0, 0) scale(1) rotate(360deg);
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-  }
-}
-
-/* Hide blobs on mobile for performance */
-@media (max-width: 768px) {
-  .background-blobs {
-    display: none;
-  }
-}
-
-/* ===== TEXT REVEAL ANIMATION STYLES ===== */
-.split-char,
-.split-word {
-  display: inline-block;
-  will-change: transform, opacity;
-}
-
-/* Add perspective for 3D transforms */
-.about-letter,
-.project-about-letter {
-  perspective: 1000px;
-  transform-style: preserve-3d;
-}
-
-/* ===== TEXT SCRAMBLE STYLES ===== */
-.scramble-char {
-  color: #00ffc8;
-  font-weight: inherit;
-}
-
-/* Word-by-word reveal text styling */
-.pr-text .split-word {
-  transition: color 0.1s ease;
-}
-
-/* ===== SCROLL PROGRESS BAR ===== */
-.scroll-progress-bar {
-  box-shadow: 0 0 10px rgba(0, 255, 200, 0.5);
-}
-
-/* ===== PINNED SECTION STYLES ===== */
-.hello {
-  will-change: transform;
-}
-
-#project-about-main {
-  will-change: transform;
+  background-color: black;
 }
 
 a {
@@ -339,15 +990,12 @@ button {
   0% {
     opacity: 0%;
   }
-
   1% {
     opacity: 100%;
   }
-
   99% {
     opacity: 100%;
   }
-
   100% {
     opacity: 0;
   }
@@ -393,7 +1041,6 @@ button {
   0% {
     opacity: 0%;
   }
-
   1% {
     opacity: 100%;
   }
@@ -401,7 +1048,6 @@ button {
   19% {
     opacity: 100%;
   }
-
   20% {
     opacity: 0%;
   }
@@ -409,7 +1055,6 @@ button {
   39% {
     opacity: 0%;
   }
-
   40% {
     opacity: 100%;
   }
@@ -417,7 +1062,6 @@ button {
   59% {
     opacity: 100%;
   }
-
   60% {
     opacity: 0%;
   }
@@ -425,7 +1069,6 @@ button {
   79% {
     opacity: 0%;
   }
-
   80% {
     opacity: 100%;
   }
@@ -465,9 +1108,13 @@ button {
   margin: 0%;
   width: 100vw;
   height: 100vh;
-  /* Removed background-image for seamless blending */
-  background: transparent;
+  background-image: url(https://manuarya1610.github.io/contact-glass-blk-v3.jpeg);
   position: relative;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /* This is the navbar */
@@ -522,27 +1169,27 @@ button {
   cursor: pointer;
 }
 
-.hover-link>span {
+.hover-link > span {
   overflow: hidden;
   display: block;
   position: relative;
   pointer-events: none;
 }
 
-.hover-link>span>span {
+.hover-link > span > span {
   display: inline-block;
 }
 
-.hover-link>span>span:nth-of-type(1) {
+.hover-link > span > span:nth-of-type(1) {
   transition: 0.4s ease all;
 }
 
-.hover-link>span>span:nth-of-type(2) {
+.hover-link > span > span:nth-of-type(2) {
   transition: 0.4s ease all;
   transition-delay: 0.07s;
 }
 
-.hover-link>span>span>span {
+.hover-link > span > span > span {
   content: attr(data-text);
   display: block;
   position: absolute;
@@ -551,8 +1198,8 @@ button {
   transform: translateY(200%);
 }
 
-.hover-link:hover>span>span,
-.hover-link:focus>span>span {
+.hover-link:hover > span > span,
+.hover-link:focus > span > span {
   transform: translateY(-200%);
 }
 
@@ -637,8 +1284,6 @@ span {
   width: 750px;
   height: 150px;
   font-size: 10.5vw;
-  font-family: var(--font-display);
-  letter-spacing: var(--tracking-tighter);
   position: relative;
   overflow: hidden;
   display: inline-block;
@@ -712,7 +1357,6 @@ span {
   from {
     left: 1200px;
   }
-
   to {
     left: 0px;
   }
@@ -722,7 +1366,6 @@ span {
   from {
     left: 1200px;
   }
-
   to {
     left: -750px;
   }
@@ -879,11 +1522,9 @@ span {
   0% {
     width: 30px;
   }
-
   50% {
     width: 0px;
   }
-
   100% {
     width: 30px;
   }
@@ -958,32 +1599,34 @@ a {
 }
 
 .about-button {
-  padding: 1rem 2rem;
+  padding: 1%;
   margin-top: 4%;
   margin-left: 4%;
-  font-family: var(--font-display);
-  font-size: var(--text-sm);
-  letter-spacing: var(--tracking-wide);
-  display: inline-flex;
+  font-family: "Monument Extended Bold", Arial, Helvetica, sans-serif;
+  display: flex;
+  border: 1px solid white;
   justify-content: center;
   align-items: center;
   color: white;
-  text-decoration: none;
-  /* Glass button effect */
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 50px;
-  position: relative;
+  background-color: transparent;
+}
+
+.about-button {
+  border: 1px solid currentColor;
+  border-radius: 1.2em;
+  color: rgb(255, 255, 255);
+  font-family: "Monument Extended Regular", Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
   overflow: hidden;
-  transition: all 0.4s var(--ease-smooth);
+  position: relative;
+  text-decoration: none;
+  transition: 1s transform ease-in-out;
   will-change: transform;
   z-index: 0;
 }
 
 .about-button::after {
-  background-color: var(--color-accent-2, rgba(48, 90, 48, 0.738));
+  background-color: rgba(48, 90, 48, 0.738);
   color: black;
   content: "";
   display: block;
@@ -1005,11 +1648,10 @@ a {
 
 @media (hover: hover) and (pointer: fine) {
   .about-button:hover {
-    background: rgba(0, 255, 200, 0.15);
-    border-color: rgba(0, 255, 200, 0.3);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 255, 200, 0.15);
-    color: white;
+    background-color: rgba(26, 61, 26, 0.738);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    border-color: transparent;
+    color: black;
   }
 
   .about-button:hover::after {
@@ -1027,8 +1669,14 @@ a {
   position: relative;
   display: flex;
   flex-direction: row;
-  /* Removed background-image for seamless blending */
-  background: transparent;
+
+  background-image: url(https://manuarya1610.github.io/ft546-v2.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   width: 100%;
   height: 100%;
 }
@@ -1077,38 +1725,6 @@ a {
   height: auto;
   display: flex;
   flex-direction: column;
-  /* Apple-style Premium Glassmorphism */
-  background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.08) 0%,
-      rgba(255, 255, 255, 0.04) 50%,
-      rgba(255, 255, 255, 0.02) 100%);
-  backdrop-filter: blur(var(--glass-blur)) saturate(180%);
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%);
-  border: 1px solid var(--glass-border);
-  border-radius: 28px;
-  padding: 3rem 3.5rem;
-  margin-top: 2rem;
-  box-shadow:
-    var(--glass-shadow),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.05);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Specular highlight - top edge glow */
-.about-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 15%;
-  right: 15%;
-  height: 1px;
-  background: linear-gradient(90deg,
-      transparent,
-      rgba(255, 255, 255, 0.3),
-      transparent);
-  pointer-events: none;
 }
 
 .about-wrapper .about-line {
@@ -1119,15 +1735,13 @@ a {
 
 .about-wrapper .about-line-1 {
   margin-bottom: 2%;
-  font-family: var(--font-body);
-  font-size: var(--text-lg);
-  line-height: 1.7;
-  letter-spacing: var(--tracking-normal);
+  font-family: Helvetica, sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
   width: 65%;
   height: 100%;
   position: relative;
   overflow: hidden;
-  color: rgba(255, 255, 255, 0.9);
 }
 
 p {
@@ -1416,11 +2030,12 @@ p {
   color: white;
 
   color: black;
-  -webkit-text-fill-color: rgba(55,
-      41,
-      41,
-      0);
-  /* Will override color (regardless of order) */
+  -webkit-text-fill-color: rgba(
+    55,
+    41,
+    41,
+    0
+  ); /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgb(255, 255, 255);
 }
@@ -1447,7 +2062,6 @@ p {
   border-radius: 200px;
   border: 1px solid currentColor;
 }
-
 .git-website {
   z-index: 200;
   margin-top: 8%;
@@ -1569,8 +2183,8 @@ p {
   display: flex;
   flex-direction: row;
 }
-
 */
+
 /* END */
 
 /* THIS IS THE CONTACT FORM */
@@ -1591,8 +2205,13 @@ p {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  /* Removed background-image for seamless blending */
-  background: transparent;
+  background-image: url(https://manuarya1610.github.io/contact-final.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .left_box {
@@ -1808,12 +2427,10 @@ input {
   .button:hover {
     border-color: transparent;
   }
-
   .button:hover::after {
     width: 100%;
     height: 100%;
   }
-
   .button:hover .button-text.foreground-text {
     opacity: 1;
   }
@@ -1948,7 +2565,7 @@ button.md-close {
   transition: all 0.3s;
 }
 
-.md-show~.md-overlay {
+.md-show ~ .md-overlay {
   opacity: 1;
   visibility: visible;
 }
@@ -1990,11 +2607,12 @@ button.md-close {
 
 .container-text .txt-1 {
   color: black;
-  -webkit-text-fill-color: rgba(55,
-      41,
-      41,
-      0);
-  /* Will override color (regardless of order) */
+  -webkit-text-fill-color: rgba(
+    55,
+    41,
+    41,
+    0
+  ); /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgb(255, 255, 255);
 }
@@ -2015,7 +2633,6 @@ button.md-close {
 /*  */
 
 @media only screen and (max-width: 780px) {
-
   /* for small smartphones */
   html {
     font-size: 14px;
@@ -2358,7 +2975,7 @@ button.md-close {
   opacity: 0;
 }
 
-.menu__item-link:hover+.menu__item-img {
+.menu__item-link:hover + .menu__item-img {
   opacity: 1;
   transform: scale(1);
   transition: all 0.4s;
@@ -2390,7 +3007,7 @@ button.md-close {
   transform: translateX(60px);
 }
 
-.menu__item-link:hover~.marquee .marquee__inner {
+.menu__item-link:hover ~ .marquee .marquee__inner {
   opacity: 1;
   transform: translateX(0px);
   transition-duration: 0.4s;
@@ -2411,7 +3028,6 @@ button.md-close {
 /* end */
 
 @media only screen and (min-width: 1500px) {
-
   #box1,
   #box2,
   #box3,
@@ -2422,3 +3038,40 @@ button.md-close {
     margin-bottom: +1rem;
   }
 }
+
+    ]]>
+  </file>
+  <file path="script.js">
+    <![CDATA[
+// full modal
+
+$(function () {
+  $(".md-trigger").on("click", function () {
+    $(".md-modal").addClass("md-show");
+  });
+
+  $(".md-close").on("click", function () {
+    $(".md-modal").removeClass("md-show");
+  });
+});
+
+// modal
+
+// smooth
+
+$(document).on("click", 'a[href^="#"]', function (event) {
+  event.preventDefault();
+
+  $("html, body").animate(
+    {
+      scrollTop: $($.attr(this, "href")).offset().top,
+    },
+    900
+  );
+});
+
+// end
+
+    ]]>
+  </file>
+</codebase>

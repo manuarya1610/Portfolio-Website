@@ -1,0 +1,128 @@
+# Portfolio Website - Project Context
+# Complete project state and implementation guidelines
+
+project:
+  name: "Manu Arya Portfolio"
+  path: /Users/manuarya/Documents/GitHub/Portfolio-Website
+  version: "3.0"
+  last_updated: "2026-01-25"
+
+# ==================== FILES ====================
+files:
+  html:
+    - path: index.html
+      status: active
+      sections:
+        - intro_loader (KEEP IT SIMPLE animation)
+        - hero (DATA/ENGINEER/DEVELOPER)
+        - about (HELLO letters + bio)
+        - projects (6 project cards)
+        - contact (form + socials)
+      needs_changes:
+        - Add data-speed for parallax
+        - Restructure projects for vertical carousel
+        - Add split-text classes
+
+  css:
+    - path: style.css
+      status: active
+      lines: ~2400
+      needs_changes:
+        - Remove section backgrounds (make seamless)
+        - Add clip-path reveal classes
+        - Add vertical carousel styles
+
+  javascript:
+    - path: script.js
+      status: legacy
+      description: Original jQuery animations
+    - path: modern-animations.js
+      status: active
+      description: GSAP + Lenis + ScrollTrigger
+      needs_overhaul: true
+
+# ==================== LIBRARIES ====================
+libraries:
+  current:
+    - gsap@3.12.5
+    - scrolltrigger@3.12.5
+    - lenis@1.1.18
+    - jquery@3.7.1
+  
+  keep:
+    - gsap (essential)
+    - scrolltrigger (essential)
+    - lenis (smooth scroll)
+    - jquery (legacy support)
+
+# ==================== DESIGN TOKENS ====================
+design:
+  colors:
+    bg: "#0a0a0a"
+    text: "#ffffff"
+    accent: "#00ffc8"
+    accent2: "#0a512e"
+  
+  fonts:
+    display: "Monument Extended"
+    body: "Inter"
+  
+  easings:
+    smooth: "power4.out"
+    transition: "power4.inOut"
+    bounce: "elastic.out(1, 0.3)"
+
+# ==================== ANIMATION GOALS ====================
+goals:
+  primary:
+    - "Seamless section blending (no visible boundaries)"
+    - "Organic motion (delays, staggers, easings)"
+    - "Vertical scroll project carousel"
+    - "Text reveal animations"
+    
+  secondary:
+    - "Image clip-path reveals"
+    - "Parallax depth layers"
+    - "Enhanced preloader"
+    - "Micro-interactions"
+
+# ==================== IMPLEMENTATION ORDER ====================
+implementation_order:
+  phase1_foundation:
+    - Remove section backgrounds
+    - Implement unified page background
+    - Restructure scroll flow
+    
+  phase2_text:
+    - Split text function (vanilla JS)
+    - Hero text reveal animation
+    - Section heading reveals
+    
+  phase3_projects:
+    - Convert to vertical carousel
+    - Pin container while cards animate  
+    - Staggered card reveals
+    
+  phase4_polish:
+    - Clip-path image reveals
+    - Parallax layers
+    - Enhanced preloader
+    - Micro-interactions
+
+# ==================== TECHNIQUES REFERENCE ====================
+techniques:
+  text_split:
+    method: "vanilla JS - wrap each character in span"
+    animation: "gsap stagger from y:100, opacity:0"
+    
+  vertical_carousel:
+    method: "ScrollTrigger pin with scrub"
+    layout: "Stacked cards, animate opacity and y"
+    
+  seamless_blend:
+    method: "Remove individual backgrounds, one continuous bg"
+    blob: "Animated gradient blobs throughout page"
+    
+  clip_path_reveal:
+    from: "inset(0% 100% 0% 0%)"
+    to: "inset(0% 0% 0% 0%)"

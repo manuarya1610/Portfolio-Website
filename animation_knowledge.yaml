@@ -1,0 +1,417 @@
+# ============================================================
+# COMPREHENSIVE ANIMATION KNOWLEDGE BASE
+# For Portfolio Website Overhaul - CreativeWebManual.com Style
+# ============================================================
+
+meta:
+  created: "2026-01-25T02:27:38+05:30"
+  purpose: "Complete reference for implementing Awwwards-level animations"
+  target_style: "creativewebmanual.com - Editorial, Minimal, Sophisticated"
+
+# ============================================================
+# TECH STACK
+# ============================================================
+tech_stack:
+  required:
+    gsap:
+      version: "3.12.5"
+      cdn: "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+      note: "Core animation engine - industry standard"
+    
+    scroll_trigger:
+      version: "3.12.5"  
+      cdn: "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+      note: "Scroll-based animations - pin, scrub, toggleActions"
+    
+    split_text:
+      version: "3.12.5"
+      cdn: "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/SplitText.min.js"
+      note: "NOW FREE as of May 2025 - splits text into chars/words/lines"
+    
+    lenis:
+      version: "1.1.18"
+      cdn: "https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"
+      size: "~3KB"
+      note: "Ultra-smooth scrolling, works with position:sticky"
+  
+  optional:
+    split_type:
+      cdn: "https://unpkg.com/split-type@0.3.4/umd/index.min.js"
+      note: "Free alternative if not using GSAP SplitText"
+
+# ============================================================
+# ANIMATION TECHNIQUES (From Research)
+# ============================================================
+techniques:
+
+  # ----------------------------------------------------------
+  # 1. WORD-BY-WORD TEXT REVEAL (Grey to White on Scroll)
+  # ----------------------------------------------------------
+  word_reveal:
+    description: "Text transitions from grey (dim) to white (bright) as you scroll"
+    used_by: "creativewebmanual.com - their signature effect"
+    difficulty: "medium"
+    
+    implementation: |
+      // Step 1: Split text into words
+      const split = new SplitText('.reveal-text', { type: 'words' });
+      
+      // Step 2: Set initial state (grey/dim)
+      gsap.set(split.words, { opacity: 0.15 });
+      
+      // Step 3: Animate with scroll scrub
+      gsap.to(split.words, {
+        opacity: 1,
+        color: '#ffffff',
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: '.reveal-text',
+          start: 'top 80%',
+          end: 'bottom 30%',
+          scrub: true  // Links animation to scroll position
+        }
+      });
+    
+    key_property: "scrub: true"
+    
+  # ----------------------------------------------------------
+  # 2. PINNED SECTION (Editorial Scroll)
+  # ----------------------------------------------------------
+  pinned_section:
+    description: "Section title stays fixed while content scrolls beside it"
+    used_by: "creativewebmanual.com chapters, Apple product pages"
+    difficulty: "medium"
+    
+    implementation: |
+      // Pin the title while content scrolls
+      ScrollTrigger.create({
+        trigger: '.section-container',
+        start: 'top top',
+        end: 'bottom bottom',
+        pin: '.section-title',         // Element to pin
+        pinSpacing: false              // Don't add extra spacing
+      });
+    
+    variations:
+      - "Pin left sidebar while right content scrolls"
+      - "Pin chapter number while paragraphs scroll"
+      - "Pin sticky navigation for section"
+
+  # ----------------------------------------------------------
+  # 3. TEXT SCRAMBLE EFFECT
+  # ----------------------------------------------------------
+  text_scramble:
+    description: "Characters shuffle/scramble before revealing final text"
+    used_by: "creativewebmanual.com MENU button, tech-style sites"
+    difficulty: "easy"
+    
+    implementation: |
+      // Vanilla JS approach (no plugin needed)
+      class TextScramble {
+        constructor(el) {
+          this.el = el;
+          this.chars = '!<>-_\\/[]{}—=+*^?#________';
+          this.update = this.update.bind(this);
+        }
+        
+        setText(newText) {
+          const oldText = this.el.innerText;
+          const length = Math.max(oldText.length, newText.length);
+          const promise = new Promise(resolve => this.resolve = resolve);
+          this.queue = [];
+          
+          for (let i = 0; i < length; i++) {
+            const from = oldText[i] || '';
+            const to = newText[i] || '';
+            const start = Math.floor(Math.random() * 40);
+            const end = start + Math.floor(Math.random() * 40);
+            this.queue.push({ from, to, start, end });
+          }
+          
+          cancelAnimationFrame(this.frameRequest);
+          this.frame = 0;
+          this.update();
+          return promise;
+        }
+        
+        update() {
+          let output = '';
+          let complete = 0;
+          
+          for (let i = 0; i < this.queue.length; i++) {
+            let { from, to, start, end, char } = this.queue[i];
+            
+            if (this.frame >= end) {
+              complete++;
+              output += to;
+            } else if (this.frame >= start) {
+              if (!char || Math.random() < 0.28) {
+                char = this.randomChar();
+                this.queue[i].char = char;
+              }
+              output += char;
+            } else {
+              output += from;
+            }
+          }
+          
+          this.el.innerText = output;
+          
+          if (complete === this.queue.length) {
+            this.resolve();
+          } else {
+            this.frameRequest = requestAnimationFrame(this.update);
+            this.frame++;
+          }
+        }
+        
+        randomChar() {
+          return this.chars[Math.floor(Math.random() * this.chars.length)];
+        }
+      }
+      
+      // Usage on hover
+      const el = document.querySelector('.scramble-text');
+      const fx = new TextScramble(el);
+      el.addEventListener('mouseenter', () => fx.setText('MENU [+]'));
+
+  # ----------------------------------------------------------
+  # 4. BACKGROUND COLOR TRANSITIONS
+  # ----------------------------------------------------------
+  background_color:
+    description: "Smooth background color changes between sections"
+    difficulty: "easy"
+    
+    implementation: |
+      // Method 1: Using data attributes
+      const sections = document.querySelectorAll('[data-bg-color]');
+      
+      sections.forEach(section => {
+        const bgColor = section.dataset.bgColor;
+        
+        ScrollTrigger.create({
+          trigger: section,
+          start: 'top center',
+          end: 'bottom center',
+          onEnter: () => {
+            gsap.to('body', {
+              backgroundColor: bgColor,
+              duration: 0.8,
+              ease: 'power2.out'
+            });
+          },
+          onEnterBack: () => {
+            gsap.to('body', {
+              backgroundColor: bgColor,
+              duration: 0.8,
+              ease: 'power2.out'
+            });
+          }
+        });
+      });
+      
+      // Method 2: Using scrub for smooth gradient-like effect
+      gsap.to('body', {
+        backgroundColor: '#1a1a2e',
+        scrollTrigger: {
+          trigger: '.section-2',
+          start: 'top bottom',
+          end: 'top top',
+          scrub: true
+        }
+      });
+
+  # ----------------------------------------------------------
+  # 5. CLIP-PATH IMAGE REVEAL
+  # ----------------------------------------------------------
+  clip_path_reveal:
+    description: "Images reveal with a sliding mask effect"
+    difficulty: "easy"
+    
+    implementation: |
+      // Horizontal reveal (left to right)
+      gsap.fromTo('.reveal-image', 
+        { clipPath: 'inset(0% 100% 0% 0%)' },
+        { 
+          clipPath: 'inset(0% 0% 0% 0%)',
+          duration: 1.2,
+          ease: 'power4.inOut',
+          scrollTrigger: {
+            trigger: '.reveal-image',
+            start: 'top 75%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+      
+      // Vertical reveal (bottom to top)
+      gsap.fromTo('.reveal-vertical', 
+        { clipPath: 'inset(100% 0% 0% 0%)' },
+        { 
+          clipPath: 'inset(0% 0% 0% 0%)',
+          duration: 1,
+          ease: 'power4.out'
+        }
+      );
+      
+      // Circle expand
+      gsap.fromTo('.reveal-circle', 
+        { clipPath: 'circle(0% at 50% 50%)' },
+        { clipPath: 'circle(100% at 50% 50%)' }
+      );
+
+  # ----------------------------------------------------------
+  # 6. PARALLAX DEPTH LAYERS
+  # ----------------------------------------------------------
+  parallax:
+    description: "Elements move at different speeds for depth"
+    difficulty: "easy"
+    
+    implementation: |
+      // Using data-speed attributes
+      // speed < 1 = moves slower (background)
+      // speed > 1 = moves faster (foreground)
+      
+      gsap.utils.toArray('[data-speed]').forEach(el => {
+        const speed = parseFloat(el.dataset.speed) || 1;
+        
+        gsap.to(el, {
+          y: (1 - speed) * 300,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: el.parentElement,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true
+          }
+        });
+      });
+
+  # ----------------------------------------------------------
+  # 7. MAGNETIC BUTTONS
+  # ----------------------------------------------------------
+  magnetic_buttons:
+    description: "Buttons follow cursor slightly on hover"
+    difficulty: "easy"
+    
+    implementation: |
+      document.querySelectorAll('.magnetic').forEach(btn => {
+        btn.addEventListener('mousemove', e => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          
+          gsap.to(btn, {
+            x: x * 0.3,
+            y: y * 0.3,
+            duration: 0.4,
+            ease: 'power2.out'
+          });
+        });
+        
+        btn.addEventListener('mouseleave', () => {
+          gsap.to(btn, {
+            x: 0,
+            y: 0,
+            duration: 0.7,
+            ease: 'elastic.out(1, 0.3)'
+          });
+        });
+      });
+
+  # ----------------------------------------------------------
+  # 8. STAGGERED ENTER ANIMATIONS
+  # ----------------------------------------------------------
+  stagger:
+    description: "Elements animate in sequence with delays"
+    difficulty: "easy"
+    
+    implementation: |
+      // Hero text stagger
+      gsap.from('.hero-word', {
+        y: 100,
+        opacity: 0,
+        stagger: 0.1,       // 100ms delay between each
+        duration: 0.8,
+        ease: 'power4.out'
+      });
+      
+      // Grid items stagger
+      gsap.from('.grid-item', {
+        y: 60,
+        opacity: 0,
+        stagger: {
+          amount: 0.8,      // Total time for all staggers
+          from: 'start',    // or 'end', 'center', 'edges', 'random'
+          grid: [4, 3]      // If items are in a grid
+        }
+      });
+
+# ============================================================
+# EASING REFERENCE
+# ============================================================
+easings:
+  smooth_decel: "power4.out"       # Smooth stop - reveals, enters
+  smooth_both: "power4.inOut"      # Smooth both ways - transitions
+  dramatic: "expo.out"             # More dramatic stop
+  bouncy: "elastic.out(1, 0.3)"   # Bouncy - buttons, fun elements
+  overshoot: "back.out(1.7)"      # Slight overshoot - impact
+
+# ============================================================
+# COLOR PALETTE SUGGESTIONS
+# ============================================================
+colors:
+  dark_base: "#0a0a0a"            # Near black
+  dark_accent: "#1a1a2e"          # Dark blue-ish
+  text_dim: "rgba(255,255,255,0.15)"
+  text_bright: "#ffffff"
+  accent_green: "#00ffc8"
+  accent_coral: "#ff6b6b"
+
+# ============================================================
+# TUTORIAL SOURCES
+# ============================================================
+tutorials:
+  youtube:
+    - name: "Codegrid"
+      url: "https://www.youtube.com/@codegrid"
+      topics: ["scroll text reveals", "Awwwards rebuilds", "ScrollTrigger"]
+    
+    - name: "Conor Bailey"
+      url: "https://www.youtube.com/@ConorBailey"
+      topics: ["Lenis smooth scroll", "image reveals", "page transitions"]
+    
+    - name: "Taimoor Shahzada"
+      url: "https://www.youtube.com/@TaimoorShahzada"
+      topics: ["GSAP effects", "interactive reveals"]
+  
+  websites:
+    - "gsap.com/docs"
+    - "gsap.com/forums"
+    - "tympanus.net/codrops"
+    - "creativewebmanual.com (reference site)"
+
+# ============================================================
+# IMPLEMENTATION ORDER
+# ============================================================
+implementation_order:
+  phase_1_core:
+    - "Add SplitText CDN"
+    - "Implement word-by-word text reveal"
+    - "Add smooth background color transitions"
+    
+  phase_2_sections:
+    - "Pin About section title"
+    - "Add editorial scroll effect"
+    - "Enhance text animations with scrub"
+    
+  phase_3_projects:
+    - "Vertical pinned project carousel"
+    - "Clip-path image reveals"
+    - "Project number parallax"
+    
+  phase_4_polish:
+    - "Text scramble on menu hover"
+    - "Magnetic buttons"
+    - "Progress indicator at bottom"
+    - "Micro-interactions everywhere"

@@ -1,0 +1,463 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# ANIMATIONS SPECIFICATION
+# Detailed implementation guide for all animations
+# ══════════════════════════════════════════════════════════════════════════════
+
+preloader:
+  # ═══════════════════════════════════════════════════════════════════════════
+  # ODOMETER-STYLE PERCENTAGE COUNTER
+  # Like olhalazarieva.com - numbers slide up/down
+  # ═══════════════════════════════════════════════════════════════════════════
+  counter:
+    description: "Large percentage counter with sliding digits"
+    html_structure: |
+      <div class="preloader">
+        <div class="preloader-rotating-text">
+          <span>CREATIVE DATA ENGINEERING // MANU ARYA //</span>
+        </div>
+        <div class="preloader-counter">
+          <span class="counter-digit" data-target="0">0</span>
+          <span class="counter-digit" data-target="9">0</span>
+          <span class="counter-percent">%</span>
+        </div>
+      </div>
+    
+    css:
+      rotating_text:
+        animation: "rotate 20s linear infinite"
+        font_size: "0.75rem"
+        letter_spacing: "0.2em"
+        text_transform: "uppercase"
+        position: "absolute"
+        
+      counter:
+        font_family: "Sofia Sans Condensed"
+        font_size: "clamp(6rem, 15vw, 12rem)"
+        font_weight: 800
+        letter_spacing: "-0.03em"
+        overflow: "hidden"
+        
+      digit:
+        display: "inline-block"
+        height: "1em"
+        overflow: "hidden"
+        
+    javascript:
+      algorithm: |
+        // Each digit column contains 0-9 stacked vertically
+        // Animate translateY to "roll" to the target number
+        // Creates odometer/slot machine effect
+        
+        function rollDigit(element, targetValue, duration) {
+          const digitHeight = element.clientHeight;
+          gsap.to(element.querySelector('.digits'), {
+            y: -targetValue * digitHeight,
+            duration: duration,
+            ease: 'power2.inOut'
+          });
+        }
+        
+    timing:
+      total_duration: "2.5s"
+      roll_start: "0.3s"        # Start rolling slightly after load
+      completion_hold: "0.4s"   # Hold at 100% before exit
+      
+  rotating_text:
+    description: "Circular text rotating above counter"
+    implementation: |
+      // Use CSS animation for rotation
+      // SVG path text OR positioned spans
+      
+      // Option 1: Simple CSS rotation of text along a circle path
+      .rotating-text {
+        animation: rotate 20s linear infinite;
+      }
+      
+      // Option 2: SVG textPath for true circular text
+      <svg viewBox="0 0 100 100">
+        <path id="circle-path" d="M50,50 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0" fill="none"/>
+        <text>
+          <textPath href="#circle-path">
+            CREATIVE DATA ENGINEERING // MANU ARYA //
+          </textPath>
+        </text>
+      </svg>
+      
+  exit:
+    description: "Smooth fade out with element stagger"
+    sequence:
+      - step: "Counter fades out"
+        duration: "0.3s"
+        ease: "power2.out"
+      - step: "Rotating text fades"
+        duration: "0.3s"
+        delay: "0.1s"
+      - step: "Preloader background slides up"
+        duration: "0.8s"
+        ease: "power2.inOut"
+      - step: "Hero elements reveal"
+        trigger: "onComplete of preloader exit"
+
+# ═══════════════════════════════════════════════════════════════════════════
+# TEXT SCRAMBLE EFFECT
+# Character-by-character scramble on hover
+# ═══════════════════════════════════════════════════════════════════════════
+text_scramble:
+  description: "Letters scramble through random characters before settling"
+  
+  class_implementation: |
+    class TextScramble {
+      constructor(el) {
+        this.el = el;
+        this.chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&*()<>{}[]';
+        this.frameRate = 30; // frames to complete
+      }
+      
+      scramble(newText) {
+        const originalText = this.el.textContent;
+        const length = Math.max(originalText.length, newText.length);
+        let frame = 0;
+        
+        const update = () => {
+          let output = '';
+          let complete = true;
+          
+          for (let i = 0; i < length; i++) {
+            const targetChar = newText[i] || '';
+            const progress = frame / (this.frameRate + i * 2);
+            
+            if (progress >= 1) {
+              output += targetChar;
+            } else {
+              complete = false;
+              if (Math.random() < 0.3) {
+                output += this.chars[Math.floor(Math.random() * this.chars.length)];
+              } else {
+                output += originalText[i] || '';
+              }
+            }
+          }
+          
+          this.el.textContent = output;
+          frame++;
+          
+          if (!complete) {
+            requestAnimationFrame(update);
+          }
+        };
+        
+        update();
+      }
+    }
+    
+  usage: |
+    // Apply to navigation links
+    document.querySelectorAll('.nav-link').forEach(link => {
+      const scrambler = new TextScramble(link);
+      const originalText = link.textContent;
+      
+      link.addEventListener('mouseenter', () => {
+        scrambler.scramble(originalText); // Re-scramble same text
+      });
+    });
+    
+  css_requirements: |
+    .scramble-text {
+      font-family: 'Spline Sans Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+# ═══════════════════════════════════════════════════════════════════════════
+# HERO ENTRANCE ANIMATION
+# Staggered reveal of hero elements
+# ═══════════════════════════════════════════════════════════════════════════
+hero_entrance:
+  description: "Dramatic character-by-character name reveal with supporting elements"
+  
+  timeline:
+    - id: "name-chars"
+      target: ".hero-name .char"
+      from:
+        y: "120%"
+        opacity: 0
+        rotationX: -60
+      to:
+        y: "0%"
+        opacity: 1
+        rotationX: 0
+      duration: 1.2
+      stagger: 0.06
+      ease: "power4.out"
+      
+    - id: "subtitle"
+      target: ".hero-subtitle"
+      from:
+        opacity: 0
+        x: -30
+      to:
+        opacity: 1
+        x: 0
+      duration: 0.8
+      delay: 0.6
+      ease: "power2.out"
+      
+    - id: "tagline"
+      target: ".hero-tagline"
+      from:
+        opacity: 0
+        y: 20
+      to:
+        opacity: 1
+        y: 0
+      duration: 0.8
+      delay: 0.8
+      ease: "power2.out"
+      
+    - id: "hero-image"
+      target: ".hero-image"
+      from:
+        clipPath: "inset(100% 0 0 0)"
+        scale: 1.1
+      to:
+        clipPath: "inset(0% 0 0 0)"
+        scale: 1
+      duration: 1.2
+      delay: 0.4
+      ease: "power3.inOut"
+      
+    - id: "decorative-box"
+      target: ".hero-deco-box"
+      from:
+        opacity: 0
+        scale: 0.9
+      to:
+        opacity: 1
+        scale: 1
+      duration: 0.8
+      delay: 0.8
+      ease: "power2.out"
+      
+    - id: "corner-elements"
+      target: ".corner-element"
+      from:
+        opacity: 0
+      to:
+        opacity: 1
+      duration: 0.6
+      stagger: 0.1
+      delay: 1.0
+      ease: "power2.out"
+
+# ═══════════════════════════════════════════════════════════════════════════
+# SCROLL-TRIGGERED ANIMATIONS
+# ═══════════════════════════════════════════════════════════════════════════
+scroll_triggered:
+  # Background color transitions
+  background_transition:
+    description: "Seamless light-to-dark background transition"
+    implementation: |
+      const sections = document.querySelectorAll('[data-bg]');
+      
+      sections.forEach(section => {
+        ScrollTrigger.create({
+          trigger: section,
+          start: 'top 50%',
+          end: 'bottom 50%',
+          onEnter: () => {
+            gsap.to('body', {
+              backgroundColor: section.dataset.bg,
+              duration: 0.8,
+              ease: 'power2.inOut'
+            });
+          },
+          onEnterBack: () => {
+            gsap.to('body', {
+              backgroundColor: section.dataset.bg,
+              duration: 0.8,
+              ease: 'power2.inOut'
+            });
+          }
+        });
+      });
+      
+  # Word-by-word text reveal
+  text_reveal:
+    description: "Words fade from grey/blurred to visible"
+    implementation: |
+      document.querySelectorAll('.reveal-text').forEach(block => {
+        const words = block.textContent.split(' ');
+        block.innerHTML = words.map(word => 
+          `<span class="word">${word}</span>`
+        ).join(' ');
+        
+        const wordElements = block.querySelectorAll('.word');
+        
+        gsap.fromTo(wordElements, 
+          { 
+            opacity: 0.15, 
+            filter: 'blur(2px)',
+            color: 'rgba(255,255,255,0.2)'
+          },
+          {
+            opacity: 1,
+            filter: 'blur(0px)',
+            color: 'inherit',
+            stagger: 0.02,
+            scrollTrigger: {
+              trigger: block,
+              start: 'top 80%',
+              end: 'top 30%',
+              scrub: true
+            }
+          }
+        );
+      });
+      
+  # Project reveal
+  project_reveal:
+    description: "Projects slide up with image reveal"
+    implementation: |
+      document.querySelectorAll('.project').forEach((project, i) => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: project,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+          }
+        });
+        
+        tl.from(project, {
+          y: 80,
+          opacity: 0,
+          duration: 1,
+          ease: 'power3.out'
+        })
+        .from(project.querySelector('.project-image'), {
+          clipPath: 'inset(100% 0 0 0)',
+          duration: 1,
+          ease: 'power3.inOut'
+        }, '-=0.6')
+        .from(project.querySelector('.project-info > *'), {
+          y: 30,
+          opacity: 0,
+          stagger: 0.1,
+          duration: 0.6
+        }, '-=0.4');
+      });
+
+# ═══════════════════════════════════════════════════════════════════════════
+# MAGNETIC EFFECT
+# Elements subtly follow cursor when nearby
+# ═══════════════════════════════════════════════════════════════════════════
+magnetic:
+  description: "Buttons and links have subtle magnetic pull towards cursor"
+  implementation: |
+    document.querySelectorAll('.magnetic').forEach(elem => {
+      const strength = 0.3; // How strongly it follows
+      const rect = elem.getBoundingClientRect();
+      
+      elem.addEventListener('mousemove', (e) => {
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        gsap.to(elem, {
+          x: x * strength,
+          y: y * strength,
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+      });
+      
+      elem.addEventListener('mouseleave', () => {
+        gsap.to(elem, {
+          x: 0,
+          y: 0,
+          duration: 0.5,
+          ease: 'elastic.out(1, 0.5)'
+        });
+      });
+    });
+
+# ═══════════════════════════════════════════════════════════════════════════
+# BLUE VIGNETTE EFFECT
+# Inner glow around viewport edges
+# ═══════════════════════════════════════════════════════════════════════════
+vignette:
+  description: "Subtle blue glow at viewport edges - premium 'monitor' feel"
+  css: |
+    .vignette-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 9995;
+      box-shadow: 
+        inset 0 0 200px rgba(77, 168, 255, 0.08),
+        inset 0 0 100px rgba(77, 168, 255, 0.05),
+        inset 0 0 50px rgba(77, 168, 255, 0.03);
+      animation: vignette-pulse 8s ease-in-out infinite;
+    }
+    
+    @keyframes vignette-pulse {
+      0%, 100% {
+        box-shadow: 
+          inset 0 0 200px rgba(77, 168, 255, 0.08),
+          inset 0 0 100px rgba(77, 168, 255, 0.05),
+          inset 0 0 50px rgba(77, 168, 255, 0.03);
+      }
+      50% {
+        box-shadow: 
+          inset 0 0 220px rgba(77, 168, 255, 0.12),
+          inset 0 0 120px rgba(77, 168, 255, 0.07),
+          inset 0 0 60px rgba(77, 168, 255, 0.04);
+      }
+    }
+    
+  intensity_by_section:
+    light_sections: 0.08
+    dark_sections: 0.15
+
+# ═══════════════════════════════════════════════════════════════════════════
+# SPOTLIGHT EFFECT
+# Mouse-following radial gradient
+# ═══════════════════════════════════════════════════════════════════════════
+spotlight:
+  description: "Subtle light follows mouse cursor on dark sections"
+  implementation: |
+    const spotlight = document.createElement('div');
+    spotlight.className = 'spotlight';
+    document.body.appendChild(spotlight);
+    
+    document.addEventListener('mousemove', (e) => {
+      gsap.to(spotlight, {
+        x: e.clientX,
+        y: e.clientY,
+        duration: 0.5,
+        ease: 'power2.out'
+      });
+    });
+    
+  css: |
+    .spotlight {
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      pointer-events: none;
+      z-index: 9990;
+      background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.05) 0%,
+        transparent 70%
+      );
+      transform: translate(-50%, -50%);
+      filter: blur(50px);
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+    
+    .dark-section .spotlight {
+      opacity: 1;
+    }

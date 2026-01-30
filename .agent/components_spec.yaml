@@ -1,0 +1,912 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# COMPONENT SPECIFICATIONS
+# HTML structure and CSS for every component
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ═══════════════════════════════════════════════════════════════════════════
+# NAVIGATION
+# ═══════════════════════════════════════════════════════════════════════════
+navigation:
+  html: |
+    <nav class="nav">
+      <!-- Logo in top-left corner -->
+      <a href="#hero" class="nav-logo magnetic">
+        <span class="logo-text">MA</span>
+      </a>
+      
+      <!-- Main navigation links with brackets -->
+      <div class="nav-links">
+        <a href="#about" class="nav-link scramble-text magnetic" data-text="ABOUT">
+          <span class="bracket">[</span>
+          <span class="link-text">ABOUT</span>
+          <span class="bracket">]</span>
+        </a>
+        <a href="#work" class="nav-link scramble-text magnetic" data-text="WORK">
+          <span class="bracket">[</span>
+          <span class="link-text">WORK</span>
+          <span class="bracket">]</span>
+        </a>
+        <a href="#connect" class="nav-link scramble-text magnetic" data-text="CONNECT">
+          <span class="bracket">[</span>
+          <span class="link-text">CONNECT</span>
+          <span class="bracket">]</span>
+        </a>
+      </div>
+      
+      <!-- Time/location in corner -->
+      <div class="nav-meta">
+        <span class="meta-location">IND</span>
+        <span class="meta-time" id="current-time">00:00</span>
+      </div>
+    </nav>
+    
+  css: |
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 5vw;
+      z-index: 1000;
+      mix-blend-mode: difference;
+    }
+    
+    .nav-logo {
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    
+    .nav-link {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 0.75rem;
+      color: #fff;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    
+    .nav-link .bracket {
+      opacity: 0.5;
+      transition: opacity 0.3s;
+    }
+    
+    .nav-link:hover .bracket {
+      opacity: 1;
+    }
+    
+    .nav-meta {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 0.625rem;
+      color: rgba(255, 255, 255, 0.5);
+      display: flex;
+      gap: 1rem;
+      letter-spacing: 0.1em;
+    }
+
+# ═══════════════════════════════════════════════════════════════════════════
+# HERO SECTION
+# ═══════════════════════════════════════════════════════════════════════════
+hero:
+  html: |
+    <section id="hero" class="section section--hero" data-bg="#F7F7F7">
+      <!-- Corner elements for "filling white space" -->
+      <div class="corner corner--top-left">
+        <span class="label">// PORTFOLIO 2026</span>
+      </div>
+      <div class="corner corner--top-right">
+        <span class="section-indicator">01/05</span>
+      </div>
+      <div class="corner corner--bottom-left">
+        <span class="label">/BASED IN INDIA</span>
+        <span class="label">28.6139° N, 77.2090° E</span>
+      </div>
+      <div class="corner corner--bottom-right">
+        <div class="scroll-indicator">
+          <span>SCROLL</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+      
+      <!-- Main hero content -->
+      <div class="hero-wrapper">
+        <!-- The big name -->
+        <div class="hero-name">
+          <div class="name-row">
+            <span class="char">M</span>
+            <span class="char">A</span>
+            <span class="char">N</span>
+            <span class="char">U</span>
+          </div>
+          <div class="name-row name-row--offset">
+            <span class="char">A</span>
+            <span class="char">R</span>
+            <span class="char">Y</span>
+            <span class="char">A</span>
+          </div>
+        </div>
+        
+        <!-- Subtitle with brackets -->
+        <div class="hero-subtitle">
+          <span class="bracket">[</span>
+          <span class="subtitle-text">DATA ENGINEER</span>
+          <span class="bracket">]</span>
+        </div>
+        
+        <!-- Portrait image with decorative box -->
+        <div class="hero-image-container">
+          <div class="hero-deco-box"></div>
+          <div class="hero-image">
+            <img src="portrait.jpg" alt="Manu Arya" />
+          </div>
+        </div>
+        
+        <!-- Tagline with serif italic -->
+        <p class="hero-tagline">
+          <span class="tagline-connector">transforming</span>
+          <span class="tagline-main">raw data into intelligence</span>
+        </p>
+      </div>
+      
+      <!-- Grid lines overlay -->
+      <div class="grid-overlay"></div>
+    </section>
+    
+  css: |
+    .section--hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 5vw;
+    }
+    
+    /* Corner elements */
+    .corner {
+      position: absolute;
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    
+    .corner--top-left { top: 5vw; left: 5vw; }
+    .corner--top-right { top: 5vw; right: 5vw; }
+    .corner--bottom-left { bottom: 5vw; left: 5vw; display: flex; flex-direction: column; gap: 0.25rem; }
+    .corner--bottom-right { bottom: 5vw; right: 5vw; }
+    
+    .section-indicator {
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+    
+    /* Hero name */
+    .hero-name {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .name-row {
+      display: flex;
+      overflow: hidden;
+    }
+    
+    .name-row--offset {
+      margin-left: 15%;
+    }
+    
+    .char {
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      font-size: clamp(5rem, 15vw, 14rem);
+      font-weight: 800;
+      line-height: 0.85;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+    }
+    
+    /* Subtitle */
+    .hero-subtitle {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 0.875rem;
+      letter-spacing: 0.2em;
+      color: var(--text-secondary);
+    }
+    
+    .hero-subtitle .bracket {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    
+    /* Hero image with offset decorative box */
+    .hero-image-container {
+      position: absolute;
+      right: 10vw;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    .hero-deco-box {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-alt);
+      transform: translate(20px, 20px);
+      z-index: -1;
+    }
+    
+    .hero-image {
+      width: 300px;
+      height: 400px;
+      overflow: hidden;
+    }
+    
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: filter 0.6s;
+    }
+    
+    .hero-image:hover img {
+      filter: grayscale(0%);
+    }
+    
+    /* Tagline */
+    .hero-tagline {
+      position: absolute;
+      bottom: 20%;
+      left: 5vw;
+      max-width: 300px;
+    }
+    
+    .tagline-connector {
+      display: block;
+      font-family: 'Times New Roman', serif;
+      font-style: italic;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    
+    .tagline-main {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: var(--text-secondary);
+    }
+    
+    /* Grid overlay */
+    .grid-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      background: 
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent calc(20% - 1px),
+          rgba(0,0,0,0.03) calc(20% - 1px),
+          rgba(0,0,0,0.03) 20%
+        );
+    }
+
+# ═══════════════════════════════════════════════════════════════════════════
+# ABOUT SECTION
+# ═══════════════════════════════════════════════════════════════════════════
+about:
+  html: |
+    <section id="about" class="section section--about" data-bg="#F7F7F7">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <span class="section-label">/ABOUT</span>
+      </div>
+      
+      <div class="manifesto-container">
+        <p class="manifesto reveal-text">
+          I transform raw data into actionable insights. 
+          From raw bytes to refined intelligence, 
+          I build the pipelines that transform chaos into clarity.
+        </p>
+        
+        <p class="manifesto reveal-text">
+          Data doesn't lie, but it doesn't talk either. 
+          My job is to make it speak—clearly, efficiently, beautifully.
+        </p>
+        
+        <p class="manifesto reveal-text">
+          Passionate about clean code, efficient systems, and 
+          bridging the gap between data and design.
+        </p>
+      </div>
+      
+      <div class="about-cta">
+        <a href="#connect" class="btn btn-primary magnetic">
+          <span class="btn-text">Let's Connect</span>
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </section>
+    
+  css: |
+    .section--about {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10vh 5vw;
+    }
+    
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 4rem;
+    }
+    
+    .section-number {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    
+    .section-label {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 0.625rem;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+    }
+    
+    .manifesto-container {
+      max-width: 800px;
+    }
+    
+    .manifesto {
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      font-weight: 500;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      margin-bottom: 2rem;
+    }
+    
+    /* Word-by-word reveal styling */
+    .manifesto .word {
+      display: inline-block;
+      transition: opacity 0.3s, filter 0.3s;
+    }
+
+# ═══════════════════════════════════════════════════════════════════════════
+# SKILLS/SERVICES SECTION
+# ═══════════════════════════════════════════════════════════════════════════
+skills:
+  html: |
+    <section id="expertise" class="section section--expertise" data-bg="#000000">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <span class="section-label">/EXPERTISE</span>
+      </div>
+      
+      <div class="skills-marquee">
+        <div class="marquee-track">
+          <span class="marquee-item">PYTHON</span>
+          <span class="marquee-separator">•</span>
+          <span class="marquee-item">SQL</span>
+          <span class="marquee-separator">•</span>
+          <span class="marquee-item">APACHE SPARK</span>
+          <span class="marquee-separator">•</span>
+          <span class="marquee-item">AIRFLOW</span>
+          <span class="marquee-separator">•</span>
+          <span class="marquee-item">AWS</span>
+          <span class="marquee-separator">•</span>
+          <span class="marquee-item">KAFKA</span>
+          <!-- Duplicate for seamless loop -->
+        </div>
+      </div>
+      
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-number">01</div>
+          <h3 class="skill-title">Data Engineering</h3>
+          <p class="skill-desc">Building robust ETL pipelines and data infrastructure</p>
+          <ul class="skill-list">
+            <li>Apache Spark</li>
+            <li>Airflow</li>
+            <li>dbt</li>
+            <li>Kafka</li>
+          </ul>
+        </div>
+        
+        <div class="skill-card">
+          <div class="skill-number">02</div>
+          <h3 class="skill-title">Cloud Architecture</h3>
+          <p class="skill-desc">Designing scalable cloud-native data solutions</p>
+          <ul class="skill-list">
+            <li>AWS</li>
+            <li>GCP</li>
+            <li>Azure</li>
+            <li>Snowflake</li>
+          </ul>
+        </div>
+        
+        <div class="skill-card">
+          <div class="skill-number">03</div>
+          <h3 class="skill-title">Analytics & ML</h3>
+          <p class="skill-desc">Transforming data into actionable insights</p>
+          <ul class="skill-list">
+            <li>Python</li>
+            <li>SQL</li>
+            <li>Pandas</li>
+            <li>TensorFlow</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  css: |
+    .section--expertise {
+      min-height: 100vh;
+      padding: 10vh 5vw;
+      color: #fff;
+    }
+    
+    /* Infinite scrolling marquee */
+    .skills-marquee {
+      overflow: hidden;
+      margin: 4rem -5vw;
+      padding: 2rem 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .marquee-track {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 20s linear infinite;
+    }
+    
+    .marquee-item {
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+      color: rgba(255,255,255,0.1);
+      transition: color 0.3s;
+    }
+    
+    .marquee-item:hover {
+      color: #fff;
+    }
+    
+    .marquee-separator {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.3);
+    }
+    
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    
+    /* Skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+    
+    .skill-card {
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    
+    .skill-card:hover {
+      border-color: rgba(255,255,255,0.3);
+      transform: translateY(-4px);
+    }
+    
+    .skill-number {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    
+    .skill-title {
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .skill-desc {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 1.5rem;
+    }
+    
+    .skill-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .skill-list li {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 0.625rem;
+      letter-spacing: 0.1em;
+      padding: 0.25rem 0.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.7);
+    }
+
+# ═══════════════════════════════════════════════════════════════════════════
+# PROJECTS SECTION
+# ═══════════════════════════════════════════════════════════════════════════
+projects:
+  html: |
+    <section id="work" class="section section--work" data-bg="#000000">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <span class="section-label">/SELECTED WORK</span>
+      </div>
+      
+      <div class="projects-list">
+        <article class="project">
+          <div class="project-grid">
+            <div class="project-image-wrapper">
+              <div class="project-image">
+                <img src="project1.jpg" alt="Object Detection Project" loading="lazy" />
+              </div>
+              <div class="project-image-overlay">
+                <span class="view-text">VIEW →</span>
+              </div>
+            </div>
+            
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-number">01</span>
+                <span class="project-year">2024</span>
+              </div>
+              <h2 class="project-title scramble-text">Object Detection & Alert System</h2>
+              <p class="project-desc reveal-text">
+                Real-time object detection software with automated alert generation
+                and remote server notifications.
+              </p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>OpenCV</span>
+                <span>ML</span>
+              </div>
+              <a href="#" class="btn btn-outline magnetic">
+                <span>View Project</span>
+                <span class="btn-arrow">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+        
+        <!-- More projects... -->
+      </div>
+    </section>
+    
+  css: |
+    .section--work {
+      padding: 10vh 5vw;
+      color: #fff;
+    }
+    
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15vh;
+      margin-top: 4rem;
+    }
+    
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    .project:nth-child(even) .project-grid {
+      direction: rtl;
+    }
+    
+    .project:nth-child(even) .project-grid > * {
+      direction: ltr;
+    }
+    
+    .project-image-wrapper {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    
+    .project-image {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    
+    .project:hover .project-image img {
+      transform: scale(1.08);
+    }
+    
+    .project-image-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.4);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    
+    .project:hover .project-image-overlay {
+      opacity: 1;
+    }
+    
+    .view-text {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 0.875rem;
+      letter-spacing: 0.2em;
+      color: #fff;
+    }
+    
+    .project-meta {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .project-number,
+    .project-year {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+    }
+    
+    .project-number {
+      color: var(--accent);
+    }
+    
+    .project-title {
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    
+    .project-desc {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 1.5rem;
+    }
+    
+    .project-tech {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    
+    .project-tech span {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 0.625rem;
+      letter-spacing: 0.1em;
+      padding: 0.375rem 0.75rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.8);
+    }
+
+# ═══════════════════════════════════════════════════════════════════════════
+# CONNECT SECTION
+# ═══════════════════════════════════════════════════════════════════════════
+connect:
+  html: |
+    <section id="connect" class="section section--connect" data-bg="#101010">
+      <div class="connect-wrapper">
+        <div class="connect-header">
+          <span class="section-number">05</span>
+          <span class="section-label">/CONNECT</span>
+        </div>
+        
+        <h2 class="connect-title">
+          <span class="title-line">LET'S</span>
+          <span class="title-line">CONNECT</span>
+        </h2>
+        
+        <div class="connect-grid">
+          <div class="connect-left">
+            <p class="connect-text">
+              Have a project in mind? Let's create something amazing together.
+            </p>
+            
+            <div class="contact-links">
+              <a href="mailto:email@example.com" class="contact-link copy-email magnetic">
+                <span class="link-label">Email</span>
+                <span class="link-value scramble-text">email@example.com</span>
+              </a>
+              
+              <a href="https://linkedin.com" class="contact-link magnetic" target="_blank">
+                <span class="link-label">LinkedIn</span>
+                <span class="link-value">@manuarya ↗</span>
+              </a>
+              
+              <a href="https://github.com" class="contact-link magnetic" target="_blank">
+                <span class="link-label">GitHub</span>
+                <span class="link-value">@manuarya ↗</span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="connect-right">
+            <form class="contact-form">
+              <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" name="name" placeholder="Name" required />
+              </div>
+              <div class="form-group">
+                <label>Your Email</label>
+                <input type="email" name="email" placeholder="Email" required />
+              </div>
+              <div class="form-group">
+                <label>Message</label>
+                <textarea name="message" placeholder="Tell me about your project..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary magnetic">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-arrow">→</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  css: |
+    .section--connect {
+      min-height: 100vh;
+      padding: 10vh 5vw;
+      color: #fff;
+    }
+    
+    .connect-title {
+      display: flex;
+      flex-direction: column;
+      margin: 4rem 0;
+    }
+    
+    .title-line {
+      font-family: 'Sofia Sans Condensed', sans-serif;
+      font-size: clamp(4rem, 12vw, 10rem);
+      font-weight: 800;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+    }
+    
+    .connect-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+    
+    .connect-text {
+      font-size: 1.25rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 3rem;
+      max-width: 400px;
+    }
+    
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .contact-link {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      transition: border-color 0.3s;
+    }
+    
+    .contact-link:hover {
+      border-color: rgba(255,255,255,0.3);
+    }
+    
+    .link-label {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+    }
+    
+    .link-value {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: #fff;
+    }
+    
+    /* Form styles */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: #fff;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+    }
+    
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255,255,255,0.3);
+    }

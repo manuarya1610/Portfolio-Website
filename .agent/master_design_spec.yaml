@@ -1,0 +1,507 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# MASTER DESIGN SPECIFICATION - ULTIMATE PORTFOLIO
+# Reference: olhalazarieva.com + helloelva.com
+# Goal: Awwwards-level interactive portfolio
+# ══════════════════════════════════════════════════════════════════════════════
+
+metadata:
+  name: "Manu Arya Portfolio - Ultimate Edition"
+  version: "3.0.0"
+  style: "Interactive Awwwards Portfolio"
+  references:
+    - url: "https://www.olhalazarieva.com"
+      inspiration:
+        - "Odometer-style percentage preloader"
+        - "Rotating circular text during load"
+        - "Blue vignette glow effect"
+        - "Character scramble hover effects"
+        - "Exploding 3D typography on scroll"
+        - "Light-to-dark theme transition on scroll"
+        - "Section numbering (1/5, 2/5 format)"
+        - "Bracket motif for links [WORKS]"
+        - "Grid lines filling white space"
+        - "Corner utilization (logo, contact, etc.)"
+    - url: "https://www.helloelva.com"
+      inspiration:
+        - "Clean preloader with text animation"
+        - "Symbols replacing letters (heart, star)"
+        - "Large bold typography with tight spacing"
+        - "Minimal but impactful micro-interactions"
+        - "Curated color palette transitions"
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SECTION 1: COLOR SYSTEM
+# ══════════════════════════════════════════════════════════════════════════════
+colors:
+  # Light theme (hero section)
+  light:
+    background: "#F7F7F7"           # Soft light beige/grey
+    background_alt: "#EFEFEF"       # Slightly darker for contrast
+    text_primary: "#101010"         # Near black
+    text_secondary: "#555555"       # Medium grey
+    text_muted: "#888888"           # Light grey for labels
+    
+  # Dark theme (projects, depth sections)
+  dark:
+    background: "#000000"           # Pure black
+    background_alt: "#0A0A0A"       # Soft black
+    text_primary: "#FFFFFF"         # Pure white
+    text_secondary: "#AAAAAA"       # Light grey
+    text_muted: "#666666"           # Muted grey
+    
+  # Accent colors (used sparingly but impactfully)
+  accents:
+    blue_glow: "#4DA8FF"            # Vignette glow color
+    blue_glow_rgb: "77, 168, 255"   # For rgba usage
+    highlight: "#FF6B35"            # Orange highlight (optional)
+    link_hover: "#FFFFFF"           # Links brighten on hover
+    
+  # Special effects
+  effects:
+    vignette_color: "rgba(77, 168, 255, 0.15)"
+    vignette_inner_color: "rgba(0, 0, 0, 0)"
+    grid_line_color: "rgba(255, 255, 255, 0.05)"  # Subtle grid lines
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SECTION 2: TYPOGRAPHY SYSTEM
+# ══════════════════════════════════════════════════════════════════════════════
+typography:
+  # Font families
+  fonts:
+    display: 
+      family: "Sofia Sans Condensed"
+      fallback: "Arial Narrow, sans-serif"
+      weight_range: [400, 800]
+      characteristics: "Condensed, bold, high-impact"
+    mono:
+      family: "Spline Sans Mono"
+      fallback: "'JetBrains Mono', 'Fira Code', monospace"
+      weight_range: [400, 600]
+      characteristics: "Technical, labels, navigation"
+    serif:
+      family: "Times New Roman"
+      fallback: "Georgia, serif"
+      usage: "Decorative connectors, 'starts with', italics"
+    body:
+      family: "Inter"
+      fallback: "-apple-system, BlinkMacSystemFont, sans-serif"
+      weight_range: [300, 600]
+      
+  # Scale system (modular - 1.25 ratio)
+  scale:
+    hero_title: "clamp(5rem, 15vw, 12rem)"
+    section_title: "clamp(3rem, 8vw, 6rem)"
+    subsection_title: "clamp(1.5rem, 3vw, 2.5rem)"
+    body_large: "1.25rem"
+    body: "1rem"
+    body_small: "0.875rem"
+    label: "0.75rem"
+    micro: "0.625rem"
+    
+  # Spacing configurations
+  letter_spacing:
+    condensed_title: "-0.05em"    # Tight for impact
+    normal: "0em"
+    wide: "0.15em"                # Labels, caps
+    extra_wide: "0.25em"          # Section numbers
+    
+  line_height:
+    tight: 0.9                     # Headlines
+    normal: 1.4
+    relaxed: 1.7                   # Body text
+    
+  # Text decorations
+  decorations:
+    bracket_links: true            # [ABOUT ME] format
+    underline_on_hover: false
+    scramble_on_hover: true
+    italic_connectors: true        # "starts with" in serif italic
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SECTION 3: INTERACTIVE ELEMENTS
+# ══════════════════════════════════════════════════════════════════════════════
+interactions:
+  # Custom cursor
+  cursor:
+    enabled: true
+    type: "dot-with-circle"
+    dot:
+      size_default: "8px"
+      size_hover: "12px"
+      color_default: "#101010"
+      color_hover: "#FFFFFF"
+      blend_mode: "difference"
+    circle:
+      size_default: "40px"
+      size_hover: "80px"
+      border_width: "1px"
+      border_color: "rgba(255, 255, 255, 0.3)"
+      
+  # Text scramble effect (like Olha)
+  text_scramble:
+    enabled: true
+    characters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&*"
+    duration: "0.6s"
+    stagger: "0.02s"
+    trigger: "hover"
+    elements:
+      - ".nav-link"
+      - ".project-title"
+      - ".cta-text"
+      
+  # Magnetic effect
+  magnetic:
+    enabled: true
+    strength: 0.3
+    elements:
+      - ".btn"
+      - ".nav-link"
+      - ".social-link"
+      
+  # Copy to clipboard feedback
+  clipboard:
+    enabled: true
+    toast_text: "Copied!"
+    toast_duration: "2s"
+    elements:
+      - ".email-link"
+      - ".phone-link"
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SECTION 4: ANIMATION SYSTEM
+# ══════════════════════════════════════════════════════════════════════════════
+animations:
+  # Preloader animation
+  preloader:
+    type: "percentage-counter"
+    duration: "3s"
+    elements:
+      counter:
+        style: "odometer"          # Digits slide up/down
+        font: "Sofia Sans Condensed"
+        size: "clamp(4rem, 12vw, 8rem)"
+        color: "#101010"
+      rotating_text:
+        content: "CREATIVE DATA ENGINEERING // MANU ARYA //"
+        size: "0.75rem"
+        rotation_speed: "20s"
+        position: "above-counter"
+    exit:
+      fade_duration: "0.6s"
+      stagger_reveal: "0.1s"
+      
+  # Hero entrance
+  hero_entrance:
+    delay_after_preloader: "0.3s"
+    elements:
+      - target: ".hero-title"
+        effect: "slide-up-stagger"
+        duration: "1.2s"
+        stagger: "0.08s"
+        ease: "power4.out"
+      - target: ".hero-labels"
+        effect: "fade-in-stagger"
+        duration: "0.8s"
+        stagger: "0.1s"
+        delay: "0.4s"
+      - target: ".hero-image"
+        effect: "scale-reveal"
+        duration: "1s"
+        from_scale: 0.95
+        delay: "0.5s"
+        
+  # Scroll-triggered animations
+  scroll:
+    # Section background transitions
+    background_transition:
+      enabled: true
+      sections:
+        - id: "hero"
+          background: "#F7F7F7"
+        - id: "about"
+          background: "#F7F7F7"
+        - id: "expertise"
+          background: "#000000"
+        - id: "work"
+          background: "#000000"
+        - id: "connect"
+          background: "#101010"
+      transition_duration: "0.8s"
+      ease: "power2.inOut"
+      
+    # Content reveal
+    content_reveal:
+      trigger_start: "top 80%"
+      trigger_end: "top 20%"
+      effects:
+        - type: "word-by-word-reveal"
+          elements: ".manifesto, .project-description"
+          from_opacity: 0.1
+          from_blur: "2px"
+          stagger: "0.015"
+        - type: "slide-up"
+          elements: ".skill-category"
+          from_y: "60px"
+          stagger: "0.1"
+        - type: "parallax"
+          elements: ".project-image img"
+          speed: 0.2
+
+  # Easing presets
+  easing:
+    smooth: "cubic-bezier(0.25, 0.1, 0.25, 1)"
+    power: "cubic-bezier(0.65, 0, 0.35, 1)"
+    bounce: "cubic-bezier(0.34, 1.56, 0.64, 1)"
+    elastic: "cubic-bezier(0.68, -0.55, 0.265, 1.55)"
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SECTION 5: LAYOUT & GRID SYSTEM
+# ══════════════════════════════════════════════════════════════════════════════
+layout:
+  # Base grid
+  grid:
+    columns: 5                     # 5-column grid like Olha
+    gutter: "2vw"
+    margin: "5vw"
+    
+  # Grid lines (visible structure)
+  grid_lines:
+    enabled: true
+    color: "rgba(255, 255, 255, 0.03)"
+    horizontal: true
+    vertical: true
+    
+  # Corner utilization (fill white space)
+  corners:
+    top_left: "logo"
+    top_right: "section-number"
+    bottom_left: "contact-info"
+    bottom_right: "scroll-indicator"
+    
+  # Section numbering
+  section_numbers:
+    format: "{current}/{total}"    # e.g., "01/05"
+    position: "fixed-top-right"
+    font: "Spline Sans Mono"
+    size: "0.75rem"
+    
+  # Spacing scale (8px base)
+  spacing:
+    base: "8px"
+    xs: "4px"
+    sm: "8px"
+    md: "16px"
+    lg: "32px"
+    xl: "64px"
+    xxl: "96px"
+    section: "clamp(80px, 15vh, 160px)"
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SECTION 6: EFFECTS & VISUAL ENHANCEMENTS
+# ══════════════════════════════════════════════════════════════════════════════
+effects:
+  # Blue vignette glow
+  vignette:
+    enabled: true
+    type: "inner-shadow"
+    color: "rgba(77, 168, 255, 0.12)"
+    spread: "200px"
+    position: "fixed"
+    animation: "subtle-pulse"
+    pulse_duration: "8s"
+    
+  # Noise texture
+  noise:
+    enabled: true
+    opacity: 0.02
+    blend_mode: "overlay"
+    
+  # Gradient overlays
+  gradients:
+    hero_fade: "linear-gradient(to bottom, transparent 0%, var(--bg) 100%)"
+    section_transition: "linear-gradient(180deg, #F7F7F7 0%, #000000 100%)"
+    
+  # Spotlight (mouse-following)
+  spotlight:
+    enabled: true
+    size: "400px"
+    color: "rgba(255, 255, 255, 0.03)"
+    blur: "100px"
+    follows_mouse: true
+    opacity_on_dark_sections: 0.08
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SECTION 7: COMPONENT SPECIFICATIONS
+# ══════════════════════════════════════════════════════════════════════════════
+components:
+  # Navigation
+  navigation:
+    position: "fixed"
+    style: "minimal-corners"
+    items:
+      - text: "[ ABOUT ]"
+        scramble: true
+      - text: "[ WORK ]"
+        scramble: true
+      - text: "[ CONNECT ]"
+        scramble: true
+    animation:
+      entrance: "fade-down"
+      hide_on_scroll_down: true
+      show_on_scroll_up: true
+      
+  # Hero section
+  hero:
+    layout: "editorial"
+    title:
+      text: "MANU ARYA"
+      split_lines: true
+      animation: "char-by-char-reveal"
+    subtitle:
+      text: "DATA ENGINEER"
+      format: "[ DATA ENGINEER ]"
+      font: "Spline Sans Mono"
+    tagline:
+      text: "Transforming raw data into intelligence"
+      font: "serif-italic"
+    image:
+      position: "offset-center"
+      has_decorative_box: true
+      reveal: "clip-path"
+      
+  # Project cards
+  projects:
+    layout: "alternating"          # Image left/right alternates
+    image:
+      aspect_ratio: "4:3"
+      hover_effect: "scale-1.05"
+      has_reveal_animation: true
+    info:
+      number_format: "01"
+      title_scramble_on_hover: true
+      tech_tags:
+        style: "minimal-pill"
+        background: "transparent"
+        border: "1px solid rgba(255,255,255,0.2)"
+        
+  # Services/Skills cards
+  skills:
+    layout: "draggable-cards"      # Interactive horizontal scroll
+    style: "bordered-minimal"
+    hover:
+      lift: "4px"
+      glow: true
+      
+  # Contact/Connect
+  connect:
+    layout: "full-width"
+    title_effect: "massive-type"
+    form_style: "underline-inputs"
+    social_links:
+      format: "text-with-arrow"
+      scramble_on_hover: true
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SECTION 8: STORY-TELLING ELEMENTS
+# ══════════════════════════════════════════════════════════════════════════════
+storytelling:
+  # Section flow
+  narrative:
+    - section: "hero"
+      message: "First impression - bold, confident, creative"
+      duration_on_screen: "full-viewport"
+    - section: "about"
+      message: "Who I am - manifesto, personal story"
+      animation: "text-reveal"
+    - section: "expertise"
+      message: "What I can do - skills showcase"
+      animation: "cards-cascade"
+    - section: "work"
+      message: "Proof of ability - project highlights"
+      animation: "staggered-reveal"
+    - section: "connect"
+      message: "Call to action - let's work together"
+      animation: "fade-in-up"
+      
+  # Micro-copy elements
+  labels:
+    portfolio_year: "Portfolio 2026"
+    location: "Based in India"
+    availability: "Available for projects"
+    
+  # Decorative text
+  decorative:
+    brackets: ["[", "]"]
+    arrows: ["→", "↗", "↓"]
+    separators: ["/", "//", "—"]
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SECTION 9: FILLING WHITE SPACE (Critical!)
+# ══════════════════════════════════════════════════════════════════════════════
+white_space_filling:
+  strategies:
+    - name: "Grid lines"
+      description: "Subtle lines that give structure"
+      implementation: "CSS ::before/::after pseudo-elements"
+      
+    - name: "Corner metadata"
+      description: "Small text in corners (coordinates, version, etc.)"
+      examples:
+        - "// 2026"
+        - "IND, 28.6139° N"
+        - "v.03"
+        
+    - name: "Mono-spaced labels"
+      description: "Technical-looking labels near content"
+      examples:
+        - "/EXPERTISE"
+        - "/SELECTED WORK"
+        - "(01)"
+        
+    - name: "Directional cues"
+      description: "Arrows and indicators"
+      examples:
+        - "↓ Scroll"
+        - "→ View project"
+        
+    - name: "Section markers"
+      description: "Numbered sections"
+      format: "01/05"
+      
+    - name: "Decorative shapes"
+      description: "Subtle geometric elements"
+      types:
+        - "offset rectangles behind images"
+        - "circles at section transitions"
+        - "diagonal lines"
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SECTION 10: TECHNICAL IMPLEMENTATION NOTES
+# ══════════════════════════════════════════════════════════════════════════════
+implementation:
+  libraries:
+    required:
+      - name: "GSAP"
+        version: "3.12+"
+        plugins: ["ScrollTrigger", "SplitText"]
+      - name: "Lenis"
+        version: "1.1+"
+        purpose: "Smooth scrolling"
+    optional:
+      - name: "Three.js"
+        purpose: "3D effects, exploding text"
+      - name: "Barba.js"
+        purpose: "Page transitions"
+        
+  performance:
+    - "Use will-change sparingly"
+    - "Prefer transform/opacity animations"
+    - "Implement requestAnimationFrame for cursor"
+    - "Lazy load images with blur-up placeholder"
+    - "Code-split heavy animation code"
+    
+  accessibility:
+    - "Respect prefers-reduced-motion"
+    - "Ensure contrast ratios WCAG AA"
+    - "Keyboard navigation support"
+    - "Focus states visible"
