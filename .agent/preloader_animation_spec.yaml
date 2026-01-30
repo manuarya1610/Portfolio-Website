@@ -1,0 +1,248 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# ELVA-STYLE PRELOADER ANIMATION SPECIFICATION
+# Reference: https://www.helloelva.com/
+# ═══════════════════════════════════════════════════════════════════════════
+
+metadata:
+  name: Elva-Style Preloader Animation
+  version: 1.0.0
+  target_text: "ARYA."
+  reference_site: https://www.helloelva.com/
+
+# ═══════════════════════════════════════════════════════════════════════════
+# COLOR PALETTE
+# ═══════════════════════════════════════════════════════════════════════════
+colors:
+  background: "#ECECEC"        # Off-white/light gray
+  text: "#262523"              # Dark charcoal
+  mask: "#ECECEC"              # Same as background (invisible mask trick)
+
+# ═══════════════════════════════════════════════════════════════════════════
+# TYPOGRAPHY
+# ═══════════════════════════════════════════════════════════════════════════
+typography:
+  font_family: "'Monument Extended', 'Inter', Arial, sans-serif"
+  font_size: "clamp(4rem, 12vw, 8rem)"
+  font_weight: 400
+  letter_spacing: "0.02em"
+  text_transform: "uppercase"
+  line_height: 1
+
+# ═══════════════════════════════════════════════════════════════════════════
+# ELEMENT STRUCTURE
+# ═══════════════════════════════════════════════════════════════════════════
+elements:
+  preloader:
+    selector: ".preloader"
+    description: "Full-screen fixed overlay container"
+    styles:
+      position: fixed
+      inset: "0"
+      background: "#ECECEC"
+      z_index: 10000
+      display: flex
+      align_items: center
+      justify_content: center
+
+  logo_container:
+    selector: ".preloader-logo-container"
+    description: "Container for text, mask bar, and dot"
+    styles:
+      position: relative
+      display: flex
+      align_items: center
+      justify_content: center
+      overflow: visible
+
+  text:
+    selector: ".preloader-text"
+    description: "Main logo text 'ARYA.'"
+    content: "ARYA."
+    initial_state:
+      opacity: 0
+      transform: "translateX(100%)"
+    final_state:
+      opacity: 1
+      transform: "translateX(0)"
+
+  mask_bar:
+    selector: ".preloader-mask-bar"
+    description: "Invisible sliding mask (same color as background)"
+    purpose: "Covers RYA. to reveal only A during animation"
+    initial_state:
+      transform: "translateX(100%)"
+    reveal_state:
+      transform: "translateX(0%)"
+    # Width should cover exactly "RYA." but not "A"
+    width_percentage: "80%"
+
+  dot:
+    selector: ".preloader-dot"
+    description: "Small dot that morphs into a tall slash"
+    initial_state:
+      opacity: 0
+      scale: 1
+      skew: 0
+      border_radius: "50%"
+    morphed_state:
+      opacity: 1
+      scaleY: 7.6
+      scaleX: 0.3
+      skewX: -24
+      border_radius: "2px"
+
+  glitch:
+    selector: ".preloader-glitch"
+    description: "Scanline/glitch overlay effect"
+    animation: "16-frame sprite or CSS scanlines"
+
+# ═══════════════════════════════════════════════════════════════════════════
+# ANIMATION TIMELINE
+# ═══════════════════════════════════════════════════════════════════════════
+animation_timeline:
+  total_duration_ms: 3600
+  easing: "power2.inOut"
+  
+  phases:
+    - phase: 1
+      name: "Initial Hold"
+      start_ms: 0
+      end_ms: 800
+      description: "Solid background screen, all elements hidden"
+      actions:
+        - element: preloader
+          property: visibility
+          value: visible
+        - element: text
+          property: opacity
+          value: 0
+        - element: mask_bar
+          property: transform
+          value: "translateX(100%)"
+        - element: dot
+          property: opacity
+          value: 0
+
+    - phase: 2
+      name: "Text Reveal / Sliding Motion"
+      start_ms: 800
+      end_ms: 1600
+      duration_ms: 800
+      description: "Logo slides in, mask bar slides to reveal text"
+      easing: "power2.inOut"
+      actions:
+        - element: text
+          animation:
+            from:
+              opacity: 0
+              x: "100%"
+            to:
+              opacity: 1
+              x: "50%"
+          duration_ms: 600
+        - element: mask_bar
+          animation:
+            from:
+              x: "110%"
+            to:
+              x: "160%"
+          duration_ms: 600
+          description: "Mask slides right, revealing letters left-to-right"
+        - element: dot
+          animation:
+            to:
+              opacity: 1
+              x: "11rem"
+          duration_ms: 300
+
+    - phase: 3
+      name: "Dot Transformation"
+      start_ms: 1600
+      end_ms: 2200
+      duration_ms: 600
+      description: "Dot morphs into a tall skewed column (slash)"
+      easing: "power2.inOut"
+      actions:
+        - element: dot
+          animation:
+            to:
+              scaleY: 7.6
+              scaleX: 0.3
+              skewX: -24
+              borderRadius: "2px"
+          duration_ms: 400
+        - element: mask_bar
+          animation:
+            to:
+              x: "120%"
+          duration_ms: 400
+        - element: text
+          animation:
+            to:
+              x: "80%"
+          duration_ms: 400
+
+    - phase: 4
+      name: "Glitch Exit"
+      start_ms: 2200
+      end_ms: 3000
+      duration_ms: 800
+      description: "Glitch effect appears, logo disappears"
+      actions:
+        - element: glitch
+          animation:
+            to:
+              opacity: 1
+          trigger: "addClass('active')"
+          css_animation: "steps(16) 0.8s"
+        - element: text
+          animation:
+            to:
+              opacity: 0
+          duration_ms: 200
+        - element: dot
+          animation:
+            to:
+              opacity: 0
+          duration_ms: 200
+
+    - phase: 5
+      name: "Page Reveal"
+      start_ms: 3000
+      end_ms: 3600
+      duration_ms: 600
+      description: "Preloader fades out to reveal website"
+      easing: "power2.out"
+      actions:
+        - element: preloader
+          animation:
+            to:
+              opacity: 0
+              visibility: hidden
+          duration_ms: 600
+          on_complete: "display: none"
+
+# ═══════════════════════════════════════════════════════════════════════════
+# KEY DESIGN NOTES
+# ═══════════════════════════════════════════════════════════════════════════
+design_notes:
+  invisible_mask_trick: |
+    The mask bar has the SAME color as the background (#ECECEC).
+    When it slides over the text, it appears to "erase" letters.
+    This is more reliable than clip-path for text masking.
+  
+  a_clipping_prevention: |
+    For "ARYA.", the mask should cover exactly "RYA." (80% from right).
+    The "A" at the start must remain fully visible.
+    Adjust mask width based on font metrics if needed.
+  
+  dot_to_slash: |
+    The dot transforms into a tall vertical slash using:
+    - scaleY: 7.6 (makes it tall)
+    - scaleX: 0.3 (makes it thin)
+    - skewX: -24deg (creates the italic/slash angle)
+  
+  no_blue_glow: |
+    The original Elva site has a WebGL vignette effect.
+    This implementation does NOT include any blue glow.
+    Background is solid #ECECEC throughout.

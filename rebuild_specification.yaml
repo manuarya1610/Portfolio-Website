@@ -1,0 +1,255 @@
+# =============================================================================
+# COMPLETE WEBSITE REBUILD SPECIFICATION
+# CreativeWebManual-Style Portfolio for Manu Arya - Data Engineer
+# =============================================================================
+
+meta:
+  created: "2026-01-25"
+  purpose: "Complete rebuild specification matching creativewebmanual.com style"
+  target: "Editorial, typography-focused, scroll-driven data engineer portfolio"
+
+# =============================================================================
+# REFERENCE ANALYSIS: creativewebmanual.com
+# =============================================================================
+reference_analysis:
+
+  overall_philosophy:
+    - "Reading experience over browsing experience"
+    - "Typography as the primary visual element"
+    - "Minimal imagery - text tells the story"
+    - "Scroll reveals narrative progressively"
+    - "Dark mode with high contrast text"
+    - "Editorial/magazine-style layout"
+
+  color_scheme:
+    background: "#0a0a0a"
+    text_dim: "rgba(255, 255, 255, 0.15)"
+    text_bright: "#ffffff"
+    accent: "#00ffc8"
+
+  typography:
+    primary_font: "PP Neue Montreal or similar grotesque sans-serif"
+    secondary_font: "Monospace for technical labels"
+    hero_size: "8-12vw (viewport-relative, HUGE)"
+    body_size: "1.2-1.5rem"
+    line_height: "1.6-1.8"
+
+  layout_structure:
+    - "Full viewport height sections"
+    - "Large left/right margins (10-15%)"
+    - "Pinned sidebars while content scrolls"
+    - "Chapter/section numbering"
+    - "Horizontal dividers between sections"
+
+  key_animations:
+    word_reveal:
+      description: "Text starts grey, becomes white word-by-word as you scroll"
+      trigger: "Scroll position (scrub: true)"
+      duration: "Tied to scroll distance"
+      
+    section_pin:
+      description: "Section titles pin while content scrolls beside them"
+      trigger: "When section reaches top"
+      end: "When section content ends"
+      
+    background_fade:
+      description: "Background color smoothly transitions between sections"
+      trigger: "Section enters viewport center"
+      
+    text_scramble:
+      description: "Characters shuffle on hover"
+      trigger: "Mouse enter"
+
+# =============================================================================
+# CURRENT CONTENT TO PRESERVE
+# =============================================================================
+current_content:
+  
+  personal:
+    name: "Manu Arya"
+    role: "Data Engineer & Developer"
+    linkedin: "https://linkedin.com/in/manuaryaddn"
+    github: "https://github.com/manuarya1610"
+    email_form: "https://formspree.io/f/meqdpngy"
+    
+  about:
+    tagline: "Data Engineer crafting robust data pipelines and scalable architectures"
+    description: |
+      I transform raw data into actionable insights while building interactive web 
+      experiences on the side. Passionate about clean code, efficient systems, 
+      and bridging the gap between data and design.
+
+  projects:
+    - id: 1
+      title: "Object Detection & Alert Generation"
+      description: |
+        Software supporting video and image formats, utilizing bounding boxes to 
+        identify and label detected objects. Features filters for specific objects 
+        and generates text alerts with screenshots. Alerts sent to remote servers 
+        as intruder warnings.
+      github: "https://github.com/manuarya1610/Object-Detection-and-Alert-Generation.git"
+      tech: ["Python", "OpenCV", "Machine Learning"]
+      
+    - id: 2
+      title: "RTSP/Video Streaming Software"
+      description: |
+        Leverages OpenCV library to stream video from diverse sources. 
+        Built using QT Creator with interface designed in QT Designer.
+      github: "https://github.com/manuarya1610/RTSP-Video-Player.git"
+      tech: ["Python", "OpenCV", "QT"]
+      
+    - id: 3
+      title: "Website Template"
+      description: |
+        Aesthetically pleasing and user-friendly website template that is 
+        super responsive. Follows minimalistic design concept.
+      github: "https://github.com/manuarya1610/Community-Website-Template"
+      website: "https://manant-devs.netlify.app"
+      tech: ["HTML", "CSS", "JavaScript"]
+      
+    - id: 4
+      title: "Cocktails App"
+      description: |
+        React website fetching cocktails from a free API 
+        with stunning UI/UX.
+      github: "https://github.com/manuarya1610/Cocktails-WebApp"
+      website: "https://cocktails-arya-webapp.netlify.app/"
+      tech: ["React", "API Integration"]
+
+# =============================================================================
+# NEW DATA ENGINEER CONTENT TO ADD
+# =============================================================================
+new_content:
+  
+  data_engineer_intro: |
+    I architect the invisible infrastructure that powers data-driven decisions.
+    From raw bytes to refined insights, I build the pipelines that transform 
+    chaos into clarity.
+    
+  skills_narrative: |
+    Every great insight begins with clean data. I specialize in:
+    Building robust ETL pipelines that handle terabytes daily.
+    Designing data warehouses that scale with your ambitions.
+    Creating real-time streaming architectures.
+    Bridging the gap between raw data and actionable intelligence.
+    
+  philosophy: |
+    Data doesn't lie, but it doesn't talk either. 
+    My job is to make it speak—clearly, efficiently, beautifully.
+    
+  tech_stack:
+    languages: ["Python", "SQL", "JavaScript"]
+    data: ["Apache Spark", "Airflow", "dbt", "Kafka"]
+    cloud: ["AWS", "GCP", "Azure"]
+    databases: ["PostgreSQL", "MongoDB", "Snowflake", "BigQuery"]
+    visualization: ["Tableau", "PowerBI", "D3.js"]
+
+# =============================================================================
+# NEW WEBSITE ARCHITECTURE
+# =============================================================================
+new_architecture:
+
+  sections:
+    - id: "hero"
+      title: "MANU ARYA"
+      subtitle: "DATA ENGINEER"
+      layout: "fullscreen, centered text"
+      animation: "Letters stagger in, then word-by-word tagline reveal"
+      
+    - id: "manifesto"  
+      title: "01"
+      sidebar: "ABOUT"
+      content: "data_engineer_intro + philosophy"
+      layout: "pinned sidebar left, scrolling content right"
+      animation: "Word-by-word grey to white reveal"
+      
+    - id: "expertise"
+      title: "02"
+      sidebar: "EXPERTISE"
+      content: "skills_narrative + tech_stack visualization"
+      layout: "pinned sidebar, scrolling skill cards"
+      animation: "Cards fade in with stagger"
+      
+    - id: "work"
+      title: "03"
+      sidebar: "SELECTED WORK"
+      content: "projects as vertical stacked cards"
+      layout: "pinned project number, scrolling project details"
+      animation: "Project number changes, content slides"
+      
+    - id: "connect"
+      title: "04"
+      sidebar: "CONNECT"
+      content: "contact form + social links"
+      layout: "Two column, form right"
+      animation: "Fade in elements"
+
+  file_structure:
+    - "index.html       # Complete rebuild"
+    - "styles.css       # New minimal CSS"
+    - "animations.js    # GSAP animations"
+    - "lenis-config.js  # Smooth scroll"
+
+# =============================================================================
+# IMPLEMENTATION PHASES
+# =============================================================================
+implementation:
+
+  phase_1_foundation:
+    files: ["index.html", "styles.css"]
+    tasks:
+      - "Create new minimal HTML structure"
+      - "Setup CSS with dark theme and typography"
+      - "Large viewport sections"
+      - "Basic responsive grid"
+      
+  phase_2_content:
+    files: ["index.html"]
+    tasks:
+      - "Add hero section with name/role"
+      - "Add manifesto section with about text"
+      - "Add expertise section with skills"
+      - "Add work section with projects"
+      - "Add connect section with form"
+      
+  phase_3_animations:
+    files: ["animations.js"]
+    tasks:
+      - "Setup Lenis smooth scroll"
+      - "Word-by-word text reveal"
+      - "Pinned sidebar scroll"
+      - "Background color transitions"
+      - "Staggered reveals"
+      
+  phase_4_polish:
+    tasks:
+      - "Text scramble on hover"
+      - "Progress indicator"
+      - "Custom cursor"
+      - "Mobile responsive"
+      - "Performance optimize"
+
+# =============================================================================
+# CSS DESIGN TOKENS
+# =============================================================================
+design_tokens:
+  colors:
+    bg_primary: "#0a0a0a"
+    bg_section_2: "#0d1117"
+    text_muted: "rgba(255, 255, 255, 0.15)"
+    text_primary: "#ffffff"
+    accent: "#00ffc8"
+    
+  spacing:
+    section_padding: "10vh 10vw"
+    content_max_width: "1400px"
+    
+  typography:
+    font_display: "'Monument Extended', sans-serif"
+    font_body: "'Inter', sans-serif"
+    font_mono: "'JetBrains Mono', monospace"
+    
+  breakpoints:
+    mobile: "768px"
+    tablet: "1024px"
+    desktop: "1440px"

@@ -1,0 +1,318 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# PORTFOLIO WEBSITE - COMPLETE DESIGN SYSTEM & SPECIFICATIONS
+# Inspired by: helloelva.com, lusion.co, broed.co, 3200kelvin.com, delassus.com
+# ═══════════════════════════════════════════════════════════════════════════════
+
+metadata:
+  name: Manu Arya Portfolio
+  version: 2.0.0
+  style: Minimalist Awwwards-Style
+  last_updated: 2026-01-28
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# REFERENCE WEBSITES ANALYSIS
+# ═══════════════════════════════════════════════════════════════════════════════
+references:
+  helloelva:
+    url: https://www.helloelva.com/
+    best_features:
+      - Clean preloader with text animation
+      - Minimal color palette (off-white + charcoal)
+      - Bold geometric typography
+      - Smooth page transitions
+      - WebGL subtle effects
+    colors:
+      background: "#ECECEC"
+      text: "#262523"
+    
+  lusion:
+    url: https://lusion.co/
+    best_features:
+      - 3D WebGL experiences
+      - Smooth scroll with parallax
+      - Dark theme with accent colors
+      - Micro-interactions on hover
+      - Progressive content reveal
+    
+  broed:
+    url: https://broed.co/
+    best_features:
+      - Clean grid layouts
+      - Elegant typography
+      - Subtle hover animations
+      - Warm neutral tones
+      - Project showcase cards
+    
+  3200kelvin:
+    url: https://3200kelvin.com/
+    best_features:
+      - Warm cream/beige palette
+      - Elegant serif + sans-serif pairing
+      - Smooth scrolling
+      - Editorial layout style
+      - Refined animations
+    
+  delassus:
+    url: https://delassus.com/
+    best_features:
+      - Organic flowing animations
+      - Natural color palette (greens, creams)
+      - Full-screen imagery
+      - Horizontal scroll sections
+      - Smooth cursor effects
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# COLOR PALETTE - Minimalist Awwwards Style
+# ═══════════════════════════════════════════════════════════════════════════════
+colors:
+  primary:
+    cream: "#FAF8F5"           # Main background - warm off-white
+    ivory: "#F5F2ED"           # Secondary background
+    sand: "#E8E4DC"            # Subtle sections
+    
+  text:
+    charcoal: "#1A1A1A"        # Primary text - deep black
+    graphite: "#3D3D3D"        # Secondary text
+    slate: "#6B6B6B"           # Muted text
+    silver: "#9A9A9A"          # Caption/meta text
+    
+  accent:
+    terracotta: "#C45C3E"      # Warm accent (tasteful pop)
+    sage: "#7B8B6F"            # Natural green accent
+    ocean: "#4A6FA5"           # Cool blue accent
+    gold: "#B8963E"            # Elegant gold touch
+    
+  neutral:
+    warm_white: "#FEFCF9"      # Cards/highlights
+    cool_gray: "#E5E5E5"       # Borders/dividers
+    dark_gray: "#2A2A2A"       # Dark sections
+
+  gradients:
+    warm_fade: "linear-gradient(180deg, #FAF8F5 0%, #F5F2ED 100%)"
+    subtle_glow: "radial-gradient(ellipse at center, rgba(196, 92, 62, 0.05) 0%, transparent 70%)"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# TYPOGRAPHY SYSTEM
+# ═══════════════════════════════════════════════════════════════════════════════
+typography:
+  fonts:
+    display:
+      family: "'Playfair Display', Georgia, serif"
+      weights: [400, 500, 600, 700]
+      use: "Headlines, hero text, statements"
+      
+    body:
+      family: "'Inter', 'Helvetica Neue', Arial, sans-serif"
+      weights: [300, 400, 500, 600]
+      use: "Body text, UI elements, navigation"
+      
+    mono:
+      family: "'JetBrains Mono', 'Fira Code', monospace"
+      weights: [400, 500]
+      use: "Code, technical specs, numbers"
+      
+  scale:
+    hero: "clamp(3.5rem, 8vw, 7rem)"
+    h1: "clamp(2.5rem, 5vw, 4.5rem)"
+    h2: "clamp(2rem, 4vw, 3.5rem)"
+    h3: "clamp(1.5rem, 3vw, 2.25rem)"
+    h4: "clamp(1.25rem, 2vw, 1.75rem)"
+    body_large: "clamp(1.125rem, 1.5vw, 1.375rem)"
+    body: "clamp(1rem, 1.25vw, 1.125rem)"
+    small: "clamp(0.875rem, 1vw, 0.9375rem)"
+    caption: "clamp(0.75rem, 0.9vw, 0.8125rem)"
+    
+  line_heights:
+    tight: 1.1
+    normal: 1.5
+    relaxed: 1.7
+    
+  letter_spacing:
+    tight: "-0.02em"
+    normal: "0"
+    wide: "0.05em"
+    extra_wide: "0.15em"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# SPACING & LAYOUT SYSTEM
+# ═══════════════════════════════════════════════════════════════════════════════
+spacing:
+  base: "8px"
+  scale:
+    xs: "0.5rem"     # 8px
+    sm: "1rem"       # 16px
+    md: "1.5rem"     # 24px
+    lg: "2rem"       # 32px
+    xl: "3rem"       # 48px
+    xxl: "4rem"      # 64px
+    section: "6rem"  # 96px
+    hero: "8rem"     # 128px
+    
+  container:
+    max_width: "1400px"
+    padding: "clamp(1.5rem, 5vw, 4rem)"
+    
+  grid:
+    columns: 12
+    gap: "clamp(1rem, 2vw, 2rem)"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# ANIMATION SPECIFICATIONS
+# ═══════════════════════════════════════════════════════════════════════════════
+animations:
+  timing:
+    instant: "0.1s"
+    fast: "0.2s"
+    normal: "0.4s"
+    slow: "0.6s"
+    slower: "0.8s"
+    slowest: "1.2s"
+    
+  easing:
+    default: "cubic-bezier(0.4, 0, 0.2, 1)"
+    smooth: "cubic-bezier(0.25, 0.1, 0.25, 1)"
+    bounce: "cubic-bezier(0.34, 1.56, 0.64, 1)"
+    power2_out: "cubic-bezier(0.33, 0, 0.67, 1)"
+    power3_inout: "cubic-bezier(0.65, 0, 0.35, 1)"
+    
+  scroll_animations:
+    fade_up:
+      from: { opacity: 0, y: 60 }
+      to: { opacity: 1, y: 0 }
+      duration: 0.8
+      stagger: 0.1
+      
+    fade_in:
+      from: { opacity: 0 }
+      to: { opacity: 1 }
+      duration: 0.6
+      
+    slide_in_left:
+      from: { opacity: 0, x: -80 }
+      to: { opacity: 1, x: 0 }
+      duration: 0.8
+      
+    scale_in:
+      from: { opacity: 0, scale: 0.95 }
+      to: { opacity: 1, scale: 1 }
+      duration: 0.6
+      
+  hover_effects:
+    link_underline:
+      type: "width expansion"
+      duration: "0.3s"
+      
+    card_lift:
+      transform: "translateY(-8px)"
+      shadow: "0 20px 40px rgba(0,0,0,0.1)"
+      duration: "0.4s"
+      
+    image_zoom:
+      transform: "scale(1.05)"
+      duration: "0.6s"
+      
+    button_fill:
+      type: "background slide"
+      duration: "0.3s"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# COMPONENT SPECIFICATIONS
+# ═══════════════════════════════════════════════════════════════════════════════
+components:
+  navigation:
+    position: fixed
+    background: "rgba(250, 248, 245, 0.9)"
+    backdrop_filter: "blur(10px)"
+    height: "80px"
+    border_bottom: "1px solid rgba(0,0,0,0.05)"
+    
+  hero:
+    height: "100vh"
+    background: "#FAF8F5"
+    text_animation: "staggered reveal"
+    
+  project_cards:
+    aspect_ratio: "4/3"
+    border_radius: "12px"
+    hover: "lift + image zoom"
+    
+  buttons:
+    primary:
+      background: "#1A1A1A"
+      color: "#FAF8F5"
+      padding: "1rem 2rem"
+      border_radius: "4px"
+      hover: "background #3D3D3D"
+    secondary:
+      background: "transparent"
+      border: "1px solid #1A1A1A"
+      color: "#1A1A1A"
+      hover: "fill background"
+      
+  cursor:
+    type: "custom dot + follower"
+    size: "8px / 40px"
+    blend_mode: "difference"
+    
+# ═══════════════════════════════════════════════════════════════════════════════
+# PERFORMANCE OPTIMIZATION
+# ═══════════════════════════════════════════════════════════════════════════════
+performance:
+  images:
+    format: "WebP preferred, AVIF for modern browsers"
+    lazy_loading: true
+    responsive_sizes: [320, 640, 1024, 1440, 1920]
+    
+  css:
+    critical_above_fold: true
+    unused_removal: true
+    minification: true
+    
+  javascript:
+    defer_non_critical: true
+    tree_shaking: true
+    code_splitting: false  # Single page, not needed
+    
+  animations:
+    will_change: "transform, opacity only"
+    gpu_accelerated: true
+    reduce_motion: true  # Respect prefers-reduced-motion
+    
+  fonts:
+    display_swap: true
+    preload_critical: true
+    subset: false  # Using full font files
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# SECTION SPECIFICATIONS
+# ═══════════════════════════════════════════════════════════════════════════════
+sections:
+  hero:
+    background: "#FAF8F5"
+    headline: "Manu Arya"
+    subheadline: "Data Engineer & Analytics Professional"
+    cta: "View My Work"
+    animation: "staggered text reveal + subtle parallax"
+    
+  about:
+    background: "#F5F2ED"
+    layout: "two column - image + text"
+    animation: "fade up on scroll"
+    accent: "terracotta highlight on key phrases"
+    
+  projects:
+    background: "#FAF8F5"
+    layout: "masonry grid or bento"
+    card_hover: "lift + zoom + overlay"
+    animation: "staggered reveal"
+    
+  skills:
+    background: "#E8E4DC"
+    layout: "horizontal scroll or grid"
+    animation: "progressive reveal"
+    
+  contact:
+    background: "#1A1A1A"  # Dark section for contrast
+    text: "#FAF8F5"
+    accent: "#C45C3E"
+    animation: "fade in + form micro-interactions"

@@ -1,0 +1,207 @@
+# =============================================================================
+# WEBSITE ENHANCEMENTS SPECIFICATION
+# Loading Animation + Text Effects + Project Images + Buttons
+# =============================================================================
+
+# =============================================================================
+# PHASE 1: PRELOADER / LOADING ANIMATION
+# =============================================================================
+preloader:
+  
+  design:
+    background: "#0a0a0a"
+    duration: "3-4 seconds"
+    
+  elements:
+    counter:
+      description: "Percentage counter 0% → 100%"
+      position: "bottom-left corner"
+      font: "Monument Extended, 6rem"
+      animation: "Count up with easing"
+      
+    marquee:
+      description: "KEEP IT SIMPLE text (from original site)"
+      text: "KEEP IT SIMPLE"
+      count: "7 repeating lines"
+      animation: "Scale and fade reveal"
+      
+    progress_line:
+      description: "Horizontal progress line"
+      position: "middle of screen"
+      animation: "Width grows 0% to 100%"
+      
+  reveal_animation:
+    type: "Clip-path reveal"
+    direction: "Top to bottom wipe"
+    timing: "After counter reaches 100%"
+    hero_entrance: "Stagger letters after reveal"
+
+# =============================================================================
+# PHASE 2: HERO REDESIGN
+# =============================================================================
+hero_redesign:
+  
+  layout:
+    structure: "Asymmetric/creative arrangement"
+    name_position: "MANU on left, ARYA on right offset"
+    subtitle_position: "Bottom left corner"
+    tagline_position: "Right side, vertical or offset"
+    
+  entrance_animations:
+    name_letters:
+      type: "Stagger from below with rotation"
+      delay: "After loader completes"
+      duration: "1.2s per letter"
+      stagger: "0.08s"
+      
+    subtitle:
+      type: "Fade up"
+      delay: "After name animation"
+      
+    tagline:
+      type: "Word-by-word fade in"
+      stagger: "0.05s per word"
+      
+  decorative_elements:
+    line_dividers: "Animated horizontal/vertical lines"
+    floating_text: "Data Engineer rotating or floating"
+
+# =============================================================================
+# PHASE 3: TEXT SCROLL EFFECTS
+# =============================================================================
+text_effects:
+  
+  word_reveal:
+    description: "Words change from grey to white as you scroll"
+    initial_color: "rgba(255, 255, 255, 0.15)"
+    final_color: "#ffffff"
+    trigger: "ScrollTrigger with scrub"
+    targets: [".manifesto", ".project-description"]
+    
+  text_highlight:
+    description: "Text gets highlighted/filled as you scroll past"
+    effect: "gradient fill or color change"
+    alternative: "Background highlight sweep"
+    
+  character_scramble:
+    description: "Characters scramble on hover"
+    targets: [".nav-link", ".project-title"]
+
+# =============================================================================
+# PHASE 4: PROJECT IMAGES
+# =============================================================================
+project_images:
+  
+  sources:
+    - id: 1
+      title: "Object Detection & Alert"
+      image_url: "https://manuarya1610.github.io/pr1.png"
+      
+    - id: 2
+      title: "RTSP Streaming"
+      image_url: "https://manuarya1610.github.io/pr2.png"
+      
+    - id: 3
+      title: "Website Template"
+      image_url: "https://manuarya1610.github.io/pr3.png"
+      
+    - id: 4
+      title: "Cocktails App"
+      image_url: "https://manuarya1610.github.io/pr6.png"
+      
+  layout:
+    position: "Left side of project card"
+    size: "400px width, maintain aspect ratio"
+    
+  animations:
+    reveal:
+      type: "Clip-path inset reveal"
+      direction: "Right to left wipe"
+      duration: "1.2s"
+      
+    hover:
+      type: "Scale + slight rotation"
+      scale: "1.05"
+      
+    parallax:
+      type: "Slight Y movement on scroll"
+      amount: "-30px to 30px"
+
+# =============================================================================
+# PHASE 5: BUTTON STYLES
+# =============================================================================
+buttons:
+  
+  primary_style:
+    description: "Pill button with border and fill on hover"
+    border: "1px solid white"
+    border_radius: "50px (pill shape)"
+    padding: "1rem 2.5rem"
+    
+  animations:
+    magnetic:
+      description: "Button follows cursor slightly"
+      strength: "0.2 (20% of cursor distance)"
+      
+    fill_on_hover:
+      description: "Background fills from left to right"
+      effect: "translateX(-100%) to translateX(0)"
+      duration: "0.4s"
+      
+    text_invert:
+      description: "Text color inverts on hover"
+      from: "#ffffff"
+      to: "#0a0a0a"
+      
+    arrow_slide:
+      description: "Arrow slides right on hover"
+      icons: "→"
+      distance: "5px"
+      
+  types:
+    cta: "Let's Connect, View Work"
+    project: "GitHub →, Live Site →"
+    form: "Send Message →"
+
+# =============================================================================
+# CSS ADDITIONS NEEDED
+# =============================================================================
+css_additions:
+  
+  preloader:
+    - ".preloader (fullscreen overlay)"
+    - ".preloader-counter"
+    - ".preloader-marquee"
+    - ".preloader-progress"
+    
+  buttons:
+    - ".btn (base style)"
+    - ".btn-primary (pill with border)"
+    - ".btn-text (text + arrow)"
+    - ".btn::before (fill pseudo-element)"
+    
+  projects:
+    - ".project-image (container)"
+    - ".project-image img (image styles)"
+    - ".project-grid (image + content layout)"
+
+# =============================================================================
+# JAVASCRIPT ADDITIONS NEEDED
+# =============================================================================
+js_additions:
+  
+  preloader:
+    - "Counter animation 0-100"
+    - "Progress bar animation"
+    - "Marquee scale animation"
+    - "Clip-path reveal timeline"
+    - "Lock scroll during loading"
+    
+  text_effects:
+    - "SplitText for word splitting"
+    - "ScrollTrigger scrub for reveals"
+    - "Color interpolation gsap"
+    
+  buttons:
+    - "Magnetic effect on mousemove"
+    - "Elastic return on mouseleave"

@@ -1,0 +1,32 @@
+# System & Environment
+.DS_Store
+.agent/
+.gemini/
+node_modules/
+
+# Legacy Version (Reference Only)
+# These are the old files being replaced by index-new.html, etc.
+index.html
+style.css
+script.js
+index_backup_v1.html
+
+# Intermediate Development Artifacts
+# These were used during the V3 rebuild process but are not needed for production.
+animation_knowledge.yaml
+animation_notes.xml
+active_context.xml
+codebase_context.xml
+enhancement_spec.yaml
+project_context.yaml
+rebuild_specification.yaml
+modern-animations.js
+
+# Note: The ACTIVE production files strictly tracked are:
+# - index-new.html
+# - styles-new.css
+# - animations-new.js
+# - project_context.xml
+# - codebase_map.xml
+# - change_history.md
+# - README.md

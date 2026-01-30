@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codebase_map>
+  <overview>
+    <root_dir>/Users/manuarya/Documents/GitHub/Portfolio-Website</root_dir>
+    <primary_entry>index-new.html</primary_entry>
+  </overview>
+
+  <files>
+    <!-- ACTIVE PRODUCTION FILES -->
+    <file path="index-new.html">
+      <role>Main Entry Point</role>
+      <description>Semantic HTML5 structure for the v3 redesign.</description>
+      <key_sections>
+        <section id="preloader">Odometer counter &amp; rotating text</section>
+        <section id="hero">Massive evolving text, magnetic brand anchor</section>
+        <section id="about">Manifesto text with reveal animations</section>
+        <section id="expertise">Infinite marquee &amp; skill cards</section>
+        <section id="work">Project showcase with hover image reveals</section>
+        <section id="connect">Contact form &amp; social links</section>
+      </key_sections>
+    </file>
+
+    <file path="styles-new.css">
+      <role>Styling System</role>
+      <description>Modern CSS with custom properties for theming and motion.</description>
+      <key_tokens>
+        <token>--bg-light / --bg-dark</token>
+        <token>--accent-blue / --accent-orange</token>
+        <token>--font-display / --font-mono</token>
+        <token>--ease-smooth / --ease-power</token>
+      </key_tokens>
+      <modules>
+        <module>Vignette &amp; Noise Overlays</module>
+        <module>Cursor Logic</module>
+        <module>Magnetic Utilities</module>
+        <module>Hero Typography &amp; Icons</module>
+      </modules>
+    </file>
+
+    <file path="animations-new.js">
+      <role>Interaction Engine</role>
+      <description>GSAP &amp; Lenis controller for all motion.</description>
+      <functions>
+        <fn>initLenis()</fn>
+        <fn>initPreloader() -> buildMasterReveal()</fn>
+        <fn>initTextScramble()</fn>
+        <fn>initMagneticElements()</fn>
+        <fn>initScrollAnimations()</fn>
+        <fn>initEvolvingText()</fn>
+      </functions>
+    </file>
+
+    <!-- LEGACY / REFERENCE FILES -->
+    <file path="index.html">
+      <role>Legacy Entry Point</role>
+      <status>Reference Only</status>
+      <description>Previous version of the site.</description>
+    </file>
+
+    <file path="style.css">
+      <role>Legacy Styles</role>
+      <status>Reference Only</status>
+      <description>Previous stylesheet including 'Monument Extended' font ref.</description>
+    </file>
+
+    <file path="script.js">
+      <role>Legacy Scripts</role>
+      <status>Reference Only</status>
+      <description>jQuery-based interaction logic.</description>
+    </file>
+  </files>
+
+  <dependencies>
+    <dependency name="GSAP" type="CDN">Animations (Core, ScrollTrigger, SplitText)</dependency>
+    <dependency name="Lenis" type="CDN">Smooth Scrolling</dependency>
+    <dependency name="Google Fonts" type="External">Inter, Sofia Sans Condensed, Spline Sans Mono</dependency>
+  </dependencies>
+</codebase_map>
