@@ -20,23 +20,26 @@
     <!-- Spline Sans Mono for technical labels -->
     <link href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
+    <!-- Playfair Display for elegant serif project titles -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="styles-new.css">
+    <link rel="stylesheet" href="styles.css">
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/SplitText.min.js"></script>
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-    <script src="animations-new.js" defer></script>
+    <script src="animations.js" defer></script>
 </head>
 
 <body>
     <!-- ═══════════════════════════════════════════════════════════════════════════ -->
     <!-- VIGNETTE OVERLAY - Blue glow at edges (like olhalazarieva.com) -->
     <!-- ═══════════════════════════════════════════════════════════════════════════ -->
-    <div class="vignette-overlay"></div>
+
 
     <!-- ═══════════════════════════════════════════════════════════════════════════ -->
     <!-- SPOTLIGHT - Mouse-following radial light on dark sections -->
@@ -68,7 +71,8 @@
                 </defs>
                 <text class="rotating-text-content">
                     <textPath href="#circlePath">
-                        CREATIVE DATA ENGINEERING • MANU ARYA • TRANSFORMING DATA •
+                        <tspan class="accent">CREATIVE</tspan> DATA <tspan class="accent">ENGINEERING</tspan> • <tspan
+                            class="accent">MANU</tspan> ARYA • <tspan class="accent">TRANSFORMING</tspan> DATA •
                     </textPath>
                 </text>
             </svg>
@@ -173,7 +177,7 @@
                 <span class="corner-coords">28.6139° N, 77.2090° E</span>
             </div>
             <div class="corner corner--bottom-right">
-                <!-- Scroll indicator moved to main hero flow for centering -->
+                <!-- content moved out -->
             </div>
 
             <div class="scroll-indicator">
@@ -344,9 +348,18 @@
 
             <!-- Tagline with serif connector -->
             <p class="hero-tagline">
-                <span class="tagline-connector">transforming</span>
-                <span class="tagline-main">raw data into intelligence</span>
+                <span class="tagline-connector">where</span>
+                <span class="tagline-main">precision meets creativity</span>
             </p>
+
+            <!-- Story Badge - Personal status -->
+            <div class="hero-story-badge">
+                <div class="badge-status">
+                    <span class="badge-dot"></span>
+                    <span class="badge-text">Engineering data pipelines</span>
+                </div>
+                <div class="badge-passion">Seeking order in complexity</div>
+            </div>
 
             <!-- Decorative elements -->
             <div class="hero-deco">
@@ -358,38 +371,179 @@
         </section>
 
         <!-- ═══════════════════════════════════════════════════════════════════ -->
-        <!-- SECTION 02: ABOUT / MANIFESTO -->
+        <!-- SECTION 02: ABOUT - Storytelling Redesign -->
         <!-- ═══════════════════════════════════════════════════════════════════ -->
-        <section id="about" class="section section--about" data-section="2" data-bg="light">
-            <div class="section-header">
-                <span class="section-number">02</span>
-                <span class="section-label">/ABOUT</span>
+        <section id="about" class="section section--about-story" data-section="2" data-bg="light">
+
+            <!-- IDENTITY ANCHOR - "I am" massive statement -->
+            <div class="about-identity">
+                <div class="identity-text">
+                    <span class="identity-pre">I am</span>
+                    <h2 class="identity-name">
+                        <span class="name-first">Manu</span>
+                        <span class="name-last">Arya</span>
+                    </h2>
+                </div>
+                <div class="identity-visual">
+                    <div class="visual-frame">
+                        <img src="assets/about-illustration.png" alt="Creative workspace">
+                    </div>
+                    <div class="identity-badge">
+                        <svg viewBox="0 0 100 100" class="badge-svg">
+                            <defs>
+                                <path id="badgePath" d="M50,50 m-35,0 a35,35 0 1,1 70,0 a35,35 0 1,1 -70,0" />
+                            </defs>
+                            <text class="badge-text">
+                                <textPath href="#badgePath">CREATOR • THINKER • EXPLORER • ENGINEER •</textPath>
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <p class="identity-tagline">
+                    A curious mind building things that matter—where creativity meets precision.
+                </p>
             </div>
 
-            <div class="manifesto-container">
-                <p class="manifesto reveal-text">
-                    I transform raw data into actionable insights. From raw bytes to refined intelligence,
-                    I build the pipelines that transform chaos into clarity.
-                </p>
+            <!-- THREE PILLARS - Vision, Craft, Soul -->
+            <div class="about-pillars">
+                <article class="pillar pillar--vision">
+                    <div class="pillar-header">
+                        <span class="pillar-number">01</span>
+                        <h3 class="pillar-title">The Vision</h3>
+                    </div>
+                    <p class="pillar-text">
+                        I see possibilities where others see problems. Whether it's architecting systems,
+                        designing experiences, or building products—I start with the end in mind and
+                        work backwards with intention.
+                    </p>
+                    <div class="pillar-visual">
+                        <svg class="pillar-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <circle cx="24" cy="24" r="8" />
+                            <circle cx="24" cy="24" r="16" />
+                            <line x1="24" y1="4" x2="24" y2="8" />
+                            <line x1="24" y1="40" x2="24" y2="44" />
+                            <line x1="4" y1="24" x2="8" y2="24" />
+                            <line x1="40" y1="24" x2="44" y2="24" />
+                        </svg>
+                    </div>
+                </article>
 
-                <p class="manifesto reveal-text">
-                    Data doesn't lie, but it doesn't talk either. My job is to make it speak—clearly,
-                    efficiently, beautifully.
-                </p>
+                <article class="pillar pillar--craft">
+                    <div class="pillar-header">
+                        <span class="pillar-number">02</span>
+                        <h3 class="pillar-title">The Craft</h3>
+                    </div>
+                    <p class="pillar-text">
+                        Every project is a chance to obsess over the details. I believe in quality
+                        over quantity, in systems that evolve, and in the pursuit of work that
+                        stands the test of time.
+                    </p>
+                    <div class="pillar-visual">
+                        <svg class="pillar-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <polygon points="24 4 4 20 10 20 10 44 38 44 38 20 44 20" />
+                            <rect x="18" y="28" width="12" height="16" />
+                        </svg>
+                    </div>
+                </article>
 
-                <p class="manifesto reveal-text">
-                    Passionate about clean code, efficient systems, and bridging the gap between
-                    data and design. Every great insight begins with clean data.
-                </p>
+                <article class="pillar pillar--soul">
+                    <div class="pillar-header">
+                        <span class="pillar-number">03</span>
+                        <h3 class="pillar-title">The Soul</h3>
+                    </div>
+                    <p class="pillar-text">
+                        Beyond the screen lies a curious explorer. I find inspiration in mountain trails,
+                        in the rhythm of nature, in conversations that challenge perspectives.
+                        This fuels everything I create.
+                    </p>
+                    <div class="pillar-visual">
+                        <svg class="pillar-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M24 44c-8-8-16-14-16-22a12 12 0 0 1 24 0c0 8-8 14-8 22" />
+                            <circle cx="24" cy="18" r="4" />
+                        </svg>
+                    </div>
+                </article>
             </div>
 
-            <div class="about-cta">
-                <a href="#connect" class="btn btn-primary magnetic">
-                    <span class="btn-text">Let's Connect</span>
-                    <span class="btn-arrow">→</span>
-                </a>
+            <!-- BIG PICTURE - Screen-filling statement -->
+            <div class="about-bigpicture">
+                <div class="bigpicture-content">
+                    <span class="bigpicture-line">I see the</span>
+                    <span class="bigpicture-accent">BIGGER</span>
+                    <span class="bigpicture-line">picture</span>
+                </div>
+            </div>
+
+            <!-- PHILOSOPHY - Deeper narrative -->
+            <div class="about-philosophy">
+                <div class="philosophy-content">
+                    <div class="philosophy-header">
+                        <span class="philosophy-label">// MY PHILOSOPHY</span>
+                    </div>
+                    <div class="philosophy-text">
+                        <p class="philosophy-lead">
+                            I believe in creating things that <em>resonate</em>—not just function.
+                        </p>
+                        <p>
+                            The best work happens at the intersection of curiosity and discipline.
+                            I bring the same intentionality to building systems as I do to exploring
+                            new places, learning new skills, or having meaningful conversations.
+                        </p>
+                        <p>
+                            I'm not defined by one title or one skill. I'm a builder, a learner,
+                            and a perpetual work in progress—always <em>evolving</em>.
+                        </p>
+                    </div>
+                </div>
+                <div class="philosophy-cta">
+                    <a href="#connect" class="btn btn-primary magnetic">
+                        <span class="btn-text">Let's Connect</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                </div>
             </div>
         </section>
+
+        <!-- Philosophy Marquee -->
+        <div class="philosophy-marquee">
+            <div class="marquee-track">
+                <div class="marquee-content">
+                    <span class="marquee-item">PRECISION</span>
+                    <span class="marquee-divider">◆</span>
+                    <span class="marquee-item">PERFECTION</span>
+                    <span class="marquee-divider">◆</span>
+                    <span class="marquee-item">DATA</span>
+                    <span class="marquee-divider">◆</span>
+                    <span class="marquee-item">DESIGN</span>
+                    <span class="marquee-divider">◆</span>
+                    <span class="marquee-item">ARCHITECTURE</span>
+                    <span class="marquee-divider">◆</span>
+                    <span class="marquee-item">NATURE</span>
+                    <span class="marquee-divider">◆</span>
+                    <span class="marquee-item">TRAVEL</span>
+                    <span class="marquee-divider">◆</span>
+                </div>
+                <div class="marquee-content" aria-hidden="true">
+                    <span class="marquee-item">PRECISION</span>
+                    <span class="marquee-divider">◆</span>
+                    <span class="marquee-item">PERFECTION</span>
+                    <span class="marquee-divider">◆</span>
+                    <span class="marquee-item">DATA</span>
+                    <span class="marquee-divider">◆</span>
+                    <span class="marquee-item">DESIGN</span>
+                    <span class="marquee-divider">◆</span>
+                    <span class="marquee-item">ARCHITECTURE</span>
+                    <span class="marquee-divider">◆</span>
+                    <span class="marquee-item">NATURE</span>
+                    <span class="marquee-divider">◆</span>
+                    <span class="marquee-item">TRAVEL</span>
+                    <span class="marquee-divider">◆</span>
+                </div>
+            </div>
+        </div>
 
         <!-- ═══════════════════════════════════════════════════════════════════ -->
         <!-- SECTION 03: EXPERTISE - With marquee -->
@@ -484,166 +638,157 @@
                 <span class="section-label">/SELECTED WORK</span>
             </div>
 
-            <div class="projects-list">
+            <div class="projects-accordion">
                 <!-- Project 1 -->
-                <article class="project">
-                    <div class="project-grid">
-                        <div class="project-image-wrapper">
-                            <div class="project-image">
-                                <img src="https://manuarya1610.github.io/pr1.png" alt="Object Detection Project"
-                                    loading="lazy">
-                            </div>
-                            <div class="project-overlay">
-                                <span class="view-text">VIEW →</span>
-                            </div>
+                <article class="project-tab" data-project="1">
+                    <!-- Collapsed Strip -->
+                    <div class="project-strip">
+                        <div class="strip-content">
+                            <span class="strip-badge">NEW</span>
+                            <span class="strip-year">2024</span>
                         </div>
-                        <div class="project-info">
-                            <div class="project-meta">
-                                <span class="project-number">01</span>
-                                <span class="project-year">2024</span>
+                        <h3 class="strip-title">OBJECT DETECTION</h3>
+                    </div>
+
+                    <!-- Expanded Panel -->
+                    <div class="project-panel">
+                        <div class="panel-content">
+                            <div class="panel-tags">
+                                <span>PYTHON</span>
+                                <span>OPENCV</span>
+                                <span>ML</span>
                             </div>
-                            <h2 class="project-title scramble-text">Object Detection & Alert System</h2>
-                            <p class="project-desc reveal-text">
+                            <h2 class="panel-title">Object Detection & Alert System</h2>
+                            <p class="panel-desc">
                                 Real-time object detection software with automated alert generation
                                 and remote server notifications. Uses bounding boxes to identify intruders.
                             </p>
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>OpenCV</span>
-                                <span>ML</span>
-                            </div>
                             <a href="https://github.com/manuarya1610/Object-Detection-and-Alert-Generation.git"
-                                class="btn btn-outline magnetic" target="_blank">
-                                <span class="btn-text">View Project</span>
-                                <span class="btn-arrow">↗</span>
+                                class="panel-link" target="_blank">
+                                <span>View Project</span>
+                                <span class="link-arrow">↗</span>
                             </a>
+                        </div>
+                        <div class="panel-image">
+                            <img src="https://manuarya1610.github.io/pr1.png" alt="Object Detection Project">
                         </div>
                     </div>
                 </article>
 
                 <!-- Project 2 -->
-                <article class="project">
-                    <div class="project-grid project-grid--reverse">
-                        <div class="project-image-wrapper">
-                            <div class="project-image">
-                                <img src="https://manuarya1610.github.io/pr2.png" alt="RTSP Streaming Project"
-                                    loading="lazy">
-                            </div>
-                            <div class="project-overlay">
-                                <span class="view-text">VIEW →</span>
-                            </div>
+                <article class="project-tab" data-project="2">
+                    <div class="project-strip">
+                        <div class="strip-content">
+                            <span class="strip-badge">NEW</span>
+                            <span class="strip-year">2024</span>
                         </div>
-                        <div class="project-info">
-                            <div class="project-meta">
-                                <span class="project-number">02</span>
-                                <span class="project-year">2024</span>
+                        <h3 class="strip-title">RTSP STREAMING</h3>
+                    </div>
+
+                    <div class="project-panel">
+                        <div class="panel-content">
+                            <div class="panel-tags">
+                                <span>PYTHON</span>
+                                <span>OPENCV</span>
+                                <span>QT</span>
                             </div>
-                            <h2 class="project-title scramble-text">RTSP Video Streaming Software</h2>
-                            <p class="project-desc reveal-text">
+                            <h2 class="panel-title">RTSP Video Streaming Software</h2>
+                            <p class="panel-desc">
                                 Leverages OpenCV library to stream video from diverse sources.
                                 Built with QT Creator for seamless playback and intuitive interface.
                             </p>
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>OpenCV</span>
-                                <span>QT</span>
-                            </div>
-                            <a href="https://github.com/manuarya1610/RTSP-Video-Player.git"
-                                class="btn btn-outline magnetic" target="_blank">
-                                <span class="btn-text">View Project</span>
-                                <span class="btn-arrow">↗</span>
+                            <a href="https://github.com/manuarya1610/RTSP-Video-Player.git" class="panel-link"
+                                target="_blank">
+                                <span>View Project</span>
+                                <span class="link-arrow">↗</span>
                             </a>
+                        </div>
+                        <div class="panel-image">
+                            <img src="https://manuarya1610.github.io/pr2.png" alt="RTSP Streaming Project">
                         </div>
                     </div>
                 </article>
 
                 <!-- Project 3 -->
-                <article class="project">
-                    <div class="project-grid">
-                        <div class="project-image-wrapper">
-                            <div class="project-image">
-                                <img src="https://manuarya1610.github.io/pr3.png" alt="Website Template Project"
-                                    loading="lazy">
-                            </div>
-                            <div class="project-overlay">
-                                <span class="view-text">VIEW →</span>
-                            </div>
+                <article class="project-tab" data-project="3">
+                    <div class="project-strip">
+                        <div class="strip-content">
+                            <span class="strip-year">2023</span>
                         </div>
-                        <div class="project-info">
-                            <div class="project-meta">
-                                <span class="project-number">03</span>
-                                <span class="project-year">2023</span>
+                        <h3 class="strip-title">COMMUNITY WEB</h3>
+                    </div>
+
+                    <div class="project-panel">
+                        <div class="panel-content">
+                            <div class="panel-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JAVASCRIPT</span>
                             </div>
-                            <h2 class="project-title scramble-text">Community Website Template</h2>
-                            <p class="project-desc reveal-text">
+                            <h2 class="panel-title">Community Website Template</h2>
+                            <p class="panel-desc">
                                 Aesthetically pleasing and user-friendly website template that is super responsive.
                                 Follows minimalistic design that is both functional and aesthetic.
                             </p>
-                            <div class="project-tech">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
-                            </div>
-                            <div class="project-buttons">
-                                <a href="https://github.com/manuarya1610/Community-Website-Template"
-                                    class="btn btn-outline magnetic" target="_blank">
-                                    <span class="btn-text">GitHub</span>
-                                    <span class="btn-arrow">↗</span>
-                                </a>
-                                <a href="https://manant-devs.netlify.app" class="btn btn-outline magnetic"
+                            <div class="panel-links">
+                                <a href="https://github.com/manuarya1610/Community-Website-Template" class="panel-link"
                                     target="_blank">
-                                    <span class="btn-text">Live Site</span>
-                                    <span class="btn-arrow">↗</span>
+                                    <span>GitHub</span>
+                                    <span class="link-arrow">↗</span>
+                                </a>
+                                <a href="https://manant-devs.netlify.app" class="panel-link" target="_blank">
+                                    <span>Live Site</span>
+                                    <span class="link-arrow">↗</span>
                                 </a>
                             </div>
+                        </div>
+                        <div class="panel-image">
+                            <img src="https://manuarya1610.github.io/pr3.png" alt="Website Template Project">
                         </div>
                     </div>
                 </article>
 
                 <!-- Project 4 -->
-                <article class="project">
-                    <div class="project-grid project-grid--reverse">
-                        <div class="project-image-wrapper">
-                            <div class="project-image">
-                                <img src="https://manuarya1610.github.io/pr6.png" alt="Cocktails App Project"
-                                    loading="lazy">
-                            </div>
-                            <div class="project-overlay">
-                                <span class="view-text">VIEW →</span>
-                            </div>
+                <article class="project-tab" data-project="4">
+                    <div class="project-strip">
+                        <div class="strip-content">
+                            <span class="strip-year">2023</span>
                         </div>
-                        <div class="project-info">
-                            <div class="project-meta">
-                                <span class="project-number">04</span>
-                                <span class="project-year">2023</span>
-                            </div>
-                            <h2 class="project-title scramble-text">Cocktails Web App</h2>
-                            <p class="project-desc reveal-text">
-                                React website fetching cocktails from a free API with stunning UI/UX.
-                                Search, filter, and discover recipes with a beautiful interface.
-                            </p>
-                            <div class="project-tech">
-                                <span>React</span>
+                        <h3 class="strip-title">COCKTAILS APP</h3>
+                    </div>
+
+                    <div class="project-panel">
+                        <div class="panel-content">
+                            <div class="panel-tags">
+                                <span>REACT</span>
                                 <span>API</span>
                                 <span>CSS</span>
                             </div>
-                            <div class="project-buttons">
-                                <a href="https://github.com/manuarya1610/Cocktails-WebApp"
-                                    class="btn btn-outline magnetic" target="_blank">
-                                    <span class="btn-text">GitHub</span>
-                                    <span class="btn-arrow">↗</span>
-                                </a>
-                                <a href="https://cocktails-arya-webapp.netlify.app/" class="btn btn-outline magnetic"
+                            <h2 class="panel-title">Cocktails Web App</h2>
+                            <p class="panel-desc">
+                                React website fetching cocktails from a free API with stunning UI/UX.
+                                Search, filter, and discover recipes with a beautiful interface.
+                            </p>
+                            <div class="panel-links">
+                                <a href="https://github.com/manuarya1610/Cocktails-WebApp" class="panel-link"
                                     target="_blank">
-                                    <span class="btn-text">Live Site</span>
-                                    <span class="btn-arrow">↗</span>
+                                    <span>GitHub</span>
+                                    <span class="link-arrow">↗</span>
+                                </a>
+                                <a href="https://cocktails-arya-webapp.netlify.app/" class="panel-link" target="_blank">
+                                    <span>Live Site</span>
+                                    <span class="link-arrow">↗</span>
                                 </a>
                             </div>
+                        </div>
+                        <div class="panel-image">
+                            <img src="https://manuarya1610.github.io/pr6.png" alt="Cocktails App Project">
                         </div>
                     </div>
                 </article>
             </div>
         </section>
+
 
         <!-- ═══════════════════════════════════════════════════════════════════ -->
         <!-- SECTION 05: CONNECT -->
@@ -699,9 +844,8 @@
                                 <textarea name="message" placeholder="Tell me about your project..."
                                     required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary magnetic">
-                                <span class="btn-text">Send Message</span>
-                                <span class="btn-arrow">→</span>
+                            <button type="submit" class="rawlab-btn">
+                                <span class="rawlab-btn-text">Send Message</span>
                             </button>
                         </form>
                     </div>
@@ -712,12 +856,72 @@
     </main>
 
     <!-- ═══════════════════════════════════════════════════════════════════════════ -->
-    <!-- FOOTER -->
+    <!-- FOOTER - Duten-style with cursor spotlight effect (Dark Theme) -->
     <!-- ═══════════════════════════════════════════════════════════════════════════ -->
-    <footer class="footer">
-        <span class="footer-left">© 2026 Manu Arya</span>
-        <span class="footer-center">Built with passion</span>
-        <span class="footer-right">v.03</span>
+    <footer class="duten-footer duten-footer--dark" data-bg="dark">
+        <!-- Massive background text - edge to edge -->
+        <div class="footer-bg-container">
+            <!-- Outlined version (always visible) -->
+            <div class="footer-bg-text footer-bg-text--outline">MANU</div>
+            <!-- Filled version (revealed by spotlight) -->
+            <div class="footer-bg-text footer-bg-text--fill">MANU</div>
+            <!-- Spotlight mask (follows cursor) -->
+            <div class="footer-spotlight"></div>
+        </div>
+
+        <!-- Main footer content -->
+        <div class="footer-content">
+            <!-- Column 1: Brand/Logo -->
+            <div class="footer-column footer-brand">
+                <div class="footer-logo">
+                    <span class="logo-line">ma</span>
+                    <span class="logo-line">nu</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#hero" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#expertise" class="footer-link">Expertise</a>
+                    <a href="#work" class="footer-link">Work</a>
+                </div>
+            </div>
+
+            <!-- Column 2: Info Links -->
+            <div class="footer-column footer-info">
+                <a href="mailto:manuarya1610@gmail.com" class="footer-link">Contact</a>
+            </div>
+
+            <!-- Column 3: Social -->
+            <div class="footer-column footer-social">
+                <a href="https://github.com/manuarya1610" target="_blank" class="footer-link">GitHub</a>
+                <a href="https://linkedin.com/in/manuaryaddn" target="_blank" class="footer-link">LinkedIn</a>
+                <a href="https://twitter.com" target="_blank" class="footer-link">Twitter</a>
+            </div>
+
+            <!-- Column 4: Contact/Newsletter -->
+            <div class="footer-column footer-contact">
+                <span class="footer-contact-label">Get in touch</span>
+                <form class="footer-form" action="https://formspree.io/f/meqdpngy" method="POST">
+                    <div class="footer-input-wrapper">
+                        <input type="email" name="email" placeholder="Your email address" required>
+                        <button type="submit" class="footer-submit">
+                            <span>Send</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+                <p class="footer-privacy">By sending, you agree to our <a href="#">Privacy Policy</a></p>
+            </div>
+        </div>
+
+        <!-- Footer bottom bar -->
+        <div class="footer-bottom">
+            <span class="footer-copyright">© 2026 Manu Arya</span>
+            <span class="footer-tagline">Data Engineer • Dehradun, India</span>
+            <span class="footer-version">v.03</span>
+        </div>
     </footer>
 
     <!-- Toast notification for clipboard -->
