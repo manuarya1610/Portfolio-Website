@@ -11,9 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Register GSAP plugins
     gsap.registerPlugin(ScrollTrigger);
 
+    // Browser detection for cross-browser fixes
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
     // Initialize all modules
-    initLenis();
-    initCursor();
+    initLenis(isSafari);
+    if (!isTouchDevice) initCursor();
     initSpotlight();
     initPreloader();
     initCurrentTime();
@@ -33,27 +37,20 @@ document.addEventListener('DOMContentLoaded', () => {
 // ═══════════════════════════════════════════════════════════════════════════════
 let lenis;
 
-function initLenis() {
+function initLenis(isSafari) {
     lenis = new Lenis({
-        duration: 1.3,
+        duration: isSafari ? 1.5 : 1.3,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         orientation: 'vertical',
         gestureOrientation: 'vertical',
         smoothWheel: true,
-        wheelMultiplier: 1,
-        touchMultiplier: 2,
+        wheelMultiplier: isSafari ? 0.8 : 1,
+        touchMultiplier: isSafari ? 1 : 2,
+        smoothTouch: false,
     });
 
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    // Sync with GSAP ScrollTrigger
+    // Single unified RAF via GSAP ticker — no double-pumping
     lenis.on('scroll', ScrollTrigger.update);
-
-    // GSAP ticker for ScrollTrigger
     gsap.ticker.add((time) => {
         lenis.raf(time * 1000);
     });
@@ -74,29 +71,32 @@ function initCursor() {
     let dotX = 0, dotY = 0;
     let circleX = 0, circleY = 0;
 
+    // GPU-composited quickSetters (no layout thrashing)
+    const setDotX = gsap.quickSetter(cursorDot, 'x', 'px');
+    const setDotY = gsap.quickSetter(cursorDot, 'y', 'px');
+    const setCircleX = gsap.quickSetter(cursorCircle, 'x', 'px');
+    const setCircleY = gsap.quickSetter(cursorCircle, 'y', 'px');
+
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
     });
 
-    // Smooth cursor animation
-    function animateCursor() {
-        // Dot follows instantly
+    // Smooth cursor animation via GSAP ticker (synced with main loop)
+    gsap.ticker.add(() => {
+        // Dot follows with slight lag
         dotX += (mouseX - dotX) * 0.3;
         dotY += (mouseY - dotY) * 0.3;
 
-        // Circle follows with delay
+        // Circle follows with more delay
         circleX += (mouseX - circleX) * 0.1;
         circleY += (mouseY - circleY) * 0.1;
 
-        cursorDot.style.left = `${dotX}px`;
-        cursorDot.style.top = `${dotY}px`;
-        cursorCircle.style.left = `${circleX}px`;
-        cursorCircle.style.top = `${circleY}px`;
-
-        requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
+        setDotX(dotX);
+        setDotY(dotY);
+        setCircleX(circleX);
+        setCircleY(circleY);
+    });
 
     // Hover effects on interactive elements
     const interactiveElements = document.querySelectorAll('a, button, .magnetic, .project-image-wrapper');
@@ -117,21 +117,23 @@ function initSpotlight() {
     let targetX = 0, targetY = 0;
     let currentX = 0, currentY = 0;
 
+    // GPU-composited quickSetters
+    const setX = gsap.quickSetter(spotlight, 'x', 'px');
+    const setY = gsap.quickSetter(spotlight, 'y', 'px');
+
     document.addEventListener('mousemove', (e) => {
         targetX = e.clientX;
         targetY = e.clientY;
     });
 
-    function animateSpotlight() {
+    // Sync with GSAP ticker instead of separate RAF
+    gsap.ticker.add(() => {
         currentX += (targetX - currentX) * 0.05;
         currentY += (targetY - currentY) * 0.05;
 
-        spotlight.style.left = `${currentX}px`;
-        spotlight.style.top = `${currentY}px`;
-
-        requestAnimationFrame(animateSpotlight);
-    }
-    animateSpotlight();
+        setX(currentX);
+        setY(currentY);
+    });
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -159,7 +161,9 @@ function initPreloader() {
     }
 
     // Calculate digit height
-    const digitHeight = parseFloat(getComputedStyle(document.querySelector('.counter-digit-container')).height);
+    const digitContainer = document.querySelector('.counter-digit-container');
+    if (!digitContainer) { if (masterRevealTl) masterRevealTl.play(); return; }
+    const digitHeight = parseFloat(getComputedStyle(digitContainer).height);
     let currentPercent = 0;
     const targetPercent = 100;
     const duration = 2500; // 2.5 seconds
@@ -599,6 +603,9 @@ function initWordReveal() {
             color: 'inherit'
         });
 
+        // Pre-compute opacity quickSetters for each word (avoid per-frame style writes)
+        const wordSetters = Array.from(wordSpans).map(word => gsap.quickSetter(word, 'opacity'));
+
         // Create scroll-driven animation
         ScrollTrigger.create({
             trigger: text,
@@ -608,9 +615,8 @@ function initWordReveal() {
             onUpdate: (self) => {
                 const progress = self.progress;
 
-                wordSpans.forEach((word, i) => {
+                for (let i = 0; i < totalWords; i++) {
                     // Calculate when this word should start and end revealing
-                    // Each word has a small window where it transitions
                     const wordStart = i / totalWords;
                     const wordEnd = (i + 1) / totalWords;
 
@@ -623,13 +629,11 @@ function initWordReveal() {
                     }
 
                     // Smooth the transition with easing
-                    const easedProgress = wordProgress * wordProgress * (3 - 2 * wordProgress); // smoothstep
+                    const easedProgress = wordProgress * wordProgress * (3 - 2 * wordProgress);
 
-                    // Interpolate opacity from 0.15 to 1
-                    const opacity = 0.15 + (0.85 * easedProgress);
-
-                    word.style.opacity = opacity;
-                });
+                    // Interpolate opacity from 0.15 to 1 via quickSetter
+                    wordSetters[i](0.15 + (0.85 * easedProgress));
+                }
             }
         });
     });
@@ -1009,8 +1013,14 @@ function initSectionTransitions() {
 
             gsap.set(darkContent, {
                 clipPath: 'inset(10% 0% 10% 0%)',
+                webkitClipPath: 'inset(10% 0% 10% 0%)',
                 opacity: 0.8
             });
+
+            // Use quickSetters for fast per-frame updates (avoids gsap.set overhead)
+            const setClipPath = gsap.quickSetter(darkContent, 'clipPath');
+            const setWebkitClipPath = gsap.quickSetter(darkContent, 'webkitClipPath');
+            const setOpacity = gsap.quickSetter(darkContent, 'opacity');
 
             ScrollTrigger.create({
                 trigger: section,
@@ -1020,11 +1030,10 @@ function initSectionTransitions() {
                 onUpdate: (self) => {
                     const progress = self.progress;
                     const inset = 10 * (1 - progress);
-
-                    gsap.set(darkContent, {
-                        clipPath: `inset(${inset}% 0% ${inset}% 0%)`,
-                        opacity: 0.8 + (0.2 * progress)
-                    });
+                    const clipValue = `inset(${inset}% 0% ${inset}% 0%)`;
+                    setClipPath(clipValue);
+                    setWebkitClipPath(clipValue);
+                    setOpacity(0.8 + (0.2 * progress));
                 }
             });
         }
@@ -1289,6 +1298,7 @@ function initAboutStoryAnimations() {
 
     if (marquee) {
         const marqueeContent = marquee.querySelectorAll('.marquee-content');
+        const baseDuration = 40; // cached base duration (avoids getComputedStyle per tick)
 
         // Speed up/slow down based on scroll velocity
         ScrollTrigger.create({
@@ -1298,10 +1308,10 @@ function initAboutStoryAnimations() {
             onUpdate: (self) => {
                 const velocity = self.getVelocity();
                 const speedMultiplier = 1 + Math.abs(velocity) / 5000;
+                const newDuration = `${baseDuration / speedMultiplier}s`;
 
                 marqueeContent.forEach(content => {
-                    const currentDuration = parseFloat(getComputedStyle(content).animationDuration);
-                    content.style.animationDuration = `${40 / speedMultiplier}s`;
+                    content.style.animationDuration = newDuration;
                 });
             }
         });
@@ -1540,56 +1550,60 @@ function initFooterSpotlight() {
         // Smooth shrink and fade
         gsap.to(fillText, {
             clipPath: 'circle(0px at 50% 50%)',
+            webkitClipPath: 'circle(0px at 50% 50%)',
             duration: 0.8,
             ease: 'power3.out'
         });
     });
 
-    // Animation loop with spring physics for ultra-fluid following
-    function updateSpotlight() {
+    // Cache container reference and offset (avoid per-frame querySelector + getBoundingClientRect)
+    const bgContainer = document.querySelector('.footer-bg-container');
+    let bgOffsetY = 0;
+
+    function cacheBgOffset() {
+        if (bgContainer) {
+            const bgRect = bgContainer.getBoundingClientRect();
+            const footerRect = footer.getBoundingClientRect();
+            bgOffsetY = bgRect.top - footerRect.top;
+        }
+    }
+    cacheBgOffset();
+
+    // Recache on resize
+    window.addEventListener('resize', cacheBgOffset);
+    // Also recache on mouseenter for accuracy
+    footer.addEventListener('mouseenter', cacheBgOffset);
+
+    // Animation loop via GSAP ticker (synced, no separate RAF)
+    gsap.ticker.add(() => {
         // Spring physics calculation
         const dx = mouseX - currentX;
         const dy = mouseY - currentY;
 
-        // Apply spring force (acceleration towards target)
         velocityX += dx * stiffness;
         velocityY += dy * stiffness;
-
-        // Apply damping (friction/resistance)
         velocityX *= damping;
         velocityY *= damping;
 
-        // Update position
         currentX += velocityX;
         currentY += velocityY;
 
         // Only update DOM if hovering and there's meaningful movement
         if (isHovering && (Math.abs(velocityX) > precision || Math.abs(velocityY) > precision || Math.abs(dx) > precision || Math.abs(dy) > precision)) {
-            // Get background text container position
-            const bgContainer = document.querySelector('.footer-bg-container');
             if (bgContainer) {
-                const bgRect = bgContainer.getBoundingClientRect();
-                const footerRect = footer.getBoundingClientRect();
-
-                // Calculate position relative to background text
                 const relativeX = currentX;
-                const relativeY = currentY - (bgRect.top - footerRect.top);
-
-                // Update clip-path with smooth spring-physics values
-                fillText.style.clipPath = `circle(${spotlightRadius}px at ${relativeX}px ${relativeY}px)`;
+                const relativeY = currentY - bgOffsetY;
+                const clipValue = `circle(${spotlightRadius}px at ${relativeX}px ${relativeY}px)`;
+                fillText.style.clipPath = clipValue;
+                fillText.style.webkitClipPath = clipValue;
             }
 
-            // Update spotlight element position if exists
             if (spotlight) {
                 spotlight.style.left = currentX + 'px';
                 spotlight.style.top = currentY + 'px';
             }
         }
-
-        requestAnimationFrame(updateSpotlight);
-    }
-
-    updateSpotlight();
+    });
 }
 
 
