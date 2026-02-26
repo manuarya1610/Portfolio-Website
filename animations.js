@@ -1673,6 +1673,55 @@ function initRawLabButtons() {
             }
         });
     });
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // PANEL LINK BUTTONS - Same staggered text + magnetic effect (Rectangle)
+    // ─────────────────────────────────────────────────────────────────────────
+    const panelLinks = document.querySelectorAll('.panel-link');
+
+    panelLinks.forEach(link => {
+        // 1. Text Stagger Setup - split the text span only (not the arrow)
+        const textSpan = link.querySelector('span:not(.link-arrow)');
+        const arrowSpan = link.querySelector('.link-arrow');
+
+        if (textSpan) {
+            const text = textSpan.textContent.trim();
+            const wrapper = document.createElement('span');
+            wrapper.className = 'panel-link-text';
+            wrapper.innerHTML = text.split('').map((char, i) => {
+                const delay = i * 0.03;
+                const charContent = char === ' ' ? '&nbsp;' : char;
+                return `<span class="panel-link-char" data-char="${char}" style="transition-delay: ${delay}s">${charContent}</span>`;
+            }).join('');
+
+            // Replace the original text span with the wrapped version
+            textSpan.replaceWith(wrapper);
+        }
+
+        // 2. Magnetic Effect (same as rawlab but slightly subtler)
+        link.addEventListener('mousemove', (e) => {
+            const rect = link.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            gsap.to(link, {
+                x: x * 0.35,
+                y: y * 0.35,
+                duration: 0.6,
+                ease: 'power3.out'
+            });
+        });
+
+        // 3. Reset on Leave with elastic snap-back
+        link.addEventListener('mouseleave', () => {
+            gsap.to(link, {
+                x: 0,
+                y: 0,
+                duration: 1.2,
+                ease: 'elastic.out(1, 0.4)'
+            });
+        });
+    });
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════

@@ -1996,31 +1996,70 @@ body.theme-dark .indicator-total {
 }
 
 .panel-link {
+    position: relative;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     font-family: var(--font-mono);
     font-size: 0.75rem;
     letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
     color: var(--text-dark);
     text-decoration: none;
-    padding: 0.75rem 1.25rem;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
+    padding: 0.85rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 .panel-link:hover {
-    background: var(--accent-primary);
-    color: white;
     border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    background: rgba(255, 107, 53, 0.08);
+}
+
+/* Staggered character text container inside panel-link */
+.panel-link-text {
+    position: relative;
+    display: block;
+    height: 1.2em;
+    line-height: 1.2em;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.panel-link-char {
+    display: inline-block;
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+/* The duplicate character that slides in from bottom */
+.panel-link-char[data-char]:before {
+    content: attr(data-char);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: var(--accent-primary);
+    transform: translate3d(0, 0, 0);
+}
+
+.panel-link:hover .panel-link-char {
+    transform: translateY(-100%);
 }
 
 .link-arrow {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
+    flex-shrink: 0;
 }
 
 .panel-link:hover .link-arrow {
-    transform: translateX(3px);
+    transform: translateX(4px);
+    color: var(--accent-primary);
 }
 
 /* Panel Image - Bottom of Panel */
